@@ -71,11 +71,9 @@ export default function Header() {
 
         {/* Right Container - CTA Button and Avatar */}
         <div className="content-stretch flex gap-[22px] h-[88px] items-center justify-end relative shrink-0 w-[306px]">
-          <div className="bg-[#0a7c00] box-border content-stretch flex gap-2.5 items-center justify-center px-6 py-2.5 relative rounded-[8px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)] shrink-0 cursor-pointer hover:bg-[#0a6b00] transition-colors">
-            <div className="font-['Inter:regular',_sans-serif] leading-[0] not-italic relative shrink-0 text-[16px] text-nowrap text-white">
-              <p className="leading-[20px] whitespace-pre">Get a quote</p>
-            </div>
-          </div>
+          <button className="btn btn-primary shrink-0">
+            Get a quote
+          </button>
           <div className="content-stretch flex gap-3 items-center justify-start relative shrink-0">
             <div className="bg-[#e7f6e5] content-stretch flex flex-col items-center justify-center relative rounded-[200px] shrink-0 size-10">
               <Avatar property1="Chris" />
