@@ -1,6 +1,4 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import Header from './components/header'
 import Home from './components/home'
@@ -10,20 +8,36 @@ import FAQs from './components/faqs'
 import Training from './components/training'
 import Contact from './components/contact'
 
+type ActiveSection = 'home' | 'gallery' | 'pricing' | 'faqs' | 'training' | 'contact'
+
 function App() {
-  const [count, setCount] = useState(0)
+  const [activeSection, setActiveSection] = useState<ActiveSection>('home')
+
+  const renderActiveComponent = () => {
+    switch (activeSection) {
+      case 'home':
+        return <Home />
+      case 'gallery':
+        return <Gallery />
+      case 'pricing':
+        return <Pricing />
+      case 'faqs':
+        return <FAQs />
+      case 'training':
+        return <Training />
+      case 'contact':
+        return <Contact />
+      default:
+        return <Home />
+    }
+  }
 
   return (
     <>
-      <Header />
-      <div>
-        <Home />
-        <Gallery />
-        <Pricing />
-        <FAQs />
-        <Training />
-        <Contact />
-      </div>
+      <Header activeSection={activeSection} setActiveSection={setActiveSection} />
+      <main className="min-h-screen">
+        {renderActiveComponent()}
+      </main>
     </>
   )
 }
