@@ -1,4 +1,5 @@
 export default function Footer() {
+  const logoIcon = "icons/logo-icon-2.svg";
   return (
     <div 
       className="box-border content-start flex flex-wrap gap-0 items-start justify-center px-6 py-10 relative size-full"
@@ -14,6 +15,7 @@ export default function Footer() {
               {/* Logo Icon */}
               <div className="bg-[#8cc63f] overflow-clip relative rounded-[94.118px] shrink-0 size-12">
                 <div className="absolute inset-[20.59%]">
+                <img alt="Logo icon" className="block max-w-none size-full" src={logoIcon} />
                   <div className="block max-w-none size-full bg-white rounded-full"></div>
                 </div>
               </div>

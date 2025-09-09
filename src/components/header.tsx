@@ -1,8 +1,8 @@
 import '../App.css'
 
 // Image assets from Figma
-const logoIcon = "http://localhost:3845/assets/d07b19d6d0626a7614de42145ee3cb234b123703.svg";
-const logoText = "http://localhost:3845/assets/80e338fdedad3da44a758b02d8e2eeac6c05ec3e.svg";
+const logoIcon = "icons/logo-icon.svg";
+const logoText = "icons/logo-text.svg";
 
 type ActiveSection = 'home' | 'gallery' | 'pricing' | 'faqs' | 'training' | 'contact'
 
