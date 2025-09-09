@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 import Header from './components/header'
+import Footer from './components/footer'
 import Home from './components/home'
 import Gallery from './components/gallery'
 import Pricing from './components/pricing'
@@ -38,6 +39,7 @@ function App() {
       <main className="min-h-screen">
         {renderActiveComponent()}
       </main>
+      <Footer />
     </>
   )
 }
