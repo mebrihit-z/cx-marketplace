@@ -1,14 +1,10 @@
 import '../App.css'
 import CTASection from './cta-section';
+import GalleryGrid from './GalleryGrid';
+import { templateData, additionalTemplates } from '../data/templates';
+import type { Template } from '../data/templates';
 
 const imgLineRoundedSearch = "http://localhost:3845/assets/7953949d658286013aeb2389729b8a7196e8bad5.svg";
-const img = "images/saas-card-bg.svg";
-const img1 = "icons/arrow-forward-rounded.svg";
-const img2 = "images/e-commerce-card-bg-image.svg";
-const img3 = "images/portfolio-card-bg-image.svg";
-const img4 = "images/event-card-bg-image.svg";
-const img5 = "images/blog-card-bg-image.svg";
-const img6 = "images/agency-card-bg-image.svg";
 const imgMaterialSymbolsKeyboardArrowDownRounded = "http://localhost:3845/assets/eacea545fb9d391dc079785c3412b3ff45e428a3.svg";
 
 interface ButtonProps {
@@ -19,7 +15,7 @@ interface ButtonProps {
   buttonType?: "Default" | "Tertiary Right Icon" | "Tertiary" | "Primary Right Icon" | "Primary Left Icon" | "Secondary" | "Secondary Left Icon" | "Secondary Right Icon" | "Button Link" | "Button Link Right Icon" | "Button Link Left Icon" | "Tertiary Left Icon";
 }
 
-function Button({ text = "Button", leftIcon = true, rightIcon = true, state = "Default", buttonType = "Default" }: ButtonProps) {
+function Button({ text = "Button" }: ButtonProps) {
   return (
     <div className="box-border content-stretch flex gap-2.5 items-center justify-center px-6 py-2.5 relative rounded-[8px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)] size-full" data-name="State=Default, Button Type=Default" data-node-id="3781:18356">
       <div className="font-['Inter:regular',_sans-serif] leading-[0] not-italic relative shrink-0 text-[16px] text-nowrap text-white" data-node-id="3490:20338">
@@ -30,6 +26,11 @@ function Button({ text = "Button", leftIcon = true, rightIcon = true, state = "D
 }
 
 export default function Gallery() {
+  const handleCardClick = (template: Template) => {
+    console.log('Template clicked:', template);
+    // You can add navigation, modal opening, or other actions here
+  };
+
   return (
     <div className="box-border content-stretch flex flex-col gap-20 items-start justify-start pb-16 pt-32 px-0 relative size-full" data-name="Section Container" data-node-id="8084:56888">
       <div className="box-border content-stretch flex items-start justify-between px-32 py-0 relative shrink-0 w-full" data-name="Header" data-node-id="8084:57041">
@@ -150,91 +151,19 @@ export default function Gallery() {
         </div>
         
         {/* Template Grid */}
-        <div className="box-border gap-4 grid grid-cols-[repeat(3,_minmax(0px,_1fr))] grid-rows-[repeat(2,_minmax(0px,_1fr))] h-[668.8px] px-32 py-0 relative shrink-0 w-full" data-name="Grid" data-node-id="8084:57052">
-          <div className="[grid-area:1_/_2] aspect-[500/400] box-border content-stretch flex flex-col gap-3 items-start justify-end overflow-clip p-[32px] relative rounded-[16px] shrink-0" data-name="Card" data-node-id="8084:57053">
-            <div className="" data-name="Image Container" id="node-I8084_57053-8645_39400">
-            <img alt="arrow" className="block max-w-none size-full" src={img} />
-            </div>
-          </div>
-          <div className="[grid-area:1_/_3] aspect-[500/400] box-border content-stretch flex flex-col gap-3 items-start justify-end overflow-clip p-[32px] relative rounded-[16px] shrink-0" data-name="Card" data-node-id="8084:57055">
-            <div className="">
-              <img alt="arrow" className="block max-w-none size-full" src={img2} />
-            </div>
-            
-          </div>
-          <div className="[grid-area:2_/_1] aspect-[500/400] box-border content-stretch flex flex-col gap-3 items-start justify-end overflow-clip p-[32px] relative rounded-[16px] shrink-0" data-name="Card" data-node-id="8263:73712">
-            <div className="" data-name="Image Container" id="node-I8263_73712-8645_40947">
-              <img alt="arrow" className="block max-w-none size-full" src={img3} />
-            </div>
-          </div>
-          <div className="[grid-area:2_/_2] box-border content-stretch flex flex-col gap-3 items-start justify-end overflow-clip p-[32px] relative rounded-[16px] shrink-0" data-name="Card" data-node-id="8650:41119">
-            <div className="" data-name="Image Container" id="node-I8650_41119-8645_39451">
-              <img alt="arrow" className="block max-w-none size-full" src={img4} />
-            </div>
-          </div>
-          <div className="[grid-area:2_/_3] box-border content-stretch flex flex-col gap-3 items-start justify-end overflow-clip p-[32px] relative rounded-[16px] shrink-0" data-name="Card" data-node-id="8650:41130">
-            <div className="" data-name="Image Container" id="node-I8650_41130-8645_39462">
-              <img alt="arrow" className="block max-w-none size-full" src={img5} />
-            </div>
-          </div>
-          <div className="[grid-area:1_/_1] aspect-[500/400] box-border content-stretch flex flex-col gap-3 items-start justify-end overflow-clip p-[32px] relative rounded-[16px] shrink-0" data-name="Card" data-node-id="8263:73698">
-            <div className="" data-name="Image Container" id="node-I8263_73698-8645_39378">
-              <img alt="arrow" className="block max-w-none size-full" src={img5} />
-            </div>
-          </div>
-        </div>
+        <GalleryGrid 
+          templates={templateData} 
+          onCardClick={handleCardClick}
+        />
       </div>
       <CTASection />
       
       {/* Additional Gallery Section */}
-      <div className="box-border gap-4 grid grid-cols-[repeat(3,_minmax(0px,_1fr))] h-[668.8px] px-32 py-0 relative shrink-0 w-full" data-name="Grid" data-node-id="8084:57052">
-          <div className="[grid-area:1_/_2] aspect-[500/400] box-border content-stretch flex flex-col gap-3 items-start justify-end overflow-clip p-[32px] relative rounded-[16px] shrink-0" data-name="Card" data-node-id="8084:57053">
-            <div className="" data-name="Image Container" id="node-I8084_57053-8645_39400">
-            <img alt="arrow" className="block max-w-none size-full" src={img} />
-            </div>
-          </div>
-          <div className="[grid-area:1_/_3] aspect-[500/400] box-border content-stretch flex flex-col gap-3 items-start justify-end overflow-clip p-[32px] relative rounded-[16px] shrink-0" data-name="Card" data-node-id="8084:57055">
-            <div className="">
-              <img alt="arrow" className="block max-w-none size-full" src={img2} />
-            </div>
-            
-          </div>
-          <div className="[grid-area:2_/_1] aspect-[500/400] box-border content-stretch flex flex-col gap-3 items-start justify-end overflow-clip p-[32px] relative rounded-[16px] shrink-0" data-name="Card" data-node-id="8263:73712">
-            <div className="" data-name="Image Container" id="node-I8263_73712-8645_40947">
-              <img alt="arrow" className="block max-w-none size-full" src={img3} />
-            </div>
-          </div>
-          <div className="[grid-area:2_/_2] box-border content-stretch flex flex-col gap-3 items-start justify-end overflow-clip p-[32px] relative rounded-[16px] shrink-0" data-name="Card" data-node-id="8650:41119">
-            <div className="" data-name="Image Container" id="node-I8650_41119-8645_39451">
-              <img alt="arrow" className="block max-w-none size-full" src={img4} />
-            </div>
-          </div>
-          <div className="[grid-area:2_/_3] box-border content-stretch flex flex-col gap-3 items-start justify-end overflow-clip p-[32px] relative rounded-[16px] shrink-0" data-name="Card" data-node-id="8650:41130">
-            <div className="" data-name="Image Container" id="node-I8650_41130-8645_39462">
-              <img alt="arrow" className="block max-w-none size-full" src={img5} />
-            </div>
-          </div>
-          <div className="[grid-area:1_/_1] aspect-[500/400] box-border content-stretch flex flex-col gap-3 items-start justify-end overflow-clip p-[32px] relative rounded-[16px] shrink-0" data-name="Card" data-node-id="8263:73698">
-            <div className="" data-name="Image Container" id="node-I8263_73698-8645_39378">
-              <img alt="arrow" className="block max-w-none size-full" src={img5} />
-            </div>
-          </div>
-          <div className="[grid-area:1_/_1] aspect-[500/400] box-border content-stretch flex flex-col gap-3 items-start justify-end overflow-clip p-[32px] relative rounded-[16px] shrink-0" data-name="Card" data-node-id="8263:73698">
-            <div className="" data-name="Image Container" id="node-I8263_73698-8645_39378">
-              <img alt="arrow" className="block max-w-none size-full" src={img5} />
-            </div>
-          </div>
-          <div className="[grid-area:1_/_1] aspect-[500/400] box-border content-stretch flex flex-col gap-3 items-start justify-end overflow-clip p-[32px] relative rounded-[16px] shrink-0" data-name="Card" data-node-id="8263:73698">
-            <div className="" data-name="Image Container" id="node-I8263_73698-8645_39378">
-              <img alt="arrow" className="block max-w-none size-full" src={img5} />
-            </div>
-          </div>
-          <div className="[grid-area:1_/_1] aspect-[500/400] box-border content-stretch flex flex-col gap-3 items-start justify-end overflow-clip p-[32px] relative rounded-[16px] shrink-0" data-name="Card" data-node-id="8263:73698">
-            <div className="" data-name="Image Container" id="node-I8263_73698-8645_39378">
-              <img alt="arrow" className="block max-w-none size-full" src={img5} />
-            </div>
-          </div>
-        </div>
+      <GalleryGrid 
+        templates={additionalTemplates} 
+        onCardClick={handleCardClick}
+        className="grid-rows-[repeat(3,_minmax(0px,_1fr))] h-[1000px]"
+      />
     </div>
   );
 }
