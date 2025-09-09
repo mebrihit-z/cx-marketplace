@@ -1,14 +1,9 @@
-const imgImage7 = "http://localhost:3845/assets/5672096bed4e40fb96b0a9404540cc4f40a281fc.png";
-const img = "http://localhost:3845/assets/48d56ab48d85e260963f6ee3722dd3d7492771c6.svg";
+const imgImage7 = "images/cta-bg-image.svg";
+const starWhiteIcon = "icons/star-white.svg";
 
 export default function CTASection() {
   return (
-    <div className="bg-gradient-to-t box-border content-stretch flex flex-col from-[#00120c] gap-6 items-center justify-center px-0 py-32 relative size-full to-[#000000]" data-name="Section Container" data-node-id="8213:78160">
-      <div className="absolute flex h-[1008px] items-center justify-center left-1/2 translate-x-[-50%] translate-y-[-50%] w-[1512px]" style={{ top: "calc(50% + 142.167px)" }}>
-        <div className="flex-none rotate-[270deg]">
-          <div className="bg-center bg-cover bg-no-repeat h-[1512px] opacity-30 w-[1008px]" data-name="image 7" data-node-id="8213:78161" style={{ backgroundImage: `url('${imgImage7}')` }} />
-        </div>
-      </div>
+    <div className=" box-border content-stretch flex flex-col gap-6 items-center justify-center px-0 py-32 relative size-full" data-name="Section Container" data-node-id="8213:78160" style={{ backgroundImage: `url('${imgImage7}')` }}>
       <div className="box-border content-stretch flex flex-col gap-12 items-start justify-center overflow-clip px-32 py-0 relative shrink-0 w-full" data-name="Container" data-node-id="8213:78162">
         <div className="content-stretch flex flex-col gap-6 items-center justify-start leading-[0] not-italic relative shrink-0 text-white w-[960px]" data-name="Text Container" data-node-id="8213:78163">
           <div className="font-['Inter:Semi_Bold',_sans-serif] font-semibold relative shrink-0 text-[48px] w-full" data-node-id="8213:78164">
@@ -21,7 +16,7 @@ export default function CTASection() {
         <div className="content-stretch flex gap-4 items-start justify-start relative shrink-0" data-name="Button Group" data-node-id="8213:78166">
           <div className="bg-[#0a7c00] box-border content-stretch flex gap-2 items-center justify-start px-6 py-2.5 relative rounded-[8px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)] shrink-0" data-name="Button" data-node-id="8213:78167">
             <div className="relative shrink-0 size-[18.333px]" data-name="Vector" id="node-I8213_78167-3904_19148">
-              <img alt="" className="block max-w-none size-full" src={img} />
+              <img alt="" className="block max-w-none size-full" src={starWhiteIcon} />
             </div>
             <div className="font-['Inter:regular',_sans-serif] leading-[0] not-italic relative shrink-0 text-[16px] text-nowrap text-white" id="node-I8213_78167-3904_19141">
               <p className="leading-[20px] whitespace-pre">Create template</p>

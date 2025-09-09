@@ -1,5 +1,5 @@
-const imgImage25 = "http://localhost:3845/assets/01042182e89008d239457e0a1a23a6894ec7f994.png";
-const imgVector = "http://localhost:3845/assets/48d56ab48d85e260963f6ee3722dd3d7492771c6.svg";
+const imgImage25 = "images/ai-bg-image.png";
+const imgVector = "icons/star-white.svg";
 
 interface ButtonProps {
   text?: string;
