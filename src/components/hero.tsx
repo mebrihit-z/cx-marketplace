@@ -16,7 +16,7 @@ function Button({ text = "Button", leftIcon = true, rightIcon = true, state = "D
       <div className="bg-white box-border content-stretch flex gap-2 items-center justify-start px-6 py-2.5 relative rounded-[8px] size-full" data-name="State=Default, Button Type=Secondary Left Icon" data-node-id="4138:11594">
         <div aria-hidden="true" className="absolute border border-[#0a7c00] border-solid inset-0 pointer-events-none rounded-[8px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)]" />
         <div className="relative shrink-0 size-[18.333px]" data-name="Vector" data-node-id="4138:11595">
-          <img alt className="block max-w-none size-full" src={imgVector} />
+          <img alt="vector" className="block max-w-none size-full" src={imgVector} />
         </div>
         <div className="font-['Inter:regular',_sans-serif] leading-[0] not-italic relative shrink-0 text-[#111215] text-[16px] text-nowrap" data-node-id="4138:11596">
           <p className="leading-[20px] whitespace-pre">{text}</p>
