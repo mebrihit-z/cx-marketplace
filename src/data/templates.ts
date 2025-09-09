@@ -38,7 +38,7 @@ export const templateData: Template[] = [
   },
   {
     id: "8263:73712",
-    src: "images/portfolio-card-bg-image.svg",
+    src: "images/startup-card-bg-image.svg",
     alt: "Portfolio Template",
     gridArea: "2 / 1",
     aspectRatio: "aspect-[500/400]",
@@ -50,7 +50,7 @@ export const templateData: Template[] = [
   },
   {
     id: "8650:41119",
-    src: "images/event-card-bg-image.svg",
+    src: "images/portfolio-card-bg-image.svg",
     alt: "Event Template",
     gridArea: "2 / 2",
     title: "Event Landing Page",
@@ -61,7 +61,7 @@ export const templateData: Template[] = [
   },
   {
     id: "8650:41130",
-    src: "images/blog-card-bg-image.svg",
+    src: "images/event-card-bg-image.svg",
     alt: "Blog Template",
     gridArea: "2 / 3",
     title: "Blog Platform",
@@ -72,7 +72,7 @@ export const templateData: Template[] = [
   },
   {
     id: "8263:73698",
-    src: "images/blog-card-bg-image.svg",
+    src: "images/agency-card-bg-image-1.svg",
     alt: "Blog Template 2",
     gridArea: "1 / 1",
     aspectRatio: "aspect-[500/400]",
@@ -87,7 +87,7 @@ export const templateData: Template[] = [
 export const additionalTemplates: Template[] = [
   {
     id: "8084:57053-2",
-    src: "images/saas-card-bg.svg",
+    src: "images/e-commerce-card-bg-image-2.svg",
     alt: "SaaS Template 2",
     gridArea: "1 / 2",
     aspectRatio: "aspect-[500/400]",
@@ -99,7 +99,7 @@ export const additionalTemplates: Template[] = [
   },
   {
     id: "8084:57055-2",
-    src: "images/e-commerce-card-bg-image.svg",
+    src: "images/portfolio-card-bg-image-2.svg",
     alt: "E-commerce Template 2",
     gridArea: "1 / 3",
     aspectRatio: "aspect-[500/400]",
@@ -111,7 +111,7 @@ export const additionalTemplates: Template[] = [
   },
   {
     id: "8263:73712-2",
-    src: "images/portfolio-card-bg-image.svg",
+    src: "images/news-card-bg-image.svg",
     alt: "Portfolio Template 2",
     gridArea: "2 / 1",
     aspectRatio: "aspect-[500/400]",
@@ -123,7 +123,7 @@ export const additionalTemplates: Template[] = [
   },
   {
     id: "8650:41119-2",
-    src: "images/event-card-bg-image.svg",
+    src: "images/startup-card-bg-image-2.svg",
     alt: "Event Template 2",
     gridArea: "2 / 2",
     title: "Conference Landing",
@@ -134,7 +134,7 @@ export const additionalTemplates: Template[] = [
   },
   {
     id: "8650:41130-2",
-    src: "images/blog-card-bg-image.svg",
+    src: "images/saas-card-bg-image-2.svg",
     alt: "Blog Template 2",
     gridArea: "2 / 3",
     title: "News Blog",
@@ -145,7 +145,7 @@ export const additionalTemplates: Template[] = [
   },
   {
     id: "8263:73698-2",
-    src: "images/blog-card-bg-image.svg",
+    src: "images/business-card-bg-image.svg",
     alt: "Blog Template 3",
     gridArea: "1 / 1",
     aspectRatio: "aspect-[500/400]",
@@ -169,7 +169,7 @@ export const additionalTemplates: Template[] = [
   },
   {
     id: "8263:73698-4",
-    src: "images/blog-card-bg-image.svg",
+    src: "images/agency-card-bg-image.svg",
     alt: "Blog Template 5",
     gridArea: "1 / 1",
     aspectRatio: "aspect-[500/400]",
