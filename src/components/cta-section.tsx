@@ -1,9 +1,10 @@
-const imgImage7 = "images/cta-bg-image.svg";
+const imgImage7 = "images/ai-bg-image.png";
 const starWhiteIcon = "icons/star-white.svg";
+
 
 export default function CTASection() {
   return (
-    <div className=" box-border content-stretch flex flex-col gap-6 items-center justify-center px-0 py-32 relative size-full" data-name="Section Container" data-node-id="8213:78160" style={{ backgroundImage: `url('${imgImage7}')` }}>
+    <div className=" bg-cover bg-no-repeat box-border content-stretch flex flex-col gap-6 items-center justify-center px-0 py-32 relative size-full" data-name="Section Container" data-node-id="8213:78160" style={{ backgroundImage: `url('${imgImage7}')` }}>
       <div className="box-border content-stretch flex flex-col gap-12 items-start justify-center overflow-clip px-32 py-0 relative shrink-0 w-full" data-name="Container" data-node-id="8213:78162">
         <div className="content-stretch flex flex-col gap-6 items-center justify-start leading-[0] not-italic relative shrink-0 text-white w-[960px]" data-name="Text Container" data-node-id="8213:78163">
           <div className="font-['Inter:Semi_Bold',_sans-serif] font-semibold relative shrink-0 text-[48px] w-full" data-node-id="8213:78164">
