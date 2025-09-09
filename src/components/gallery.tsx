@@ -54,7 +54,7 @@ export default function Gallery() {
                 </div>
               </div>
             </div>
-            <div className="bg-[#0a7c00] box-border content-stretch flex gap-2.5 items-center justify-center px-6 py-2.5 relative rounded-[8px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)] shrink-0" data-name="Button" data-node-id="8249:58498">
+            <div className="bg-[#0a7c00] box-border content-stretch flex gap-2.5 items-center justify-center px-6 relative rounded-[8px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)] shrink-0" data-name="Button" data-node-id="8249:58498">
               <Button text="Search" />
             </div>
           </div>
