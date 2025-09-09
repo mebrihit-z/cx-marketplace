@@ -1,5 +1,5 @@
-const imgDesktopCreate11 = "http://localhost:3845/assets/ece626af52a8e5ebc6116582c1ea5a4d3307330c.png";
-const imgVector = "http://localhost:3845/assets/53f196aaa228150d93cb0ec56a0e1d83c5c37030.svg";
+const imgDesktopCreate11 = "images/desktop-bg-image.png";
+const imgVector = "icons/star-black.svg";
 const heroBg = "images/hero-bg-home.svg";
 
 interface ButtonProps {
@@ -13,7 +13,7 @@ interface ButtonProps {
 function Button({ text = "Button", leftIcon = true, rightIcon = true, state = "Default", buttonType = "Default" }: ButtonProps) {
   if (state === "Default" && buttonType === "Secondary Left Icon") {
     return (
-      <div className="bg-white box-border content-stretch flex gap-2 items-center justify-start px-6 py-2.5 relative rounded-[8px] size-full" data-name="State=Default, Button Type=Secondary Left Icon" data-node-id="4138:11594">
+      <div className="bg-white box-border content-stretch flex gap-2 items-center justify-start px-6 py-2.5 rounded-[8px] size-full" data-name="State=Default, Button Type=Secondary Left Icon" data-node-id="4138:11594">
         <div aria-hidden="true" className="absolute border border-[#0a7c00] border-solid inset-0 pointer-events-none rounded-[8px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)]" />
         <div className="relative shrink-0 size-[18.333px]" data-name="Vector" data-node-id="4138:11595">
           <img alt="vector" className="block max-w-none size-full" src={imgVector} />
