@@ -268,7 +268,7 @@ export default function Gallery() {
                   <p className="leading-[20px] whitespace-pre">View</p>
                 </div>
                 <div className="relative shrink-0 size-5" data-name="material-symbols:arrow-forward-rounded" data-node-id="8219:81567">
-                  <img alt className="block max-w-none size-full" src="http://localhost:3845/assets/35f56b629603a8d763e79d4485e01d5ecb3a9978.svg" />
+                  <img alt="arrow forward rounded" className="block max-w-none size-full" src="http://localhost:3845/assets/35f56b629603a8d763e79d4485e01d5ecb3a9978.svg" />
                 </div>
               </div>
             </div>
@@ -287,7 +287,7 @@ export default function Gallery() {
                   <p className="leading-[20px] whitespace-pre">View</p>
                 </div>
                 <div className="relative shrink-0 size-5" data-name="material-symbols:arrow-forward-rounded" data-node-id="8219:81567">
-                  <img alt className="block max-w-none size-full" src="http://localhost:3845/assets/35f56b629603a8d763e79d4485e01d5ecb3a9978.svg" />
+                  <img alt="arrow forward rounded" className="block max-w-none size-full" src="http://localhost:3845/assets/35f56b629603a8d763e79d4485e01d5ecb3a9978.svg" />
                 </div>
               </div>
             </div>
@@ -303,7 +303,7 @@ export default function Gallery() {
               <div className="box-border content-stretch flex gap-2 items-center justify-start p-[10px] relative rounded-[8px] shrink-0" data-name="Button" id="node-I8200_41861-8645_40900">
                 <div aria-hidden="true" className="absolute border border-[#d0d1d4] border-solid inset-0 pointer-events-none rounded-[8px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)]" />
                 <div className="relative shrink-0 size-5" data-name="material-symbols:arrow-forward-rounded" id="node-I8200_41861-8645_40900-8219_81567">
-                  <img alt className="block max-w-none size-full" src="http://localhost:3845/assets/35f56b629603a8d763e79d4485e01d5ecb3a9978.svg" />
+                  <img alt="arrow forward rounded" className="block max-w-none size-full" src="http://localhost:3845/assets/35f56b629603a8d763e79d4485e01d5ecb3a9978.svg" />
                 </div>
               </div>
             </div>
@@ -322,7 +322,7 @@ export default function Gallery() {
                   <p className="leading-[20px] whitespace-pre">View</p>
                 </div>
                 <div className="relative shrink-0 size-5" data-name="material-symbols:arrow-forward-rounded" data-node-id="8219:81567">
-                  <img alt className="block max-w-none size-full" src="http://localhost:3845/assets/35f56b629603a8d763e79d4485e01d5ecb3a9978.svg" />
+                  <img alt="arrow forward rounded" className="block max-w-none size-full" src="http://localhost:3845/assets/35f56b629603a8d763e79d4485e01d5ecb3a9978.svg" />
                 </div>
               </div>
             </div>
@@ -341,7 +341,7 @@ export default function Gallery() {
                   <p className="leading-[20px] whitespace-pre">View</p>
                 </div>
                 <div className="relative shrink-0 size-5" data-name="material-symbols:arrow-forward-rounded" data-node-id="8219:81567">
-                  <img alt className="block max-w-none size-full" src="http://localhost:3845/assets/35f56b629603a8d763e79d4485e01d5ecb3a9978.svg" />
+                  <img alt="arrow forward rounded" className="block max-w-none size-full" src="http://localhost:3845/assets/35f56b629603a8d763e79d4485e01d5ecb3a9978.svg" />
                 </div>
               </div>
             </div>
@@ -360,7 +360,7 @@ export default function Gallery() {
                   <p className="leading-[20px] whitespace-pre">View</p>
                 </div>
                 <div className="relative shrink-0 size-5" data-name="material-symbols:arrow-forward-rounded" data-node-id="8219:81567">
-                  <img alt className="block max-w-none size-full" src="http://localhost:3845/assets/35f56b629603a8d763e79d4485e01d5ecb3a9978.svg" />
+                  <img alt="arrow forward rounded" className="block max-w-none size-full" src="http://localhost:3845/assets/35f56b629603a8d763e79d4485e01d5ecb3a9978.svg" />
                 </div>
               </div>
             </div>
@@ -379,7 +379,7 @@ export default function Gallery() {
                   <p className="leading-[20px] whitespace-pre">View</p>
                 </div>
                 <div className="relative shrink-0 size-5" data-name="material-symbols:arrow-forward-rounded" data-node-id="8219:81567">
-                  <img alt className="block max-w-none size-full" src="http://localhost:3845/assets/35f56b629603a8d763e79d4485e01d5ecb3a9978.svg" />
+                  <img alt="arrow forward rounded" className="block max-w-none size-full" src="http://localhost:3845/assets/35f56b629603a8d763e79d4485e01d5ecb3a9978.svg" />
                 </div>
               </div>
             </div>
@@ -398,7 +398,7 @@ export default function Gallery() {
                   <p className="leading-[20px] whitespace-pre">View</p>
                 </div>
                 <div className="relative shrink-0 size-5" data-name="material-symbols:arrow-forward-rounded" data-node-id="8219:81567">
-                  <img alt className="block max-w-none size-full" src="http://localhost:3845/assets/35f56b629603a8d763e79d4485e01d5ecb3a9978.svg" />
+                  <img alt="arrow forward rounded" className="block max-w-none size-full" src="http://localhost:3845/assets/35f56b629603a8d763e79d4485e01d5ecb3a9978.svg" />
                 </div>
               </div>
             </div>
