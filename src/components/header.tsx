@@ -40,8 +40,8 @@ export default function Header({ activeSection, setActiveSection }: HeaderProps)
             onClick={() => setActiveSection('home')}
           >
             <div className="bg-[#8cc63f] overflow-clip relative rounded-[94.118px] shrink-0 size-8">
-              <div className="absolute left-1/2 size-[1.772px] top-1/2 translate-x-[-50%] translate-y-[-50%]">
-                <img alt="Logo icon" className="block max-w-none size-full" src={logoIcon} />
+              <div >
+                <img alt="Logo icon" className="block size-full" src={logoIcon} />
               </div>
             </div>
             <div className="h-[24.228px] relative shrink-0 w-[138.445px]">
