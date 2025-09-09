@@ -14,7 +14,7 @@ function Button({ text = "Button", leftIcon = true, rightIcon = true, state = "D
     return (
       <div className="box-border content-stretch flex gap-2 items-center justify-start px-6 py-2.5 relative rounded-[8px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)] size-full" data-name="State=Default, Button Type=Primary Left Icon" data-node-id="3904:19140">
         <div className="relative shrink-0 size-[18.333px]" data-name="Vector" data-node-id="3904:19148">
-          <img alt className="block max-w-none size-full" src={imgVector} />
+          <img alt="" className="block max-w-none size-full" src={imgVector} />
         </div>
         <div className="font-['Inter:regular',_sans-serif] leading-[0] not-italic relative shrink-0 text-[16px] text-nowrap text-white" data-node-id="3904:19141">
           <p className="leading-[20px] whitespace-pre">{text}</p>
@@ -26,8 +26,8 @@ function Button({ text = "Button", leftIcon = true, rightIcon = true, state = "D
 
 export default function AISection() {
   return (
-    <div className="bg-gradient-to-t box-border content-stretch flex flex-col from-[#00120c] gap-6 items-center justify-center px-0 py-32 relative size-full to-[#000000]" data-name="Section Container" data-node-id="8207:44618">
-      <div className="absolute bg-center bg-cover bg-no-repeat h-[721px] left-[-1px] opacity-30 top-[-9.27px] w-[1513px]" data-name="image 25" data-node-id="8249:58715" style={{ backgroundImage: `url('${imgImage25}')` }} />
+    <div className="bg-gradient-to-t box-border content-stretch flex flex-col from-[#00120c] gap-6 items-center justify-center px-0 py-32 relative size-full to-[#000000] h-[500px] overflow-hidden" data-name="Section Container" data-node-id="8207:44618">
+      <div className="absolute bg-center bg-cover bg-no-repeat h-full left-[-1px] opacity-30 top-[-9.27px] w-full" data-name="image 25" data-node-id="8249:58715" style={{ backgroundImage: `url('${imgImage25}')` }} />
       <div className="box-border content-stretch flex flex-col gap-12 items-start justify-center overflow-clip px-32 py-0 relative shrink-0 w-full" data-name="Container" data-node-id="8207:44620">
         <div className="content-stretch flex flex-col gap-6 items-center justify-start leading-[0] not-italic relative shrink-0 text-white w-[960px]" data-name="Text Container" data-node-id="8207:44621">
           <div className="font-['Inter:Semi_Bold',_sans-serif] font-semibold relative shrink-0 text-[48px] w-full" data-node-id="8207:44622">

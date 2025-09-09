@@ -3,15 +3,16 @@ interface WhiteGlovesTabsProps {
 }
 
 function WhiteGlovesTabs({ property1 = "Default" }: WhiteGlovesTabsProps) {
+  const dollarIcon = "icons/dollar-icon.svg";
+  const starRibbonIcon = "icons/star-ribbon.svg";
+  const customerSupportIcon = "icons/support-icon.svg";
   return (
     <div className="content-stretch flex gap-20 items-start justify-start relative size-full">
       <div className="basis-0 bg-[rgba(231,246,229,0.5)] box-border content-stretch flex flex-col gap-3 grow items-start justify-center min-h-px min-w-px overflow-clip p-[12px] relative rounded-[16px] shrink-0">
-        <div className="box-border content-stretch flex gap-2 items-center justify-start overflow-clip p-[24px] relative rounded-[12px] shrink-0 w-full bg-white">
+        <div className="box-border content-stretch flex gap-2 items-center justify-start overflow-clip p-[24px] relative rounded-[12px] shrink-0 w-full bg-[linear-gradient(242deg,rgba(86,152,0,0.35)_4%,rgba(231,255,201,0.35)_44.79%,rgba(0,167,72,0.35)_85.58%)]">
           <div className="absolute h-[121px] left-1/2 opacity-[0.35] translate-x-[-50%] translate-y-[-50%] w-[400px] bg-gradient-to-r from-green-50 to-blue-50" style={{ top: "calc(50% + 0.5px)" }} />
           <div className="overflow-clip relative shrink-0 size-6">
-            <div className="w-6 h-6 bg-green-500 rounded flex items-center justify-center">
-              <div className="w-3 h-3 bg-white rounded-sm"></div>
-            </div>
+            <img alt="arrow" className="block max-w-none size-full" src={dollarIcon} />
           </div>
           <div className="flex flex-col font-['Inter:Semi_Bold',_sans-serif] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-[#111215] text-[20px] text-center text-nowrap">
             <p className="leading-[24px] whitespace-pre">Best Price Guaranteed</p>
@@ -19,9 +20,7 @@ function WhiteGlovesTabs({ property1 = "Default" }: WhiteGlovesTabsProps) {
         </div>
         <button className="box-border content-stretch cursor-pointer flex gap-2 h-[72px] items-center justify-start overflow-visible p-[24px] relative rounded-[10px] shrink-0 w-full hover:bg-white/50 transition-colors">
           <div className="overflow-clip relative shrink-0 size-6">
-            <div className="w-6 h-6 bg-blue-500 rounded flex items-center justify-center">
-              <div className="w-3 h-3 bg-white rounded-sm"></div>
-            </div>
+            <img alt="arrow" className="block max-w-none size-full" src={starRibbonIcon} />
           </div>
           <div className="flex flex-col font-['Inter:Semi_Bold',_sans-serif] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-[#111215] text-[20px] text-center text-nowrap">
             <p className="leading-[24px] whitespace-pre">Premium Talent & Services</p>
@@ -29,9 +28,7 @@ function WhiteGlovesTabs({ property1 = "Default" }: WhiteGlovesTabsProps) {
         </button>
         <button className="box-border content-stretch cursor-pointer flex gap-2 h-[72px] items-center justify-start overflow-visible p-[24px] relative rounded-[10px] shrink-0 w-full hover:bg-white/50 transition-colors">
           <div className="opacity-[0.98] relative shrink-0 size-6">
-            <div className="w-6 h-6 bg-purple-500 rounded flex items-center justify-center">
-              <div className="w-3 h-3 bg-white rounded-sm"></div>
-            </div>
+            <img alt="arrow" className="block max-w-none size-full" src={customerSupportIcon} />
           </div>
           <div className="flex flex-col font-['Inter:Semi_Bold',_sans-serif] font-semibold justify-center leading-[0] not-italic relative shrink-0 text-[#111215] text-[20px] text-center text-nowrap">
             <p className="leading-[24px] whitespace-pre">Customer Support</p>

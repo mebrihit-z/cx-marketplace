@@ -1,4 +1,6 @@
 export default function PromiseSection() {
+  const img = "images/leader-image.svg";
+
   return (
     <div className="box-border content-stretch flex flex-col gap-20 items-start justify-start px-0 py-32 relative size-full">
       <div className="box-border content-stretch flex items-start justify-between px-32 py-0 relative shrink-0 w-full">
@@ -15,16 +17,10 @@ export default function PromiseSection() {
       </div>
       <div className="box-border content-stretch flex gap-[120px] items-center justify-center overflow-clip px-32 py-0 relative shrink-0 w-full">
         <div className="basis-0 bg-white box-border content-stretch flex gap-16 grow items-center justify-start min-h-px min-w-px overflow-clip px-16 py-8 relative rounded-[16px] shrink-0 shadow-lg">
-          <div className="absolute h-[413px] left-0 opacity-25 translate-y-[-50%] w-[1272px] bg-gradient-to-r from-blue-50 to-green-50" style={{ top: "calc(50% + 0.324px)" }} />
+          <div className="absolute h-[413px] left-0 opacity-25 translate-y-[-50%] w-[1272px] bg-gradient-to-r bg-[linear-gradient(242deg,#569800_4%,#E7FFC9_43.62%,#00A748_85.58%)]" style={{ top: "calc(50% + 0.324px)" }} />
           <div className="basis-0 content-stretch flex flex-col grow items-center justify-center min-h-px min-w-px relative shrink-0">
             <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] place-items-start relative shrink-0 w-full">
-              <div className="[grid-area:1_/_1] h-[266.853px] ml-0 mt-[0.374px] relative w-[263.916px]">
-                <div className="w-full h-full bg-gradient-to-br from-blue-100 to-green-100 rounded-full flex items-center justify-center">
-                  <div className="w-32 h-32 bg-gradient-to-br from-blue-200 to-green-200 rounded-full flex items-center justify-center">
-                    <div className="w-20 h-20 bg-gradient-to-br from-blue-300 to-green-300 rounded-full"></div>
-                  </div>
-                </div>
-              </div>
+              <img alt="arrow" className="block max-w-none size-full" src={img} />
             </div>
           </div>
           <div className="content-stretch flex flex-col gap-6 items-start justify-start leading-[0] not-italic relative shrink-0 w-[800px]">
