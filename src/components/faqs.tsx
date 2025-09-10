@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 const addIcon = "icons/add-icon.svg";
 
@@ -120,6 +120,7 @@ const faqData: FAQSection[] = [
 export default function FAQs() {
   const [openItems, setOpenItems] = useState<Set<string>>(new Set());
   const [activeSection, setActiveSection] = useState<string>('templates');
+  const sectionRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
 
   const toggleItem = (itemId: string) => {
     setOpenItems(prev => {
@@ -137,9 +138,48 @@ export default function FAQs() {
     setActiveSection(sectionId);
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      // Add a small offset to account for any fixed headers
+      const offset = 100;
+      const elementPosition = element.offsetTop - offset;
+      
+      window.scrollTo({
+        top: elementPosition,
+        behavior: 'smooth'
+      });
     }
   };
+
+  // Set up intersection observer to automatically update active section
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const sectionId = entry.target.id;
+            if (sectionId) {
+              setActiveSection(sectionId);
+            }
+          }
+        });
+      },
+      {
+        threshold: 0.3,
+        rootMargin: '-100px 0px -50% 0px'
+      }
+    );
+
+    // Observe all section elements
+    faqData.forEach((section) => {
+      const element = sectionRefs.current[section.id];
+      if (element) {
+        observer.observe(element);
+      }
+    });
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
     return (
     <div className="box-border content-stretch flex flex-col gap-20 items-start justify-start pb-16 pt-32 px-0 relative size-full" data-name="Section Container" data-node-id="8141:20154">
       <div className="box-border content-stretch flex items-start justify-between px-32 py-0 relative shrink-0 w-full" data-name="Header" data-node-id="8141:20155">
@@ -188,6 +228,7 @@ export default function FAQs() {
         <div 
           key={section.id}
           id={section.id}
+          ref={(el) => { sectionRefs.current[section.id] = el; }}
           className={`box-border content-stretch flex flex-col gap-6 items-center justify-center px-32 relative size-full ${
             sectionIndex === 0 ? 'py-10' : 
             sectionIndex === faqData.length - 1 ? 'pb-32 pt-10' : 'py-10'
