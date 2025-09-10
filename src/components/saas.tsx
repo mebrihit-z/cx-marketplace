@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 // Image assets
 const imgScreenshot1 = "http://localhost:3845/assets/8bdc6cc66d33e8a3c198d296d365b23c58ab1828.png";
 const imgScreenshot2 = "http://localhost:3845/assets/07c69373f1ea35febf9b475960d85d6aa5c9d625.png";
@@ -5,8 +7,42 @@ const imgScreenshot3 = "http://localhost:3845/assets/8c1f7562884f860e91e1f67f947
 const imgRadioIcon = "http://localhost:3845/assets/1eebb2433c6a78bd9a43e3118ca592786e745ba1.svg";
 const imgRadioSelected = "http://localhost:3845/assets/6d05347e7901e7fe252d31c08c434dfd1a47a4b4.svg";
 const imgArrowOutward = "http://localhost:3845/assets/8076c6dc332fb2ce4eb47e36413658636034a160.svg";
-const imgCheckIcon = "http://localhost:3845/assets/f02dfb67e3a918722a08349fa3e8e98d82f7fdc0.svg";
+const imgCheckIcon = "icons/black-check-icon.svg";
 const imgBackArrow = "http://localhost:3845/assets/7b3e619d741509d9537815b561969526c32d0a5e.svg";
+
+// Skin color schemes
+const skinThemes = {
+  default: {
+    primary: '#4dd58c',
+    secondary: '#e7f6e5',
+    text: '#0a7c00'
+  },
+  winterBlues: {
+    primary: '#97e3e5',
+    secondary: '#e3f7f7',
+    text: '#097dbb'
+  },
+  springGarden: {
+    primary: '#f96b96',
+    secondary: '#fde8f0',
+    text: '#1f7f41'
+  },
+  summerSunset: {
+    primary: '#ff7543',
+    secondary: '#fff0eb',
+    text: '#ae25c9'
+  },
+  autumnLeaves: {
+    primary: '#ffb701',
+    secondary: '#fff8e6',
+    text: '#244524'
+  },
+  custom: {
+    primary: '#f9e000',
+    secondary: '#fffce6',
+    text: '#0033ed'
+  }
+};
 
 interface RadioButtonProps {
   selected?: boolean;
@@ -66,6 +102,13 @@ function Button({ text, variant = "primary", showArrow = false }: ButtonProps) {
 }
 
 export default function SaaS() {
+  const [selectedSkin, setSelectedSkin] = useState<keyof typeof skinThemes>('default');
+  const currentTheme = skinThemes[selectedSkin];
+
+  const handleSkinChange = (skin: keyof typeof skinThemes) => {
+    setSelectedSkin(skin);
+  };
+
   return (
     <div className="box-border content-stretch flex flex-col gap-20 items-start justify-start px-0 py-32 relative size-full">
       {/* Back Button */}
@@ -84,7 +127,10 @@ export default function SaaS() {
         <div className="content-stretch flex flex-col gap-6 items-start justify-start relative shrink-0 w-[696px]">
           <div className="content-start flex flex-wrap gap-4 items-start justify-start relative shrink-0 w-full">
             {/* Main Screenshot */}
-            <div className="bg-[#4dd58c] box-border content-stretch flex flex-col gap-2.5 items-start justify-start overflow-clip p-[40px] relative rounded-[16px] shrink-0 w-[696px]">
+            <div 
+              className="box-border content-stretch flex flex-col gap-2.5 items-start justify-start overflow-clip p-[40px] relative rounded-[16px] shrink-0 w-[696px]"
+              style={{ backgroundColor: currentTheme.primary }}
+            >
               <div 
                 className="aspect-[1810/1180] bg-center bg-cover bg-no-repeat rounded-[8px] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] shrink-0 w-full"
                 style={{ backgroundImage: `url('${imgScreenshot1}')` }}
@@ -92,7 +138,10 @@ export default function SaaS() {
             </div>
             
             {/* Secondary Screenshot */}
-            <div className="bg-[#4dd58c] box-border content-stretch flex flex-col gap-2.5 items-start justify-center overflow-clip pl-10 pr-0 py-0 relative rounded-[16px] shrink-0 size-[376px]">
+            <div 
+              className="box-border content-stretch flex flex-col gap-2.5 items-start justify-center overflow-clip pl-10 pr-0 py-0 relative rounded-[16px] shrink-0 size-[376px]"
+              style={{ backgroundColor: currentTheme.primary }}
+            >
               <div 
                 className="aspect-[1762/1448] basis-0 bg-no-repeat bg-size-[100%_100%] bg-top-left grow min-h-px min-w-px shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] shrink-0"
                 style={{ backgroundImage: `url('${imgScreenshot2}')` }}
@@ -100,7 +149,10 @@ export default function SaaS() {
             </div>
             
             {/* Third Screenshot */}
-            <div className="aspect-[304/248] basis-0 bg-[#4dd58c] box-border content-stretch flex flex-col gap-2.5 grow items-center justify-center min-h-px min-w-px overflow-clip pb-10 pt-0 px-0 relative rounded-[16px] shrink-0">
+            <div 
+              className="aspect-[304/248] basis-0 box-border content-stretch flex flex-col gap-2.5 grow items-center justify-center min-h-px min-w-px overflow-clip pb-10 pt-0 px-0 relative rounded-[16px] shrink-0"
+              style={{ backgroundColor: currentTheme.primary }}
+            >
               <div 
                 className="aspect-[1900/1260] basis-0 bg-center bg-cover bg-no-repeat grow min-h-px min-w-px shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] shrink-0"
                 style={{ backgroundImage: `url('${imgScreenshot3}')` }}
@@ -130,13 +182,25 @@ export default function SaaS() {
                   <p className="leading-[20px] whitespace-pre">Tags</p>
                 </div>
                 <div className="content-stretch flex gap-2 items-start justify-start relative shrink-0">
-                  <div className="bg-[#e7f6e5] box-border content-stretch flex gap-2 items-center justify-center overflow-clip px-3 py-[5px] relative rounded-[5px] shadow-[0px_1px_2px_0px_rgba(16,24,40,0.05)] shrink-0">
-                    <div className="font-['Inter:regular',_sans-serif] leading-[0] not-italic relative shrink-0 text-[#0a7c00] text-[14px] text-nowrap">
+                  <div 
+                    className="box-border content-stretch flex gap-2 items-center justify-center overflow-clip px-3 py-[5px] relative rounded-[5px] shadow-[0px_1px_2px_0px_rgba(16,24,40,0.05)] shrink-0"
+                    style={{ backgroundColor: currentTheme.secondary }}
+                  >
+                    <div 
+                      className="font-['Inter:regular',_sans-serif] leading-[0] not-italic relative shrink-0 text-[14px] text-nowrap"
+                      style={{ color: currentTheme.text }}
+                    >
                       <p className="leading-[18px] whitespace-pre">Business</p>
                     </div>
                   </div>
-                  <div className="bg-[#e7f6e5] box-border content-stretch flex gap-2 items-center justify-center overflow-clip px-3 py-[5px] relative rounded-[5px] shadow-[0px_1px_2px_0px_rgba(16,24,40,0.05)] shrink-0">
-                    <div className="font-['Inter:regular',_sans-serif] leading-[0] not-italic relative shrink-0 text-[#0a7c00] text-[14px] text-nowrap">
+                  <div 
+                    className="box-border content-stretch flex gap-2 items-center justify-center overflow-clip px-3 py-[5px] relative rounded-[5px] shadow-[0px_1px_2px_0px_rgba(16,24,40,0.05)] shrink-0"
+                    style={{ backgroundColor: currentTheme.secondary }}
+                  >
+                    <div 
+                      className="font-['Inter:regular',_sans-serif] leading-[0] not-italic relative shrink-0 text-[14px] text-nowrap"
+                      style={{ color: currentTheme.text }}
+                    >
                       <p className="leading-[18px] whitespace-pre">Tech</p>
                     </div>
                   </div>
@@ -154,15 +218,24 @@ export default function SaaS() {
             <div className="bg-white relative rounded-[8px] shrink-0 w-[420px]">
               <div className="content-stretch flex flex-col items-start justify-start overflow-clip relative w-[420px]">
                 {/* Default Option */}
-                <div className="bg-[#e7f6e5] relative shrink-0 w-full">
-                  <div className="box-border content-stretch flex items-center justify-between overflow-clip px-4 py-3.5 relative w-full">
+                <div 
+                  className="relative shrink-0 w-full"
+                  style={{ backgroundColor: selectedSkin === 'default' ? skinThemes.default.secondary : 'transparent' }}
+                >
+                  <div 
+                    className="box-border content-stretch flex items-center justify-between overflow-clip px-4 py-3.5 relative w-full cursor-pointer"
+                    onClick={() => handleSkinChange('default')}
+                  >
                     <div className="basis-0 content-stretch flex gap-2 grow items-center justify-start min-h-px min-w-px relative shrink-0">
                       <button className="block cursor-pointer overflow-visible relative shrink-0 size-5">
-                        <RadioButton selected={true} />
+                        <RadioButton selected={selectedSkin === 'default'} />
                       </button>
                       <div className="content-stretch flex flex-col gap-0.5 items-start justify-start relative shrink-0">
                         <div className="content-stretch flex gap-2 items-center justify-start relative shrink-0">
-                          <div className="font-['Inter:regular',_sans-serif] leading-[0] not-italic relative shrink-0 text-[#0a7c00] text-[14px] text-nowrap">
+                          <div 
+                            className="font-['Inter:regular',_sans-serif] leading-[0] not-italic relative shrink-0 text-[14px] text-nowrap"
+                            style={{ color: selectedSkin === 'default' ? skinThemes.default.text : '#111215' }}
+                          >
                             <p className="leading-[18px] whitespace-pre">Default</p>
                           </div>
                         </div>
@@ -178,15 +251,24 @@ export default function SaaS() {
                 </div>
 
                 {/* Winter Blues Option */}
-                <div className="relative shrink-0 w-full">
-                  <div className="box-border content-stretch flex items-center justify-between overflow-clip px-4 py-3.5 relative w-full">
+                <div 
+                  className="relative shrink-0 w-full"
+                  style={{ backgroundColor: selectedSkin === 'winterBlues' ? skinThemes.winterBlues.secondary : 'transparent' }}
+                >
+                  <div 
+                    className="box-border content-stretch flex items-center justify-between overflow-clip px-4 py-3.5 relative w-full cursor-pointer"
+                    onClick={() => handleSkinChange('winterBlues')}
+                  >
                     <div className="basis-0 content-stretch flex gap-2 grow items-center justify-start min-h-px min-w-px relative shrink-0">
                       <button className="block cursor-pointer overflow-visible relative shrink-0 size-5">
-                        <RadioButton />
+                        <RadioButton selected={selectedSkin === 'winterBlues'} />
                       </button>
                       <div className="content-stretch flex flex-col gap-0.5 items-start justify-start relative shrink-0">
                         <div className="content-stretch flex gap-2 items-center justify-start relative shrink-0">
-                          <div className="font-['Inter:regular',_sans-serif] leading-[0] not-italic relative shrink-0 text-[#111215] text-[14px] text-nowrap">
+                          <div 
+                            className="font-['Inter:regular',_sans-serif] leading-[0] not-italic relative shrink-0 text-[14px] text-nowrap"
+                            style={{ color: selectedSkin === 'winterBlues' ? skinThemes.winterBlues.text : '#111215' }}
+                          >
                             <p className="leading-[18px] whitespace-pre">Winter Blues</p>
                           </div>
                         </div>
@@ -202,15 +284,24 @@ export default function SaaS() {
                 </div>
 
                 {/* Spring Garden Option */}
-                <div className="relative shrink-0 w-full">
-                  <div className="box-border content-stretch flex items-center justify-between overflow-clip px-4 py-3.5 relative w-full">
+                <div 
+                  className="relative shrink-0 w-full"
+                  style={{ backgroundColor: selectedSkin === 'springGarden' ? skinThemes.springGarden.secondary : 'transparent' }}
+                >
+                  <div 
+                    className="box-border content-stretch flex items-center justify-between overflow-clip px-4 py-3.5 relative w-full cursor-pointer"
+                    onClick={() => handleSkinChange('springGarden')}
+                  >
                     <div className="basis-0 content-stretch flex gap-2 grow items-center justify-start min-h-px min-w-px relative shrink-0">
                       <button className="block cursor-pointer overflow-visible relative shrink-0 size-5">
-                        <RadioButton />
+                        <RadioButton selected={selectedSkin === 'springGarden'} />
                       </button>
                       <div className="content-stretch flex flex-col gap-0.5 items-start justify-start relative shrink-0">
                         <div className="content-stretch flex gap-2 items-center justify-start relative shrink-0">
-                          <div className="font-['Inter:regular',_sans-serif] leading-[0] not-italic relative shrink-0 text-[#111215] text-[14px] text-nowrap">
+                          <div 
+                            className="font-['Inter:regular',_sans-serif] leading-[0] not-italic relative shrink-0 text-[14px] text-nowrap"
+                            style={{ color: selectedSkin === 'springGarden' ? skinThemes.springGarden.text : '#111215' }}
+                          >
                             <p className="leading-[18px] whitespace-pre">Spring Garden</p>
                           </div>
                         </div>
@@ -226,15 +317,24 @@ export default function SaaS() {
                 </div>
 
                 {/* Summer Sunset Option */}
-                <div className="relative shrink-0 w-full">
-                  <div className="box-border content-stretch flex items-center justify-between overflow-clip px-4 py-3.5 relative w-full">
+                <div 
+                  className="relative shrink-0 w-full"
+                  style={{ backgroundColor: selectedSkin === 'summerSunset' ? skinThemes.summerSunset.secondary : 'transparent' }}
+                >
+                  <div 
+                    className="box-border content-stretch flex items-center justify-between overflow-clip px-4 py-3.5 relative w-full cursor-pointer"
+                    onClick={() => handleSkinChange('summerSunset')}
+                  >
                     <div className="basis-0 content-stretch flex gap-2 grow items-center justify-start min-h-px min-w-px relative shrink-0">
                       <button className="block cursor-pointer overflow-visible relative shrink-0 size-5">
-                        <RadioButton />
+                        <RadioButton selected={selectedSkin === 'summerSunset'} />
                       </button>
                       <div className="content-stretch flex flex-col gap-0.5 items-start justify-start relative shrink-0">
                         <div className="content-stretch flex gap-2 items-center justify-start relative shrink-0">
-                          <div className="font-['Inter:regular',_sans-serif] leading-[0] not-italic relative shrink-0 text-[#111215] text-[14px] text-nowrap">
+                          <div 
+                            className="font-['Inter:regular',_sans-serif] leading-[0] not-italic relative shrink-0 text-[14px] text-nowrap"
+                            style={{ color: selectedSkin === 'summerSunset' ? skinThemes.summerSunset.text : '#111215' }}
+                          >
                             <p className="leading-[18px] whitespace-pre">Summer Sunset</p>
                           </div>
                         </div>
@@ -250,15 +350,24 @@ export default function SaaS() {
                 </div>
 
                 {/* Autumn Leaves Option */}
-                <div className="relative shrink-0 w-full">
-                  <div className="box-border content-stretch flex items-center justify-between overflow-clip px-4 py-3.5 relative w-full">
+                <div 
+                  className="relative shrink-0 w-full"
+                  style={{ backgroundColor: selectedSkin === 'autumnLeaves' ? skinThemes.autumnLeaves.secondary : 'transparent' }}
+                >
+                  <div 
+                    className="box-border content-stretch flex items-center justify-between overflow-clip px-4 py-3.5 relative w-full cursor-pointer"
+                    onClick={() => handleSkinChange('autumnLeaves')}
+                  >
                     <div className="basis-0 content-stretch flex gap-2 grow items-center justify-start min-h-px min-w-px relative shrink-0">
                       <button className="block cursor-pointer overflow-visible relative shrink-0 size-5">
-                        <RadioButton />
+                        <RadioButton selected={selectedSkin === 'autumnLeaves'} />
                       </button>
                       <div className="content-stretch flex flex-col gap-0.5 items-start justify-start relative shrink-0">
                         <div className="content-stretch flex gap-2 items-center justify-start relative shrink-0">
-                          <div className="font-['Inter:regular',_sans-serif] leading-[0] not-italic relative shrink-0 text-[#333740] text-[14px] text-nowrap">
+                          <div 
+                            className="font-['Inter:regular',_sans-serif] leading-[0] not-italic relative shrink-0 text-[14px] text-nowrap"
+                            style={{ color: selectedSkin === 'autumnLeaves' ? skinThemes.autumnLeaves.text : '#333740' }}
+                          >
                             <p className="leading-[18px] whitespace-pre">Autumn Leaves</p>
                           </div>
                         </div>
@@ -274,15 +383,24 @@ export default function SaaS() {
                 </div>
 
                 {/* Custom Option */}
-                <div className="relative shrink-0 w-full">
-                  <div className="box-border content-stretch flex items-center justify-between overflow-clip px-4 py-3.5 relative w-full">
+                <div 
+                  className="relative shrink-0 w-full"
+                  style={{ backgroundColor: selectedSkin === 'custom' ? skinThemes.custom.secondary : 'transparent' }}
+                >
+                  <div 
+                    className="box-border content-stretch flex items-center justify-between overflow-clip px-4 py-3.5 relative w-full cursor-pointer"
+                    onClick={() => handleSkinChange('custom')}
+                  >
                     <div className="basis-0 content-stretch flex gap-2 grow items-center justify-start min-h-px min-w-px relative shrink-0">
                       <button className="block cursor-pointer overflow-visible relative shrink-0 size-5">
-                        <RadioButton />
+                        <RadioButton selected={selectedSkin === 'custom'} />
                       </button>
                       <div className="content-stretch flex flex-col gap-0.5 items-start justify-start relative shrink-0">
                         <div className="content-stretch flex gap-2 items-center justify-start relative shrink-0">
-                          <div className="font-['Inter:regular',_sans-serif] leading-[0] not-italic relative shrink-0 text-[#333740] text-[14px] text-nowrap">
+                          <div 
+                            className="font-['Inter:regular',_sans-serif] leading-[0] not-italic relative shrink-0 text-[14px] text-nowrap"
+                            style={{ color: selectedSkin === 'custom' ? skinThemes.custom.text : '#333740' }}
+                          >
                             <p className="leading-[18px] whitespace-pre">Custom</p>
                           </div>
                         </div>
@@ -303,10 +421,10 @@ export default function SaaS() {
 
           {/* Action Buttons */}
           <div className="content-stretch flex gap-4 items-start justify-start relative shrink-0">
-            <div className="bg-[#0a7c00] box-border content-stretch flex gap-2.5 items-center justify-center px-6 py-2.5 relative rounded-[8px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)] shrink-0">
+            <div className="bg-[#0a7c00] box-border content-stretch flex gap-2.5 items-center justify-center px-6 relative rounded-[8px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)] shrink-0">
               <Button text="Get a quote" />
             </div>
-            <div className="bg-white box-border content-stretch flex gap-2 items-center justify-start px-6 py-2.5 relative rounded-[8px] shrink-0">
+            <div className="bg-white box-border content-stretch flex gap-2 items-center justify-start px-6 relative rounded-[8px] shrink-0">
               <Button text="Preview" variant="secondary" showArrow={true} />
             </div>
           </div>
@@ -403,7 +521,7 @@ export default function SaaS() {
             <div className="absolute bg-[#236e84] bottom-0 box-border content-stretch flex flex-col from-[#00000000] gap-2.5 items-start justify-start left-0 overflow-clip pb-0 pl-10 pr-0 pt-10 right-[-4.8%] to-85% to-[#001619] top-0">
               <div 
                 className="aspect-[1860/1212] basis-0 bg-[position:0%_0%,_50%_50%] bg-gradient-to-b bg-size-[auto,cover] from-[#00000000] grow min-h-px min-w-px rounded-tl-[4px] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] shrink-0 to-85% to-[#001619]"
-                style={{ backgroundImage: `url('http://localhost:3845/assets/9987b1fe5c9ccc92afba601e7a862cc95dae3f0c.png')` }}
+                style={{ backgroundImage: `url('images/automate-card-image.svg')` }}
               />
             </div>
             <div className="content-stretch flex items-center justify-between relative shrink-0 w-full">
@@ -412,8 +530,8 @@ export default function SaaS() {
               </div>
               <div className="box-border content-stretch flex gap-2 items-center justify-start p-[10px] relative rounded-[8px] shrink-0">
                 <div aria-hidden="true" className="absolute border border-[#d0d1d4] border-solid inset-0 pointer-events-none rounded-[8px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)]" />
-                <div className="relative shrink-0 size-5">
-                  <img alt="" className="block max-w-none size-full" src="http://localhost:3845/assets/35f56b629603a8d763e79d4485e01d5ecb3a9978.svg" />
+                <div className="relative shrink-0 size-4">
+                  <img alt="" className="block max-w-none size-full" src="icons/white-right-arrow.svg" />
                 </div>
               </div>
             </div>
@@ -422,7 +540,7 @@ export default function SaaS() {
             <div className="absolute bg-[#bd550f] bottom-0 box-border content-stretch flex flex-col from-[#00000000] gap-2.5 items-start justify-start left-0 overflow-clip pb-0 pl-10 pr-0 pt-10 right-[-4.8%] to-85% to-[#421e06] top-0">
               <div 
                 className="aspect-[1726/1124] basis-0 bg-[position:0%_0%,_50%_50%] bg-gradient-to-b bg-size-[auto,cover] from-[#00000000] grow min-h-px min-w-px rounded-tl-[4px] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] shrink-0 to-85% to-[#421e06]"
-                style={{ backgroundImage: `url('http://localhost:3845/assets/108731de4ec8ba9c535f9681d049a24dafeabd30.png')` }}
+                style={{ backgroundImage: `url('images/advancing-card-image.svg')` }}
               />
             </div>
             <div className="content-stretch flex items-center justify-between relative shrink-0 w-full">
@@ -431,8 +549,8 @@ export default function SaaS() {
               </div>
               <div className="box-border content-stretch flex gap-2 items-center justify-start p-[10px] relative rounded-[8px] shrink-0">
                 <div aria-hidden="true" className="absolute border border-[#d0d1d4] border-solid inset-0 pointer-events-none rounded-[8px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)]" />
-                <div className="relative shrink-0 size-5">
-                  <img alt="" className="block max-w-none size-full" src="http://localhost:3845/assets/35f56b629603a8d763e79d4485e01d5ecb3a9978.svg" />
+                <div className="relative shrink-0 size-4">
+                  <img alt="" className="block max-w-none size-full" src="icons/white-right-arrow.svg" />
                 </div>
               </div>
             </div>
@@ -441,7 +559,7 @@ export default function SaaS() {
             <div className="absolute bg-[#42ab18] bottom-0 box-border content-stretch flex flex-col from-[#00000000] gap-2.5 items-start justify-start left-0 overflow-clip pb-0 pl-10 pr-0 pt-10 right-[-4.8%] to-85% to-[#0f2b04] top-0">
               <div 
                 className="aspect-[1666/1084] basis-0 bg-[position:0%_0%,_50%_50%] bg-gradient-to-b bg-size-[auto,cover] from-[#00000000] grow min-h-px min-w-px rounded-tl-[4px] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] shrink-0 to-85% to-[#0f2b04]"
-                style={{ backgroundImage: `url('http://localhost:3845/assets/615d974f64d41350899523a937a01de725e28ef1.png')` }}
+                style={{ backgroundImage: `url('images/fast-secure-card-image.svg')` }}
               />
             </div>
             <div className="content-stretch flex items-center justify-between relative shrink-0 w-full">
@@ -450,8 +568,8 @@ export default function SaaS() {
               </div>
               <div className="box-border content-stretch flex gap-2 items-center justify-start p-[10px] relative rounded-[8px] shrink-0">
                 <div aria-hidden="true" className="absolute border border-[#d0d1d4] border-solid inset-0 pointer-events-none rounded-[8px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)]" />
-                <div className="relative shrink-0 size-5">
-                  <img alt="" className="block max-w-none size-full" src="http://localhost:3845/assets/35f56b629603a8d763e79d4485e01d5ecb3a9978.svg" />
+                <div className="relative shrink-0 size-4">
+                  <img alt="" className="block max-w-none size-full" src="icons/white-right-arrow.svg" />
                 </div>
               </div>
             </div>
