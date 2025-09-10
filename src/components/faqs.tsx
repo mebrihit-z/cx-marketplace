@@ -1,4 +1,4 @@
-const img = "http://localhost:3845/assets/ba54139c995f6f0220415752d57fb331366304b2.svg";
+const img = "icons/add-icon.svg";
 
 export default function FAQs() {
     return (
