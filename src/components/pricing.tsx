@@ -22,17 +22,15 @@ function Button({ text = "Button", state = "Default", buttonType = "Default" }: 
 // Image assets
 const imgImage19 = "images/black-card-bg-image.svg";
 const greenCardBgImage = "images/green-card-bg-image.svg";
-const imgInfo = "icons/check-white-icon.svg";
-const imgDivider = "http://localhost:3845/assets/4d161f8a3dc0da028fc6520ce54a678cd2ef6444.svg";
-const imgMaterialSymbolsCheckRounded = "icons/check-white-icon.svg";
-const imgInfo1 = "http://localhost:3845/assets/d580b21692ededd1094df79e8007ebfbae134163.svg";
-const imgMaterialSymbolsAttachMoneyRounded = "http://localhost:3845/assets/7e67f2f6385ff030d4ff80c07acbfdd80a0d5a64.svg";
+const imgInfo = "icons/info-icon.svg";
+const imgMaterialSymbolsCheckRounded = "icons/green-check-icon.svg";
+const xIcon = "icons/x-icon.svg";
+const imgMaterialSymbolsAttachMoneyRounded = "icons/money-icon.svg";
 
 // Comparison table image assets
 const imgImage46 = "http://localhost:3845/assets/7e2f4b13b8101d455a2fe962796591ee30c6e36e.png";
 const imgLine7 = "http://localhost:3845/assets/a3e48a0411e58ca0738ffdb7738dccce8374c0f7.svg";
 const imgLine15 = "http://localhost:3845/assets/29a91ea6fe856958e9a569248623f536085c50bf.svg";
-const imgMaterialSymbolsCloseRounded = "http://localhost:3845/assets/5f9c2984e4f8a487a6d71bfce4353cad4d020779.svg";
 
 export default function Pricing() {
     return (
@@ -76,17 +74,14 @@ export default function Pricing() {
                   <p className="leading-[40px] whitespace-pre">$</p>
                 </div>
               </div>
-              <div className="h-0 relative shrink-0 w-full" data-name="Divider" data-node-id="8272:92114">
-                <div className="absolute inset-[-0.5px_-0.15%]" style={{ "--stroke-0": "rgba(208, 209, 212, 1)" } as React.CSSProperties}>
-                  <img alt='' className="block max-w-none size-full" src={imgDivider} />
-                </div>
+              <div className="h-[0.125px] bg-[#D0D1D4] w-full" data-name="Divider" data-node-id="8272:92114">
               </div>
               <div className="content-stretch flex flex-col gap-2 items-start justify-start relative shrink-0 w-full" data-name="Package Includes Container" data-node-id="8272:92115">
                 <div className="font-['Inter:regular',_sans-serif] leading-[0] not-italic relative shrink-0 text-[0px] text-white w-full" data-node-id="8272:92116">
                   <p className="font-['Inter:Bold',_sans-serif] font-bold leading-[20px] text-[16px]">Includes:</p>
                 </div>
                 <div className="content-stretch flex gap-2 items-center justify-start relative shrink-0 w-full" data-name="List Item" data-node-id="8272:92117">
-                  <div className="relative shrink-0" data-name="material-symbols:check-rounded" data-node-id="8272:92118">
+                  <div data-name="material-symbols:check-rounded" data-node-id="8272:92118">
                     <img alt='' src={imgMaterialSymbolsCheckRounded} />
                   </div>
                   <div className="font-['Inter:regular',_sans-serif] leading-[0] not-italic relative shrink-0 text-[16px] text-nowrap text-white" data-node-id="8272:92120">
@@ -110,18 +105,15 @@ export default function Pricing() {
                   </div>
                 </div>
               </div>
-              <div className="h-0 relative shrink-0 w-full" data-name="Divider" data-node-id="8272:92125">
-                <div className="absolute inset-[-0.5px_-0.15%]" style={{ "--stroke-0": "rgba(208, 209, 212, 1)" } as React.CSSProperties}>
-                  <img alt='' className="block max-w-none size-full" src={imgDivider} />
-                </div>
+              <div className="h-[0.125px] bg-[#D0D1D4]  w-full" data-name="Divider" data-node-id="8272:92125">
               </div>
               <div className="content-stretch flex flex-col gap-2 items-start justify-start relative shrink-0 w-full" data-name="Package Includes Container" data-node-id="8272:92126">
                 <div className="font-['Inter:regular',_sans-serif] leading-[0] not-italic relative shrink-0 text-[0px] text-white w-full" data-node-id="8272:92127">
                   <p className="font-['Inter:Bold',_sans-serif] font-bold leading-[20px] text-[16px]">Bonus features</p>
                 </div>
                 <div className="content-stretch flex gap-2 items-center justify-start relative shrink-0 w-full" data-name="List Item" data-node-id="8310:44739">
-                  <div className="relative shrink-0 size-6" data-name="material-symbols:check-rounded" data-node-id="8310:44740">
-                    <img alt='' className="block max-w-none size-full" src={imgMaterialSymbolsCheckRounded} />
+                  <div data-name="material-symbols:check-rounded" data-node-id="8310:44740">
+                    <img alt='' src={imgMaterialSymbolsCheckRounded} />
                   </div>
                   <div className="basis-0 font-['Inter:regular',_sans-serif] grow leading-[0] min-h-px min-w-px not-italic relative shrink-0 text-[16px] text-white" data-node-id="8310:44742">
                     <p className="leading-[20px]">Basic analytics dashboard</p>
@@ -132,8 +124,7 @@ export default function Pricing() {
 
             {/* Pro Plan */}
             <div className="bg-white relative rounded-[16px] shrink-0 w-[400px]" data-name="_Pricing tier card" data-node-id="8272:92217">
-              <div className="box-border content-stretch flex flex-col gap-6 items-start justify-start overflow-clip px-8 py-10 relative w-[400px] rounded-[16px]">
-                <div className="absolute bg-center bg-cover bg-no-repeat h-[585px] left-1/2 translate-x-[-50%] translate-y-[-50%] w-[400px] bg-cover bg-center" data-name="image 19" data-node-id="8272:92218" style={{ top: "calc(50% - 0.5px)", backgroundImage: `url('${imgImage19}')` }} />
+              <div className="box-border content-stretch flex flex-col gap-6 items-start justify-start overflow-clip px-8 py-10 relative w-[400px] rounded-[16px] bg-center bg-cover bg-no-repeat" style={{ top: "calc(50% - 0.5px)", backgroundImage: `url('${imgImage19}')` }}>
                 <div className="font-['Inter:Semi_Bold',_sans-serif] font-semibold leading-[0] min-w-full not-italic relative shrink-0 text-[40px] text-white" data-node-id="8272:92219" style={{ width: "min-content" }}>
                   <p className="leading-[48px]">Pro</p>
                 </div>
@@ -143,17 +134,14 @@ export default function Pricing() {
                       <p className="leading-[18px] whitespace-pre">Estimated cost</p>
                     </div>
                     <div className="relative shrink-0 size-3" data-name="Info" data-node-id="8272:92223">
-                      <img alt='' className="block max-w-none size-full" src={imgInfo1} />
+                      <img alt='' className="block max-w-none size-full" src={imgInfo} />
                     </div>
                   </div>
                   <div className="font-['Inter:Semi_Bold',_sans-serif] font-semibold leading-[0] not-italic relative shrink-0 text-[32px] text-nowrap text-white tracking-[-1px]" data-node-id="8272:92225">
                     <p className="leading-[40px] whitespace-pre">$$</p>
                   </div>
                 </div>
-                <div className="h-0 relative shrink-0 w-full" data-name="Divider" data-node-id="8272:92226">
-                  <div className="absolute inset-[-0.5px_-0.15%]" style={{ "--stroke-0": "rgba(208, 209, 212, 1)" } as React.CSSProperties}>
-                    <img alt='' className="block max-w-none size-full" src={imgDivider} />
-                  </div>
+                <div className="h-[0.125px] bg-[#D0D1D4] w-full" data-name="Divider" data-node-id="8272:92226">
                 </div>
                 <div className="content-stretch flex flex-col gap-2 items-start justify-start relative shrink-0 w-full" data-name="Package Includes Container" data-node-id="8272:92227">
                   <div className="font-['Inter:regular',_sans-serif] leading-[0] not-italic relative shrink-0 text-[0px] text-white w-full" data-node-id="8272:92228">
@@ -192,26 +180,23 @@ export default function Pricing() {
                     </div>
                   </div>
                 </div>
-                <div className="h-0 relative shrink-0 w-full" data-name="Divider" data-node-id="8272:92241">
-                  <div className="absolute inset-[-0.5px_-0.15%]" style={{ "--stroke-0": "rgba(208, 209, 212, 1)" } as React.CSSProperties}>
-                    <img alt='' className="block max-w-none size-full" src={imgDivider} />
-                  </div>
+                <div className="h-[0.125px] bg-[#D0D1D4] w-full" data-name="Divider" data-node-id="8272:92241">
                 </div>
                 <div className="content-stretch flex flex-col gap-2 items-start justify-start relative shrink-0 w-full" data-name="Package Includes Container" data-node-id="8272:92242">
                   <div className="font-['Inter:regular',_sans-serif] leading-[0] not-italic relative shrink-0 text-[0px] text-white w-full" data-node-id="8272:92243">
                     <p className="font-['Inter:Bold',_sans-serif] font-bold leading-[20px] text-[16px]">Bonus features</p>
                   </div>
                   <div className="content-stretch flex gap-2 items-center justify-start relative shrink-0 w-full" data-name="List Item" data-node-id="8272:92248">
-                    <div className="relative shrink-0 size-6" data-name="material-symbols:check-rounded" data-node-id="8272:92249">
-                      <img alt='' className="block max-w-none size-full" src={imgMaterialSymbolsCheckRounded} />
+                    <div data-name="material-symbols:check-rounded" data-node-id="8272:92249">
+                      <img alt='' src={imgMaterialSymbolsCheckRounded} />
                     </div>
                     <div className="basis-0 font-['Inter:regular',_sans-serif] grow leading-[0] min-h-px min-w-px not-italic relative shrink-0 text-[16px] text-white" data-node-id="8272:92251">
                       <p className="leading-[20px]">Advanced analytics dashboard</p>
                     </div>
                   </div>
                   <div className="content-stretch flex gap-2 items-center justify-start relative shrink-0 w-full" data-name="List Item" data-node-id="8272:92244">
-                    <div className="relative shrink-0 size-6" data-name="material-symbols:check-rounded" data-node-id="8272:92245">
-                      <img alt='' className="block max-w-none size-full" src={imgMaterialSymbolsCheckRounded} />
+                    <div data-name="material-symbols:check-rounded" data-node-id="8272:92245">
+                      <img alt='' src={imgMaterialSymbolsCheckRounded} />
                     </div>
                     <div className="basis-0 font-['Inter:regular',_sans-serif] grow leading-[0] min-h-px min-w-px not-italic relative shrink-0 text-[16px] text-white" data-node-id="8272:92247">
                       <p className="leading-[20px]">Web/graphic designer as needed</p>
@@ -223,12 +208,7 @@ export default function Pricing() {
             </div>
 
             {/* Premium Plan */}
-            <div className="bg-white box-border content-stretch flex flex-col gap-6 items-start justify-start overflow-clip px-8 py-10 relative rounded-[16px] shrink-0 w-[400px]" data-name="_Pricing tier card" data-node-id="8272:92161">
-              <div className="absolute flex h-[1078.625px] items-center justify-center translate-x-[-50%] translate-y-[-50%] w-[1078.625px]" style={{ top: "calc(50% + 0.322px)", left: "calc(50% - 0.102px)" }}>
-                <div className="flex-none">
-                  <div className="bg-[#00000066] bg-[position:0%_0%,_0%_26.01%] bg-size-[auto,100%_100%] h-[704.407px] w-[821.027px]  bg-cover bg-center" data-name="photo-1636011497948-13d7aaa84f31 1" data-node-id="8272:92162" style={{ backgroundImage: `url('${greenCardBgImage}')` }} />
-                </div>
-              </div>
+            <div className="bg-white box-border content-stretch flex flex-col gap-6 items-start justify-start overflow-clip px-8 py-10 relative rounded-[16px] shrink-0 w-[400px]" data-name="_Pricing tier card" data-node-id="8272:92161" style={{ top: "calc(50% - 0.5px)", backgroundImage: `url('${greenCardBgImage}')` }}>
               <div className="font-['Inter:Semi_Bold',_sans-serif] font-semibold leading-[0] min-w-full not-italic relative shrink-0 text-[40px] text-white" data-node-id="8272:92163" style={{ width: "min-content" }}>
                 <p className="leading-[48px]">Premium</p>
               </div>
@@ -238,41 +218,38 @@ export default function Pricing() {
                     <p className="leading-[18px] whitespace-pre">Estimated cost</p>
                   </div>
                   <div className="relative shrink-0 size-3" data-name="Info" data-node-id="8272:92167">
-                    <img alt='' className="block max-w-none size-full" src={imgInfo1} />
+                    <img alt='' className="block max-w-none size-full" src={imgInfo} />
                   </div>
                 </div>
                 <div className="font-['Inter:Semi_Bold',_sans-serif] font-semibold leading-[0] not-italic relative shrink-0 text-[32px] text-nowrap text-white tracking-[-1px]" data-node-id="8272:92169">
                   <p className="leading-[40px] whitespace-pre">$$$</p>
                 </div>
               </div>
-              <div className="h-0 relative shrink-0 w-full" data-name="Divider" data-node-id="8272:92170">
-                <div className="absolute inset-[-0.5px_-0.15%]" style={{ "--stroke-0": "rgba(208, 209, 212, 1)" } as React.CSSProperties}>
-                  <img alt= '' className="block max-w-none size-full" src={imgDivider} />
-                </div>
+              <div className="h-[0.125px] bg-[#D0D1D4] w-full" data-name="Divider" data-node-id="8272:92170">
               </div>
               <div className="content-stretch flex flex-col gap-2 items-start justify-start relative shrink-0 w-full" data-name="Package Includes Container" data-node-id="8272:92171">
                 <div className="font-['Inter:regular',_sans-serif] leading-[0] not-italic relative shrink-0 text-[0px] text-white w-[259px]" data-node-id="8272:92172">
                   <p className="font-['Inter:Bold',_sans-serif] font-bold leading-[20px] text-[16px]">Includes everything in Pro, plus:</p>
                 </div>
                 <div className="content-stretch flex gap-2 items-center justify-start relative shrink-0 w-full" data-name="List Item" data-node-id="8272:92197">
-                  <div className="relative shrink-0 size-6" data-name="material-symbols:check-rounded" data-node-id="8272:92198">
-                    <img alt="material symbols check rounded" className="block max-w-none size-full" src={imgMaterialSymbolsCheckRounded} />
+                  <div data-name="material-symbols:check-rounded" data-node-id="8272:92198">
+                    <img alt="material symbols check rounded" src={imgMaterialSymbolsCheckRounded} />
                   </div>
                   <div className="basis-0 font-['Inter:regular',_sans-serif] grow leading-[0] min-h-px min-w-px not-italic relative shrink-0 text-[16px] text-white" data-node-id="8272:92200">
                     <p className="leading-[20px]">Up to 1000 pages</p>
                   </div>
                 </div>
                 <div className="content-stretch flex gap-2 items-center justify-start relative shrink-0 w-full" data-name="List Item" data-node-id="8272:92202">
-                  <div className="relative shrink-0 size-6" data-name="material-symbols:check-rounded" data-node-id="8272:92203">
-                    <img alt="material symbols check rounded" className="block max-w-none size-full" src={imgMaterialSymbolsCheckRounded} />
+                  <div data-name="material-symbols:check-rounded" data-node-id="8272:92203">
+                    <img alt="material symbols check rounded" src={imgMaterialSymbolsCheckRounded} />
                   </div>
                   <div className="basis-0 font-['Inter:regular',_sans-serif] grow leading-[0] min-h-px min-w-px not-italic relative shrink-0 text-[16px] text-white" data-node-id="8272:92205">
                     <p className="leading-[20px]">Up to 30 authorized users</p>
                   </div>
                 </div>
                 <div className="content-stretch flex gap-2 items-center justify-start relative shrink-0 w-full" data-name="List Item" data-node-id="8272:92173">
-                  <div className="relative shrink-0 size-6" data-name="material-symbols:check-rounded" data-node-id="8272:92174">
-                    <img alt="material symbols check rounded" className="block max-w-none size-full" src={imgMaterialSymbolsCheckRounded} />
+                  <div data-name="material-symbols:check-rounded" data-node-id="8272:92174">
+                    <img alt="material symbols check rounded" src={imgMaterialSymbolsCheckRounded} />
                   </div>
                   <div className="basis-0 font-['Inter:regular',_sans-serif] grow leading-[0] min-h-px min-w-px not-italic relative shrink-0 text-[16px] text-white" data-node-id="8272:92176">
                     <p className="leading-[20px]">Full brand and style customization</p>
@@ -287,18 +264,15 @@ export default function Pricing() {
                   </div>
                 </div>
                 <div className="content-stretch flex gap-2 items-center justify-start relative shrink-0 w-full" data-name="List Item" data-node-id="8272:92177">
-                  <div className="relative shrink-0 size-6" data-name="material-symbols:check-rounded" data-node-id="8272:92178">
-                    <img alt="material symbols check rounded" className="block max-w-none size-full" src={imgMaterialSymbolsCheckRounded} />
+                  <div data-name="material-symbols:check-rounded" data-node-id="8272:92178">
+                    <img alt="material symbols check rounded" src={imgMaterialSymbolsCheckRounded} />
                   </div>
                   <div className="basis-0 font-['Inter:regular',_sans-serif] grow leading-[0] min-h-px min-w-px not-italic relative shrink-0 text-[16px] text-white" data-node-id="8272:92180">
                     <p className="leading-[20px]">CRM integration</p>
                   </div>
                 </div>
               </div>
-              <div className="h-0 relative shrink-0 w-full" data-name="Divider" data-node-id="8272:92181">
-                <div className="absolute inset-[-0.5px_-0.15%]" style={{ "--stroke-0": "rgba(208, 209, 212, 1)" } as React.CSSProperties}>
-                  <img alt="divider" className="block max-w-none size-full" src={imgDivider} />
-                </div>
+              <div className="h-[0.5px] bg-[#D0D1D4] w-full" data-name="Divider" data-node-id="8272:92181">
               </div>
               <div className="content-stretch flex flex-col gap-2 items-start justify-start relative shrink-0 w-full" data-name="Package Includes Container" data-node-id="8272:92182">
                 <div className="font-['Inter:regular',_sans-serif] leading-[0] not-italic relative shrink-0 text-[0px] text-white w-[259px]" data-node-id="8272:92183">
@@ -313,16 +287,16 @@ export default function Pricing() {
                   </div>
                 </div>
                 <div className="content-stretch flex gap-2 items-center justify-start relative shrink-0 w-full" data-name="List Item" data-node-id="8272:92192">
-                  <div className="relative shrink-0 size-6" data-name="material-symbols:check-rounded" data-node-id="8272:92193">
-                    <img alt="material symbols check rounded" className="block max-w-none size-full" src={imgMaterialSymbolsCheckRounded} />
+                  <div data-name="material-symbols:check-rounded" data-node-id="8272:92193">
+                    <img alt="material symbols check rounded" src={imgMaterialSymbolsCheckRounded} />
                   </div>
                   <div className="basis-0 font-['Inter:regular',_sans-serif] grow leading-[0] min-h-px min-w-px not-italic relative shrink-0 text-[16px] text-white" data-node-id="8272:92195">
                     <p className="leading-[20px]">Web/graphic designer as needed</p>
                   </div>
                 </div>
                 <div className="content-stretch flex gap-2 items-center justify-start relative shrink-0 w-full" data-name="List Item" data-node-id="8272:92184">
-                  <div className="relative shrink-0 size-6" data-name="material-symbols:check-rounded" data-node-id="8272:92185">
-                    <img alt="material symbols check rounded" className="block max-w-none size-full" src={imgMaterialSymbolsCheckRounded} />
+                  <div data-name="material-symbols:check-rounded" data-node-id="8272:92185">
+                    <img alt="material symbols check rounded" src={imgMaterialSymbolsCheckRounded} />
                   </div>
                   <div className="basis-0 font-['Inter:regular',_sans-serif] grow leading-[0] min-h-px min-w-px not-italic relative shrink-0 text-[16px] text-white" data-node-id="8272:92187">
                     <p className="leading-[20px]">Custom template built with AI</p>
@@ -522,16 +496,16 @@ export default function Pricing() {
               <p className="leading-[20px] whitespace-pre">Limited</p>
             </div>
             <div className="[grid-area:1_/_1] ml-[447.5px] mt-[534px] relative size-8" data-name="material-symbols:close-rounded" data-node-id="8310:44794">
-              <img alt="" className="block max-w-none size-full" src={imgMaterialSymbolsCloseRounded} />
+              <img alt="" className="block max-w-none size-full" src={xIcon} />
             </div>
             <div className="[grid-area:1_/_1] ml-[447.5px] mt-[390px] relative size-8" data-name="material-symbols:close-rounded" data-node-id="8306:40208">
-              <img alt="" className="block max-w-none size-full" src={imgMaterialSymbolsCloseRounded} />
+              <img alt="" className="block max-w-none size-full" src={xIcon} />
             </div>
             <div className="[grid-area:1_/_1] ml-[447.5px] mt-[318px] relative size-8" data-name="material-symbols:close-rounded" data-node-id="8306:40210">
-              <img alt="" className="block max-w-none size-full" src={imgMaterialSymbolsCloseRounded} />
+              <img alt="" className="block max-w-none size-full" src={xIcon} />
             </div>
             <div className="[grid-area:1_/_1] ml-[447.5px] mt-[606px] relative size-8" data-name="material-symbols:close-rounded" data-node-id="8306:40212">
-              <img alt="" className="block max-w-none size-full" src={imgMaterialSymbolsCloseRounded} />
+              <img alt="" className="block max-w-none size-full" src={xIcon} />
             </div>
             <div className="[grid-area:1_/_1] font-['Inter:regular',_sans-serif] ml-[463px] mt-[468px] not-italic relative text-[16px] text-center text-nowrap text-white translate-x-[-50%]" data-node-id="8310:44754">
               <p className="leading-[20px] whitespace-pre">Basic</p>
@@ -552,10 +526,10 @@ export default function Pricing() {
               <img alt="" className="block max-w-none size-full" src={imgMaterialSymbolsCheckRounded} />
             </div>
             <div className="[grid-area:1_/_1] ml-[757.5px] mt-[606px] relative size-8" data-name="material-symbols:close-rounded" data-node-id="8306:40222">
-              <img alt="" className="block max-w-none size-full" src={imgMaterialSymbolsCloseRounded} />
+              <img alt="" className="block max-w-none size-full" src={xIcon} />
             </div>
             <div className="[grid-area:1_/_1] ml-[757.5px] mt-[390px] relative size-8" data-name="material-symbols:close-rounded" data-node-id="8306:40224">
-              <img alt="" className="block max-w-none size-full" src={imgMaterialSymbolsCloseRounded} />
+              <img alt="" className="block max-w-none size-full" src={xIcon} />
             </div>
             <div className="[grid-area:1_/_1] font-['Inter:regular',_sans-serif] ml-[773.5px] mt-[468px] not-italic relative text-[16px] text-center text-nowrap text-white translate-x-[-50%]" data-node-id="8306:40226">
               <p className="leading-[20px] whitespace-pre">Advanced</p>
