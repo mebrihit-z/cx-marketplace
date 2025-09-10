@@ -84,6 +84,42 @@ export const templateData: Template[] = [
   }
 ];
 
+export interface MoreTemplate {
+  id: string;
+  title: string;
+  backgroundImage: string;
+  backgroundColor: string;
+  gradientTo: string;
+  aspectRatio?: string;
+}
+
+export const moreTemplates: MoreTemplate[] = [
+  {
+    id: "saas-2.0",
+    title: "SaaS 2.0",
+    backgroundImage: "images/automate-card-image.svg",
+    backgroundColor: "#236e84",
+    gradientTo: "#001619",
+    aspectRatio: "aspect-[1860/1212]"
+  },
+  {
+    id: "startup-1.0",
+    title: "Startup 1.0",
+    backgroundImage: "images/advancing-card-image.svg",
+    backgroundColor: "#bd550f",
+    gradientTo: "#421e06",
+    aspectRatio: "aspect-[1726/1124]"
+  },
+  {
+    id: "startup-2.0",
+    title: "Startup 2.0",
+    backgroundImage: "images/fast-secure-card-image.svg",
+    backgroundColor: "#42ab18",
+    gradientTo: "#0f2b04",
+    aspectRatio: "aspect-[1666/1084]"
+  }
+];
+
 export const additionalTemplates: Template[] = [
   {
     id: "8084:57053-2",
