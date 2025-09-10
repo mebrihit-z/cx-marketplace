@@ -29,12 +29,12 @@ const imgMaterialSymbolsAttachMoneyRounded = "icons/money-icon.svg";
 
 // Comparison table image assets
 const imgImage46 = "http://localhost:3845/assets/7e2f4b13b8101d455a2fe962796591ee30c6e36e.png";
-const imgLine7 = "http://localhost:3845/assets/a3e48a0411e58ca0738ffdb7738dccce8374c0f7.svg";
-const imgLine15 = "http://localhost:3845/assets/29a91ea6fe856958e9a569248623f536085c50bf.svg";
+const imgLine7 = "icons/line-image.svg";
+const imgLine15 = "icons/line-white-image.png";
 
 export default function Pricing() {
     return (
-    <div className="box-border content-stretch flex flex-col gap-20 items-start justify-start pb-16 pt-32 px-0 relative size-full" data-name="Section Container" data-node-id="8102:60508">
+    <div className="box-border content-stretch flex flex-col gap-20 items-start justify-start pt-32 px-0 relative size-full" data-name="Section Container" data-node-id="8102:60508">
       <div className="box-border content-stretch flex items-start justify-between px-32 py-0 relative shrink-0 w-full" data-name="Header" data-node-id="8102:60509">
         <div className="content-stretch flex flex-col items-start justify-center relative shrink-0 w-[480px]" data-name="Title Container" data-node-id="8102:60510">
           <div className="font-['Inter:semibold',_sans-serif] leading-[0] not-italic relative shrink-0 text-[#22252b] text-[60px] w-full" data-node-id="8102:60511">
