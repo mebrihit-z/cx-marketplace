@@ -13,8 +13,8 @@ export default function Footer() {
           <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] place-items-start relative shrink-0">
             <div className="[grid-area:1_/_1] box-border content-stretch flex flex-col gap-4 items-center justify-start ml-0 mt-0 relative">
               {/* Logo Icon */}
-              <div className="bg-[#8cc63f] overflow-clip relative rounded-[94.118px] shrink-0 size-12">
-                <div className="inset-[20.59%]">
+              <div className="bg-[#8cc63f] overflow-clip relative rounded-[94.118px] shrink-0 size-8">
+                <div>
                   <img alt="Logo icon" className="block size-full" src={logoIcon} />
                 </div>
               </div>
