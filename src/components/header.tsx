@@ -21,7 +21,7 @@ function Avatar({ property1 = "Chris", size = "Default" }: AvatarProps) {
     return (
       <div className="content-stretch flex flex-col items-center justify-center relative rounded-[200px] size-full">
         <div className="font-['Inter:Medium',_sans-serif] font-medium leading-[0] not-italic relative shrink-0 text-[#0a7c00] text-[14px] text-nowrap">
-          <p className="leading-[20px] whitespace-pre">C</p>
+          <p className="leading-[20px] whitespace-pre">MP</p>
         </div>
       </div>
     );

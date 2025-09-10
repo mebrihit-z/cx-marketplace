@@ -4,8 +4,8 @@ import GalleryGrid from './GalleryGrid';
 import { templateData, additionalTemplates } from '../data/templates';
 import type { Template } from '../data/templates';
 
-const imgLineRoundedSearch = "http://localhost:3845/assets/7953949d658286013aeb2389729b8a7196e8bad5.svg";
-const imgMaterialSymbolsKeyboardArrowDownRounded = "http://localhost:3845/assets/eacea545fb9d391dc079785c3412b3ff45e428a3.svg";
+const imgLineRoundedSearch = "icons/search-icon.svg";
+const imgMaterialSymbolsKeyboardArrowDownRounded = "icons/keyboard-arrow-down-icon.svg";
 
 interface ButtonProps {
   text?: string;

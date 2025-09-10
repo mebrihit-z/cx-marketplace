@@ -20,11 +20,11 @@ function Button({ text = "Button", state = "Default", buttonType = "Default" }: 
 }
 
 // Image assets
-const imgImage19 = "http://localhost:3845/assets/d36c2881822d23ee9d438d25f3a28c08f7a18a2a.png";
-const imgPhoto163601149794813D7Aaa84F311 = "http://localhost:3845/assets/96b1166c204726a7c45d28ac5424da54e0d3b8b6.png";
-const imgInfo = "http://localhost:3845/assets/15f56fe0c129d4540e55ab2f19b1d8745d97c118.svg";
+const imgImage19 = "images/black-card-bg-image.svg";
+const greenCardBgImage = "images/green-card-bg-image.svg";
+const imgInfo = "icons/check-white-icon.svg";
 const imgDivider = "http://localhost:3845/assets/4d161f8a3dc0da028fc6520ce54a678cd2ef6444.svg";
-const imgMaterialSymbolsCheckRounded = "http://localhost:3845/assets/2def8f325e4101c908e81ed5154134e95655a73c.svg";
+const imgMaterialSymbolsCheckRounded = "icons/check-white-icon.svg";
 const imgInfo1 = "http://localhost:3845/assets/d580b21692ededd1094df79e8007ebfbae134163.svg";
 const imgMaterialSymbolsAttachMoneyRounded = "http://localhost:3845/assets/7e67f2f6385ff030d4ff80c07acbfdd80a0d5a64.svg";
 
@@ -86,24 +86,24 @@ export default function Pricing() {
                   <p className="font-['Inter:Bold',_sans-serif] font-bold leading-[20px] text-[16px]">Includes:</p>
                 </div>
                 <div className="content-stretch flex gap-2 items-center justify-start relative shrink-0 w-full" data-name="List Item" data-node-id="8272:92117">
-                  <div className="relative shrink-0 size-6" data-name="material-symbols:check-rounded" data-node-id="8272:92118">
-                    <img alt='' className="block max-w-none size-full" src={imgMaterialSymbolsCheckRounded} />
+                  <div className="relative shrink-0" data-name="material-symbols:check-rounded" data-node-id="8272:92118">
+                    <img alt='' src={imgMaterialSymbolsCheckRounded} />
                   </div>
                   <div className="font-['Inter:regular',_sans-serif] leading-[0] not-italic relative shrink-0 text-[16px] text-nowrap text-white" data-node-id="8272:92120">
                     <p className="leading-[20px] whitespace-pre">Up to 100 pages</p>
                   </div>
                 </div>
                 <div className="content-stretch flex gap-2 items-center justify-start relative shrink-0 w-full" data-name="List Item" data-node-id="8272:92121">
-                  <div className="relative shrink-0 size-6" data-name="material-symbols:check-rounded" data-node-id="8272:92122">
-                    <img alt='' className="block max-w-none size-full" src={imgMaterialSymbolsCheckRounded} />
+                  <div className="" data-name="material-symbols:check-rounded" data-node-id="8272:92122">
+                    <img alt='' src={imgMaterialSymbolsCheckRounded} />
                   </div>
                   <div className="font-['Inter:regular',_sans-serif] leading-[0] not-italic relative shrink-0 text-[16px] text-nowrap text-white" data-node-id="8272:92124">
                     <p className="leading-[20px] whitespace-pre">Up to 10 authorized users</p>
                   </div>
                 </div>
                 <div className="content-stretch flex gap-2 items-center justify-start relative shrink-0 w-full" data-name="List Item" data-node-id="8272:92212">
-                  <div className="relative shrink-0 size-6" data-name="material-symbols:check-rounded" data-node-id="8272:92213">
-                    <img alt='' className="block max-w-none size-full" src={imgMaterialSymbolsCheckRounded} />
+                  <div data-name="material-symbols:check-rounded" data-node-id="8272:92213">
+                    <img alt='' src={imgMaterialSymbolsCheckRounded} />
                   </div>
                   <div className="font-['Inter:regular',_sans-serif] leading-[0] not-italic relative shrink-0 text-[16px] text-nowrap text-white" data-node-id="8272:92215">
                     <p className="leading-[20px] whitespace-pre">Limited customization options</p>
@@ -132,8 +132,8 @@ export default function Pricing() {
 
             {/* Pro Plan */}
             <div className="bg-white relative rounded-[16px] shrink-0 w-[400px]" data-name="_Pricing tier card" data-node-id="8272:92217">
-              <div className="box-border content-stretch flex flex-col gap-6 items-start justify-start overflow-clip px-8 py-10 relative w-[400px]">
-                <div className="absolute bg-center bg-cover bg-no-repeat h-[585px] left-1/2 translate-x-[-50%] translate-y-[-50%] w-[400px]" data-name="image 19" data-node-id="8272:92218" style={{ top: "calc(50% - 0.5px)", backgroundImage: `url('${imgImage19}')` }} />
+              <div className="box-border content-stretch flex flex-col gap-6 items-start justify-start overflow-clip px-8 py-10 relative w-[400px] rounded-[16px]">
+                <div className="absolute bg-center bg-cover bg-no-repeat h-[585px] left-1/2 translate-x-[-50%] translate-y-[-50%] w-[400px] bg-cover bg-center" data-name="image 19" data-node-id="8272:92218" style={{ top: "calc(50% - 0.5px)", backgroundImage: `url('${imgImage19}')` }} />
                 <div className="font-['Inter:Semi_Bold',_sans-serif] font-semibold leading-[0] min-w-full not-italic relative shrink-0 text-[40px] text-white" data-node-id="8272:92219" style={{ width: "min-content" }}>
                   <p className="leading-[48px]">Pro</p>
                 </div>
@@ -160,32 +160,32 @@ export default function Pricing() {
                     <p className="font-['Inter:Bold',_sans-serif] font-bold leading-[20px] text-[16px]">Includes everything in Basic, plus:</p>
                   </div>
                   <div className="content-stretch flex gap-2 items-center justify-start relative shrink-0 w-full" data-name="List Item" data-node-id="8272:92229">
-                    <div className="relative shrink-0 size-6" data-name="material-symbols:check-rounded" data-node-id="8272:92230">
-                      <img alt='' className="block max-w-none size-full" src={imgMaterialSymbolsCheckRounded} />
+                    <div data-name="material-symbols:check-rounded" data-node-id="8272:92230">
+                      <img alt='' src={imgMaterialSymbolsCheckRounded} />
                     </div>
                     <div className="font-['Inter:regular',_sans-serif] leading-[0] not-italic relative shrink-0 text-[16px] text-nowrap text-white" data-node-id="8272:92232">
                       <p className="leading-[20px] whitespace-pre">Up to 500 pages</p>
                     </div>
                   </div>
                   <div className="content-stretch flex gap-2 items-center justify-start relative shrink-0 w-full" data-name="List Item" data-node-id="8272:92233">
-                    <div className="relative shrink-0 size-6" data-name="material-symbols:check-rounded" data-node-id="8272:92234">
-                      <img alt='' className="block max-w-none size-full" src={imgMaterialSymbolsCheckRounded} />
+                    <div data-name="material-symbols:check-rounded" data-node-id="8272:92234">
+                      <img alt='' src={imgMaterialSymbolsCheckRounded} />
                     </div>
                     <div className="font-['Inter:regular',_sans-serif] leading-[0] not-italic relative shrink-0 text-[16px] text-nowrap text-white" data-node-id="8272:92236">
                       <p className="leading-[20px] whitespace-pre">Up to 20 authorized users</p>
                     </div>
                   </div>
                   <div className="content-stretch flex gap-2 items-center justify-start relative shrink-0 w-full" data-name="List Item" data-node-id="8272:92237">
-                    <div className="relative shrink-0 size-6" data-name="material-symbols:check-rounded" data-node-id="8272:92238">
-                      <img alt='' className="block max-w-none size-full" src={imgMaterialSymbolsCheckRounded} />
+                    <div data-name="material-symbols:check-rounded" data-node-id="8272:92238">
+                      <img alt=''src={imgMaterialSymbolsCheckRounded} />
                     </div>
                     <div className="font-['Inter:regular',_sans-serif] leading-[0] not-italic relative shrink-0 text-[16px] text-nowrap text-white" data-node-id="8272:92240">
                       <p className="leading-[20px] whitespace-pre">Advanced customization options</p>
                     </div>
                   </div>
                   <div className="content-stretch flex gap-2 items-center justify-start relative shrink-0 w-full" data-name="List Item" data-node-id="8272:92259">
-                    <div className="relative shrink-0 size-6" data-name="material-symbols:check-rounded" data-node-id="8272:92260">
-                      <img alt='' className="block max-w-none size-full" src={imgMaterialSymbolsCheckRounded} />
+                    <div data-name="material-symbols:check-rounded" data-node-id="8272:92260">
+                      <img alt='' src={imgMaterialSymbolsCheckRounded} />
                     </div>
                     <div className="font-['Inter:regular',_sans-serif] leading-[0] not-italic relative shrink-0 text-[16px] text-nowrap text-white" data-node-id="8272:92262">
                       <p className="leading-[20px] whitespace-pre">Basic SEO optimization</p>
@@ -225,8 +225,8 @@ export default function Pricing() {
             {/* Premium Plan */}
             <div className="bg-white box-border content-stretch flex flex-col gap-6 items-start justify-start overflow-clip px-8 py-10 relative rounded-[16px] shrink-0 w-[400px]" data-name="_Pricing tier card" data-node-id="8272:92161">
               <div className="absolute flex h-[1078.625px] items-center justify-center translate-x-[-50%] translate-y-[-50%] w-[1078.625px]" style={{ top: "calc(50% + 0.322px)", left: "calc(50% - 0.102px)" }}>
-                <div className="flex-none rotate-[45deg]">
-                  <div className="bg-[#00000066] bg-[position:0%_0%,_0%_26.01%] bg-size-[auto,100%_100%] h-[704.407px] w-[821.027px]" data-name="photo-1636011497948-13d7aaa84f31 1" data-node-id="8272:92162" style={{ backgroundImage: `url('${imgPhoto163601149794813D7Aaa84F311}')` }} />
+                <div className="flex-none">
+                  <div className="bg-[#00000066] bg-[position:0%_0%,_0%_26.01%] bg-size-[auto,100%_100%] h-[704.407px] w-[821.027px]  bg-cover bg-center" data-name="photo-1636011497948-13d7aaa84f31 1" data-node-id="8272:92162" style={{ backgroundImage: `url('${greenCardBgImage}')` }} />
                 </div>
               </div>
               <div className="font-['Inter:Semi_Bold',_sans-serif] font-semibold leading-[0] min-w-full not-italic relative shrink-0 text-[40px] text-white" data-node-id="8272:92163" style={{ width: "min-content" }}>
@@ -279,8 +279,8 @@ export default function Pricing() {
                   </div>
                 </div>
                 <div className="content-stretch flex gap-2 items-center justify-start relative shrink-0 w-full" data-name="List Item" data-node-id="8272:92264">
-                  <div className="relative shrink-0 size-6" data-name="material-symbols:check-rounded" data-node-id="8272:92265">
-                    <img alt="material symbols check rounded" className="block max-w-none size-full" src={imgMaterialSymbolsCheckRounded} />
+                  <div data-name="material-symbols:check-rounded" data-node-id="8272:92265">
+                    <img alt="material symbols check rounded" src={imgMaterialSymbolsCheckRounded} />
                   </div>
                   <div className="font-['Inter:regular',_sans-serif] leading-[0] not-italic relative shrink-0 text-[16px] text-nowrap text-white" data-node-id="8272:92267">
                     <p className="leading-[20px] whitespace-pre">Advanced SEO optimization</p>
@@ -305,8 +305,8 @@ export default function Pricing() {
                   <p className="font-['Inter:Bold',_sans-serif] font-bold leading-[20px] text-[16px]">Bonus features</p>
                 </div>
                 <div className="content-stretch flex gap-2 items-center justify-start relative shrink-0 w-full" data-name="List Item" data-node-id="8272:92188">
-                  <div className="relative shrink-0 size-6" data-name="material-symbols:check-rounded" data-node-id="8272:92189">
-                    <img alt="material symbols check rounded" className="block max-w-none size-full" src={imgMaterialSymbolsCheckRounded} />
+                  <div data-name="material-symbols:check-rounded" data-node-id="8272:92189">
+                    <img alt="material symbols check rounded" src={imgMaterialSymbolsCheckRounded} />
                   </div>
                   <div className="font-['Inter:regular',_sans-serif] leading-[0] not-italic relative shrink-0 text-[16px] text-nowrap text-white" data-node-id="8272:92191">
                     <p className="leading-[20px] whitespace-pre">Intelligent analytics dashboard</p>
