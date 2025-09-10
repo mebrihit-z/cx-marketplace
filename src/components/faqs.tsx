@@ -181,30 +181,30 @@ export default function FAQs() {
     };
   }, []);
     return (
-    <div className="box-border content-stretch flex flex-col gap-20 items-start justify-start pb-16 pt-32 px-0 relative size-full" data-name="Section Container" data-node-id="8141:20154">
-      <div className="box-border content-stretch flex items-start justify-between px-32 py-0 relative shrink-0 w-full" data-name="Header" data-node-id="8141:20155">
-        <div className="content-stretch flex flex-col items-start justify-center relative shrink-0 w-[480px]" data-name="Title Container" data-node-id="8141:20156">
-          <div className="font-['Inter:semibold',_sans-serif] leading-[0] not-italic relative shrink-0 text-[#22252b] text-[60px] w-full" data-node-id="8141:20157">
-            <p className="leading-[72px]">FAQs</p>
+    <div className="box-border content-stretch flex flex-col gap-8 md:gap-12 lg:gap-20 items-start justify-start pb-8 md:pb-12 lg:pb-16 pt-16 md:pt-24 lg:pt-32 px-4 md:px-8 lg:px-0 relative size-full" data-name="Section Container" data-node-id="8141:20154">
+      <div className="box-border content-stretch flex flex-col lg:flex-row items-start justify-between px-0 md:px-8 lg:px-32 py-0 relative shrink-0 w-full gap-6 lg:gap-0" data-name="Header" data-node-id="8141:20155">
+        <div className="content-stretch flex flex-col items-start justify-center relative shrink-0 w-full lg:w-[480px]" data-name="Title Container" data-node-id="8141:20156">
+          <div className="font-['Inter:semibold',_sans-serif] leading-[0] not-italic relative shrink-0 text-[#22252b] text-[40px] md:text-[50px] lg:text-[60px] w-full" data-node-id="8141:20157">
+            <p className="leading-[48px] md:leading-[60px] lg:leading-[72px]">FAQs</p>
           </div>
         </div>
-        <div className="content-stretch flex flex-col gap-12 items-start justify-center relative shrink-0 w-[640px]" data-name="Subtitle Container" data-node-id="8141:20158">
-          <div className="font-['Inter:regular',_sans-serif] leading-[0] not-italic relative shrink-0 text-[#333740] text-[18px] w-full" data-node-id="8141:20159">
-            <p className="leading-[24px]">Our support team has compiled a list of the most frequently asked questions so you can easily find the answers you need.</p>
+        <div className="content-stretch flex flex-col gap-6 md:gap-8 lg:gap-12 items-start justify-center relative shrink-0 w-full lg:w-[640px]" data-name="Subtitle Container" data-node-id="8141:20158">
+          <div className="font-['Inter:regular',_sans-serif] leading-[0] not-italic relative shrink-0 text-[#333740] text-[16px] md:text-[17px] lg:text-[18px] w-full" data-node-id="8141:20159">
+            <p className="leading-[22px] md:leading-[23px] lg:leading-[24px]">Our support team has compiled a list of the most frequently asked questions so you can easily find the answers you need.</p>
           </div>
         </div>
       </div>
-      <div className="box-border content-start flex flex-wrap items-start justify-between px-32 py-0 relative shrink-0 w-full" data-name="Actions" data-node-id="8141:20440">
-        <div className="content-stretch flex flex-col gap-3 items-start justify-start relative shrink-0" data-name="Jump Links" data-node-id="8141:20609">
-          <div className="font-['Inter:regular',_sans-serif] leading-[0] not-italic relative shrink-0 text-[#333740] text-[18px] text-nowrap" data-node-id="8141:20443">
-            <p className="leading-[24px] whitespace-pre">Jump to topic</p>
+      <div className="box-border content-start flex flex-wrap items-start justify-between px-0 md:px-8 lg:px-32 py-0 relative shrink-0 w-full" data-name="Actions" data-node-id="8141:20440">
+        <div className="content-stretch flex flex-col gap-3 items-start justify-start relative shrink-0 w-full" data-name="Jump Links" data-node-id="8141:20609">
+          <div className="font-['Inter:regular',_sans-serif] leading-[0] not-italic relative shrink-0 text-[#333740] text-[16px] md:text-[17px] lg:text-[18px]" data-node-id="8141:20443">
+            <p className="leading-[20px] md:leading-[22px] lg:leading-[24px]">Jump to topic</p>
           </div>
-          <div className="content-end cursor-pointer flex flex-wrap gap-2 items-end justify-start relative shrink-0" data-name="Container" data-node-id="8141:20441">
+          <div className="content-end cursor-pointer flex flex-wrap gap-2 items-start justify-start relative shrink-0 w-full" data-name="Container" data-node-id="8141:20441">
             {faqData.map((section) => (
               <button 
                 key={section.id}
                 onClick={() => scrollToSection(section.id)}
-                className={`box-border content-stretch flex gap-2.5 items-center justify-center overflow-visible px-6 py-2.5 relative rounded-[8px] shrink-0 transition-colors duration-200 ${
+                className={`box-border content-stretch flex gap-2.5 items-center justify-center overflow-visible px-4 md:px-5 lg:px-6 py-2 md:py-2.5 relative rounded-[8px] shrink-0 transition-colors duration-200 ${
                   activeSection === section.id 
                     ? 'bg-[#0a7c00] text-white' 
                     : 'bg-white text-[#111215] hover:bg-gray-50'
@@ -216,8 +216,8 @@ export default function FAQs() {
                     ? 'border-[#0a7c00]' 
                     : 'border-[#0a7c00]'
                 }`} />
-                <div className="font-['Inter:regular',_sans-serif] leading-[0] not-italic relative shrink-0 text-[16px] text-nowrap">
-                  <p className="leading-[20px] whitespace-pre">{section.title}</p>
+                <div className="font-['Inter:regular',_sans-serif] leading-[0] not-italic relative shrink-0 text-[14px] md:text-[15px] lg:text-[16px]">
+                  <p className="leading-[18px] md:leading-[19px] lg:leading-[20px]">{section.title}</p>
                 </div>
               </button>
             ))}
@@ -229,35 +229,35 @@ export default function FAQs() {
           key={section.id}
           id={section.id}
           ref={(el) => { sectionRefs.current[section.id] = el; }}
-          className={`box-border content-stretch flex flex-col gap-6 items-center justify-center px-32 relative size-full ${
-            sectionIndex === 0 ? 'py-10' : 
-            sectionIndex === faqData.length - 1 ? 'pb-32 pt-10' : 'py-10'
+          className={`box-border content-stretch flex flex-col gap-4 md:gap-5 lg:gap-6 items-center justify-center px-0 md:px-8 lg:px-32 relative size-full ${
+            sectionIndex === 0 ? 'py-6 md:py-8 lg:py-10' : 
+            sectionIndex === faqData.length - 1 ? 'pb-16 md:pb-24 lg:pb-32 pt-6 md:pt-8 lg:pt-10' : 'py-6 md:py-8 lg:py-10'
           }`}
           data-name={`Container ${sectionIndex + 1}`}
         >
           <div className="content-stretch flex items-start justify-start relative shrink-0 w-full" data-name="Header">
             <div className="basis-0 content-stretch flex flex-col grow items-start justify-center min-h-px min-w-px relative shrink-0" data-name="Title Container">
-              <div className="font-['Inter:Semi_Bold',_sans-serif] font-semibold leading-[0] not-italic relative shrink-0 text-[#22252b] text-[32px] tracking-[-1px] w-full">
-                <p className="leading-[40px]">{section.title}</p>
+              <div className="font-['Inter:Semi_Bold',_sans-serif] font-semibold leading-[0] not-italic relative shrink-0 text-[#22252b] text-[24px] md:text-[28px] lg:text-[32px] tracking-[-1px] w-full">
+                <p className="leading-[30px] md:leading-[35px] lg:leading-[40px]">{section.title}</p>
               </div>
             </div>
           </div>
-          <div className="content-stretch flex flex-col gap-6 items-start justify-start relative shrink-0 w-full" data-name="Accordions">
+          <div className="content-stretch flex flex-col gap-4 md:gap-5 lg:gap-6 items-start justify-start relative shrink-0 w-full" data-name="Accordions">
             {section.items.map((item) => {
               const isOpen = openItems.has(item.id);
               return (
                 <div key={item.id} className="w-full">
                   <button 
                     onClick={() => toggleItem(item.id)}
-                    className="box-border content-stretch flex gap-4 items-start justify-start overflow-visible px-6 py-4 relative rounded-[8px] shrink-0 w-full transition-all duration-200 hover:bg-gray-50"
+                    className="box-border content-stretch flex gap-3 md:gap-4 items-start justify-start overflow-visible px-4 md:px-5 lg:px-6 py-3 md:py-4 relative rounded-[8px] shrink-0 w-full transition-all duration-200 hover:bg-gray-50"
                     data-name="Accordion Light"
                   >
                     <div aria-hidden="true" className="absolute border border-[#d0d1d4] border-solid inset-0 pointer-events-none rounded-[8px]" />
-                    <div className="basis-0 content-stretch flex gap-5 grow items-center justify-start min-h-px min-w-px relative shrink-0">
-                      <div className="basis-0 font-['Inter:Semi_Bold',_sans-serif] font-semibold grow leading-[0] min-h-px min-w-px not-italic relative shrink-0 text-[#333740] text-[20px] text-left">
-                        <p className="leading-[24px]">{item.question}</p>
+                    <div className="basis-0 content-stretch flex gap-3 md:gap-4 lg:gap-5 grow items-center justify-start min-h-px min-w-px relative shrink-0">
+                      <div className="basis-0 font-['Inter:Semi_Bold',_sans-serif] font-semibold grow leading-[0] min-h-px min-w-px not-italic relative shrink-0 text-[#333740] text-[16px] md:text-[18px] lg:text-[20px] text-left">
+                        <p className="leading-[20px] md:leading-[22px] lg:leading-[24px]">{item.question}</p>
                       </div>
-                      <div className="relative shrink-0 size-5 transition-transform duration-200" data-name="material-symbols:add-2-rounded">
+                      <div className="relative shrink-0 size-4 md:size-5 transition-transform duration-200" data-name="material-symbols:add-2-rounded">
                         <div className="relative w-full h-full">
                           <img 
                             alt="" 
@@ -268,7 +268,7 @@ export default function FAQs() {
                           />
                           {isOpen && (
                             <div className="absolute inset-0 flex items-center justify-center">
-                              <div className="w-3 h-0.5 bg-[#333740] rounded-sm"></div>
+                              <div className="w-2.5 md:w-3 h-0.5 bg-[#333740] rounded-sm"></div>
                             </div>
                           )}
                         </div>
@@ -280,9 +280,9 @@ export default function FAQs() {
                       isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
                     }`}
                   >
-                    <div className="px-6 py-4 border-l-4 border-[#0a7c00] bg-gray-50">
-                      <div className="font-['Inter:regular',_sans-serif] leading-[0] not-italic relative text-[#333740] text-[16px]">
-                        <p className="leading-[24px]">{item.answer}</p>
+                    <div className="px-4 md:px-5 lg:px-6 py-3 md:py-4 border-l-4 border-[#0a7c00] bg-gray-50">
+                      <div className="font-['Inter:regular',_sans-serif] leading-[0] not-italic relative text-[#333740] text-[14px] md:text-[15px] lg:text-[16px]">
+                        <p className="leading-[20px] md:leading-[22px] lg:leading-[24px]">{item.answer}</p>
                       </div>
                     </div>
                   </div>
