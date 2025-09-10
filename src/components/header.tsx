@@ -150,11 +150,11 @@ export default function Header({ activeSection, setActiveSection }: HeaderProps)
 
           {/* Right Container - CTA Button, Avatar, and Hamburger Menu */}
           <div className="content-stretch flex gap-[22px] h-[88px] items-center justify-end relative shrink-0 w-[306px] md:w-[306px] w-auto min-w-0">
-            {/* CTA Button - Visible on both mobile and desktop */}
-            <button className="btn btn-primary shrink-0 text-sm md:text-base px-4 md:px-6">
+            {/* CTA Button - Hidden on mobile, visible on desktop */}
+            <button className="!hidden md:!inline-flex btn btn-primary shrink-0 text-sm md:text-base px-4 md:px-6">
               Get a quote
             </button>
-            
+
             {/* Avatar - Hidden on mobile */}
             <div className="hidden md:flex content-stretch gap-3 items-center justify-start relative shrink-0">
               <div className="bg-[#e7f6e5] content-stretch flex flex-col items-center justify-center relative rounded-[200px] shrink-0 size-10">
@@ -215,6 +215,11 @@ export default function Header({ activeSection, setActiveSection }: HeaderProps)
                 >
                   Contact
                 </button>
+                
+                {/* CTA Button - Visible on both mobile and desktop */}
+                <button className="btn btn-primary shrink-0 text-sm md:text-base px-4 md:px-6">
+                  Get a quote
+                </button>
               </div>
               
               {/* Mobile Avatar */}
@@ -223,7 +228,7 @@ export default function Header({ activeSection, setActiveSection }: HeaderProps)
                   <div className="bg-[#e7f6e5] content-stretch flex flex-col items-center justify-center relative rounded-[200px] shrink-0 size-10">
                     <Avatar property1="Chris" />
                   </div>
-                  <span className="text-white text-sm">My Profile</span>
+                  <span className="text-white text-sm">MP</span>
                 </div>
               </div>
             </div>
