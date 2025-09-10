@@ -35,31 +35,31 @@ function Button({ text = "Button", leftIcon = true, rightIcon = true, state = "D
 
 export default function Hero() {
   return (
-    <div className="box-border content-stretch flex flex-col gap-20 items-center justify-start pb-6 pt-32 px-60 relative size-full" data-name="Hero" data-node-id="8213:78184" style={{ backgroundImage: `url('${heroBg}')` }}>
-      <div className="content-stretch flex flex-col gap-12 items-center justify-start shrink-0 w-full" data-name="Header Wrapper" data-node-id="8213:78185">
-        <div className="content-stretch flex flex-col gap-6 items-center justify-start shrink-0 w-full" data-name="Header" data-node-id="8213:78186">
+    <div className="box-border content-stretch flex flex-col gap-8 md:gap-12 lg:gap-20 items-center justify-start pb-6 pt-16 md:pt-24 lg:pt-32 px-4 md:px-8 lg:px-16 xl:px-60 relative size-full" data-name="Hero" data-node-id="8213:78184" style={{ backgroundImage: `url('${heroBg}')` }}>
+      <div className="content-stretch flex flex-col gap-8 md:gap-10 lg:gap-12 items-center justify-start shrink-0 w-full" data-name="Header Wrapper" data-node-id="8213:78185">
+        <div className="content-stretch flex flex-col gap-4 md:gap-6 items-center justify-start shrink-0 w-full" data-name="Header" data-node-id="8213:78186">
           <div className="content-stretch flex flex-col items-center justify-center shrink-0 w-full" data-name="Title Container" data-node-id="8213:78187">
-            <div className="font-['Inter:Semi_Bold',_sans-serif] font-semibold leading-[0] not-italic shrink-0 text-[72px] text-center text-white w-full" data-node-id="8213:78188">
-              <p className="leading-[84px]">Supporting your freedom to create with Marketplace</p>
+            <div className="font-['Inter:Semi_Bold',_sans-serif] font-semibold leading-[0] not-italic shrink-0 text-3xl md:text-4xl lg:text-5xl xl:text-[72px] text-center text-white w-full" data-node-id="8213:78188">
+              <p className="leading-tight md:leading-[56px] lg:leading-[70px] xl:leading-[84px]">Supporting your freedom to create with Marketplace</p>
             </div>
           </div>
-          <div className="content-stretch flex flex-col items-center justify-center shrink-0 w-[720px]" data-name="Subtitle Container" data-node-id="8213:78189">
-            <div className="font-['Inter:regular',_sans-serif] leading-[0] not-italic relative shrink-0 text-[18px] text-center text-white w-full" data-node-id="8213:78190">
-              <p className="leading-[24px]">With ready-made and fully customizable templates, Marketplace helps bring your ideal website to life—faster and smarter. Whether you are migrating a current site or building a new one, we are here to guide you on your website journey.</p>
+          <div className="content-stretch flex flex-col items-center justify-center shrink-0 w-full max-w-2xl lg:max-w-[720px]" data-name="Subtitle Container" data-node-id="8213:78189">
+            <div className="font-['Inter:regular',_sans-serif] leading-[0] not-italic relative shrink-0 text-base md:text-lg text-center text-white w-full" data-node-id="8213:78190">
+              <p className="leading-relaxed md:leading-[24px]">With ready-made and fully customizable templates, Marketplace helps bring your ideal website to life—faster and smarter. Whether you are migrating a current site or building a new one, we are here to guide you on your website journey.</p>
             </div>
           </div>
         </div>
-        <div className="content-stretch flex gap-4 items-start justify-center shrink-0 w-full" data-name="Button Group" data-node-id="8213:78191">
+        <div className="content-stretch flex flex-col sm:flex-row gap-4 items-center justify-center shrink-0 w-full" data-name="Button Group" data-node-id="8213:78191">
           <div aria-hidden="true" className="absolute border-0 border-black border-solid inset-0 pointer-events-none" />
-          <div className="bg-[#0a7c00] box-border content-stretch flex gap-2.5 items-center justify-center px-6 py-2.5 relative rounded-[8px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)] shrink-0" data-name="Button" data-node-id="8213:78192">
+          <div className="bg-[#0a7c00] box-border content-stretch flex gap-2.5 items-center justify-center px-6 py-2.5 relative rounded-[8px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)] shrink-0 w-full sm:w-auto" data-name="Button" data-node-id="8213:78192">
             <Button text="Get a quote" />
           </div>
-          <div className="bg-white box-border content-stretch flex gap-2 items-center justify-start px-6 py-2.5 relative rounded-[8px] shrink-0" data-name="Button" data-node-id="8213:78193">
+          <div className="bg-white box-border content-stretch flex gap-2 items-center justify-start px-6 py-2.5 relative rounded-[8px] shrink-0 w-full sm:w-auto" data-name="Button" data-node-id="8213:78193">
             <Button text="Create template" buttonType="Secondary Left Icon" />
           </div>
         </div>
       </div>
-      <div className="aspect-[3024/1892] bg-center bg-cover bg-no-repeat relative rounded-[16px] shrink-0 w-full" data-name="Desktop - Create - 1 1" data-node-id="8719:44627" style={{ backgroundImage: `url('${imgDesktopCreate11}')` }}>
+      <div className="aspect-[3024/1892] bg-center bg-cover bg-no-repeat relative rounded-[16px] shrink-0 w-full max-w-4xl" data-name="Desktop - Create - 1 1" data-node-id="8719:44627" style={{ backgroundImage: `url('${imgDesktopCreate11}')` }}>
         <div aria-hidden="true" className="absolute border border-[#d0d1d4] border-solid inset-0 pointer-events-none rounded-[16px] shadow-[0px_5px_20px_0px_rgba(0,0,0,0.15)]" />
       </div>
     </div>

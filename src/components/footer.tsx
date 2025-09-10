@@ -2,32 +2,32 @@ export default function Footer() {
   const logoIcon = "icons/logo-icon.svg";
   return (
     <div 
-      className="box-border content-start flex flex-wrap gap-0 items-start justify-center px-6 py-10 relative size-full"
+      className="box-border content-start flex flex-wrap gap-0 items-start justify-center px-4 sm:px-6 py-8 sm:py-10 relative size-full"
       style={{ 
         backgroundImage: "url('data:image/svg+xml;utf8,<svg viewBox=\\'0 0 1512 358.23\\' xmlns=\\'http://www.w3.org/2000/svg\\' preserveAspectRatio=\\'none\\'><rect x=\\'0\\' y=\\'0\\' height=\\'100%\\' width=\\'100%\\' fill=\\'url(%23grad)\\' opacity=\\'1\\'/><defs><radialGradient id=\\'grad\\' gradientUnits=\\'userSpaceOnUse\\' cx=\\'0\\' cy=\\'0\\' r=\\'10\\' gradientTransform=\\'matrix(47.521 27.794 -27.794 47.521 634.5 0.000010398)\\'><stop stop-color=\\'rgba(0,0,0,1)\\' offset=\\'0\\'/><stop stop-color=\\'rgba(1,7,8,1)\\' offset=\\'0.25\\'/><stop stop-color=\\'rgba(2,13,16,1)\\' offset=\\'0.5\\'/><stop stop-color=\\'rgba(0,20,12,1)\\' offset=\\'1\\'/></radialGradient></defs></svg>')" 
       }}
     >
-      <div className="content-stretch flex flex-col gap-10 items-center justify-start max-w-[1440px] relative shrink-0 w-[1440px]">
-        <div className="box-border content-stretch flex flex-col gap-6 items-center justify-center px-80 py-0 relative shrink-0 w-full">
+      <div className="content-stretch flex flex-col gap-6 sm:gap-10 items-center justify-start max-w-[1440px] relative shrink-0 w-full px-4 sm:px-0">
+        <div className="box-border content-stretch flex flex-col gap-4 sm:gap-6 items-center justify-center px-4 sm:px-20 lg:px-80 py-0 relative shrink-0 w-full">
           {/* Logo Section */}
           <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] place-items-start relative shrink-0">
             <div className="[grid-area:1_/_1] box-border content-stretch flex flex-col gap-4 items-center justify-start ml-0 mt-0 relative">
               {/* Logo Icon */}
-              <div className="bg-[#8cc63f] overflow-clip relative rounded-[94.118px] shrink-0 size-8">
+              <div className="bg-[#8cc63f] overflow-clip relative rounded-[94.118px] shrink-0 size-6 sm:size-8">
                 <div>
                   <img alt="Logo icon" className="block size-full" src={logoIcon} />
                 </div>
               </div>
               {/* Marketplace Text */}
-              <div className="h-[24.228px] relative shrink-0 w-[138.445px] flex items-center justify-center">
-                <span className="text-white text-lg font-medium">Marketplace</span>
+              <div className="h-[20px] sm:h-[24.228px] relative shrink-0 w-[120px] sm:w-[138.445px] flex items-center justify-center">
+                <span className="text-white text-base sm:text-lg font-medium">Marketplace</span>
               </div>
             </div>
           </div>
           
           {/* Navigation Links */}
-          <div className="box-border content-stretch flex flex-col gap-2.5 h-[46px] items-center justify-center px-2.5 py-0 relative shrink-0">
-            <div className="content-stretch flex gap-8 items-center justify-start relative shrink-0">
+          <div className="box-border content-stretch flex flex-col gap-2.5 min-h-[46px] items-center justify-center px-2.5 py-0 relative shrink-0 w-full">
+            <div className="content-stretch flex flex-wrap gap-4 sm:gap-8 items-center justify-center relative shrink-0 w-full">
               <div className="box-border content-stretch flex gap-2 items-center justify-center overflow-clip px-2.5 py-2 relative shrink-0">
                 <div className="flex flex-col font-['Inter:regular',_sans-serif] justify-end leading-[0] not-italic relative shrink-0 text-[16px] text-center text-nowrap text-white">
                   <p className="leading-[20px] whitespace-pre">Home</p>
@@ -75,17 +75,17 @@ export default function Footer() {
         </div>
         
         {/* Footer Bottom */}
-        <div className="content-stretch flex h-6 items-center justify-between relative shrink-0 w-full">
+        <div className="content-stretch flex flex-col sm:flex-row gap-4 sm:gap-0 min-h-6 items-center justify-between relative shrink-0 w-full">
           {/* Copyright */}
-          <div className="h-[18px] relative shrink-0 w-[400px]">
-            <div className="absolute font-['Inter:regular',_sans-serif] leading-[0] left-[-0.5px] not-italic text-[#a1a4aa] text-[14px] text-nowrap top-0">
-              <p className="leading-[18px] whitespace-pre">Copyright © 2025 CX Studios. All right reserved.</p>
+          <div className="h-[18px] relative shrink-0 w-full sm:w-[400px] flex justify-center sm:justify-start">
+            <div className="font-['Inter:regular',_sans-serif] leading-[0] not-italic text-[#a1a4aa] text-[14px] text-center sm:text-left">
+              <p className="leading-[18px]">Copyright © 2025 CX Studios. All right reserved.</p>
             </div>
           </div>
           
           {/* Social Media Icons */}
-          <div className="h-6 relative shrink-0 w-[400px]">
-            <div className="absolute content-stretch flex gap-1 items-center justify-start top-1/2 translate-x-[-50%] translate-y-[-50%]" style={{ left: "calc(50% - 0.498px)" }}>
+          <div className="h-6 relative shrink-0 w-full sm:w-[400px] flex justify-center">
+            <div className="content-stretch flex gap-1 items-center justify-center">
               <div className="overflow-clip relative shrink-0 size-6">
                 <div className="absolute bg-[rgba(255,255,255,0)] inset-0" />
                 <div className="absolute inset-[15%_14.99%_15%_15.01%]">
@@ -114,9 +114,9 @@ export default function Footer() {
           </div>
           
           {/* Legal Links */}
-          <div className="h-[18px] relative shrink-0 w-[400px]">
-            <div className="absolute font-['Inter:regular',_sans-serif] leading-[0] not-italic right-0 text-[#a1a4aa] text-[0px] text-nowrap text-right top-0">
-              <p className="leading-[18px] text-[14px] whitespace-pre">
+          <div className="h-[18px] relative shrink-0 w-full sm:w-[400px] flex justify-center sm:justify-end">
+            <div className="font-['Inter:regular',_sans-serif] leading-[0] not-italic text-[#a1a4aa] text-[14px] text-center sm:text-right">
+              <p className="leading-[18px]">
                 <span className="[text-decoration-skip-ink:none] [text-underline-position:from-font] decoration-solid font-['Inter:Regular',_sans-serif] font-normal not-italic text-[#a1a4aa] underline">Terms and Conditions</span>
                 <span>{` | `}</span>
                 <span className="[text-decoration-skip-ink:none] [text-underline-position:from-font] decoration-solid font-['Inter:Regular',_sans-serif] font-normal not-italic text-[#a1a4aa] underline">Privacy Policy</span>

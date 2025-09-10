@@ -26,18 +26,18 @@ function Button({ text = "Button", leftIcon = true, rightIcon = true, state = "D
 
 export default function AISection() {
   return (
-    <div className="bg-gradient-to-t box-border content-stretch flex flex-col from-[#00120c] gap-6 items-center justify-center px-0 py-32 relative size-full to-[#000000] h-[500px] overflow-hidden" data-name="Section Container" data-node-id="8207:44618">
+    <div className="bg-gradient-to-t box-border content-stretch flex flex-col from-[#00120c] gap-6 items-center justify-center px-0 py-16 md:py-24 lg:py-32 relative size-full to-[#000000] min-h-[400px] md:min-h-[450px] lg:min-h-[500px] overflow-hidden" data-name="Section Container" data-node-id="8207:44618">
       <div className="absolute bg-center bg-cover bg-no-repeat h-full left-[-1px] opacity-30 top-[-9.27px] w-full" data-name="image 25" data-node-id="8249:58715" style={{ backgroundImage: `url('${imgImage25}')` }} />
-      <div className="box-border content-stretch flex flex-col gap-12 items-start justify-center overflow-clip px-32 py-0 relative shrink-0 w-full" data-name="Container" data-node-id="8207:44620">
-        <div className="content-stretch flex flex-col gap-6 items-center justify-start leading-[0] not-italic relative shrink-0 text-white w-[960px]" data-name="Text Container" data-node-id="8207:44621">
-          <div className="font-['Inter:Semi_Bold',_sans-serif] font-semibold relative shrink-0 text-[48px] w-full" data-node-id="8207:44622">
-            <p className="leading-[56px]">Get creative with Marketplace AI</p>
+      <div className="box-border content-stretch flex flex-col gap-8 md:gap-10 lg:gap-12 items-center justify-center overflow-clip px-4 md:px-8 lg:px-16 xl:px-32 py-0 relative shrink-0 w-full" data-name="Container" data-node-id="8207:44620">
+        <div className="content-stretch flex flex-col gap-4 md:gap-6 items-center justify-start leading-[0] not-italic relative shrink-0 text-white w-full max-w-4xl" data-name="Text Container" data-node-id="8207:44621">
+          <div className="font-['Inter:Semi_Bold',_sans-serif] font-semibold relative shrink-0 text-2xl md:text-3xl lg:text-4xl xl:text-[48px] w-full text-center" data-node-id="8207:44622">
+            <p className="leading-tight md:leading-[40px] lg:leading-[48px] xl:leading-[56px]">Get creative with Marketplace AI</p>
           </div>
-          <div className="font-['Inter:regular',_sans-serif] relative shrink-0 text-[18px] w-full" data-node-id="8207:44623">
-            <p className="leading-[24px]">Looking for a unique solution? Marketplace AI helps you design a custom website template from the ground up—based on your brand, your style, your preferences. Bring your vision to life without limits.</p>
+          <div className="font-['Inter:regular',_sans-serif] relative shrink-0 text-base md:text-lg w-full text-center" data-node-id="8207:44623">
+            <p className="leading-relaxed md:leading-[24px]">Looking for a unique solution? Marketplace AI helps you design a custom website template from the ground up—based on your brand, your style, your preferences. Bring your vision to life without limits.</p>
           </div>
         </div>
-        <div className="bg-[#0a7c00] box-border content-stretch flex gap-2 items-center justify-start px-6 py-2.5 relative rounded-[8px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)] shrink-0" data-name="Button" data-node-id="8207:44625">
+        <div className="bg-[#0a7c00] box-border content-stretch flex gap-2 items-center justify-start px-6 py-2.5 relative rounded-[8px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)] shrink-0 w-full sm:w-auto" data-name="Button" data-node-id="8207:44625">
           <Button text="Create template" buttonType="Primary Left Icon" />
         </div>
       </div>
