@@ -35,16 +35,16 @@ const imgLine15 = "icons/line-white-image.png";
 
 export default function Pricing() {
     return (
-    <div className="box-border content-stretch flex flex-col gap-20 items-start justify-start pt-32 px-0 relative size-full" data-name="Section Container" data-node-id="8102:60508">
-      <div className="box-border content-stretch flex items-start justify-between px-32 py-0 relative shrink-0 w-full" data-name="Header" data-node-id="8102:60509">
-        <div className="content-stretch flex flex-col items-start justify-center relative shrink-0 w-[480px]" data-name="Title Container" data-node-id="8102:60510">
-          <div className="font-['Inter:semibold',_sans-serif] leading-[0] not-italic relative shrink-0 text-[#22252b] text-[60px] w-full" data-node-id="8102:60511">
-            <p className="leading-[72px]">Pricing</p>
+    <div className="box-border content-stretch flex flex-col gap-12 items-start justify-start pt-32 px-0 relative size-full" data-name="Section Container" data-node-id="8102:60508">
+      <div className="box-border content-stretch flex flex-col lg:flex-row items-start justify-between px-4 sm:px-8 lg:px-32 py-0 relative shrink-0 w-full gap-8 lg:gap-0" data-name="Header" data-node-id="8102:60509">
+        <div className="content-stretch flex flex-col items-start justify-center relative shrink-0 w-full lg:w-[480px]" data-name="Title Container" data-node-id="8102:60510">
+          <div className="font-['Inter:semibold',_sans-serif] leading-[0] not-italic relative shrink-0 text-[#22252b] text-[40px] sm:text-[50px] lg:text-[60px] w-full" data-node-id="8102:60511">
+            <p className="leading-[48px] sm:leading-[60px] lg:leading-[72px]">Pricing</p>
           </div>
         </div>
-        <div className="content-stretch flex flex-col gap-12 items-start justify-center relative shrink-0 w-[640px]" data-name="Subtitle Container" data-node-id="8102:60512">
-          <div className="font-['Inter:regular',_sans-serif] leading-[0] min-w-full not-italic relative shrink-0 text-[#333740] text-[18px]" data-node-id="8102:60513" style={{ width: "min-content" }}>
-            <p className="leading-[24px]">We offer a range of packages to suit your content needs. Get started with a quote and customize your plan accordingly. Don't hesitate to reach out to our Sales team with any questions.</p>
+        <div className="content-stretch flex flex-col gap-12 items-start justify-center relative shrink-0 w-full lg:w-[640px]" data-name="Subtitle Container" data-node-id="8102:60512">
+          <div className="font-['Inter:regular',_sans-serif] leading-[0] min-w-full not-italic relative shrink-0 text-[#333740] text-[16px] sm:text-[18px]" data-node-id="8102:60513" style={{ width: "min-content" }}>
+            <p className="leading-[22px] sm:leading-[24px]">We offer a range of packages to suit your content needs. Get started with a quote and customize your plan accordingly. Don't hesitate to reach out to our Sales team with any questions.</p>
           </div>
           <div className="bg-white box-border content-stretch flex gap-2.5 items-center justify-center px-6 py-2.5 relative rounded-[8px] shrink-0" data-name="Button" data-node-id="8207:44615">
             <Button text="Contact sales" buttonType="Secondary" />
@@ -53,12 +53,12 @@ export default function Pricing() {
       </div>
       
       {/* Pricing Cards Section */}
-      <div className="box-border content-stretch flex flex-col gap-20 items-start justify-start pb-32 pt-16 px-0 relative size-full" data-name="Section Container" data-node-id="8102:60523">
-        <div className="box-border content-stretch flex flex-col gap-12 items-center justify-start overflow-clip px-32 py-0 relative shrink-0 w-full" data-name="Container" data-node-id="8272:91887">
-          <div className="content-stretch flex gap-6 items-start justify-start relative shrink-0" data-name="Pricing Cards" data-node-id="8272:96386">
+      <div className="box-border content-stretch flex flex-col gap-12 items-start justify-start pb-32 pt-8 px-0 relative size-full" data-name="Section Container" data-node-id="8102:60523">
+        <div className="box-border content-stretch flex flex-col gap-12 items-center justify-start overflow-clip px-4 sm:px-8 lg:px-32 py-0 relative shrink-0 w-full" data-name="Container" data-node-id="8272:91887">
+          <div className="content-stretch flex flex-col lg:flex-row gap-6 items-start justify-start relative shrink-0 w-full" data-name="Pricing Cards" data-node-id="8272:96386">
             {/* Basic Plan */}
-            <div className="bg-[#032900] box-border content-stretch flex flex-col gap-6 items-start justify-start overflow-clip px-8 py-10 relative rounded-[16px] shrink-0 w-[400px]" data-name="_Pricing tier card" data-node-id="8272:92105">
-              <div className="absolute bg-gradient-to-b from-[#569800] h-[526px] left-1/2 opacity-40 to-[#00a748] top-1/2 translate-x-[-50%] translate-y-[-50%] via-50% via-[#e7ffc9] w-[400px]" data-name="Background" data-node-id="8272:92257" />
+            <div className="bg-[#032900] box-border content-stretch flex flex-col gap-6 items-start justify-start overflow-clip px-8 py-10 relative rounded-[16px] shrink-0 w-full lg:w-[400px]" data-name="_Pricing tier card" data-node-id="8272:92105">
+              <div className="absolute bg-gradient-to-b from-[#569800] h-[526px] left-1/2 opacity-40 to-[#00a748] top-1/2 translate-x-[-50%] translate-y-[-50%] via-50% via-[#e7ffc9] w-full lg:w-[400px]" data-name="Background" data-node-id="8272:92257" />
               <div className="font-['Inter:Semi_Bold',_sans-serif] font-semibold leading-[0] min-w-full not-italic relative shrink-0 text-[40px] text-white" data-node-id="8272:92107" style={{ width: "min-content" }}>
                 <p className="leading-[48px]">Basic</p>
               </div>
@@ -124,8 +124,8 @@ export default function Pricing() {
             </div>
 
             {/* Pro Plan */}
-            <div className="bg-white relative rounded-[16px] shrink-0 w-[400px]" data-name="_Pricing tier card" data-node-id="8272:92217">
-              <div className="box-border content-stretch flex flex-col gap-6 items-start justify-start overflow-clip px-8 py-10 relative w-[400px] rounded-[16px] bg-center bg-cover bg-no-repeat" style={{ top: "calc(50% - 0.5px)", backgroundImage: `url('${imgImage19}')` }}>
+            <div className="bg-white relative rounded-[16px] shrink-0 w-full lg:w-[400px]" data-name="_Pricing tier card" data-node-id="8272:92217">
+              <div className="box-border content-stretch flex flex-col gap-6 items-start justify-start overflow-clip px-8 py-10 relative w-full lg:w-[400px] rounded-[16px] bg-center bg-cover bg-no-repeat" style={{ top: "calc(50% - 0.5px)", backgroundImage: `url('${imgImage19}')` }}>
                 <div className="font-['Inter:Semi_Bold',_sans-serif] font-semibold leading-[0] min-w-full not-italic relative shrink-0 text-[40px] text-white" data-node-id="8272:92219" style={{ width: "min-content" }}>
                   <p className="leading-[48px]">Pro</p>
                 </div>
@@ -209,7 +209,7 @@ export default function Pricing() {
             </div>
 
             {/* Premium Plan */}
-            <div className="bg-white box-border content-stretch flex flex-col gap-6 items-start justify-start overflow-clip px-8 py-10 relative rounded-[16px] shrink-0 w-[400px]" data-name="_Pricing tier card" data-node-id="8272:92161" style={{ top: "calc(50% - 0.5px)", backgroundImage: `url('${greenCardBgImage}')` }}>
+            <div className="bg-white box-border content-stretch flex flex-col gap-6 items-start justify-start overflow-clip px-8 py-10 relative rounded-[16px] shrink-0 w-full lg:w-[400px]" data-name="_Pricing tier card" data-node-id="8272:92161" style={{ top: "calc(50% - 0.5px)", backgroundImage: `url('${greenCardBgImage}')` }}>
               <div className="font-['Inter:Semi_Bold',_sans-serif] font-semibold leading-[0] min-w-full not-italic relative shrink-0 text-[40px] text-white" data-node-id="8272:92163" style={{ width: "min-content" }}>
                 <p className="leading-[48px]">Premium</p>
               </div>
@@ -307,10 +307,10 @@ export default function Pricing() {
             </div>
           </div>
           <div className="content-stretch flex flex-col gap-2 items-center justify-start relative shrink-0" data-node-id="8272:96387">
-            <div className="font-['Inter:Semi_Bold',_sans-serif] font-semibold leading-[0] not-italic relative shrink-0 text-[#333740] text-[20px] text-center text-nowrap" data-node-id="8272:96388">
-              <p className="leading-[24px] whitespace-pre">Additional charges for each package may incur</p>
+            <div className="font-['Inter:Semi_Bold',_sans-serif] font-semibold leading-[0] not-italic relative shrink-0 text-[#333740] text-[18px] sm:text-[20px] text-center" data-node-id="8272:96388">
+              <p className="leading-[22px] sm:leading-[24px]">Additional charges for each package may incur</p>
             </div>
-            <div className="content-stretch flex gap-4 items-start justify-start relative shrink-0 w-full" data-node-id="8272:96389">
+            <div className="content-stretch flex flex-col sm:flex-row gap-4 items-start justify-start relative shrink-0 w-full" data-node-id="8272:96389">
               <div className="content-stretch flex gap-1 items-center justify-start relative shrink-0" data-name="List Item" data-node-id="8272:96390">
                 <div className="relative shrink-0 size-5" data-name="material-symbols:attach-money-rounded" data-node-id="8272:96391">
                   <img alt="material symbols attach money rounded" className="block max-w-none size-full" src={imgMaterialSymbolsAttachMoneyRounded} />
@@ -349,21 +349,21 @@ export default function Pricing() {
       </div>
 
       {/* Comparison Table Section */}
-      <div className="bg-[#020d10] box-border content-stretch flex flex-col gap-20 items-start justify-start px-0 py-32 relative size-full" data-name="Section Container" data-node-id="8306:40159">
-        <div className="absolute flex h-[1054px] items-center justify-center left-[-35px] top-0 w-[1581px]">
+      <div className="bg-[#020d10] box-border content-stretch flex flex-col gap-12 items-start justify-start px-0 py-16 relative size-full" data-name="Section Container" data-node-id="8306:40159">
+        <div className="absolute flex h-[1054px] items-center justify-center left-[-35px] top-0 w-[1581px] hidden lg:block">
           <div className="flex-none rotate-[180deg]">
             <div className="bg-center bg-cover bg-no-repeat h-[1054px] opacity-70 w-[1581px]" data-name="image 46" data-node-id="8306:40160" style={{ backgroundImage: `url('${imgImage46}')` }} />
           </div>
         </div>
-        <div className="box-border content-stretch flex items-start justify-start px-32 py-0 relative shrink-0 w-full" data-name="Header" data-node-id="8306:40161">
-          <div className="content-stretch flex flex-col items-start justify-center relative shrink-0 w-[480px]" data-name="Title Container" data-node-id="8306:40162">
-            <div className="font-['Inter:Semi_Bold',_sans-serif] font-semibold leading-[0] not-italic relative shrink-0 text-[48px] text-white w-full" data-node-id="8306:40163">
-              <p className="leading-[56px]">Compare packages</p>
+        <div className="box-border content-stretch flex items-start justify-start px-4 sm:px-8 lg:px-32 py-0 relative shrink-0 w-full" data-name="Header" data-node-id="8306:40161">
+          <div className="content-stretch flex flex-col items-start justify-center relative shrink-0 w-full lg:w-[480px]" data-name="Title Container" data-node-id="8306:40162">
+            <div className="font-['Inter:Semi_Bold',_sans-serif] font-semibold leading-[0] not-italic relative shrink-0 text-[32px] sm:text-[40px] lg:text-[48px] text-white w-full" data-node-id="8306:40163">
+              <p className="leading-[40px] sm:leading-[48px] lg:leading-[56px]">Compare packages</p>
             </div>
           </div>
         </div>
-        <div className="box-border content-stretch flex gap-[120px] items-center justify-center overflow-clip px-32 py-0 relative shrink-0 w-full" data-name="Container" data-node-id="8306:40164">
-          <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] place-items-start relative shrink-0" data-name="Table Container" data-node-id="8306:40165">
+        <div className="box-border content-stretch flex gap-[120px] items-center justify-center overflow-x-auto px-4 sm:px-8 lg:px-32 py-0 relative shrink-0 w-full" data-name="Container" data-node-id="8306:40164">
+          <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] place-items-start relative shrink-0 min-w-[1200px]" data-name="Table Container" data-node-id="8306:40165">
             <div className="[grid-area:1_/_1] bg-[#737780] h-[662px] ml-[928px] mt-0 opacity-[0.15] relative rounded-br-[16px] rounded-tr-[16px] w-[309px]" data-node-id="8306:40166">
               <div aria-hidden="true" className="absolute border border-solid border-white inset-0 pointer-events-none rounded-br-[16px] rounded-tr-[16px]" />
             </div>
