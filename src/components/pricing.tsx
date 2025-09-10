@@ -29,7 +29,7 @@ const xIcon = "icons/x-icon.svg";
 const imgMaterialSymbolsAttachMoneyRounded = "icons/money-icon.svg";
 
 // Comparison table image assets
-const imgImage46 = "http://localhost:3845/assets/7e2f4b13b8101d455a2fe962796591ee30c6e36e.png";
+const imgImage46 = "images/comparison-table-bg-image.svg";
 const imgLine7 = "icons/line-image.svg";
 const imgLine15 = "icons/line-white-image.png";
 
