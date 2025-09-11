@@ -112,9 +112,9 @@ export default function SaaS() {
   };
 
   return (
-    <div className="box-border content-stretch flex flex-col gap-20 items-start justify-start px-0 py-32 relative size-full">
+    <div className="box-border content-stretch flex flex-col gap-12 lg:gap-20 items-start justify-start px-0 py-16 lg:py-32 relative size-full">
       {/* Back Button */}
-      <div className="absolute box-border content-stretch flex gap-2 items-center justify-start left-32 rounded-[8px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)] top-[84px]">
+      <div className="absolute box-border content-stretch flex gap-2 items-center justify-start left-4 lg:left-32 rounded-[8px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)] top-7 lg:top-[84px]">
         <div className="relative shrink-0 size-5">
           <img alt="" className="block max-w-none size-full" src={imgBackArrow} />
         </div>
@@ -124,24 +124,24 @@ export default function SaaS() {
       </div>
 
       {/* Main Container */}
-      <div className="box-border content-stretch flex gap-20 items-start justify-start px-32 py-0 relative shrink-0 w-full">
-        {/* Image Container */}
-        <div className="content-stretch flex flex-col gap-6 items-start justify-start relative shrink-0 w-[696px]">
+      <div className="box-border content-stretch flex flex-col lg:flex-row gap-12 lg:gap-20 items-start justify-start px-4 lg:px-32 py-0 relative shrink-0 w-full">
+        {/* Image Container - Mobile Second, Laptop First */}
+        <div className="content-stretch flex flex-col gap-6 items-start justify-start relative shrink-0 w-full lg:w-[696px] order-2 lg:order-1">
           <div className="content-start flex flex-wrap gap-4 items-start justify-start relative shrink-0 w-full">
             {/* Main Screenshot */}
             <div 
-              className="box-border content-stretch flex flex-col gap-2.5 items-start justify-start overflow-clip p-[40px] relative rounded-[16px] shrink-0 w-[696px]"
+              className="bg-[#4dd58c] box-border content-stretch flex flex-col gap-2.5 items-start justify-start overflow-clip p-[40px] relative rounded-[12px] lg:rounded-[16px] shrink-0 w-full lg:w-[696px]"
               style={{ backgroundColor: currentTheme.primary }}
             >
               <div 
-                className="aspect-[1810/1180] bg-center bg-cover bg-no-repeat rounded-[8px] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] shrink-0 w-full"
+                className="aspect-[1810/1180] bg-center bg-cover bg-no-repeat rounded-[4px] lg:rounded-[8px] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] shrink-0 w-full"
                 style={{ backgroundImage: `url('${imgScreenshot1}')` }}
               />
             </div>
             
             {/* Secondary Screenshot */}
             <div 
-              className="box-border content-stretch flex flex-col gap-2.5 items-start justify-center overflow-clip pl-10 pr-0 py-0 relative rounded-[16px] shrink-0 size-[376px]"
+              className="bg-[#4dd58c] box-border content-stretch flex flex-col gap-2.5 items-start justify-center overflow-clip pl-10 pr-0 py-0 relative rounded-[12px] lg:rounded-[16px] shrink-0 size-[376px]"
               style={{ backgroundColor: currentTheme.primary }}
             >
               <div 
@@ -152,7 +152,7 @@ export default function SaaS() {
             
             {/* Third Screenshot */}
             <div 
-              className="aspect-[304/248] basis-0 box-border content-stretch flex flex-col gap-2.5 grow items-center justify-center min-h-px min-w-px overflow-clip pb-10 pt-0 px-0 relative rounded-[16px] shrink-0"
+              className="aspect-[304/248] basis-0 bg-[#4dd58c] box-border content-stretch flex flex-col gap-2.5 grow items-center justify-center min-h-px min-w-px overflow-clip pb-10 pt-0 px-0 relative rounded-[12px] lg:rounded-[16px] shrink-0"
               style={{ backgroundColor: currentTheme.primary }}
             >
               <div 
@@ -163,25 +163,25 @@ export default function SaaS() {
           </div>
         </div>
 
-        {/* Text Container */}
-        <div className="content-stretch flex flex-col gap-12 items-start justify-center relative shrink-0 w-[480px]">
+        {/* Text Container - Mobile First, Laptop Second */}
+        <div className="content-stretch flex flex-col gap-12 items-start justify-center relative shrink-0 w-full lg:w-[480px] order-1 lg:order-2">
           {/* Title and Description */}
           <div className="content-stretch flex flex-col gap-6 h-[280px] items-start justify-start relative shrink-0 w-full">
-            <div className="font-['Inter:Semi_Bold',_sans-serif] font-semibold leading-[0] not-italic relative shrink-0 text-[#22252b] text-[48px] w-full">
-              <p className="leading-[56px]">SaaS 1.0</p>
+            <div className="font-['Inter:Semi_Bold',_sans-serif] font-semibold leading-[0] not-italic relative shrink-0 text-[#22252b] text-[32px] lg:text-[48px] w-full">
+              <p className="leading-[40px] lg:leading-[56px]">SaaS 1.0</p>
             </div>
             
             <div className="content-stretch flex flex-col gap-6 items-start justify-start relative shrink-0 w-full">
-              <div className="font-['Inter:regular',_sans-serif] leading-[0] min-w-full not-italic relative shrink-0 text-[#333740] text-[18px]">
-                <p className="leading-[24px]">
+              <div className="font-['Inter:regular',_sans-serif] leading-[0] min-w-full not-italic relative shrink-0 text-[#333740] text-[16px] lg:text-[18px]" style={{ width: "min-content" }}>
+                <p className="leading-[20px] lg:leading-[24px]">
                   The SaaS template is perfect for tech organizations and product teams. It's sleek, responsive, SEO-friendly, and designed to showcase highly functional solutions with a clean layout, smooth animations, and a conversion-focused approach.
                 </p>
               </div>
               
               {/* Tags */}
               <div className="content-stretch flex flex-col gap-2 items-start justify-start relative shrink-0">
-                <div className="font-['Inter:regular',_sans-serif] leading-[0] not-italic relative shrink-0 text-[#737780] text-[16px] text-nowrap">
-                  <p className="leading-[20px] whitespace-pre">Tags</p>
+                <div className="font-['Inter:regular',_sans-serif] leading-[0] not-italic relative shrink-0 text-[#737780] text-[14px] lg:text-[16px] text-nowrap">
+                  <p className="leading-[18px] lg:leading-[20px] whitespace-pre">Tags</p>
                 </div>
                 <div className="content-stretch flex gap-2 items-start justify-start relative shrink-0">
                   <div 
@@ -213,12 +213,12 @@ export default function SaaS() {
 
           {/* Skin Customization */}
           <div className="content-stretch flex flex-col gap-3 items-start justify-start relative shrink-0 w-full">
-            <div className="font-['Inter:regular',_sans-serif] leading-[0] not-italic relative shrink-0 text-[#333740] text-[18px] text-nowrap">
-              <p className="leading-[24px] whitespace-pre">Customize skin</p>
+            <div className="font-['Inter:regular',_sans-serif] leading-[0] not-italic relative shrink-0 text-[#333740] text-[16px] lg:text-[18px] text-nowrap">
+              <p className="leading-[20px] lg:leading-[24px] whitespace-pre">Customize skin</p>
             </div>
             
-            <div className="bg-white relative rounded-[8px] shrink-0 w-[420px]">
-              <div className="content-stretch flex flex-col items-start justify-start overflow-clip relative w-[420px]">
+            <div className="bg-white relative rounded-[8px] shrink-0 w-full lg:w-[420px]">
+              <div className="content-stretch flex flex-col items-start justify-start overflow-clip relative w-full">
                 {/* Default Option */}
                 <div 
                   className="relative shrink-0 w-full"
@@ -423,86 +423,89 @@ export default function SaaS() {
 
           {/* Action Buttons */}
           <div className="content-stretch flex gap-4 items-start justify-start relative shrink-0">
-            <div className="bg-[#0a7c00] box-border content-stretch flex gap-2.5 items-center justify-center px-6 relative rounded-[8px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)] shrink-0">
+            <div aria-hidden="true" className="absolute border-0 border-black border-solid inset-0 pointer-events-none" />
+            <div className="bg-[#0a7c00] box-border content-stretch flex gap-2.5 items-center justify-center px-6 py-2.5 relative rounded-[8px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)] shrink-0">
               <Button text="Get a quote" />
             </div>
-            <div className="bg-white box-border content-stretch flex gap-2 items-center justify-start px-6 relative rounded-[8px] shrink-0">
+            <div className="bg-white box-border content-stretch flex gap-2 items-center justify-start px-6 py-2.5 relative rounded-[8px] shrink-0">
               <Button text="Preview" variant="secondary" showArrow={true} />
             </div>
           </div>
         </div>
+
       </div>
 
       {/* Features Section */}
-      <div className="box-border content-stretch flex items-center justify-start overflow-clip px-32 py-0 relative shrink-0 w-full">
-        <div className="basis-0 content-stretch flex flex-col gap-6 grow items-center justify-center min-h-px min-w-px relative shrink-0">
-          <div className="font-['Inter:Semi_Bold',_sans-serif] font-semibold leading-[0] not-italic relative shrink-0 text-[#22252b] text-[32px] tracking-[-1px] w-full">
-            <p className="leading-[40px]">Features included</p>
+      <div className="box-border content-stretch flex items-center justify-start overflow-clip px-4 lg:px-32 py-0 relative shrink-0 w-full">
+        <div className="basis-0 content-stretch flex flex-col gap-4 lg:gap-6 grow items-center justify-center min-h-px min-w-px relative shrink-0">
+          <div className="font-['Inter:Semi_Bold',_sans-serif] font-semibold leading-[0] not-italic relative shrink-0 text-[#22252b] text-[20px] lg:text-[32px] tracking-[-1px] w-full">
+            <p className="leading-[24px] lg:leading-[40px]">Features included</p>
           </div>
           
-          <div className="gap-6 grid grid-cols-[repeat(4,_minmax(0px,_1fr))] grid-rows-[repeat(2,_minmax(0px,_1fr))] h-[72px] relative shrink-0 w-full">
+          {/* Mobile: Single column, Desktop: Grid */}
+          <div className="content-stretch flex flex-col gap-4 lg:grid lg:grid-cols-4 lg:grid-rows-2 lg:gap-6 lg:h-[72px] relative shrink-0 w-full">
             {/* Row 1 */}
-            <div className="[grid-area:1_/_1] content-stretch flex gap-2 items-center justify-start relative self-start shrink-0 w-[296px]">
+            <div className="lg:[grid-area:1_/_1] content-stretch flex gap-2 items-center justify-start relative self-start shrink-0 w-full lg:w-[296px]">
               <div className="relative shrink-0 size-6">
                 <img alt="" className="block max-w-none size-full" src={imgCheckIcon} />
               </div>
-              <div className="basis-0 font-['Inter:regular',_sans-serif] grow leading-[0] min-h-px min-w-px not-italic relative shrink-0 text-[#333740] text-[18px]">
-                <p className="leading-[24px]">Product overview</p>
+              <div className="basis-0 font-['Inter:regular',_sans-serif] grow leading-[0] min-h-px min-w-px not-italic relative shrink-0 text-[#333740] text-[16px] lg:text-[18px]">
+                <p className="leading-[20px] lg:leading-[24px]">Product overview</p>
               </div>
             </div>
             
-            <div className="[grid-area:1_/_2] content-stretch flex gap-2 items-center justify-start relative self-start shrink-0 w-[296px]">
+            <div className="lg:[grid-area:1_/_2] content-stretch flex gap-2 items-center justify-start relative self-start shrink-0 w-full lg:w-[296px]">
               <div className="relative shrink-0 size-6">
                 <img alt="" className="block max-w-none size-full" src={imgCheckIcon} />
               </div>
-              <div className="basis-0 font-['Inter:regular',_sans-serif] grow leading-[0] min-h-px min-w-px not-italic relative shrink-0 text-[#333740] text-[18px]">
-                <p className="leading-[24px]">Feature(s) highlight</p>
+              <div className="basis-0 font-['Inter:regular',_sans-serif] grow leading-[0] min-h-px min-w-px not-italic relative shrink-0 text-[#333740] text-[16px] lg:text-[18px]">
+                <p className="leading-[20px] lg:leading-[24px]">Feature(s) highlight</p>
               </div>
             </div>
             
-            <div className="[grid-area:1_/_3] content-stretch flex gap-2 items-center justify-start relative self-start shrink-0 w-[296px]">
+            <div className="lg:[grid-area:1_/_3] content-stretch flex gap-2 items-center justify-start relative self-start shrink-0 w-full lg:w-[296px]">
               <div className="relative shrink-0 size-6">
                 <img alt="" className="block max-w-none size-full" src={imgCheckIcon} />
               </div>
-              <div className="basis-0 font-['Inter:regular',_sans-serif] grow leading-[0] min-h-px min-w-px not-italic relative shrink-0 text-[#333740] text-[18px]">
-                <p className="leading-[24px]">Case studies</p>
+              <div className="basis-0 font-['Inter:regular',_sans-serif] grow leading-[0] min-h-px min-w-px not-italic relative shrink-0 text-[#333740] text-[16px] lg:text-[18px]">
+                <p className="leading-[20px] lg:leading-[24px]">Case studies</p>
               </div>
             </div>
             
-            <div className="[grid-area:1_/_4] content-stretch flex gap-2 items-center justify-start relative self-start shrink-0 w-[296px]">
+            <div className="lg:[grid-area:1_/_4] content-stretch flex gap-2 items-center justify-start relative self-start shrink-0 w-full lg:w-[296px]">
               <div className="relative shrink-0 size-6">
                 <img alt="" className="block max-w-none size-full" src={imgCheckIcon} />
               </div>
-              <div className="basis-0 font-['Inter:regular',_sans-serif] grow leading-[0] min-h-px min-w-px not-italic relative shrink-0 text-[#333740] text-[18px]">
-                <p className="leading-[24px]">Testimonials</p>
+              <div className="basis-0 font-['Inter:regular',_sans-serif] grow leading-[0] min-h-px min-w-px not-italic relative shrink-0 text-[#333740] text-[16px] lg:text-[18px]">
+                <p className="leading-[20px] lg:leading-[24px]">Testimonials</p>
               </div>
             </div>
             
             {/* Row 2 */}
-            <div className="[grid-area:2_/_1] content-stretch flex gap-2 items-center justify-start relative self-start shrink-0 w-[296px]">
+            <div className="lg:[grid-area:2_/_1] content-stretch flex gap-2 items-center justify-start relative self-start shrink-0 w-full lg:w-[296px]">
               <div className="relative shrink-0 size-6">
                 <img alt="" className="block max-w-none size-full" src={imgCheckIcon} />
               </div>
-              <div className="basis-0 font-['Inter:regular',_sans-serif] grow leading-[0] min-h-px min-w-px not-italic relative shrink-0 text-[#333740] text-[18px]">
-                <p className="leading-[24px]">Pricing table & comparisons</p>
+              <div className="basis-0 font-['Inter:regular',_sans-serif] grow leading-[0] min-h-px min-w-px not-italic relative shrink-0 text-[#333740] text-[16px] lg:text-[18px]">
+                <p className="leading-[20px] lg:leading-[24px]">Pricing table & comparisons</p>
               </div>
             </div>
             
-            <div className="[grid-area:2_/_2] content-stretch flex gap-2 items-center justify-start relative self-start shrink-0 w-[296px]">
+            <div className="lg:[grid-area:2_/_2] content-stretch flex gap-2 items-center justify-start relative self-start shrink-0 w-full lg:w-[296px]">
               <div className="relative shrink-0 size-6">
                 <img alt="" className="block max-w-none size-full" src={imgCheckIcon} />
               </div>
-              <div className="basis-0 font-['Inter:regular',_sans-serif] grow leading-[0] min-h-px min-w-px not-italic relative shrink-0 text-[#333740] text-[18px]">
-                <p className="leading-[24px]">Log in/registration form</p>
+              <div className="basis-0 font-['Inter:regular',_sans-serif] grow leading-[0] min-h-px min-w-px not-italic relative shrink-0 text-[#333740] text-[16px] lg:text-[18px]">
+                <p className="leading-[20px] lg:leading-[24px]">Log in/registration form</p>
               </div>
             </div>
             
-            <div className="[grid-area:2_/_3] content-stretch flex gap-2 items-center justify-start relative self-start shrink-0 w-[296px]">
+            <div className="lg:[grid-area:2_/_3] content-stretch flex gap-2 items-center justify-start relative self-start shrink-0 w-full lg:w-[296px]">
               <div className="relative shrink-0 size-6">
                 <img alt="" className="block max-w-none size-full" src={imgCheckIcon} />
               </div>
-              <div className="basis-0 font-['Inter:regular',_sans-serif] grow leading-[0] min-h-px min-w-px not-italic relative shrink-0 text-[#333740] text-[18px]">
-                <p className="leading-[24px]">FAQ & help center</p>
+              <div className="basis-0 font-['Inter:regular',_sans-serif] grow leading-[0] min-h-px min-w-px not-italic relative shrink-0 text-[#333740] text-[16px] lg:text-[18px]">
+                <p className="leading-[20px] lg:leading-[24px]">FAQ & help center</p>
               </div>
             </div>
           </div>
@@ -510,15 +513,18 @@ export default function SaaS() {
       </div>
 
       {/* More Templates Section */}
-      <div className="box-border content-stretch flex flex-col gap-20 items-start justify-start px-0 py-32 relative size-full">
-        <div className="box-border content-stretch flex items-end justify-start px-32 py-0 relative shrink-0 w-full">
-          <div className="content-stretch flex flex-col items-start justify-center relative shrink-0 w-[800px]">
-            <div className="font-['Inter:Semi_Bold',_sans-serif] font-semibold leading-[0] not-italic relative shrink-0 text-[#22252b] text-[48px] w-full">
-              <p className="leading-[56px]">More templates like this</p>
+      <div className="box-border content-stretch flex flex-col gap-12 lg:gap-20 items-start justify-start px-0 py-16 lg:py-32 relative size-full">
+        {/* Header */}
+        <div className="box-border content-stretch flex items-end justify-start px-4 lg:px-32 py-0 relative shrink-0 w-full">
+          <div className="content-stretch flex flex-col items-start justify-center relative shrink-0 w-full lg:w-[800px]">
+            <div className="font-['Inter:Semi_Bold',_sans-serif] font-semibold leading-[0] not-italic relative shrink-0 text-[#22252b] text-[32px] lg:text-[48px] w-full">
+              <p className="leading-[40px] lg:leading-[56px]">More templates like this</p>
             </div>
           </div>
         </div>
-        <div className="box-border content-stretch flex gap-4 items-start justify-start px-32 py-0 relative shrink-0 w-full">
+        
+        {/* Grid - Mobile: Single column, Desktop: Multi-column */}
+        <div className="box-border content-stretch flex flex-col lg:flex-row gap-3 lg:gap-4 items-start justify-start px-4 lg:px-32 py-0 relative shrink-0 w-full">
           {moreTemplates.map((template) => (
             <TemplateCard
               key={template.id}
