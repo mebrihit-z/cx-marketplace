@@ -59,7 +59,7 @@ export default function Hero() {
           </div>
         </div>
       </div>
-      <div className="aspect-[3024/1892] bg-center bg-cover bg-no-repeat relative rounded-[16px] shrink-0 w-full max-w-4xl" data-name="Desktop - Create - 1 1" data-node-id="8719:44627" style={{ backgroundImage: `url('${imgDesktopCreate11}')` }}>
+      <div className="aspect-[3024/1892] bg-center bg-cover bg-no-repeat relative rounded-[16px] shrink-0 w-full max-w-4xl relative top-20 lg:top-30" data-name="Desktop - Create - 1 1" data-node-id="8719:44627" style={{ backgroundImage: `url('${imgDesktopCreate11}')`} }>
         <div aria-hidden="true" className="absolute border border-[#d0d1d4] border-solid inset-0 pointer-events-none rounded-[16px] shadow-[0px_5px_20px_0px_rgba(0,0,0,0.15)]" />
       </div>
     </div>

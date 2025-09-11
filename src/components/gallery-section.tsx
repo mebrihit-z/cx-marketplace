@@ -13,7 +13,7 @@ const templates = [
 export default function GallerySection() {
   return (
     <>
-    <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between w-full px-4 md:px-8 lg:px-16 pt-16 md:pt-24 lg:pt-32 gap-6 lg:gap-0" data-name="Header" data-node-id="8071:32925">
+    <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between w-full px-4 md:px-8 lg:px-16 pt-24 md:pt-30 lg:pt-40 gap-6 lg:gap-0" data-name="Header" data-node-id="8071:32925">
       <div className="flex flex-col items-start justify-center w-full lg:max-w-3xl" data-name="Title Container" data-node-id="8071:32926">
         <div className="font-['Inter:Semi_Bold',_sans-serif] font-semibold leading-[0] not-italic text-[#22252b] text-2xl md:text-3xl lg:text-4xl xl:text-[48px]" data-node-id="8071:32927">
           <p className="leading-tight md:leading-[40px] lg:leading-[48px] xl:leading-[56px]">Explore our gallery of website templates</p>
