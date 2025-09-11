@@ -3,6 +3,7 @@ import GallerySection from './gallery-section';
 import AISection from './ai-section';
 import PromiseSection from './promise-section';
 import WhiteGloveSection from './white-glove-section';
+import Roadmap from './roadmap';
 
 const roadmap = "/images/home-page-roadmap.svg";
 
@@ -12,7 +13,11 @@ export default function Home() {
         <Hero />
         <GallerySection />
         <AISection />
-        <div className='w-full px-4 md:px-8 lg:px-16 py-8 md:py-16'>
+        {/* Show roadmap component on mobile, image on desktop */}
+        <div className="block md:hidden">
+          <Roadmap />
+        </div>
+        <div className='hidden md:block w-full px-4 md:px-8 lg:px-16 py-8 md:py-16'>
           <img 
             alt="roadmap" 
             className="block w-full h-auto max-w-none object-contain" 
