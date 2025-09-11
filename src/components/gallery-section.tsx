@@ -1,3 +1,5 @@
+import { moreTemplates } from '../data/templates';
+import TemplateCard from './TemplateCard';
 const img1 = "/images/saas-card-bg.svg";
 const img2 = "/images/e-commerce-card-bg-image.svg";
 const img3 = "/images/startup-card-bg-image.svg";
@@ -28,26 +30,23 @@ export default function GallerySection() {
         </div>
       </div>
     </div>
-    <div className="flex flex-col gap-12 md:gap-16 lg:gap-20 items-center justify-start px-2 pt-8 md:pt-12 lg:pt-16 pb-16 md:pb-24 lg:pb-32 w-full" data-name="Section Container" data-node-id="8067:23051">
-      <div className="h-[300px] md:h-[350px] lg:h-[400px] overflow-x-auto overflow-y-hidden w-full" data-name="Automatic Scroll" data-node-id="8266:74152">
-        <div className="flex gap-4 md:gap-6 h-full min-w-max">
-          {templates.map((template) => (
-            <div key={template.id} className="flex flex-col gap-3 h-full items-start justify-end p-6 md:p-8 lg:p-10 rounded-[16px] relative overflow-hidden min-w-[280px] md:min-w-[320px] lg:min-w-[400px]" data-name="Card">
-              <div 
-                className="absolute inset-0 rounded-[16px]"
-                style={{ 
-                  background: `linear-gradient(to bottom, ${template.bgColor} 0%, ${template.gradientTo} 85%)`
-                }}
-              />
-              <div 
-                className="absolute inset-0 rounded-[16px] bg-cover bg-center bg-no-repeat"
-                style={{ backgroundImage: `url('${template.image}')` }}
-              />
-            </div>
+    {/* Grid - Mobile: Single column, Desktop: Multi-column */}
+    <div className="box-border content-stretch flex flex-col lg:flex-row gap-3 lg:gap-4 items-start justify-start px-4 lg:px-32 py-0 relative shrink-0 w-full my-24">
+          {moreTemplates.map((template) => (
+            <TemplateCard
+              key={template.id}
+              title={template.title}
+              backgroundImage={template.backgroundImage}
+              backgroundColor={template.backgroundColor}
+              gradientTo={template.gradientTo}
+              aspectRatio={template.aspectRatio}
+              onClick={() => {
+                // Handle template click - you can add navigation logic here
+                console.log(`Clicked on ${template.title}`);
+              }}
+            />
           ))}
         </div>
-      </div>
-    </div>
     </>
   );
 }
