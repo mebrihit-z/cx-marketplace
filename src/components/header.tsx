@@ -216,8 +216,8 @@ export default function Header({ activeSection, setActiveSection }: HeaderProps)
                   Contact
                 </button>
                 
-                {/* CTA Button - Visible on both mobile and desktop */}
-                <button className="btn btn-primary shrink-0 text-sm md:text-base px-4 md:px-6">
+                {/* CTA Button - Visible mobile*/}
+                <button className="btn btn-primary shrink-0 text-sm md:text-base px-4 md:px-6  w-fit self-start mb-4">
                   Get a quote
                 </button>
               </div>

@@ -216,8 +216,8 @@ export default function Roadmap() {
           <div className="font-['Inter',_sans-serif] text-sm sm:text-base text-white w-full">
             <p className="leading-5">Building, launching, and maintaining secure, modern, and compliant websites has never been easier. With a streamlined process, we guarantee transparency at every step.</p>
           </div>
-          <div className="bg-white flex gap-2.5 items-center justify-center px-4 sm:px-6 py-2.5 rounded-lg">
-            <button className="font-['Inter',_sans-serif] text-sm sm:text-base text-[#111215] border border-[#0a7c00] px-4 sm:px-6 py-2.5 rounded-lg hover:bg-[#0a7c00] hover:text-white transition-colors">
+          <div className="bg-white flex gap-2.5 items-center justify-center px-4 sm:px-6 py-2.5 rounded-lg border border-[#0a7c00]">
+            <button className="font-['Inter',_sans-serif] text-sm sm:text-base text-[#111215] px-4 sm:px-6 py-2.5 rounded-lg hover:bg-[#0a7c00] hover:text-white transition-colors">
               Read our FAQs
             </button>
           </div>

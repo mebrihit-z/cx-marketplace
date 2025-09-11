@@ -21,7 +21,7 @@ export default function GallerySection() {
           <p className="leading-tight md:leading-[40px] lg:leading-[48px] xl:leading-[56px]">Explore our gallery of website templates</p>
         </div>
       </div>
-      <div className="bg-[#0a7c00] flex gap-2 items-center justify-start px-6 py-2.5 rounded-[8px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)] w-full sm:w-auto" data-name="Button" data-node-id="8071:32969">
+      <div className="bg-[#0a7c00] flex gap-2 items-center justify-start px-6 py-2.5 rounded-[8px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)]  w-fit self-start" data-name="Button" data-node-id="8071:32969">
         <div className="font-['Inter:regular',_sans-serif] leading-[0] not-italic text-[16px] text-nowrap text-white" id="node-I8071_32969-3966_10348">
           <p className="leading-[20px] whitespace-pre">View all</p>
         </div>

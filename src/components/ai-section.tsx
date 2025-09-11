@@ -37,7 +37,7 @@ export default function AISection() {
             <p className="leading-relaxed md:leading-[24px]">Looking for a unique solution? Marketplace AI helps you design a custom website template from the ground up—based on your brand, your style, your preferences. Bring your vision to life without limits.</p>
           </div>
         </div>
-        <div className="bg-[#0a7c00] box-border content-stretch flex gap-2 items-center justify-start px-6 py-2.5 relative rounded-[8px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)] shrink-0 w-full sm:w-auto" data-name="Button" data-node-id="8207:44625">
+        <div className="bg-[#0a7c00] box-border content-stretch flex gap-2 items-center justify-start px-6 py-2.5 relative rounded-[8px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)] shrink-0" data-name="Button" data-node-id="8207:44625">
           <Button text="Create template" buttonType="Primary Left Icon" />
         </div>
       </div>

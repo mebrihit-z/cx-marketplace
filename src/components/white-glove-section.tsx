@@ -39,7 +39,7 @@ function WhiteGlovesTabs({ property1 = "Default" }: WhiteGlovesTabsProps) {
         <div className="font-['Inter:regular',_sans-serif] leading-[0] not-italic relative shrink-0 text-[#333740] text-base md:text-lg w-full">
           <p className="leading-relaxed md:leading-[24px]">Whether you are creating a new website or migrating an existing one, based on page views, storage, development complexity, and number of web content admins and authors, we offer pricing packages that match your budget.</p>
         </div>
-        <div className="bg-white box-border content-stretch flex gap-2.5 items-center justify-center px-6 py-2.5 relative rounded-[8px] shrink-0 border border-[#0a7c00] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)] w-full sm:w-auto">
+        <div className="bg-white box-border content-stretch flex gap-2.5 items-center justify-center px-6 py-2.5 relative rounded-[8px] shrink-0 border border-[#0a7c00] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)]">
           <div className="font-['Inter:regular',_sans-serif] leading-[0] not-italic relative shrink-0 text-[#111215] text-[16px] text-nowrap">
             <p className="leading-[20px] whitespace-pre">Learn More</p>
           </div>
