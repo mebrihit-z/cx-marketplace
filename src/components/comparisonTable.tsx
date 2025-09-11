@@ -47,6 +47,80 @@ export default function ComparisonTable() {
             </div>
           </div>
           
+          {/* Horizontal Lines */}
+          <div className="[grid-area:1_/_1] h-0 ml-[92px] mt-[154px] relative w-[278px]" data-name="Horizontal Line 0">
+            <div className="absolute bottom-0 left-0 right-0 top-[-1px]">
+              <img alt="" className="block max-w-none size-full" src={imgLine7} />
+            </div>
+          </div>
+          <div className="[grid-area:1_/_1] h-0 ml-[92px] mt-[226px] relative w-[278px]" data-name="Horizontal Line 1">
+            <div className="absolute bottom-0 left-0 right-0 top-[-1px]">
+              <img alt="" className="block max-w-none size-full" src={imgLine7} />
+            </div>
+          </div>
+          <div className="[grid-area:1_/_1] h-0 ml-[92px] mt-[298px] relative w-[278px]" data-name="Horizontal Line 2">
+            <div className="absolute bottom-0 left-0 right-0 top-[-1px]">
+              <img alt="" className="block max-w-none size-full" src={imgLine7} />
+            </div>
+          </div>
+          <div className="[grid-area:1_/_1] h-0 ml-[92px] mt-[370px] relative w-[278px]" data-name="Horizontal Line 3">
+            <div className="absolute bottom-0 left-0 right-0 top-[-1px]">
+              <img alt="" className="block max-w-none size-full" src={imgLine7} />
+            </div>
+          </div>
+          <div className="[grid-area:1_/_1] h-0 ml-[92px] mt-[442px] relative w-[278px]" data-name="Horizontal Line 4">
+            <div className="absolute bottom-0 left-0 right-0 top-[-1px]">
+              <img alt="" className="block max-w-none size-full" src={imgLine7} />
+            </div>
+          </div>
+          <div className="[grid-area:1_/_1] h-0 ml-[92px] mt-[514px] relative w-[278px]" data-name="Horizontal Line 5">
+            <div className="absolute bottom-0 left-0 right-0 top-[-1px]">
+              <img alt="" className="block max-w-none size-full" src={imgLine7} />
+            </div>
+          </div>
+          <div className="[grid-area:1_/_1] h-0 ml-[92px] mt-[586px] relative w-[278px]" data-name="Horizontal Line 6">
+            <div className="absolute bottom-0 left-0 right-0 top-[-1px]">
+              <img alt="" className="block max-w-none size-full" src={imgLine7} />
+            </div>
+          </div>
+          
+          {/* Vertical Lines in Left Column */}
+          <div className="[grid-area:1_/_1] h-0 ml-0 mt-[154px] relative w-[92px]" data-name="Vertical Line 1">
+            <div className="absolute bottom-0 left-0 right-0 top-[-1px]">
+              <img alt="" className="block max-w-none size-full" src={imgLine15} />
+            </div>
+          </div>
+          <div className="[grid-area:1_/_1] h-0 ml-0 mt-[226px] relative w-[92px]" data-name="Vertical Line 2">
+            <div className="absolute bottom-0 left-0 right-0 top-[-1px]">
+              <img alt="" className="block max-w-none size-full" src={imgLine15} />
+            </div>
+          </div>
+          <div className="[grid-area:1_/_1] h-0 ml-0 mt-[298px] relative w-[92px]" data-name="Vertical Line 3">
+            <div className="absolute bottom-0 left-0 right-0 top-[-1px]">
+              <img alt="" className="block max-w-none size-full" src={imgLine15} />
+            </div>
+          </div>
+          <div className="[grid-area:1_/_1] h-0 ml-0 mt-[370px] relative w-[92px]" data-name="Vertical Line 4">
+            <div className="absolute bottom-0 left-0 right-0 top-[-1px]">
+              <img alt="" className="block max-w-none size-full" src={imgLine15} />
+            </div>
+          </div>
+          <div className="[grid-area:1_/_1] h-0 ml-0 mt-[442px] relative w-[92px]" data-name="Vertical Line 5">
+            <div className="absolute bottom-0 left-0 right-0 top-[-1px]">
+              <img alt="" className="block max-w-none size-full" src={imgLine15} />
+            </div>
+          </div>
+          <div className="[grid-area:1_/_1] h-0 ml-0 mt-[514px] relative w-[92px]" data-name="Vertical Line 6">
+            <div className="absolute bottom-0 left-0 right-0 top-[-1px]">
+              <img alt="" className="block max-w-none size-full" src={imgLine15} />
+            </div>
+          </div>
+          <div className="[grid-area:1_/_1] h-0 ml-0 mt-[586px] relative w-[92px]" data-name="Vertical Line 7">
+            <div className="absolute bottom-0 left-0 right-0 top-[-1px]">
+              <img alt="" className="block max-w-none size-full" src={imgLine15} />
+            </div>
+          </div>
+          
           {/* Left Headings */}
           <div className="[grid-area:1_/_1] grid-cols-[max-content] grid-rows-[max-content] inline-grid ml-0 mt-[82.003px] place-items-start relative" data-name="Left Headings" data-node-id="8390:51406">
             <div className="[grid-area:1_/_1] bg-[#737780] h-[580px] ml-0 mt-0 opacity-30 relative rounded-bl-[16px] rounded-tl-[16px] w-[92px]" data-node-id="8390:51390">
