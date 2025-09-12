@@ -23,6 +23,17 @@ const imgFictionalCompanyLogo1 = "http://localhost:3845/assets/fa9abe922bcc2150d
 const imgFictionalCompanyLogo2 = "http://localhost:3845/assets/8d88b1f490208c59354e270ca05b2524f7926e32.svg";
 const imgXIcon = "icons/x-icon.svg";
 
+// Features section images
+const imgFeaturesVector1 = "http://localhost:3845/assets/9c7a0a6aa98d114b1d1ed157111f3ca8e52c8d80.png";
+const imgFeaturesVector5 = "http://localhost:3845/assets/350605af220fb4a8a34830ab7906d3fd8adf14b4.png";
+const imgFeaturesVector = "http://localhost:3845/assets/4cfcb9987ce5c9a1261c9c80070b2340c700af89.svg";
+const imgFeaturesVector2 = "http://localhost:3845/assets/db2c7331f672f5eb570898c4a9607dd9707e2112.svg";
+const imgFeaturesVector3 = "http://localhost:3845/assets/91c7f50702c785fabc2bf0c6d5653b40bcd7832b.svg";
+const imgFeaturesVector4 = "http://localhost:3845/assets/8c19756166b2b059efc26085110e4f7b73346a71.svg";
+const imgVuesaxBrokenConvertshape2 = "http://localhost:3845/assets/82402c31523cd17ac07104a54f08d2d15c3c3964.svg";
+const imgVuesaxOutlineReceipt = "http://localhost:3845/assets/0a8d0228302db12dde67d9d40a7d9aea0066ac18.svg";
+const imgVuesaxOutlineCloud = "http://localhost:3845/assets/0aa17a6b27136d933dd3b15099816df09d85a622.svg";
+
 interface PreviewProps {
   isOpen: boolean;
   onClose: () => void;
@@ -292,6 +303,200 @@ export default function Preview({ isOpen, onClose, template }: PreviewProps) {
               </div>
               <div className="absolute font-['Roboto:Regular',_sans-serif] font-normal leading-[0] left-8 text-[#7be385] text-[14px] top-0 w-80" data-node-id="8671:26192" style={{ fontVariationSettings: "'wdth' 100" }}>
                 <p className="leading-[1.45]">Trusted By</p>
+              </div>
+            </div>
+
+            {/* Features Section */}
+            <div className="absolute bg-[#041117] box-border content-stretch flex flex-col gap-20 items-center justify-start left-0 px-[140px] py-20 top-[888px] w-full" data-name="Features Section" data-node-id="8671:26193">
+              <div className="absolute flex h-[532.033px] items-center justify-center top-[-0.22px] translate-x-[-50%] w-[533.7px]" style={{ left: "calc(50% + 404.794px)" }}>
+                <div className="flex-none rotate-[180deg]">
+                  <div className="h-[532.033px] opacity-[0.01] relative w-[533.7px]" data-node-id="8671:26194">
+                    <div className="absolute flex h-[265.987px] items-center justify-center translate-x-[-50%] translate-y-[-50%] w-[266.615px]" style={{ top: "calc(50% - 133.023px)", left: "calc(50% + 133.543px)" }}>
+                      <div className="flex-none rotate-[180deg] scale-y-[-100%]">
+                        <div className="h-[265.987px] relative w-[266.615px]" data-node-id="8671:26195">
+                          <div className="absolute h-[265.987px] left-0 top-0 w-[266.615px]" data-node-id="8671:26196">
+                            <div className="absolute inset-0" data-name="Vector" data-node-id="8671:26197">
+                              <img alt="" className="block max-w-none size-full" src={imgFeaturesVector} />
+                            </div>
+                            <div className="absolute bottom-0 left-[33.65%] right-0 top-[33.73%]" data-name="Vector" data-node-id="8671:26198">
+                              <img alt="" className="block max-w-none size-full" height="176.279" src={imgFeaturesVector1} width="176.907" />
+                            </div>
+                            <div className="absolute bottom-[36.56%] left-[67.19%] right-0 top-[33.68%]" data-node-id="8671:26199">
+                              <img alt="" className="block max-w-none size-full" src={imgFeaturesVector2} />
+                            </div>
+                            <div className="absolute bottom-[33.72%] flex items-center justify-center left-0 right-[71.88%] top-[33.68%]">
+                              <div className="flex-none h-[74.985px] rotate-[90deg] scale-y-[-100%] w-[86.715px]">
+                                <div className="relative size-full" data-node-id="8671:26200">
+                                  <img alt="" className="block max-w-none size-full" src={imgFeaturesVector3} />
+                                </div>
+                              </div>
+                            </div>
+                            <div className="absolute bottom-0 left-[33.65%] right-0 top-[33.73%]" data-name="Vector" data-node-id="8671:26201">
+                              <img alt="" className="block max-w-none size-full" src={imgFeaturesVector4} />
+                            </div>
+                            <div className="absolute bottom-[33.73%] left-0 right-[33.88%] top-0" data-name="Vector" data-node-id="8671:26202">
+                              <img alt="" className="block max-w-none size-full" height="176.279" src={imgFeaturesVector5} width="176.279" />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="absolute flex h-[265.987px] items-center justify-center translate-x-[-50%] translate-y-[-50%] w-[266.615px]" style={{ top: "calc(50% + 133.023px)", left: "calc(50% + 133.543px)" }}>
+                      <div className="flex-none rotate-[180deg] scale-y-[-100%]">
+                        <div className="h-[265.987px] relative w-[266.615px]" data-node-id="8671:26203">
+                          <div className="absolute h-[265.987px] left-0 top-0 w-[266.615px]" data-node-id="8671:26204">
+                            <div className="absolute inset-0" data-name="Vector" data-node-id="8671:26205">
+                              <img alt="" className="block max-w-none size-full" src={imgFeaturesVector} />
+                            </div>
+                            <div className="absolute bottom-0 left-[33.65%] right-0 top-[33.73%]" data-name="Vector" data-node-id="8671:26206">
+                              <img alt="" className="block max-w-none size-full" height="176.279" src={imgFeaturesVector1} width="176.907" />
+                            </div>
+                            <div className="absolute bottom-[36.56%] left-[67.19%] right-0 top-[33.68%]" data-node-id="8671:26207">
+                              <img alt="" className="block max-w-none size-full" src={imgFeaturesVector2} />
+                            </div>
+                            <div className="absolute bottom-[33.72%] flex items-center justify-center left-0 right-[71.88%] top-[33.68%]">
+                              <div className="flex-none h-[74.985px] rotate-[90deg] scale-y-[-100%] w-[86.715px]">
+                                <div className="relative size-full" data-node-id="8671:26208">
+                                  <img alt="" className="block max-w-none size-full" src={imgFeaturesVector3} />
+                                </div>
+                              </div>
+                            </div>
+                            <div className="absolute bottom-0 left-[33.65%] right-0 top-[33.73%]" data-name="Vector" data-node-id="8671:26209">
+                              <img alt="" className="block max-w-none size-full" src={imgFeaturesVector4} />
+                            </div>
+                            <div className="absolute bottom-[33.73%] left-0 right-[33.88%] top-0" data-name="Vector" data-node-id="8671:26210">
+                              <img alt="" className="block max-w-none size-full" height="176.279" src={imgFeaturesVector5} width="176.279" />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="absolute flex h-[265.987px] items-center justify-center translate-x-[-50%] translate-y-[-50%] w-[266.615px]" style={{ top: "calc(50% - 133.023px)", left: "calc(50% - 133.543px)" }}>
+                      <div className="flex-none rotate-[180deg] scale-y-[-100%]">
+                        <div className="h-[265.987px] relative w-[266.615px]" data-node-id="8671:26211">
+                          <div className="absolute h-[265.987px] left-0 top-0 w-[266.615px]" data-node-id="8671:26212">
+                            <div className="absolute inset-0" data-name="Vector" data-node-id="8671:26213">
+                              <img alt="" className="block max-w-none size-full" src={imgFeaturesVector} />
+                            </div>
+                            <div className="absolute bottom-0 left-[33.65%] right-0 top-[33.73%]" data-name="Vector" data-node-id="8671:26214">
+                              <img alt="" className="block max-w-none size-full" height="176.279" src={imgFeaturesVector1} width="176.907" />
+                            </div>
+                            <div className="absolute bottom-[36.56%] left-[67.19%] right-0 top-[33.68%]" data-node-id="8671:26215">
+                              <img alt="" className="block max-w-none size-full" src={imgFeaturesVector2} />
+                            </div>
+                            <div className="absolute bottom-[33.72%] flex items-center justify-center left-0 right-[71.88%] top-[33.68%]">
+                              <div className="flex-none h-[74.985px] rotate-[90deg] scale-y-[-100%] w-[86.715px]">
+                                <div className="relative size-full" data-node-id="8671:26216">
+                                  <img alt="" className="block max-w-none size-full" src={imgFeaturesVector3} />
+                                </div>
+                              </div>
+                            </div>
+                            <div className="absolute bottom-0 left-[33.65%] right-0 top-[33.73%]" data-name="Vector" data-node-id="8671:26217">
+                              <img alt="" className="block max-w-none size-full" src={imgFeaturesVector4} />
+                            </div>
+                            <div className="absolute bottom-[33.73%] left-0 right-[33.88%] top-0" data-name="Vector" data-node-id="8671:26218">
+                              <img alt="" className="block max-w-none size-full" height="176.279" src={imgFeaturesVector5} width="176.279" />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="absolute flex h-[265.987px] items-center justify-center translate-x-[-50%] translate-y-[-50%] w-[266.615px]" style={{ top: "calc(50% + 133.023px)", left: "calc(50% - 133.543px)" }}>
+                      <div className="flex-none rotate-[180deg] scale-y-[-100%]">
+                        <div className="h-[265.987px] relative w-[266.615px]" data-node-id="8671:26219">
+                          <div className="absolute h-[265.987px] left-0 top-0 w-[266.615px]" data-node-id="8671:26220">
+                            <div className="absolute inset-0" data-name="Vector" data-node-id="8671:26221">
+                              <img alt="" className="block max-w-none size-full" src={imgFeaturesVector} />
+                            </div>
+                            <div className="absolute bottom-0 left-[33.65%] right-0 top-[33.73%]" data-name="Vector" data-node-id="8671:26222">
+                              <img alt="" className="block max-w-none size-full" height="176.279" src={imgFeaturesVector1} width="176.907" />
+                            </div>
+                            <div className="absolute bottom-[36.56%] left-[67.19%] right-0 top-[33.68%]" data-node-id="8671:26223">
+                              <img alt="" className="block max-w-none size-full" src={imgFeaturesVector2} />
+                            </div>
+                            <div className="absolute bottom-[33.72%] flex items-center justify-center left-0 right-[71.88%] top-[33.68%]">
+                              <div className="flex-none h-[74.985px] rotate-[90deg] scale-y-[-100%] w-[86.715px]">
+                                <div className="relative size-full" data-node-id="8671:26224">
+                                  <img alt="" className="block max-w-none size-full" src={imgFeaturesVector3} />
+                                </div>
+                              </div>
+                            </div>
+                            <div className="absolute bottom-0 left-[33.65%] right-0 top-[33.73%]" data-name="Vector" data-node-id="8671:26225">
+                              <img alt="" className="block max-w-none size-full" src={imgFeaturesVector4} />
+                            </div>
+                            <div className="absolute bottom-[33.73%] left-0 right-[33.88%] top-0" data-name="Vector" data-node-id="8671:26226">
+                              <img alt="" className="block max-w-none size-full" height="176.279" src={imgFeaturesVector5} width="176.279" />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="content-stretch flex flex-col gap-3 items-center justify-center leading-[0] relative shrink-0 text-center" data-name="Title&Subtitle" data-node-id="8671:26227">
+                <div className="font-['Roboto:Medium',_sans-serif] font-medium opacity-70 relative shrink-0 text-[#7be385] text-[18px] tracking-[-0.3px] w-[760.5px]" data-node-id="8671:26228" style={{ fontVariationSettings: "'wdth' 100" }}>
+                  <p className="leading-[1.65]">Our Features</p>
+                </div>
+                <div className="font-['Recoleta:Medium',_sans-serif] not-italic relative shrink-0 text-[#f2fcf3] text-[56px] text-nowrap tracking-[-1px]" data-node-id="8671:26229">
+                  <p className="leading-[1.15] whitespace-pre">Experience our premium features.</p>
+                </div>
+              </div>
+              <div className="content-stretch flex items-center justify-between relative shrink-0 w-full" data-name="card" data-node-id="8671:26230">
+                <div className="box-border content-stretch flex flex-col gap-8 h-[416px] items-center justify-center p-[32px] relative rounded-[32px] shrink-0" data-name="6" data-node-id="8671:26231">
+                  <div aria-hidden="true" className="absolute border-[#606162] border-[0.2px] border-solid inset-0 pointer-events-none rounded-[32px]" />
+                  <div className="box-border content-stretch flex gap-2.5 items-center justify-center p-[12px] relative rounded-[12px] shrink-0" data-name="Sec.Icon" data-node-id="8671:26232">
+                    <div className="relative shrink-0 size-10" data-name="convertshape-2" data-node-id="8671:26233">
+                      <div className="absolute contents inset-0" data-name="vuesax/broken/convertshape-2" data-node-id="8671:26234">
+                        <img alt="" className="block max-w-none size-full" src={imgVuesaxBrokenConvertshape2} />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="content-stretch flex flex-col gap-3 items-center justify-center leading-[0] relative shrink-0 text-center" data-name="text" data-node-id="8671:26241">
+                    <div className="font-['Recoleta:SemiBold',_sans-serif] not-italic relative shrink-0 text-[#e6e7e7] text-[24px] text-nowrap tracking-[-1px]" data-node-id="8671:26242">
+                      <p className="leading-[34px] whitespace-pre">Expense Tracking</p>
+                    </div>
+                    <div className="font-['Roboto:Regular',_sans-serif] font-normal relative shrink-0 text-[#bec1c2] text-[18px] tracking-[-0.3px] w-[303px]" data-node-id="8671:26243" style={{ fontVariationSettings: "'wdth' 100" }}>
+                      <p className="leading-[1.65]">Easily monitor and manage all your expenses in one place.</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="bg-[rgba(255,255,255,0.04)] box-border content-stretch flex flex-col gap-8 h-[416px] items-center justify-center p-[32px] relative rounded-[32px] shrink-0" data-name="7" data-node-id="8671:26244">
+                  <div aria-hidden="true" className="absolute border-[0.4px] border-[rgba(123,227,133,0)] border-solid inset-0 pointer-events-none rounded-[32px]" />
+                  <div className="bg-[#7be385] box-border content-stretch flex gap-2.5 items-center justify-center p-[12px] relative rounded-[12px] shrink-0 size-[72px]" data-node-id="8671:26245" style={{ backgroundImage: "url('data:image/svg+xml;utf8,<svg viewBox=\\\'0 0 72 72\\\' xmlns=\\\'http://www.w3.org/2000/svg\\\' preserveAspectRatio=\\\'none\\\'><rect x=\\\'0\\\' y=\\\'0\\\' height=\\\'100%\\\' width=\\\'100%\\\' fill=\\\'url(%23grad)\\\' opacity=\\\'1\\\'/><defs><radialGradient id=\\\'grad\\\' gradientUnits=\\\'userSpaceOnUse\\\' cx=\\\'0\\\' cy=\\\'0\\\' r=\\\'10\\\' gradientTransform=\\\'matrix(-0.74423 -6.2297 11.934 10.12 57.27 59.54)\\\'><stop stop-color=\\\'rgba(255,255,255,0)\\\' offset=\\\'0\\\'/><stop stop-color=\\\'rgba(255,255,255,0.4)\\\' offset=\\\'1\\\'/></radialGradient></defs></svg>')" }}>
+                    <div className="relative shrink-0 size-10" data-name="receipt" data-node-id="8671:26246">
+                      <div className="absolute contents inset-0" data-name="vuesax/outline/receipt" data-node-id="8671:26247">
+                        <img alt="" className="block max-w-none size-full" src={imgVuesaxOutlineReceipt} />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="content-stretch flex flex-col gap-3 items-center justify-center leading-[0] relative shrink-0 text-center w-full" data-name="text" data-node-id="8671:26253">
+                    <div className="font-['Recoleta:SemiBold',_sans-serif] not-italic relative shrink-0 text-[#7be385] text-[24px] text-nowrap tracking-[-1px]" data-node-id="8671:26254">
+                      <p className="leading-[34px] whitespace-pre">Payment Processing</p>
+                    </div>
+                    <div className="font-['Roboto:Regular',_sans-serif] font-normal relative shrink-0 text-[18px] text-white tracking-[-0.3px] w-[303px]" data-node-id="8671:26255" style={{ fontVariationSettings: "'wdth' 100" }}>
+                      <p className="leading-[1.65]">Simplify your bill payments with a secure and efficient system.</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="box-border content-stretch flex flex-col gap-8 h-[416px] items-center justify-center p-[32px] relative rounded-[32px] shrink-0" data-name="8" data-node-id="8671:26256">
+                  <div aria-hidden="true" className="absolute border-[#606162] border-[0.2px] border-solid inset-0 pointer-events-none rounded-[32px]" />
+                  <div className="box-border content-stretch flex gap-2.5 items-center justify-center p-[12px] relative rounded-[12px] shrink-0" data-name="Sec.Icon" data-node-id="8671:26257">
+                    <div className="relative shrink-0 size-10" data-name="cloud" data-node-id="8671:26258">
+                      <div className="absolute contents inset-0" data-name="vuesax/outline/cloud" data-node-id="8671:26259">
+                        <img alt="" className="block max-w-none size-full" src={imgVuesaxOutlineCloud} />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="content-stretch flex flex-col gap-3 items-center justify-center leading-[0] relative shrink-0 text-center" data-name="text" data-node-id="8671:26264">
+                    <div className="font-['Recoleta:SemiBold',_sans-serif] not-italic relative shrink-0 text-[#e6e7e7] text-[24px] text-nowrap tracking-[-1px]" data-node-id="8671:26265">
+                      <p className="leading-[34px] whitespace-pre">Platform Integrations</p>
+                    </div>
+                    <div className="font-['Roboto:Regular',_sans-serif] font-normal relative shrink-0 text-[#bec1c2] text-[18px] tracking-[-0.3px] w-[303px]" data-node-id="8671:26266" style={{ fontVariationSettings: "'wdth' 100" }}>
+                      <p className="leading-[1.65]">Connect and sync seamlessly with your favorite tools and platforms.</p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
