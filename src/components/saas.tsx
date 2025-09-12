@@ -191,7 +191,7 @@ export default function SaaS({ setActiveSection }: SaaSProps) {
             
             {/* Secondary Screenshot */}
             <div 
-              className="bg-[#4dd58c] box-border content-stretch flex flex-col gap-2.5 items-start justify-center overflow-clip pl-10 pr-0 py-0 relative rounded-[12px] lg:rounded-[16px] shrink-0 size-[376px]"
+              className="bg-[#4dd58c] box-border content-stretch flex flex-col gap-2.5 items-start justify-center overflow-clip pr-0 py-0 relative rounded-[12px] lg:rounded-[16px] shrink-0 size-[376px]"
               style={{ backgroundColor: currentTheme.primary }}
             >
               <div 
