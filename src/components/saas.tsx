@@ -236,22 +236,22 @@ export default function SaaS({ setActiveSection }: SaaSProps) {
                 <div className="content-stretch flex gap-2 items-start justify-start relative shrink-0">
                   <div 
                     className="box-border content-stretch flex gap-2 items-center justify-center overflow-clip px-3 py-[5px] relative rounded-[5px] shadow-[0px_1px_2px_0px_rgba(16,24,40,0.05)] shrink-0"
-                    style={{ backgroundColor: currentTheme.secondary }}
+                    style={{ backgroundColor: '#e7f6e5' }}
                   >
                     <div 
                       className="font-['Inter:regular',_sans-serif] leading-[0] not-italic relative shrink-0 text-[14px] text-nowrap"
-                      style={{ color: currentTheme.text }}
+                      style={{ color: '#0a7c00' }}
                     >
                       <p className="leading-[18px] whitespace-pre">Business</p>
                     </div>
                   </div>
                   <div 
                     className="box-border content-stretch flex gap-2 items-center justify-center overflow-clip px-3 py-[5px] relative rounded-[5px] shadow-[0px_1px_2px_0px_rgba(16,24,40,0.05)] shrink-0"
-                    style={{ backgroundColor: currentTheme.secondary }}
+                    style={{ backgroundColor: '#e7f6e5' }}
                   >
                     <div 
                       className="font-['Inter:regular',_sans-serif] leading-[0] not-italic relative shrink-0 text-[14px] text-nowrap"
-                      style={{ color: currentTheme.text }}
+                      style={{ color: '#0a7c00' }}
                     >
                       <p className="leading-[18px] whitespace-pre">Tech</p>
                     </div>
@@ -272,7 +272,7 @@ export default function SaaS({ setActiveSection }: SaaSProps) {
                 {/* Default Option */}
                 <div 
                   className="relative shrink-0 w-full"
-                  style={{ backgroundColor: selectedSkin === 'default' ? skinThemes.default.secondary : 'transparent' }}
+                  style={{ backgroundColor: selectedSkin === 'default' ? '#e7f6e5' : 'transparent' }}
                 >
                   <div 
                     className="box-border content-stretch flex items-center justify-between overflow-clip px-4 py-3.5 relative w-full cursor-pointer"
@@ -286,7 +286,7 @@ export default function SaaS({ setActiveSection }: SaaSProps) {
                         <div className="content-stretch flex gap-2 items-center justify-start relative shrink-0">
                           <div 
                             className="font-['Inter:regular',_sans-serif] leading-[0] not-italic relative shrink-0 text-[14px] text-nowrap"
-                            style={{ color: selectedSkin === 'default' ? skinThemes.default.text : '#111215' }}
+                            style={{ color: selectedSkin === 'default' ? '#0a7c00' : '#111215' }}
                           >
                             <p className="leading-[18px] whitespace-pre">Default</p>
                           </div>
@@ -305,7 +305,7 @@ export default function SaaS({ setActiveSection }: SaaSProps) {
                 {/* Winter Blues Option */}
                 <div 
                   className="relative shrink-0 w-full"
-                  style={{ backgroundColor: selectedSkin === 'winterBlues' ? skinThemes.winterBlues.secondary : 'transparent' }}
+                  style={{ backgroundColor: selectedSkin === 'winterBlues' ? '#e7f6e5' : 'transparent' }}
                 >
                   <div 
                     className="box-border content-stretch flex items-center justify-between overflow-clip px-4 py-3.5 relative w-full cursor-pointer"
@@ -319,7 +319,7 @@ export default function SaaS({ setActiveSection }: SaaSProps) {
                         <div className="content-stretch flex gap-2 items-center justify-start relative shrink-0">
                           <div 
                             className="font-['Inter:regular',_sans-serif] leading-[0] not-italic relative shrink-0 text-[14px] text-nowrap"
-                            style={{ color: selectedSkin === 'winterBlues' ? skinThemes.winterBlues.text : '#111215' }}
+                            style={{ color: selectedSkin === 'winterBlues' ? '#0a7c00' : '#111215' }}
                           >
                             <p className="leading-[18px] whitespace-pre">Winter Blues</p>
                           </div>
@@ -338,7 +338,7 @@ export default function SaaS({ setActiveSection }: SaaSProps) {
                 {/* Spring Garden Option */}
                 <div 
                   className="relative shrink-0 w-full"
-                  style={{ backgroundColor: selectedSkin === 'springGarden' ? skinThemes.springGarden.secondary : 'transparent' }}
+                  style={{ backgroundColor: selectedSkin === 'springGarden' ? '#e7f6e5' : 'transparent' }}
                 >
                   <div 
                     className="box-border content-stretch flex items-center justify-between overflow-clip px-4 py-3.5 relative w-full cursor-pointer"
@@ -352,7 +352,7 @@ export default function SaaS({ setActiveSection }: SaaSProps) {
                         <div className="content-stretch flex gap-2 items-center justify-start relative shrink-0">
                           <div 
                             className="font-['Inter:regular',_sans-serif] leading-[0] not-italic relative shrink-0 text-[14px] text-nowrap"
-                            style={{ color: selectedSkin === 'springGarden' ? skinThemes.springGarden.text : '#111215' }}
+                            style={{ color: selectedSkin === 'springGarden' ? '#0a7c00' : '#111215' }}
                           >
                             <p className="leading-[18px] whitespace-pre">Spring Garden</p>
                           </div>
@@ -371,7 +371,7 @@ export default function SaaS({ setActiveSection }: SaaSProps) {
                 {/* Summer Sunset Option */}
                 <div 
                   className="relative shrink-0 w-full"
-                  style={{ backgroundColor: selectedSkin === 'summerSunset' ? skinThemes.summerSunset.secondary : 'transparent' }}
+                  style={{ backgroundColor: selectedSkin === 'summerSunset' ? '#e7f6e5' : 'transparent' }}
                 >
                   <div 
                     className="box-border content-stretch flex items-center justify-between overflow-clip px-4 py-3.5 relative w-full cursor-pointer"
@@ -385,7 +385,7 @@ export default function SaaS({ setActiveSection }: SaaSProps) {
                         <div className="content-stretch flex gap-2 items-center justify-start relative shrink-0">
                           <div 
                             className="font-['Inter:regular',_sans-serif] leading-[0] not-italic relative shrink-0 text-[14px] text-nowrap"
-                            style={{ color: selectedSkin === 'summerSunset' ? skinThemes.summerSunset.text : '#111215' }}
+                            style={{ color: selectedSkin === 'summerSunset' ? '#0a7c00' : '#111215' }}
                           >
                             <p className="leading-[18px] whitespace-pre">Summer Sunset</p>
                           </div>
@@ -404,7 +404,7 @@ export default function SaaS({ setActiveSection }: SaaSProps) {
                 {/* Autumn Leaves Option */}
                 <div 
                   className="relative shrink-0 w-full"
-                  style={{ backgroundColor: selectedSkin === 'autumnLeaves' ? skinThemes.autumnLeaves.secondary : 'transparent' }}
+                  style={{ backgroundColor: selectedSkin === 'autumnLeaves' ? '#e7f6e5' : 'transparent' }}
                 >
                   <div 
                     className="box-border content-stretch flex items-center justify-between overflow-clip px-4 py-3.5 relative w-full cursor-pointer"
@@ -418,7 +418,7 @@ export default function SaaS({ setActiveSection }: SaaSProps) {
                         <div className="content-stretch flex gap-2 items-center justify-start relative shrink-0">
                           <div 
                             className="font-['Inter:regular',_sans-serif] leading-[0] not-italic relative shrink-0 text-[14px] text-nowrap"
-                            style={{ color: selectedSkin === 'autumnLeaves' ? skinThemes.autumnLeaves.text : '#333740' }}
+                            style={{ color: selectedSkin === 'autumnLeaves' ? '#0a7c00' : '#333740' }}
                           >
                             <p className="leading-[18px] whitespace-pre">Autumn Leaves</p>
                           </div>
@@ -437,7 +437,7 @@ export default function SaaS({ setActiveSection }: SaaSProps) {
                 {/* Custom Option */}
                 <div 
                   className="relative shrink-0 w-full"
-                  style={{ backgroundColor: selectedSkin === 'custom' ? skinThemes.custom.secondary : 'transparent' }}
+                  style={{ backgroundColor: selectedSkin === 'custom' ? '#e7f6e5' : 'transparent' }}
                 >
                   <div 
                     className="box-border content-stretch flex items-center justify-between overflow-clip px-4 py-3.5 relative w-full cursor-pointer"
@@ -451,7 +451,7 @@ export default function SaaS({ setActiveSection }: SaaSProps) {
                         <div className="content-stretch flex gap-2 items-center justify-start relative shrink-0">
                           <div 
                             className="font-['Inter:regular',_sans-serif] leading-[0] not-italic relative shrink-0 text-[14px] text-nowrap"
-                            style={{ color: selectedSkin === 'custom' ? skinThemes.custom.text : '#333740' }}
+                            style={{ color: selectedSkin === 'custom' ? '#0a7c00' : '#333740' }}
                           >
                             <p className="leading-[18px] whitespace-pre">Custom</p>
                           </div>
