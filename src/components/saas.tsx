@@ -2,6 +2,12 @@ import { useState } from 'react';
 import TemplateCard from './TemplateCard';
 import { moreTemplates } from '../data/templates';
 
+type ActiveSection = 'home' | 'gallery' | 'pricing' | 'faqs' | 'training' | 'contact' | 'saas';
+
+interface SaaSProps {
+  setActiveSection: (section: ActiveSection) => void;
+}
+
 // Image assets
 const imgScreenshot1 = "images/saas-card-lg.png";
 const imgScreenshot2 = "images/saas-card-md.png";
@@ -103,7 +109,7 @@ function Button({ text, variant = "primary", showArrow = false }: ButtonProps) {
   );
 }
 
-export default function SaaS() {
+export default function SaaS({ setActiveSection }: SaaSProps) {
   const [selectedSkin, setSelectedSkin] = useState<keyof typeof skinThemes>('default');
   const currentTheme = skinThemes[selectedSkin];
 
@@ -114,7 +120,10 @@ export default function SaaS() {
   return (
     <div className="box-border content-stretch flex flex-col gap-12 lg:gap-20 items-start justify-start px-0 py-16 lg:py-32 relative size-full">
       {/* Back Button */}
-      <div className="absolute box-border content-stretch flex gap-2 items-center justify-start left-4 lg:left-32 rounded-[8px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)] top-7 lg:top-[84px]">
+      <div 
+        className="absolute box-border content-stretch flex gap-2 items-center justify-start left-4 lg:left-32 rounded-[8px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)] top-7 lg:top-[84px] cursor-pointer"
+        onClick={() => setActiveSection('home')}
+      >
         <div className="relative shrink-0 size-5">
           <img alt="" className="block max-w-none size-full" src={imgBackArrow} />
         </div>

@@ -1,18 +1,14 @@
 import { moreTemplates } from '../data/templates';
 import TemplateCard from './TemplateCard';
-const img1 = "/images/saas-card-bg.svg";
-const img2 = "/images/e-commerce-card-bg-image.svg";
-const img3 = "/images/startup-card-bg-image.svg";
-const img4 = "/images/portfolio-card-bg-image.svg";
 const img = "/images/white-stars-icon.svg";
 
-const templates = [
-  { id: 1, name: "SaaS 1.0", image: img1, bgColor: "#4dd58c", gradientTo: "#04261e" },
-  { id: 2, name: "E-commerce 1.0", image: img2, bgColor: "#6d83d9", gradientTo: "#131d45" },
-  { id: 3, name: "Startup 1.0", image: img3, bgColor: "#bd550f", gradientTo: "#421e06" },
-];
+type ActiveSection = 'home' | 'gallery' | 'pricing' | 'faqs' | 'training' | 'contact' | 'saas';
 
-export default function GallerySection() {
+interface GallerySectionProps {
+  setActiveSection: (section: ActiveSection) => void;
+}
+
+export default function GallerySection({ setActiveSection }: GallerySectionProps) {
   return (
     <>
     <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between w-full px-4 md:px-8 lg:px-16 pt-24 md:pt-30 lg:pt-40 gap-6 lg:gap-0" data-name="Header" data-node-id="8071:32925">
@@ -41,8 +37,8 @@ export default function GallerySection() {
               gradientTo={template.gradientTo}
               aspectRatio={template.aspectRatio}
               onClick={() => {
-                // Handle template click - you can add navigation logic here
-                console.log(`Clicked on ${template.title}`);
+                // Navigate to SaaS component when any card is clicked
+                setActiveSection('saas');
               }}
             />
           ))}

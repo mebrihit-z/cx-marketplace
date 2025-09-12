@@ -8,8 +8,9 @@ import Pricing from './components/pricing'
 import FAQs from './components/faqs'
 import Training from './components/training'
 import Contact from './components/contact'
+import SaaS from './components/saas'
 
-type ActiveSection = 'home' | 'gallery' | 'pricing' | 'faqs' | 'training' | 'contact'
+type ActiveSection = 'home' | 'gallery' | 'pricing' | 'faqs' | 'training' | 'contact' | 'saas'
 
 function App() {
   const [activeSection, setActiveSection] = useState<ActiveSection>('home')
@@ -17,7 +18,7 @@ function App() {
   const renderActiveComponent = () => {
     switch (activeSection) {
       case 'home':
-        return <Home />
+        return <Home setActiveSection={setActiveSection} />
       case 'gallery':
         return <Gallery />
       case 'pricing':
@@ -28,6 +29,8 @@ function App() {
         return <Training />
       case 'contact':
         return <Contact />
+      case 'saas':
+        return <SaaS setActiveSection={setActiveSection} />
       default:
         return <Home />
     }

@@ -7,11 +7,17 @@ import Roadmap from './roadmap';
 
 const roadmap = "/images/home-page-roadmap.svg";
 
-export default function Home() {
+type ActiveSection = 'home' | 'gallery' | 'pricing' | 'faqs' | 'training' | 'contact' | 'saas';
+
+interface HomeProps {
+  setActiveSection: (section: ActiveSection) => void;
+}
+
+export default function Home({ setActiveSection }: HomeProps) {
     return (
       <div className="w-full min-h-screen">
         <Hero />
-        <GallerySection />
+        <GallerySection setActiveSection={setActiveSection} />
         <AISection />
         {/* Show roadmap component on mobile, image on desktop */}
         <div className="block md:hidden">
