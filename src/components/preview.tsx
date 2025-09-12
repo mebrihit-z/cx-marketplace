@@ -1,9 +1,9 @@
-const imgVector1 = "http://localhost:3845/assets/e886a86c6efbc9998c5cc527827c1cd38babd8d9.png";
+const logoPreview = "icons/logo-preview.svg";
 const imgVector5 = "http://localhost:3845/assets/15201e9ad1d338c03541a332b177176dcb60e6ae.png";
 const imgVector7 = "http://localhost:3845/assets/b35ba9f3eb353572f61af85912fbcbf4509d2e66.png";
 const imgVector11 = "http://localhost:3845/assets/d69caff5595c4cfe51519045497a835c44c8c8c8.png";
 const imgImage1 = "http://localhost:3845/assets/961a2c0de390d9b9ca10331c8116707cea0a83e3.png";
-const imgVector = "http://localhost:3845/assets/9787a9213c4b521b0b01f1ba7e96a52d7f944181.svg";
+const imgVector = "icons/black-right-arrow.svg";
 const imgVector2 = "http://localhost:3845/assets/6348ba033db2e59b006eed51e647d6836cfa44fc.svg";
 const imgVector3 = "http://localhost:3845/assets/0416f3a5da6ad6c577b19f6a3e1bbdc2af3228e9.svg";
 const imgVector4 = "http://localhost:3845/assets/f5c255f8593ad7418ec22c4886f9d92f868b153d.svg";
@@ -12,7 +12,7 @@ const imgVector8 = "http://localhost:3845/assets/6cb789336b300d8ddd13da64a9964a6
 const imgVector9 = "http://localhost:3845/assets/421e3d9db86b8423ecc55ad755cf5fd6cf3d4a95.svg";
 const imgVector10 = "http://localhost:3845/assets/aac2e9166f05614859d73b0378728d38c3071873.svg";
 const imgEllipse963 = "http://localhost:3845/assets/aab4459e21f6f63a53064fb6caff3ad5cf78be5a.svg";
-const imgVuesaxLinearArrowRight = "http://localhost:3845/assets/acf8d1f211146523e47e7626ffd30830ee9f1005.svg";
+const imgVuesaxLinearArrowRight = "icons/black-right-arrow.svg";
 const imgLine317 = "http://localhost:3845/assets/55522919f569ec35e182328f464604d6a71de6cb.svg";
 const imgFictionalCompanyLogo = "http://localhost:3845/assets/2078b3cdb8f92eea47993166ce43b3276a2bf4f9.svg";
 const imgFictionalCompanyLogo1 = "http://localhost:3845/assets/fa9abe922bcc2150d680b8131ceea8b2f37c59d4.svg";
@@ -61,10 +61,10 @@ export default function Preview({ isOpen, onClose, template }: PreviewProps) {
       <div className="absolute blur-[90.541px] filter h-[1248px] opacity-[0.08] right-[314.06px] translate-y-[-50%] w-[1250.94px]" data-node-id="8671:26043" style={{ top: "calc(50% + 814px)" }}>
         <div className="absolute h-[1248px] left-0 top-0 w-[1250.94px]" data-node-id="8671:26044">
           <div className="absolute inset-0" data-name="Vector" data-node-id="8671:26045">
-            <img alt="" className="block max-w-none size-full" src={imgVector} />
+            <img alt="" className="block max-w-none size-full" src={logoPreview} />
           </div>
           <div className="absolute bottom-0 left-[33.65%] right-0 top-[33.73%]" data-name="Vector" data-node-id="8671:26046">
-            <img alt="" className="block max-w-none size-full" height="827.094" src={imgVector1} width="830.038" />
+            <img alt="" className="block max-w-none size-full" height="827.094" src={logoPreview} width="830.038" />
           </div>
           <div className="absolute bottom-[36.56%] left-[67.19%] right-0 top-[33.68%]" data-node-id="8671:26047">
             <img alt="" className="block max-w-none size-full" src={imgVector2} />
