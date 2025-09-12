@@ -1,0 +1,90 @@
+
+interface LeadOrganizationProps {
+  className?: string;
+}
+
+export default function LeadOrganization({ className = '' }: LeadOrganizationProps) {
+  return (
+    <div className={`bg-[#041117] relative w-full min-h-screen ${className}`}>
+      {/* Background Image - positioned exactly like Figma */}
+      <div className="absolute h-[554px] left-[51.66%] right-[9.77%] top-[98px]">
+        <img 
+          alt="Lead Organization Background" 
+          className="block max-w-none size-full" 
+          height="554" 
+          src="http://localhost:3845/assets/46827c75ee060474f809ad870654867db20a6155.png" 
+          width="555.307" 
+        />
+      </div>
+
+      {/* Text Content - positioned exactly like Figma */}
+      <div className="absolute box-border content-stretch flex flex-col gap-12 items-start justify-start left-[140px] px-0 py-10 top-20 w-[501.156px]">
+        {/* Title & Subtitle - exact Figma styling */}
+        <div className="content-stretch flex flex-col gap-3 items-start justify-center relative shrink-0 w-full">
+          <div className="font-['Roboto:Medium',_sans-serif] font-medium leading-[0] opacity-70 relative shrink-0 text-[#7be385] text-[18px] tracking-[-0.3px] w-full">
+            <p className="leading-[1.65]">Lead Organization</p>
+          </div>
+          
+          <div className="content-stretch flex flex-col gap-3 items-start justify-start leading-[0] relative shrink-0 w-full">
+            <div className="font-['Recoleta:Medium',_sans-serif] not-italic relative shrink-0 text-[#f2fcf3] text-[56px] tracking-[-1px] w-full">
+              <p className="leading-[1.15]">Track All Your Potential Customers</p>
+            </div>
+            <div className="font-['Roboto:Regular',_sans-serif] font-normal relative shrink-0 text-[#b1b6b8] text-[16px] tracking-[-0.3px] w-full">
+              <p className="leading-[1.7]">Efficiently organize and track your leads, ensuring better follow-ups and higher conversion rates.</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Feature Cards - exact Figma styling */}
+        <div className="content-stretch flex flex-col gap-6 items-start justify-start relative shrink-0 w-[501px]">
+          {/* Card 1 - Organize Your Leads */}
+          <div className="bg-[rgba(255,255,255,0.04)] box-border content-stretch flex gap-3 items-center justify-center p-[24px] relative rounded-[24px] shrink-0 w-full">
+            <div className="basis-0 content-stretch flex gap-6 grow items-center justify-start min-h-px min-w-px relative shrink-0">
+              <div className="bg-[#7be385] box-border content-stretch flex gap-[5.556px] items-center justify-center p-[6.667px] relative rounded-[6.667px] shrink-0 size-10" style={{ backgroundImage: "url('data:image/svg+xml;utf8,<svg viewBox=\\'0 0 40 40\\' xmlns=\\'http://www.w3.org/2000/svg\\' preserveAspectRatio=\\'none\\'><rect x=\\'0\\' y=\\'0\\' height=\\'100%\\' width=\\'100%\\' fill=\\'url(%23grad)\\' opacity=\\'1\\'/><defs><radialGradient id=\\'grad\\' gradientUnits=\\'userSpaceOnUse\\' cx=\\'0\\' cy=\\'0\\' r=\\'10\\' gradientTransform=\\'matrix(-0.41346 -3.461 6.6301 5.6221 31.817 33.078)\\'><stop stop-color=\\'rgba(255,255,255,0)\\' offset=\\'0\\'/><stop stop-color=\\'rgba(255,255,255,0.4)\\' offset=\\'1\\'/></radialGradient></defs></svg>')" }}>
+                <div className="relative shrink-0 size-[22.222px]">
+                  <div className="absolute contents inset-0">
+                    <img alt="Category icon" className="block max-w-none size-full" src="http://localhost:3845/assets/344286940ab62cdd6022320ec177e88a11c0857a.svg" />
+                  </div>
+                </div>
+              </div>
+              <div className="basis-0 content-stretch flex flex-col gap-2 grow items-start justify-start leading-[0] min-h-px min-w-px relative shrink-0 tracking-[-0.3px]">
+                <div className="font-['Roboto:SemiBold',_sans-serif] font-semibold relative shrink-0 text-[#7be385] text-[20px] text-nowrap">
+                  <p className="leading-[1.65] whitespace-pre">Organize Your Leads</p>
+                </div>
+                <div className="font-['Roboto:Regular',_sans-serif] font-normal min-w-full relative shrink-0 text-[#e6e7e8] text-[16px]">
+                  <p className="leading-[1.7]">Streamline your sales process.</p>
+                </div>
+              </div>
+            </div>
+            <div className="relative shrink-0 size-8">
+              <div className="absolute contents inset-0">
+                <img alt="Arrow right icon" className="block max-w-none size-full" src="http://localhost:3845/assets/c554238ae6120abe1434de6f0bffed4d289eb9b0.svg" />
+              </div>
+            </div>
+          </div>
+
+          {/* Card 2 - Sales Tracking */}
+          <div className="box-border content-stretch flex flex-col gap-8 items-start justify-start p-[24px] relative rounded-[24px] shrink-0 w-full">
+            <div className="content-stretch flex gap-6 items-center justify-start relative shrink-0 w-full">
+              <div className="bg-[#7be385] box-border content-stretch flex gap-[5.556px] items-center justify-center p-[6.667px] relative rounded-[6.667px] shrink-0 size-10" style={{ backgroundImage: "url('data:image/svg+xml;utf8,<svg viewBox=\\'0 0 40 40\\' xmlns=\\'http://www.w3.org/2000/svg\\' preserveAspectRatio=\\'none\\'><rect x=\\'0\\' y=\\'0\\' height=\\'100%\\' width=\\'100%\\' fill=\\'url(%23grad)\\' opacity=\\'1\\'/><defs><radialGradient id=\\'grad\\' gradientUnits=\\'userSpaceOnUse\\' cx=\\'0\\' cy=\\'0\\' r=\\'10\\' gradientTransform=\\'matrix(2.0225 3.814 -3.814 8.6641 7.6404 1.8605)\\'><stop stop-color=\\'rgba(255,255,255,0)\\' offset=\\'0\\'/><stop stop-color=\\'rgba(255,255,255,0.4)\\' offset=\\'1\\'/></radialGradient></defs></svg>')" }}>
+                <div className="relative shrink-0 size-[22.222px]">
+                  <div className="absolute contents inset-0">
+                    <img alt="Chart icon" className="block max-w-none size-full" src="http://localhost:3845/assets/797a4f3310a135017160ec3322c1889ffeb11372.svg" />
+                  </div>
+                </div>
+              </div>
+              <div className="basis-0 content-stretch flex flex-col gap-2 grow items-start justify-start leading-[0] min-h-px min-w-px relative shrink-0 tracking-[-0.3px]">
+                <div className="font-['Roboto:SemiBold',_sans-serif] font-semibold relative shrink-0 text-[#7be385] text-[20px] text-nowrap">
+                  <p className="leading-[1.65] whitespace-pre">Sales Tracking</p>
+                </div>
+                <div className="font-['Roboto:Regular',_sans-serif] font-normal min-w-full relative shrink-0 text-[#d6f6d9] text-[16px]">
+                  <p className="leading-[1.7]">Track leads for better follow-ups.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
