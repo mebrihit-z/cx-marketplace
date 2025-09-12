@@ -17,10 +17,10 @@ export default function Home() {
         <div className="block md:hidden">
           <Roadmap />
         </div>
-        <div className='hidden md:block w-full px-4 md:px-8 lg:px-16 py-8 md:py-16'>
+        <div className='hidden md:block w-full'>
           <img 
             alt="roadmap" 
-            className="block w-full h-auto max-w-none object-contain" 
+            className="block w-full h-auto object-contain" 
             src={roadmap} 
           />
         </div>
