@@ -10,9 +10,15 @@ interface SaaSProps {
 }
 
 // Image assets
-const imgScreenshot1 = "images/saas-card-lg.png";
-const imgScreenshot2 = "images/saas-card-md.png";
-const imgScreenshot3 = "images/saas-card-sm.png";
+const imgScreenshot1 = "images/saas-card-lg.svg";
+const imgScreenshot2 = "images/saas-card-md.svg";
+const imgScreenshot3 = "images/saas-card-sm.svg";
+const imgScreenshot1WinterBlues = "images/saas-card-lg-winter-blues.svg";
+const imgScreenshot2WinterBlues = "images/saas-card-md-winter-blues.svg";
+const imgScreenshot3WinterBlues = "images/saas-card-sm-winter-blues.svg";
+const imgScreenshot1SummerSunset = "images/saas-card-lg-summer-sunset.svg";
+const imgScreenshot2SummerSunset = "images/saas-card-md-summer-sunset.svg";
+const imgScreenshot3SummerSunset = "images/saas-card-sm-summer-sunset.svg";
 const imgRadioIcon = "icons/green-circle-icon.svg";
 const imgRadioSelected = "icons/green-dot-icon.svg";
 const imgArrowOutward = "icons/black-45-arrow.svg";
@@ -115,6 +121,31 @@ export default function SaaS({ setActiveSection }: SaaSProps) {
   const [previewOpen, setPreviewOpen] = useState(false);
   const currentTheme = skinThemes[selectedSkin];
 
+  // Function to get the appropriate images based on selected theme
+  const getThemeImages = () => {
+    if (selectedSkin === 'winterBlues') {
+      return {
+        screenshot1: imgScreenshot1WinterBlues,
+        screenshot2: imgScreenshot2WinterBlues,
+        screenshot3: imgScreenshot3WinterBlues
+      };
+    }
+    if (selectedSkin === 'summerSunset') {
+      return {
+        screenshot1: imgScreenshot1SummerSunset,
+        screenshot2: imgScreenshot2SummerSunset,
+        screenshot3: imgScreenshot3SummerSunset
+      };
+    }
+    return {
+      screenshot1: imgScreenshot1,
+      screenshot2: imgScreenshot2,
+      screenshot3: imgScreenshot3
+    };
+  };
+
+  const themeImages = getThemeImages();
+
   const handleSkinChange = (skin: keyof typeof skinThemes) => {
     setSelectedSkin(skin);
   };
@@ -154,7 +185,7 @@ export default function SaaS({ setActiveSection }: SaaSProps) {
             >
               <div 
                 className="aspect-[1810/1180] bg-center bg-cover bg-no-repeat rounded-[4px] lg:rounded-[8px] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] shrink-0 w-full"
-                style={{ backgroundImage: `url('${imgScreenshot1}')` }}
+                style={{ backgroundImage: `url('${themeImages.screenshot1}')` }}
               />
             </div>
             
@@ -165,7 +196,7 @@ export default function SaaS({ setActiveSection }: SaaSProps) {
             >
               <div 
                 className="aspect-[1762/1448] basis-0 bg-no-repeat bg-size-[100%_100%] bg-top-left grow min-h-px min-w-px shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] shrink-0"
-                style={{ backgroundImage: `url('${imgScreenshot2}')` }}
+                style={{ backgroundImage: `url('${themeImages.screenshot2}')` }}
               />
             </div>
             
@@ -176,7 +207,7 @@ export default function SaaS({ setActiveSection }: SaaSProps) {
             >
               <div 
                 className="aspect-[1900/1260] basis-0 bg-center bg-cover bg-no-repeat grow min-h-px min-w-px shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] shrink-0"
-                style={{ backgroundImage: `url('${imgScreenshot3}')` }}
+                style={{ backgroundImage: `url('${themeImages.screenshot3}')` }}
               />
             </div>
           </div>
@@ -570,7 +601,7 @@ export default function SaaS({ setActiveSection }: SaaSProps) {
         onClose={handleClosePreview}
         template={{
           id: 'saas-1.0',
-          src: imgScreenshot1,
+          src: themeImages.screenshot1,
           alt: 'SaaS 1.0 Template Preview',
           title: 'SaaS 1.0',
           category: 'Business'
