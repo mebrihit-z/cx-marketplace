@@ -95,7 +95,7 @@ function Button({ text, variant = "primary", showArrow = false }: ButtonProps) {
   }
   
   return (
-    <div className="bg-[#0a7c00] box-border content-stretch flex gap-2.5 items-center justify-center px-6 py-2.5 relative rounded-[8px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)] size-full">
+    <div className="bg-[#0a7c00] box-border content-stretch flex gap-2.5 items-center justify-center px-6  relative rounded-[8px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)] size-full">
       <div className="font-['Inter:regular',_sans-serif] leading-[0] not-italic relative shrink-0 text-[16px] text-nowrap text-white">
         <p className="leading-[20px] whitespace-pre">{text}</p>
       </div>
@@ -427,7 +427,7 @@ export default function SaaS() {
             <div className="bg-[#0a7c00] box-border content-stretch flex gap-2.5 items-center justify-center px-6 py-2.5 relative rounded-[8px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)] shrink-0">
               <Button text="Get a quote" />
             </div>
-            <div className="bg-white box-border content-stretch flex gap-2 items-center justify-start px-6 py-2.5 relative rounded-[8px] shrink-0">
+            <div className="bg-white box-border content-stretch flex gap-2 items-center justify-start px-6  relative rounded-[8px] shrink-0">
               <Button text="Preview" variant="secondary" showArrow={true} />
             </div>
           </div>
