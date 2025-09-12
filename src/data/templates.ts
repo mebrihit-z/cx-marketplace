@@ -95,27 +95,27 @@ export interface MoreTemplate {
 
 export const moreTemplates: MoreTemplate[] = [
   {
-    id: "saas-2.0",
-    title: "SaaS 2.0",
-    backgroundImage: "images/automate-card-image.svg",
-    backgroundColor: "#236e84",
-    gradientTo: "#001619",
+    id: "saas-1.0",
+    title: "SaaS 1.0",
+    backgroundImage: "images/saas-card-lg.svg",
+    backgroundColor: "#4DD58C",
+    gradientTo: "#04261E",
     aspectRatio: "aspect-[1860/1212]"
   },
   {
     id: "startup-1.0",
     title: "Startup 1.0",
-    backgroundImage: "images/advancing-card-image.svg",
-    backgroundColor: "#bd550f",
-    gradientTo: "#421e06",
+    backgroundImage: "images/e-commerce-card-lg.svg",
+    backgroundColor: "#6D83D9",
+    gradientTo: "#131D45",
     aspectRatio: "aspect-[1726/1124]"
   },
   {
     id: "startup-2.0",
     title: "Startup 2.0",
-    backgroundImage: "images/fast-secure-card-image.svg",
-    backgroundColor: "#42ab18",
-    gradientTo: "#0f2b04",
+    backgroundImage: "images/startup-card-lg.svg",
+    backgroundColor: "#BD550F",
+    gradientTo: "#421E06",
     aspectRatio: "aspect-[1666/1084]"
   }
 ];
