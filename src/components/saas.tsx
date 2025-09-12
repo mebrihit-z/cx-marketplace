@@ -3,8 +3,7 @@ import TemplateCard from './TemplateCard';
 import Preview from './preview';
 import { moreTemplates } from '../data/templates';
 import type { MoreTemplate } from '../data/templates';
-
-type ActiveSection = 'home' | 'gallery' | 'pricing' | 'faqs' | 'training' | 'contact' | 'saas';
+import type { ActiveSection } from '../types';
 
 interface SaaSProps {
   setActiveSection: (section: ActiveSection) => void;

@@ -10,8 +10,7 @@ import Training from './components/training'
 import Contact from './components/contact'
 import SaaS from './components/saas'
 import type { MoreTemplate } from './data/templates'
-
-type ActiveSection = 'home' | 'gallery' | 'pricing' | 'faqs' | 'training' | 'contact' | 'saas'
+import type { ActiveSection } from './types'
 
 function App() {
   const [activeSection, setActiveSection] = useState<ActiveSection>('home')

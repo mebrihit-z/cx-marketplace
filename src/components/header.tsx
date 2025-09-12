@@ -1,11 +1,10 @@
 import { useState } from 'react';
 import '../App.css'
+import type { ActiveSection } from '../types'
 
 // Image assets from Figma
 const logoIcon = "icons/logo-icon.svg";
 const logoText = "icons/logo-text.svg";
-
-type ActiveSection = 'home' | 'gallery' | 'pricing' | 'faqs' | 'training' | 'contact'
 
 interface HeaderProps {
   activeSection: ActiveSection

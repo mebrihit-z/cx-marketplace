@@ -5,10 +5,9 @@ import PromiseSection from './promise-section';
 import WhiteGloveSection from './white-glove-section';
 import Roadmap from './roadmap';
 import type { MoreTemplate } from '../data/templates';
+import type { ActiveSection } from '../types';
 
 const roadmap = "/images/home-page-roadmap.svg";
-
-type ActiveSection = 'home' | 'gallery' | 'pricing' | 'faqs' | 'training' | 'contact' | 'saas';
 
 interface HomeProps {
   setActiveSection: (section: ActiveSection) => void;

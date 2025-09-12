@@ -1,9 +1,8 @@
 import { moreTemplates } from '../data/templates';
 import TemplateCard from './TemplateCard';
 import type { MoreTemplate } from '../data/templates';
+import type { ActiveSection } from '../types';
 const img = "/images/white-stars-icon.svg";
-
-type ActiveSection = 'home' | 'gallery' | 'pricing' | 'faqs' | 'training' | 'contact' | 'saas';
 
 interface GallerySectionProps {
   setActiveSection: (section: ActiveSection) => void;
