@@ -1,3 +1,4 @@
+const heroBgImage = "images/saas-preview-hero-bg.svg";
 const logoPreview = "icons/logo-preview.svg";
 const imgVector5 = "http://localhost:3845/assets/15201e9ad1d338c03541a332b177176dcb60e6ae.png";
 const imgVector7 = "http://localhost:3845/assets/b35ba9f3eb353572f61af85912fbcbf4509d2e66.png";
@@ -216,7 +217,7 @@ export default function Preview({ isOpen, onClose, template }: PreviewProps) {
           </div>
         </div>
       </div>
-      <div className="absolute bg-center bg-cover bg-no-repeat h-[954.567px] left-[545px] top-[193px] w-[1084px]" data-name="image 1" data-node-id="8671:26173" style={{ backgroundImage: `url('${imgImage1}')` }} />
+      <div className="absolute bg-center bg-cover bg-no-repeat h-[954.567px] left-[545px] top-[193px] w-[1084px]" data-name="image 1" data-node-id="8671:26173" style={{ backgroundImage: `url('${heroBgImage}')` }} />
       <div className="absolute bg-[#364247] h-[184px] left-[140px] opacity-[0.12] rounded-[32px] top-[704px] w-[609px]" data-name="LOGOSBACKGROUND" data-node-id="8671:26174" />
       <div className="absolute box-border content-stretch flex flex-col gap-6 items-start justify-end left-[142px] p-[32px] top-[738px] w-[1160px]" data-node-id="8671:26175">
         <div className="content-stretch flex gap-6 items-center justify-start relative shrink-0" data-node-id="8671:26176">
