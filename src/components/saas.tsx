@@ -3,14 +3,14 @@ import TemplateCard from './TemplateCard';
 import { moreTemplates } from '../data/templates';
 
 // Image assets
-const imgScreenshot1 = "http://localhost:3845/assets/8bdc6cc66d33e8a3c198d296d365b23c58ab1828.png";
-const imgScreenshot2 = "http://localhost:3845/assets/07c69373f1ea35febf9b475960d85d6aa5c9d625.png";
-const imgScreenshot3 = "http://localhost:3845/assets/8c1f7562884f860e91e1f67f9470f55dde4eabd9.png";
-const imgRadioIcon = "http://localhost:3845/assets/1eebb2433c6a78bd9a43e3118ca592786e745ba1.svg";
-const imgRadioSelected = "http://localhost:3845/assets/6d05347e7901e7fe252d31c08c434dfd1a47a4b4.svg";
-const imgArrowOutward = "http://localhost:3845/assets/8076c6dc332fb2ce4eb47e36413658636034a160.svg";
+const imgScreenshot1 = "images/saas-card-lg.png";
+const imgScreenshot2 = "images/saas-card-md.png";
+const imgScreenshot3 = "images/saas-card-sm.png";
+const imgRadioIcon = "icons/green-circle-icon.svg";
+const imgRadioSelected = "icons/green-dot-icon.svg";
+const imgArrowOutward = "icons/black-45-arrow.svg";
 const imgCheckIcon = "icons/black-check-icon.svg";
-const imgBackArrow = "http://localhost:3845/assets/7b3e619d741509d9537815b561969526c32d0a5e.svg";
+const imgBackArrow = "icons/green-left-arrow.svg";
 
 // Skin color schemes
 const skinThemes = {

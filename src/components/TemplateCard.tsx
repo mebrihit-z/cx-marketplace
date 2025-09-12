@@ -39,7 +39,7 @@ export default function TemplateCard({
         <div className="box-border content-stretch flex gap-2 items-center justify-start p-[10px] relative rounded-[8px] shrink-0">
           <div aria-hidden="true" className="absolute border border-[#d0d1d4] border-solid inset-0 pointer-events-none rounded-[8px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)]" />
           <div className="relative shrink-0 size-5">
-            <img alt="" className="block max-w-none size-full" src="http://localhost:3845/assets/35f56b629603a8d763e79d4485e01d5ecb3a9978.svg" />
+            <img alt="" className="block max-w-none size-full" src="icons/white-right-arrow.svg" />
           </div>
         </div>
       </div>
