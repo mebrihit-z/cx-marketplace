@@ -2,11 +2,13 @@ import { useState } from 'react';
 import TemplateCard from './TemplateCard';
 import Preview from './preview';
 import { moreTemplates } from '../data/templates';
+import type { MoreTemplate } from '../data/templates';
 
 type ActiveSection = 'home' | 'gallery' | 'pricing' | 'faqs' | 'training' | 'contact' | 'saas';
 
 interface SaaSProps {
   setActiveSection: (section: ActiveSection) => void;
+  selectedTemplate?: MoreTemplate | null;
 }
 
 // Image assets
@@ -116,13 +118,76 @@ function Button({ text, variant = "primary", showArrow = false }: ButtonProps) {
   );
 }
 
-export default function SaaS({ setActiveSection }: SaaSProps) {
+export default function SaaS({ setActiveSection, selectedTemplate }: SaaSProps) {
   const [selectedSkin, setSelectedSkin] = useState<keyof typeof skinThemes>('default');
   const [previewOpen, setPreviewOpen] = useState(false);
-  const currentTheme = skinThemes[selectedSkin];
+  
+  // Function to get template-specific theme and images
+  const getTemplateTheme = () => {
+    if (!selectedTemplate) {
+      return {
+        theme: skinThemes.default,
+        images: {
+          screenshot1: imgScreenshot1,
+          screenshot2: imgScreenshot2,
+          screenshot3: imgScreenshot3
+        }
+      };
+    }
 
-  // Function to get the appropriate images based on selected theme
+    // Map template colors to theme colors
+    const templateColor = selectedTemplate.backgroundColor;
+    
+    // Determine theme based on template color
+    if (templateColor === '#4DD58C') {
+      return {
+        theme: skinThemes.default,
+        images: {
+          screenshot1: imgScreenshot1,
+          screenshot2: imgScreenshot2,
+          screenshot3: imgScreenshot3
+        }
+      };
+    } else if (templateColor === '#6D83D9') {
+      return {
+        theme: skinThemes.winterBlues,
+        images: {
+          screenshot1: imgScreenshot1WinterBlues,
+          screenshot2: imgScreenshot2WinterBlues,
+          screenshot3: imgScreenshot3WinterBlues
+        }
+      };
+    } else if (templateColor === '#BD550F') {
+      return {
+        theme: skinThemes.summerSunset,
+        images: {
+          screenshot1: imgScreenshot1SummerSunset,
+          screenshot2: imgScreenshot2SummerSunset,
+          screenshot3: imgScreenshot3SummerSunset
+        }
+      };
+    }
+    
+    // Default fallback
+    return {
+      theme: skinThemes.default,
+      images: {
+        screenshot1: imgScreenshot1,
+        screenshot2: imgScreenshot2,
+        screenshot3: imgScreenshot3
+      }
+    };
+  };
+
+  const templateData = getTemplateTheme();
+  const currentTheme = selectedTemplate ? templateData.theme : skinThemes[selectedSkin];
+
+  // Function to get the appropriate images based on selected theme or template
   const getThemeImages = () => {
+    if (selectedTemplate) {
+      return templateData.images;
+    }
+    
     if (selectedSkin === 'winterBlues') {
       return {
         screenshot1: imgScreenshot1WinterBlues,
@@ -218,13 +283,16 @@ export default function SaaS({ setActiveSection }: SaaSProps) {
           {/* Title and Description */}
           <div className="content-stretch flex flex-col gap-6 h-[280px] items-start justify-start relative shrink-0 w-full">
             <div className="font-['Inter:Semi_Bold',_sans-serif] font-semibold leading-[0] not-italic relative shrink-0 text-[#22252b] text-[32px] lg:text-[48px] w-full">
-              <p className="leading-[40px] lg:leading-[56px]">SaaS 1.0</p>
+              <p className="leading-[40px] lg:leading-[56px]">{selectedTemplate?.title || 'SaaS 1.0'}</p>
             </div>
             
             <div className="content-stretch flex flex-col gap-6 items-start justify-start relative shrink-0 w-full">
               <div className="font-['Inter:regular',_sans-serif] leading-[0] min-w-full not-italic relative shrink-0 text-[#333740] text-[16px] lg:text-[18px]" style={{ width: "min-content" }}>
                 <p className="leading-[20px] lg:leading-[24px]">
-                  The SaaS template is perfect for tech organizations and product teams. It's sleek, responsive, SEO-friendly, and designed to showcase highly functional solutions with a clean layout, smooth animations, and a conversion-focused approach.
+                  {selectedTemplate ? 
+                    `The ${selectedTemplate.title} template is perfect for modern businesses and organizations. It's sleek, responsive, SEO-friendly, and designed to showcase highly functional solutions with a clean layout, smooth animations, and a conversion-focused approach.` :
+                    "The SaaS template is perfect for tech organizations and product teams. It's sleek, responsive, SEO-friendly, and designed to showcase highly functional solutions with a clean layout, smooth animations, and a conversion-focused approach."
+                  }
                 </p>
               </div>
               
@@ -600,10 +668,10 @@ export default function SaaS({ setActiveSection }: SaaSProps) {
         isOpen={previewOpen}
         onClose={handleClosePreview}
         template={{
-          id: 'saas-1.0',
+          id: selectedTemplate?.id || 'saas-1.0',
           src: themeImages.screenshot1,
-          alt: 'SaaS 1.0 Template Preview',
-          title: 'SaaS 1.0',
+          alt: `${selectedTemplate?.title || 'SaaS 1.0'} Template Preview`,
+          title: selectedTemplate?.title || 'SaaS 1.0',
           category: 'Business'
         }}
       />

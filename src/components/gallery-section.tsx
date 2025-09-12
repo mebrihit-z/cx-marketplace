@@ -1,14 +1,16 @@
 import { moreTemplates } from '../data/templates';
 import TemplateCard from './TemplateCard';
+import type { MoreTemplate } from '../data/templates';
 const img = "/images/white-stars-icon.svg";
 
 type ActiveSection = 'home' | 'gallery' | 'pricing' | 'faqs' | 'training' | 'contact' | 'saas';
 
 interface GallerySectionProps {
   setActiveSection: (section: ActiveSection) => void;
+  setSelectedTemplate: (template: MoreTemplate) => void;
 }
 
-export default function GallerySection({ setActiveSection }: GallerySectionProps) {
+export default function GallerySection({ setActiveSection, setSelectedTemplate }: GallerySectionProps) {
   return (
     <>
     <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between w-full px-4 md:px-8 lg:px-16 pt-24 md:pt-30 lg:pt-40 gap-6 lg:gap-0" data-name="Header" data-node-id="8071:32925">
@@ -37,7 +39,8 @@ export default function GallerySection({ setActiveSection }: GallerySectionProps
               gradientTo={template.gradientTo}
               aspectRatio={template.aspectRatio}
               onClick={() => {
-                // Navigate to SaaS component when any card is clicked
+                // Set the selected template and navigate to SaaS component
+                setSelectedTemplate(template);
                 setActiveSection('saas');
               }}
             />

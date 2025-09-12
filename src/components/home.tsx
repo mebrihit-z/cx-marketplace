@@ -4,6 +4,7 @@ import AISection from './ai-section';
 import PromiseSection from './promise-section';
 import WhiteGloveSection from './white-glove-section';
 import Roadmap from './roadmap';
+import type { MoreTemplate } from '../data/templates';
 
 const roadmap = "/images/home-page-roadmap.svg";
 
@@ -11,13 +12,14 @@ type ActiveSection = 'home' | 'gallery' | 'pricing' | 'faqs' | 'training' | 'con
 
 interface HomeProps {
   setActiveSection: (section: ActiveSection) => void;
+  setSelectedTemplate: (template: MoreTemplate) => void;
 }
 
-export default function Home({ setActiveSection }: HomeProps) {
+export default function Home({ setActiveSection, setSelectedTemplate }: HomeProps) {
     return (
       <div className="w-full min-h-screen">
         <Hero />
-        <GallerySection setActiveSection={setActiveSection} />
+        <GallerySection setActiveSection={setActiveSection} setSelectedTemplate={setSelectedTemplate} />
         <AISection />
         {/* Show roadmap component on mobile, image on desktop */}
         <div className="block md:hidden">
