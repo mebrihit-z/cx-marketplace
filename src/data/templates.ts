@@ -103,16 +103,16 @@ export const moreTemplates: MoreTemplate[] = [
     aspectRatio: "aspect-[1860/1212]"
   },
   {
-    id: "startup-1.0",
-    title: "Startup 1.0",
+    id: "e-commerce-1.0",
+    title: "E-commerce 1.0",
     backgroundImage: "images/e-commerce-card-lg.svg",
     backgroundColor: "#6D83D9",
     gradientTo: "#131D45",
     aspectRatio: "aspect-[1726/1124]"
   },
   {
-    id: "startup-2.0",
-    title: "Startup 2.0",
+    id: "startup-1.0",
+    title: "Startup 1.0",
     backgroundImage: "images/startup-card-lg.svg",
     backgroundColor: "#BD550F",
     gradientTo: "#421E06",

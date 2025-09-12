@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import TemplateCard from './TemplateCard';
 import Preview from './preview';
 import { moreTemplates } from '../data/templates';
@@ -122,91 +122,77 @@ export default function SaaS({ setActiveSection, selectedTemplate }: SaaSProps) 
   const [selectedSkin, setSelectedSkin] = useState<keyof typeof skinThemes>('default');
   const [previewOpen, setPreviewOpen] = useState(false);
   
-  // Function to get template-specific theme and images
-  const getTemplateTheme = () => {
-    if (!selectedTemplate) {
-      return {
-        theme: skinThemes.default,
-        images: {
-          screenshot1: imgScreenshot1,
-          screenshot2: imgScreenshot2,
-          screenshot3: imgScreenshot3
-        }
-      };
-    }
-
-    // Map template colors to theme colors
-    const templateColor = selectedTemplate.backgroundColor;
-    
-    // Determine theme based on template color
-    if (templateColor === '#4DD58C') {
-      return {
-        theme: skinThemes.default,
-        images: {
-          screenshot1: imgScreenshot1,
-          screenshot2: imgScreenshot2,
-          screenshot3: imgScreenshot3
-        }
-      };
-    } else if (templateColor === '#6D83D9') {
-      return {
-        theme: skinThemes.winterBlues,
-        images: {
-          screenshot1: imgScreenshot1WinterBlues,
-          screenshot2: imgScreenshot2WinterBlues,
-          screenshot3: imgScreenshot3WinterBlues
-        }
-      };
-    } else if (templateColor === '#BD550F') {
-      return {
-        theme: skinThemes.summerSunset,
-        images: {
-          screenshot1: imgScreenshot1SummerSunset,
-          screenshot2: imgScreenshot2SummerSunset,
-          screenshot3: imgScreenshot3SummerSunset
-        }
-      };
-    }
-    
-    // Default fallback
-    return {
-      theme: skinThemes.default,
-      images: {
-        screenshot1: imgScreenshot1,
-        screenshot2: imgScreenshot2,
-        screenshot3: imgScreenshot3
-      }
-    };
-  };
-
-  const templateData = getTemplateTheme();
-  const currentTheme = selectedTemplate ? templateData.theme : skinThemes[selectedSkin];
-
-  // Function to get the appropriate images based on selected theme or template
-  const getThemeImages = () => {
+  // Effect to automatically select the correct skin based on template color
+  useEffect(() => {
     if (selectedTemplate) {
-      return templateData.images;
+      const templateColor = selectedTemplate.backgroundColor;
+      
+      // Map template colors to skin themes
+      if (templateColor === '#4DD58C') {
+        setSelectedSkin('default');
+      } else if (templateColor === '#6D83D9') {
+        setSelectedSkin('winterBlues');
+      } else if (templateColor === '#BD550F') {
+        setSelectedSkin('summerSunset');
+      } else {
+        // For any other colors, default to default theme
+        setSelectedSkin('default');
+      }
+    } else {
+      // If no template is selected, default to default skin
+      setSelectedSkin('default');
     }
+  }, [selectedTemplate]);
+  
+
+  // Use selected skin theme colors, but if a template is selected and no skin change has been made,
+  // use the template's colors as the default
+  const currentTheme = skinThemes[selectedSkin];
+
+  // Function to get the appropriate images based on selected theme
+  const getThemeImages = () => {
+    let baseImages;
     
     if (selectedSkin === 'winterBlues') {
-      return {
+      baseImages = {
         screenshot1: imgScreenshot1WinterBlues,
         screenshot2: imgScreenshot2WinterBlues,
         screenshot3: imgScreenshot3WinterBlues
       };
-    }
-    if (selectedSkin === 'summerSunset') {
-      return {
+    } else if (selectedSkin === 'summerSunset') {
+      baseImages = {
         screenshot1: imgScreenshot1SummerSunset,
         screenshot2: imgScreenshot2SummerSunset,
         screenshot3: imgScreenshot3SummerSunset
       };
+    } else {
+      baseImages = {
+        screenshot1: imgScreenshot1,
+        screenshot2: imgScreenshot2,
+        screenshot3: imgScreenshot3
+      };
     }
-    return {
-      screenshot1: imgScreenshot1,
-      screenshot2: imgScreenshot2,
-      screenshot3: imgScreenshot3
-    };
+    
+    // If a template is selected and the skin matches the template's original skin,
+    // use the template's background image as the main screenshot
+    if (selectedTemplate) {
+      const templateColor = selectedTemplate.backgroundColor;
+      const isOriginalSkin = (
+        (templateColor === '#4DD58C' && selectedSkin === 'default') ||
+        (templateColor === '#6D83D9' && selectedSkin === 'winterBlues') ||
+        (templateColor === '#BD550F' && selectedSkin === 'summerSunset')
+      );
+      
+      if (isOriginalSkin) {
+        return {
+          screenshot1: selectedTemplate.backgroundImage, // Use the actual card image
+          screenshot2: baseImages.screenshot2,
+          screenshot3: baseImages.screenshot3
+        };
+      }
+    }
+    
+    return baseImages;
   };
 
   const themeImages = getThemeImages();
@@ -304,22 +290,22 @@ export default function SaaS({ setActiveSection, selectedTemplate }: SaaSProps) 
                 <div className="content-stretch flex gap-2 items-start justify-start relative shrink-0">
                   <div 
                     className="box-border content-stretch flex gap-2 items-center justify-center overflow-clip px-3 py-[5px] relative rounded-[5px] shadow-[0px_1px_2px_0px_rgba(16,24,40,0.05)] shrink-0"
-                    style={{ backgroundColor: '#e7f6e5' }}
+                    style={{ backgroundColor: currentTheme.secondary }}
                   >
                     <div 
                       className="font-['Inter:regular',_sans-serif] leading-[0] not-italic relative shrink-0 text-[14px] text-nowrap"
-                      style={{ color: '#0a7c00' }}
+                      style={{ color: currentTheme.text }}
                     >
                       <p className="leading-[18px] whitespace-pre">Business</p>
                     </div>
                   </div>
                   <div 
                     className="box-border content-stretch flex gap-2 items-center justify-center overflow-clip px-3 py-[5px] relative rounded-[5px] shadow-[0px_1px_2px_0px_rgba(16,24,40,0.05)] shrink-0"
-                    style={{ backgroundColor: '#e7f6e5' }}
+                    style={{ backgroundColor: currentTheme.secondary }}
                   >
                     <div 
                       className="font-['Inter:regular',_sans-serif] leading-[0] not-italic relative shrink-0 text-[14px] text-nowrap"
-                      style={{ color: '#0a7c00' }}
+                      style={{ color: currentTheme.text }}
                     >
                       <p className="leading-[18px] whitespace-pre">Tech</p>
                     </div>
@@ -340,7 +326,7 @@ export default function SaaS({ setActiveSection, selectedTemplate }: SaaSProps) 
                 {/* Default Option */}
                 <div 
                   className="relative shrink-0 w-full"
-                  style={{ backgroundColor: selectedSkin === 'default' ? '#e7f6e5' : 'transparent' }}
+                  style={{ backgroundColor: selectedSkin === 'default' ? currentTheme.secondary : 'transparent' }}
                 >
                   <div 
                     className="box-border content-stretch flex items-center justify-between overflow-clip px-4 py-3.5 relative w-full cursor-pointer"
@@ -354,7 +340,7 @@ export default function SaaS({ setActiveSection, selectedTemplate }: SaaSProps) 
                         <div className="content-stretch flex gap-2 items-center justify-start relative shrink-0">
                           <div 
                             className="font-['Inter:regular',_sans-serif] leading-[0] not-italic relative shrink-0 text-[14px] text-nowrap"
-                            style={{ color: selectedSkin === 'default' ? '#0a7c00' : '#111215' }}
+                            style={{ color: selectedSkin === 'default' ? currentTheme.text : '#111215' }}
                           >
                             <p className="leading-[18px] whitespace-pre">Default</p>
                           </div>
@@ -373,7 +359,7 @@ export default function SaaS({ setActiveSection, selectedTemplate }: SaaSProps) 
                 {/* Winter Blues Option */}
                 <div 
                   className="relative shrink-0 w-full"
-                  style={{ backgroundColor: selectedSkin === 'winterBlues' ? '#e7f6e5' : 'transparent' }}
+                  style={{ backgroundColor: selectedSkin === 'winterBlues' ? currentTheme.secondary : 'transparent' }}
                 >
                   <div 
                     className="box-border content-stretch flex items-center justify-between overflow-clip px-4 py-3.5 relative w-full cursor-pointer"
@@ -387,7 +373,7 @@ export default function SaaS({ setActiveSection, selectedTemplate }: SaaSProps) 
                         <div className="content-stretch flex gap-2 items-center justify-start relative shrink-0">
                           <div 
                             className="font-['Inter:regular',_sans-serif] leading-[0] not-italic relative shrink-0 text-[14px] text-nowrap"
-                            style={{ color: selectedSkin === 'winterBlues' ? '#0a7c00' : '#111215' }}
+                            style={{ color: selectedSkin === 'winterBlues' ? currentTheme.text : '#111215' }}
                           >
                             <p className="leading-[18px] whitespace-pre">Winter Blues</p>
                           </div>
@@ -406,7 +392,7 @@ export default function SaaS({ setActiveSection, selectedTemplate }: SaaSProps) 
                 {/* Spring Garden Option */}
                 <div 
                   className="relative shrink-0 w-full"
-                  style={{ backgroundColor: selectedSkin === 'springGarden' ? '#e7f6e5' : 'transparent' }}
+                  style={{ backgroundColor: selectedSkin === 'springGarden' ? currentTheme.secondary : 'transparent' }}
                 >
                   <div 
                     className="box-border content-stretch flex items-center justify-between overflow-clip px-4 py-3.5 relative w-full cursor-pointer"
@@ -420,7 +406,7 @@ export default function SaaS({ setActiveSection, selectedTemplate }: SaaSProps) 
                         <div className="content-stretch flex gap-2 items-center justify-start relative shrink-0">
                           <div 
                             className="font-['Inter:regular',_sans-serif] leading-[0] not-italic relative shrink-0 text-[14px] text-nowrap"
-                            style={{ color: selectedSkin === 'springGarden' ? '#0a7c00' : '#111215' }}
+                            style={{ color: selectedSkin === 'springGarden' ? currentTheme.text : '#111215' }}
                           >
                             <p className="leading-[18px] whitespace-pre">Spring Garden</p>
                           </div>
@@ -439,7 +425,7 @@ export default function SaaS({ setActiveSection, selectedTemplate }: SaaSProps) 
                 {/* Summer Sunset Option */}
                 <div 
                   className="relative shrink-0 w-full"
-                  style={{ backgroundColor: selectedSkin === 'summerSunset' ? '#e7f6e5' : 'transparent' }}
+                  style={{ backgroundColor: selectedSkin === 'summerSunset' ? currentTheme.secondary : 'transparent' }}
                 >
                   <div 
                     className="box-border content-stretch flex items-center justify-between overflow-clip px-4 py-3.5 relative w-full cursor-pointer"
@@ -453,7 +439,7 @@ export default function SaaS({ setActiveSection, selectedTemplate }: SaaSProps) 
                         <div className="content-stretch flex gap-2 items-center justify-start relative shrink-0">
                           <div 
                             className="font-['Inter:regular',_sans-serif] leading-[0] not-italic relative shrink-0 text-[14px] text-nowrap"
-                            style={{ color: selectedSkin === 'summerSunset' ? '#0a7c00' : '#111215' }}
+                            style={{ color: selectedSkin === 'summerSunset' ? currentTheme.text : '#111215' }}
                           >
                             <p className="leading-[18px] whitespace-pre">Summer Sunset</p>
                           </div>
@@ -472,7 +458,7 @@ export default function SaaS({ setActiveSection, selectedTemplate }: SaaSProps) 
                 {/* Autumn Leaves Option */}
                 <div 
                   className="relative shrink-0 w-full"
-                  style={{ backgroundColor: selectedSkin === 'autumnLeaves' ? '#e7f6e5' : 'transparent' }}
+                  style={{ backgroundColor: selectedSkin === 'autumnLeaves' ? currentTheme.secondary : 'transparent' }}
                 >
                   <div 
                     className="box-border content-stretch flex items-center justify-between overflow-clip px-4 py-3.5 relative w-full cursor-pointer"
@@ -486,7 +472,7 @@ export default function SaaS({ setActiveSection, selectedTemplate }: SaaSProps) 
                         <div className="content-stretch flex gap-2 items-center justify-start relative shrink-0">
                           <div 
                             className="font-['Inter:regular',_sans-serif] leading-[0] not-italic relative shrink-0 text-[14px] text-nowrap"
-                            style={{ color: selectedSkin === 'autumnLeaves' ? '#0a7c00' : '#333740' }}
+                            style={{ color: selectedSkin === 'autumnLeaves' ? currentTheme.text : '#333740' }}
                           >
                             <p className="leading-[18px] whitespace-pre">Autumn Leaves</p>
                           </div>
@@ -505,7 +491,7 @@ export default function SaaS({ setActiveSection, selectedTemplate }: SaaSProps) 
                 {/* Custom Option */}
                 <div 
                   className="relative shrink-0 w-full"
-                  style={{ backgroundColor: selectedSkin === 'custom' ? '#e7f6e5' : 'transparent' }}
+                  style={{ backgroundColor: selectedSkin === 'custom' ? currentTheme.secondary : 'transparent' }}
                 >
                   <div 
                     className="box-border content-stretch flex items-center justify-between overflow-clip px-4 py-3.5 relative w-full cursor-pointer"
@@ -519,7 +505,7 @@ export default function SaaS({ setActiveSection, selectedTemplate }: SaaSProps) 
                         <div className="content-stretch flex gap-2 items-center justify-start relative shrink-0">
                           <div 
                             className="font-['Inter:regular',_sans-serif] leading-[0] not-italic relative shrink-0 text-[14px] text-nowrap"
-                            style={{ color: selectedSkin === 'custom' ? '#0a7c00' : '#333740' }}
+                            style={{ color: selectedSkin === 'custom' ? currentTheme.text : '#333740' }}
                           >
                             <p className="leading-[18px] whitespace-pre">Custom</p>
                           </div>
