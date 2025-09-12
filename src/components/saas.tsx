@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import TemplateCard from './TemplateCard';
+import Preview from './preview';
 import { moreTemplates } from '../data/templates';
 
 type ActiveSection = 'home' | 'gallery' | 'pricing' | 'faqs' | 'training' | 'contact' | 'saas';
@@ -111,10 +112,19 @@ function Button({ text, variant = "primary", showArrow = false }: ButtonProps) {
 
 export default function SaaS({ setActiveSection }: SaaSProps) {
   const [selectedSkin, setSelectedSkin] = useState<keyof typeof skinThemes>('default');
+  const [previewOpen, setPreviewOpen] = useState(false);
   const currentTheme = skinThemes[selectedSkin];
 
   const handleSkinChange = (skin: keyof typeof skinThemes) => {
     setSelectedSkin(skin);
+  };
+
+  const handlePreviewClick = () => {
+    setPreviewOpen(true);
+  };
+
+  const handleClosePreview = () => {
+    setPreviewOpen(false);
   };
 
   return (
@@ -436,7 +446,10 @@ export default function SaaS({ setActiveSection }: SaaSProps) {
             <div className="bg-[#0a7c00] box-border content-stretch flex gap-2.5 items-center justify-center px-6 py-2.5 relative rounded-[8px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)] shrink-0">
               <Button text="Get a quote" />
             </div>
-            <div className="bg-white box-border content-stretch flex gap-2 items-center justify-start px-6  relative rounded-[8px] shrink-0">
+            <div 
+              className="bg-white box-border content-stretch flex gap-2 items-center justify-start px-6 relative rounded-[8px] shrink-0 cursor-pointer"
+              onClick={handlePreviewClick}
+            >
               <Button text="Preview" variant="secondary" showArrow={true} />
             </div>
           </div>
@@ -550,6 +563,19 @@ export default function SaaS({ setActiveSection }: SaaSProps) {
           ))}
         </div>
       </div>
+
+      {/* Preview Modal */}
+      <Preview 
+        isOpen={previewOpen}
+        onClose={handleClosePreview}
+        template={{
+          id: 'saas-1.0',
+          src: imgScreenshot1,
+          alt: 'SaaS 1.0 Template Preview',
+          title: 'SaaS 1.0',
+          category: 'Business'
+        }}
+      />
     </div>
   );
 }
