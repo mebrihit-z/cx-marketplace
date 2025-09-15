@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import TemplateCard from './TemplateCard';
-import Preview from './preview';
+// import Preview from './preview';
 import { moreTemplates } from '../data/templates';
 import type { MoreTemplate } from '../data/templates';
 import type { ActiveSection } from '../types';
@@ -119,7 +119,7 @@ function Button({ text, variant = "primary", showArrow = false }: ButtonProps) {
 
 export default function SaaS({ setActiveSection, selectedTemplate }: SaaSProps) {
   const [selectedSkin, setSelectedSkin] = useState<keyof typeof skinThemes>('default');
-  const [previewOpen, setPreviewOpen] = useState(false);
+  // const [previewOpen, setPreviewOpen] = useState(false);
   
   // Effect to automatically select the correct skin based on template color
   useEffect(() => {
@@ -201,12 +201,14 @@ export default function SaaS({ setActiveSection, selectedTemplate }: SaaSProps) 
   };
 
   const handlePreviewClick = () => {
-    setPreviewOpen(true);
+    // Create a new window/tab with the preview page
+    const previewUrl = `/preview?template=${encodeURIComponent(JSON.stringify(selectedTemplate))}`;
+    window.open(previewUrl, '_blank');
   };
 
-  const handleClosePreview = () => {
-    setPreviewOpen(false);
-  };
+  // const handleClosePreview = () => {
+  //   setPreviewOpen(false);
+  // };
 
   return (
     <div className="box-border content-stretch flex flex-col gap-12 lg:gap-20 items-start justify-start px-0 py-16 lg:py-32 relative size-full">
@@ -648,18 +650,7 @@ export default function SaaS({ setActiveSection, selectedTemplate }: SaaSProps) 
         </div>
       </div>
 
-      {/* Preview Modal */}
-      <Preview 
-        isOpen={previewOpen}
-        onClose={handleClosePreview}
-        template={{
-          id: selectedTemplate?.id || 'saas-1.0',
-          src: themeImages.screenshot1,
-          alt: `${selectedTemplate?.title || 'SaaS 1.0'} Template Preview`,
-          title: selectedTemplate?.title || 'SaaS 1.0',
-          category: 'Business'
-        }}
-      />
+      {/* Preview Modal - Removed, now opens in new page */}
     </div>
   );
 }

@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
 import Header from './components/header'
 import Footer from './components/footer'
@@ -9,12 +9,31 @@ import FAQs from './components/faqs'
 import Training from './components/training'
 import Contact from './components/contact'
 import SaaS from './components/saas'
+import PreviewPage from './components/preview-page'
 import type { MoreTemplate } from './data/templates'
 import type { ActiveSection } from './types'
 
 function App() {
   const [activeSection, setActiveSection] = useState<ActiveSection>('home')
   const [selectedTemplate, setSelectedTemplate] = useState<MoreTemplate | null>(null)
+
+  // Check if we're on a preview page
+  useEffect(() => {
+    const path = window.location.pathname;
+    if (path === '/preview') {
+      const urlParams = new URLSearchParams(window.location.search);
+      const templateParam = urlParams.get('template');
+      if (templateParam) {
+        try {
+          const template = JSON.parse(decodeURIComponent(templateParam));
+          setSelectedTemplate(template);
+          setActiveSection('preview' as ActiveSection);
+        } catch (error) {
+          console.error('Error parsing template parameter:', error);
+        }
+      }
+    }
+  }, []);
 
   const renderActiveComponent = () => {
     switch (activeSection) {
@@ -32,9 +51,16 @@ function App() {
         return <Contact />
       case 'saas':
         return <SaaS setActiveSection={setActiveSection} selectedTemplate={selectedTemplate} />
+      case 'preview':
+        return selectedTemplate ? <PreviewPage template={selectedTemplate} /> : <Home setActiveSection={setActiveSection} setSelectedTemplate={setSelectedTemplate} />
       default:
         return <Home setActiveSection={setActiveSection} setSelectedTemplate={setSelectedTemplate} />
     }
+  }
+
+  // For preview page, don't show header and footer
+  if (activeSection === 'preview') {
+    return <PreviewPage template={selectedTemplate!} />
   }
 
   return (

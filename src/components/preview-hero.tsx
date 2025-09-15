@@ -6,7 +6,7 @@ export default function PreviewHero() {
   return (
     <>
       {/* Header menu*/}
-      <div className="bg-[#041117] w-full">
+      {/* <div className="bg-[#041117] w-full">
         <div className="w-full bg-[#041117] px-40 py-10 fixed content-stretch flex items-center justify-between z-50" data-name="Header" data-node-id="8671:26051">
               <div className="content-stretch flex gap-16 items-center justify-start relative shrink-0" data-name="Left" data-node-id="8671:26052">
                 <div className="h-[33.455px] relative shrink-0 w-[92px]" data-name="Original Logo" data-node-id="8671:26053">
@@ -75,8 +75,8 @@ export default function PreviewHero() {
                 </div>
               </div>
         </div>
-      </div>
-      <div className='pt-50 text-white text-2xl font-bold py-20 pl-40 bg-[#041117] w-full box-border content-stretch'>
+      </div> */}
+      <div className='text-white text-2xl font-bold py-20 pl-40 bg-[#041117] w-full box-border content-stretch'>
         <div className="grid grid-cols-2 gap-4">
           <div className="hero__left">
             <h1 className="heading text-[72px] font-normal mb-8">
