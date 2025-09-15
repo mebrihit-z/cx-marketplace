@@ -1,6 +1,11 @@
 
 import React from 'react';
-
+import PreviewHero from './preview-hero.tsx'; 
+import GrowthSolutions from './growth-solutions';
+import IntegrationsSection from './integrations-section';
+import LeadOrganization from './lead-organization';
+import Testimonials from './testimonials';
+import BlogSections from './blog-section'; 
 // Image assets from Figma
 const imgXIcon = "icons/x-icon.svg";
 const imgVector6 = "icons/preview-log.svg";
@@ -48,7 +53,7 @@ export default function Preview({ isOpen, onClose, template }: PreviewProps) {
   
   return (
     <div 
-      className="fixed inset-0 z-50 flex items-center justify-center p-4"
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 overflow-y-auto overflow-x-hidden"
       onKeyDown={handleKeyDown}
       tabIndex={-1}
     >
@@ -150,7 +155,12 @@ export default function Preview({ isOpen, onClose, template }: PreviewProps) {
         </div>
           
         {/* Hero Section */}
-        <div className='text-white text-2xl font-bold mt-20'>teting hero</div>
+        <PreviewHero />
+        {/* <GrowthSolutions />
+        <LeadOrganization />
+        <IntegrationsSection />
+        <Testimonials />
+        <BlogSections /> */}
         
       </div>
     </div>
