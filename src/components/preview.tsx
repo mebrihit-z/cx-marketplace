@@ -63,7 +63,7 @@ export default function Preview({ isOpen, onClose, template }: PreviewProps) {
         onClick={onClose}
       />
       {/* Modal Content Container */}
-      <div className="bg-[#041117] w-full max-w-7xl h-full max-h-[95vh] rounded-2xl overflow-hidden shadow-2xl border border-gray-800">
+      <div className="bg-[#041117] w-full max-w-7xl h-full max-h-[95vh] rounded-2xl overflow-auto shadow-2xl border border-gray-800">
         {/* Modal Header and Close Button*/}
         <div className='flex items-center justify-between p-4'>
           {/* Modal Header */}

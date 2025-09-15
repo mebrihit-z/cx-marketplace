@@ -1,4 +1,9 @@
 @import "tailwindcss";
+
+@font-face {
+  font-family: Recoleta;
+  src: url('.././src/assets/fonts/Recoleta-RegularDEMO.otf');
+}
 /* CSS Variables for Colors */
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -101,3 +106,7 @@ body {
   line-height: 24px;
 }
 
+.heading {
+  font-family: 'Recoleta';
+  line-height: 110%;
+}
