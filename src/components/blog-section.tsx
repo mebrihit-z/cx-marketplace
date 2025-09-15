@@ -1,23 +1,23 @@
 import { useState } from 'react';
 
-// Image assets from Figma
-const imgPexelsMartProduction7550581 = "http://localhost:3845/assets/b1f892f8a616cf754428761c009568f54b28fdc3.png";
-const imgPexelsMartProduction7550583 = "http://localhost:3845/assets/28011072d81ce163e7a7ba0648e9a7dc068ca712.png";
-const imgPexelsMartProduction7550584 = "http://localhost:3845/assets/b6394ad898ae8e3063fffc84cd1a484b7403c36b.png";
-const imgVector1 = "http://localhost:3845/assets/e886a86c6efbc9998c5cc527827c1cd38babd8d9.png";
-const imgVector5 = "http://localhost:3845/assets/15201e9ad1d338c03541a332b177176dcb60e6ae.png";
-const imgPexelsMartProduction7550582 = "http://localhost:3845/assets/c1d5b4bdc747b08c55488c4eefe9169a31f174ff.svg";
-const img = "http://localhost:3845/assets/fb4cbf92237b51990f626a8e1c53f5261b870f7f.svg";
-const imgVuesaxLinearClock = "http://localhost:3845/assets/73fc996973d018d23bc8a2ee7f172c14ed12478f.svg";
-const imgVuesaxLinearBook = "http://localhost:3845/assets/1c8e4628a1a6e0f60d606b98f473a87af8527496.svg";
-const imgVuesaxOutlineGraph = "http://localhost:3845/assets/53adaa91bdbb1861559b6cd2b751ce1499cfa880.svg";
-const img1 = "http://localhost:3845/assets/1cf23df44d144cd5c1522466a79eed803eb18b8f.svg";
-const imgVuesaxLinearArrowLeft = "http://localhost:3845/assets/2d716579fc6a2accffbdb931933b001fa03133e7.svg";
-const imgVuesaxLinearArrowRight = "http://localhost:3845/assets/5497136461392bb66a07d1867d196ffb72fb772f.svg";
-const imgVector = "http://localhost:3845/assets/9787a9213c4b521b0b01f1ba7e96a52d7f944181.svg";
-const imgVector2 = "http://localhost:3845/assets/6348ba033db2e59b006eed51e647d6836cfa44fc.svg";
-const imgVector3 = "http://localhost:3845/assets/0416f3a5da6ad6c577b19f6a3e1bbdc2af3228e9.svg";
-const imgVector4 = "http://localhost:3845/assets/f5c255f8593ad7418ec22c4886f9d92f868b153d.svg";
+// Image assets - using local images from public/images directory
+const imgPexelsMartProduction7550581 = "/images/experiments-improve.svg";
+const imgPexelsMartProduction7550583 = "/images/the-power-of-real-time.svg";
+const imgPexelsMartProduction7550584 = "/images/customizing-your-user-exp.svg";
+const imgVector1 = "/images/green-card-bg-image.svg";
+const imgVector5 = "/images/white-stars-icon.svg";
+const imgPexelsMartProduction7550582 = "/images/experiments-improve.svg"; // Using same image as mask
+const img = "/icons/heart-icon.svg";
+const imgVuesaxLinearClock = "/icons/white-clock.svg";
+const imgVuesaxLinearBook = "/icons/book-icon.svg";
+const imgVuesaxOutlineGraph = "/icons/analytics-icon.svg";
+const img1 = "/icons/black-star.svg";
+const imgVuesaxLinearArrowLeft = "/icons/black-circle-left-arrow.svg";
+const imgVuesaxLinearArrowRight = "/icons/green-circle-right-arrow.svg";
+const imgVector = "/images/black-star.svg";
+const imgVector2 = "/images/black-star.svg";
+const imgVector3 = "/images/black-star.svg";
+const imgVector4 = "/images/black-star.svg";
 
 // Blog card data
 const blogCards = [
