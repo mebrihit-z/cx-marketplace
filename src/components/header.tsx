@@ -74,7 +74,7 @@ export default function Header({ activeSection, setActiveSection }: HeaderProps)
 
   return (
     <>
-      <div className="box-border content-stretch flex items-center justify-center px-6 py-0 relative size-full bg-gray-900 sticky top-0 z-50">
+      <div className="box-border content-stretch flex items-center justify-center px-6 py-0 relative size-full bg-[#041117] sticky top-0 z-50">
         <div className="basis-0 content-stretch flex grow items-center justify-between max-w-[1440px] min-h-px min-w-px relative shrink-0">
           {/* Left Container - Logo */}
           <div className="h-[88px] relative shrink-0 w-[306px] md:w-[306px] w-auto min-w-0">
