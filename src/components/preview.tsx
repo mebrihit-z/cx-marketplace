@@ -85,7 +85,7 @@ export default function Preview({ isOpen, onClose, template }: PreviewProps) {
           </button>
         </div>
         {/* Header menu*/}
-        <div className="fixed content-stretch flex items-center justify-between left-1/2 top-35 translate-x-[-50%] w-[1160px]" data-name="Header" data-node-id="8671:26051">
+        <div className="fixed content-stretch flex items-center justify-between left-1/2 top-35 translate-x-[-50%] w-[1160px] z-50" data-name="Header" data-node-id="8671:26051">
             <div className="content-stretch flex gap-16 items-center justify-start relative shrink-0" data-name="Left" data-node-id="8671:26052">
               <div className="h-[33.455px] relative shrink-0 w-[92px]" data-name="Original Logo" data-node-id="8671:26053">
                 <div className="absolute bottom-0 left-0 right-[0.91%] top-0" data-name="Original Logo" data-node-id="8671:26054">
@@ -154,7 +154,7 @@ export default function Preview({ isOpen, onClose, template }: PreviewProps) {
             </div>
         </div>
           
-          <div className="w-full h-full  overflow-auto">
+        <div className="w-full h-full  overflow-auto">
           {/* Hero Section */}
           <PreviewHero />
           <GrowthSolutions />

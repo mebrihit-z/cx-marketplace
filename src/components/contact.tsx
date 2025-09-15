@@ -1,3 +1,4 @@
+import PreviewHero from './preview-hero.tsx'; 
 import GrowthSolutions from './growth-solutions';
 import IntegrationsSection from './integrations-section';
 import LeadOrganization from './lead-organization';
@@ -10,6 +11,7 @@ export default function Contact() {
     return (
       <>
         {/* <h1>Contact</h1> */}
+        <PreviewHero />
         <GrowthSolutions />
         <LeadOrganization />
         <IntegrationsSection />

@@ -1,7 +1,6 @@
 export default function PreviewHero() {
   return (
-    <div className='text-white text-2xl font-bold m-20'>
-      <h1>Preview Hero</h1>
+    <div className='text-white text-2xl font-bold py-20 pl-40 bg-[#041117] w-full box-border content-stretch'>
       <div className="grid grid-cols-2 gap-4">
       <div className="hero__left">
         <h1 className="heading text-[72px] font-normal mb-8">
