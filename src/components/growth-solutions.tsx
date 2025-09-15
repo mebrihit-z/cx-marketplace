@@ -5,14 +5,14 @@ const imgIntersect = "/images/growth-solutions.svg";
 const imgVector1 = "/icons/logo-icon.svg";
 const imgVector5 = "/icons/logo-icon.svg";
 const imgIcons = "/icons/black-right-arrow.svg";
-const imgVector = "/icons/logo-icon.svg";
+const imgVector = "/icons/stain-icon.svg";
 const imgVector2 = "/icons/logo-icon.svg";
 const imgVector3 = "/icons/logo-icon.svg";
 const imgVector4 = "/icons/logo-icon.svg";
 // Feature icons
-const imgVuesaxOutlineUserAdd = "/icons/add-icon.svg";
-const imgVuesaxOutlineChart = "/icons/dollar-icon.svg";
-const imgVuesaxOutlineStar = "/icons/star-black.svg";
+const imgVuesaxOutlineUserAdd = "/icons/add-team-icon.svg";
+const imgVuesaxOutlineChart = "/icons/instant-analytics-icon.svg";
+const imgVuesaxOutlineStar = "/icons/white-one-star.svg";
 
 export default function GrowthSolutions() {
   console.log('GrowthSolutions component is rendering');
@@ -99,11 +99,6 @@ export default function GrowthSolutions() {
                   <div className="bg-[#eaecea] rounded-[17.669px] size-full" data-node-id="8671:26311" />
                 </div>
               </div>
-              <div className="absolute flex inset-0 items-center justify-center">
-                <div className="flex-none h-[5px] rotate-[270deg] w-[26px]">
-                  <div className="bg-[#7be385] rounded-[17.669px] size-full" data-node-id="8671:26312" style={{ backgroundImage: "url('data:image/svg+xml;utf8,<svg viewBox=\\\'0 0 26 5\\\' xmlns=\\\'http://www.w3.org/2000/svg\\\' preserveAspectRatio=\\\'none\\\'><rect x=\\\'0\\\' y=\\\'0\\\' height=\\\'100%\\\' width=\\\'100%\\\' fill=\\\'url(%23grad)\\\' opacity=\\\'1\\\'/><defs><radialGradient id=\\\'grad\\\' gradientUnits=\\\'userSpaceOnUse\\\' cx=\\\'0\\\' cy=\\\'0\\\' r=\\\'10\\\' gradientTransform=\\\'matrix(-2.5086 0.53361 -0.094457 -0.48242 24.954 -1.0672)\\\'><stop stop-color=\\\'rgba(255,255,255,0)\\\' offset=\\\'0\\\'/><stop stop-color=\\\'rgba(255,255,255,0.4)\\\' offset=\\\'1\\\'/></radialGradient></defs></svg>')" }} />
-                </div>
-              </div>
             </div>
             <div className="absolute bottom-[4.45%] contents left-[78.74%] right-[15.29%] top-0" data-name="Bar 6" data-node-id="8671:26313">
               <div className="absolute bottom-0 flex items-center justify-center left-[0.13px] right-0 top-0">
@@ -112,9 +107,7 @@ export default function GrowthSolutions() {
                 </div>
               </div>
               <div className="absolute bottom-0 flex items-center justify-center left-0 right-0 top-[0.07px]">
-                <div className="flex-none h-[5px] rotate-[270deg] w-[38px]">
-                  <div className="bg-[#7be385] rounded-[17.669px] size-full" data-node-id="8671:26315" style={{ backgroundImage: "url('data:image/svg+xml;utf8,<svg viewBox=\\\'0 0 38 5\\\' xmlns=\\\'http://www.w3.org/2000/svg\\\' preserveAspectRatio=\\\'none\\\'><rect x=\\\'0\\\' y=\\\'0\\\' height=\\\'100%\\\' width=\\\'100%\\\' fill=\\\'url(%23grad)\\\' opacity=\\\'1\\\'/><defs><radialGradient id=\\\'grad\\\' gradientUnits=\\\'userSpaceOnUse\\\' cx=\\\'0\\\' cy=\\\'0\\\' r=\\\'10\\\' gradientTransform=\\\'matrix(-3.6664 0.53361 -0.13805 -0.48242 36.471 -1.0672)\\\'><stop stop-color=\\\'rgba(255,255,255,0)\\\' offset=\\\'0\\\'/><stop stop-color=\\\'rgba(255,255,255,0.4)\\\' offset=\\\'1\\\'/></radialGradient></defs></svg>')" }} />
-                </div>
+               
               </div>
             </div>
             <div className="absolute bottom-[2.22%] contents left-[62.35%] right-[31.5%] top-0" data-name="Bar 5" data-node-id="8671:26316">
@@ -123,11 +116,7 @@ export default function GrowthSolutions() {
                   <div className="bg-[#eaecea] rounded-[17.669px] size-full" data-node-id="8671:26317" />
                 </div>
               </div>
-              <div className="absolute flex inset-0 items-center justify-center">
-                <div className="flex-none h-[5px] rotate-[270deg] w-[26px]">
-                  <div className="bg-[#7be385] rounded-[17.669px] size-full" data-node-id="8671:26318" style={{ backgroundImage: "url('data:image/svg+xml;utf8,<svg viewBox=\\\'0 0 26 5\\\' xmlns=\\\'http://www.w3.org/2000/svg\\\' preserveAspectRatio=\\\'none\\\'><rect x=\\\'0\\\' y=\\\'0\\\' height=\\\'100%\\\' width=\\\'100%\\\' fill=\\\'url(%23grad)\\\' opacity=\\\'1\\\'/><defs><radialGradient id=\\\'grad\\\' gradientUnits=\\\'userSpaceOnUse\\\' cx=\\\'0\\\' cy=\\\'0\\\' r=\\\'10\\\' gradientTransform=\\\'matrix(-2.5086 0.53361 -0.094457 -0.48242 24.954 -1.0672)\\\'><stop stop-color=\\\'rgba(255,255,255,0)\\\' offset=\\\'0\\\'/><stop stop-color=\\\'rgba(255,255,255,0.4)\\\' offset=\\\'1\\\'/></radialGradient></defs></svg>')" }} />
-                </div>
-              </div>
+              
             </div>
             <div className="absolute bottom-0 contents left-[47.06%] right-[47.06%] top-0" data-name="Bar 4" data-node-id="8671:26319">
               <div className="absolute bottom-0 flex items-center justify-center left-[2.13px] right-0 top-[0.16px]">
@@ -135,11 +124,7 @@ export default function GrowthSolutions() {
                   <div className="bg-[#eaecea] rounded-[17.669px] size-full" data-node-id="8671:26320" />
                 </div>
               </div>
-              <div className="absolute flex inset-0 items-center justify-center">
-                <div className="flex-none h-[5px] rotate-[270deg] w-[15px]">
-                  <div className="bg-[#7be385] rounded-[17.669px] size-full" data-node-id="8671:26321" style={{ backgroundImage: "url('data:image/svg+xml;utf8,<svg viewBox=\\\'0 0 15 5\\\' xmlns=\\\'http://www.w3.org/2000/svg\\\' preserveAspectRatio=\\\'none\\\'><rect x=\\\'0\\\' y=\\\'0\\\' height=\\\'100%\\\' width=\\\'100%\\\' fill=\\\'url(%23grad)\\\' opacity=\\\'1\\\'/><defs><radialGradient id=\\\'grad\\\' gradientUnits=\\\'userSpaceOnUse\\\' cx=\\\'0\\\' cy=\\\'0\\\' r=\\\'10\\\' gradientTransform=\\\'matrix(-1.4473 0.53361 -0.054494 -0.48242 14.396 -1.0672)\\\'><stop stop-color=\\\'rgba(255,255,255,0)\\\' offset=\\\'0\\\'/><stop stop-color=\\\'rgba(255,255,255,0.4)\\\' offset=\\\'1\\\'/></radialGradient></defs></svg>')" }} />
-                </div>
-              </div>
+             
             </div>
             <div className="absolute bottom-[4.45%] contents left-[31.5%] right-[62.35%] top-0" data-name="Bar 3" data-node-id="8671:26322">
               <div className="absolute bottom-0 flex items-center justify-center left-[0.13px] right-0 top-0">
@@ -147,11 +132,7 @@ export default function GrowthSolutions() {
                   <div className="bg-[#eaecea] rounded-[17.669px] size-full" data-node-id="8671:26323" />
                 </div>
               </div>
-              <div className="absolute bottom-0 flex items-center justify-center left-0 right-0 top-[0.23px]">
-                <div className="flex-none h-[5px] rotate-[270deg] w-[26px]">
-                  <div className="bg-[#7be385] rounded-[17.669px] size-full" data-node-id="8671:26324" style={{ backgroundImage: "url('data:image/svg+xml;utf8,<svg viewBox=\\\'0 0 26 5\\\' xmlns=\\\'http://www.w3.org/2000/svg\\\' preserveAspectRatio=\\\'none\\\'><rect x=\\\'0\\\' y=\\\'0\\\' height=\\\'100%\\\' width=\\\'100%\\\' fill=\\\'url(%23grad)\\\' opacity=\\\'1\\\'/><defs><radialGradient id=\\\'grad\\\' gradientUnits=\\\'userSpaceOnUse\\\' cx=\\\'0\\\' cy=\\\'0\\\' r=\\\'10\\\' gradientTransform=\\\'matrix(-2.5086 0.53361 -0.094457 -0.48242 24.954 -1.0672)\\\'><stop stop-color=\\\'rgba(255,255,255,0)\\\' offset=\\\'0\\\'/><stop stop-color=\\\'rgba(255,255,255,0.4)\\\' offset=\\\'1\\\'/></radialGradient></defs></svg>')" }} />
-                </div>
-              </div>
+              
             </div>
             <div className="absolute contents left-[13px] top-0" data-name="Bar 2" data-node-id="8671:26325">
               <div className="absolute bottom-0 flex items-center justify-center left-[2.13px] right-0 top-[0.39px]">
@@ -169,11 +150,6 @@ export default function GrowthSolutions() {
               <div className="absolute flex inset-0 items-center justify-center">
                 <div className="flex-none h-[4.685px] rotate-[270deg] w-[42.871px]">
                   <div className="bg-[#eaecea] rounded-[17.669px] size-full" data-node-id="8671:26329" />
-                </div>
-              </div>
-              <div className="absolute flex inset-0 items-center justify-center">
-                <div className="flex-none h-[4.685px] rotate-[270deg] w-[25.393px]">
-                  <div className="bg-[#7be385] rounded-[17.669px] size-full" data-node-id="8671:26330" style={{ backgroundImage: "url('data:image/svg+xml;utf8,<svg viewBox=\\\'0 0 25.393 4.685\\\' xmlns=\\\'http://www.w3.org/2000/svg\\\' preserveAspectRatio=\\\'none\\\'><rect x=\\\'0\\\' y=\\\'0\\\' height=\\\'100%\\\' width=\\\'100%\\\' fill=\\\'url(%23grad)\\\' opacity=\\\'1\\\'/><defs><radialGradient id=\\\'grad\\\' gradientUnits=\\\'userSpaceOnUse\\\' cx=\\\'0\\\' cy=\\\'0\\\' r=\\\'10\\\' gradientTransform=\\\'matrix(-2.45 0.5 -0.092251 -0.45203 24.371 -1)\\\'><stop stop-color=\\\'rgba(255,255,255,0)\\\' offset=\\\'0\\\'/><stop stop-color=\\\'rgba(255,255,255,0.4)\\\' offset=\\\'1\\\'/></radialGradient></defs></svg>')" }} />
                 </div>
               </div>
             </div>
