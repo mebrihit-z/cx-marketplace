@@ -1,77 +1,13 @@
-const imgVector1 = "http://localhost:3845/assets/e886a86c6efbc9998c5cc527827c1cd38babd8d9.png";
-const imgVector5 = "http://localhost:3845/assets/15201e9ad1d338c03541a332b177176dcb60e6ae.png";
-const imgVector7 = "http://localhost:3845/assets/0fa4fe5588eba53495dcb332db3bf9d16f1919e1.png";
-const imgVector11 = "http://localhost:3845/assets/21babd652d9d02544c75474aea543558d0b2f749.png";
 const imgImage = "images/jessica-tran.svg";
 const imgImage1 = "images/daniel-rodriguez.svg";
 const imgImage2 = "images/laura-simmons.svg";
 const imgImage3 = "images/liam-chen.svg";
 const imgImage4 = "images/emma-davis.svg";
 const imgImage5 = "images/sarah-lee.svg";
-const imgVector = "http://localhost:3845/assets/9787a9213c4b521b0b01f1ba7e96a52d7f944181.svg";
-const imgVector2 = "http://localhost:3845/assets/6348ba033db2e59b006eed51e647d6836cfa44fc.svg";
-const imgVector3 = "http://localhost:3845/assets/0416f3a5da6ad6c577b19f3e1bbdc2af3228e9.svg";
-const imgVector4 = "http://localhost:3845/assets/f5c255f8593ad7418ec22c4886f9d92f868b153d.svg";
-const imgVector6 = "http://localhost:3845/assets/200ac77448e083c57a8bb774ad94c746ea5cdf85.svg";
-const imgVector8 = "http://localhost:3845/assets/5acc0382bf0959232afb36d052e64dfdca3ca4fd.svg";
-const imgVector9 = "http://localhost:3845/assets/b48c2791622270a298cdfe1418983d738f4c8573.svg";
-const imgVector10 = "http://localhost:3845/assets/ca2aedfdb68e00dbc7aa55db10f70bd9629fd573.svg";
 
 export default function Testimonials() {
   return (
     <div className="bg-[#041117] box-border content-stretch flex flex-col gap-12 items-center justify-center px-[140px] py-[98px] relative size-full" data-name="Sections" data-node-id="8671:26552">
-      <div className="absolute blur-[90.541px] filter h-[1248px] left-[94.53px] opacity-[0.03] translate-y-[-50%] w-[1250.94px]" data-node-id="8671:26553" style={{ top: "calc(50% + 0.191px)" }}>
-        <div className="absolute h-[1248px] left-0 top-0 w-[1250.94px]" data-node-id="8671:26554">
-          <div className="absolute inset-0" data-name="Vector" data-node-id="8671:26555">
-            <img alt="Vector" className="block max-w-none size-full" src={imgVector} />
-          </div>
-          <div className="absolute bottom-0 left-[33.65%] right-0 top-[33.73%]" data-name="Vector" data-node-id="8671:26556">
-            <img alt="Vector" className="block max-w-none size-full" height="827.094" src={imgVector1} width="830.038" />
-          </div>
-          <div className="absolute bottom-[36.56%] left-[67.19%] right-0 top-[33.68%]" data-node-id="8671:26557">
-            <img alt="Vector" className="block max-w-none size-full" src={imgVector2} />
-          </div>
-          <div className="absolute bottom-[33.72%] flex items-center justify-center left-0 right-[71.88%] top-[33.68%]">
-            <div className="flex-none h-[351.828px] rotate-[90deg] scale-y-[-100%] w-[406.861px]">
-              <div className="relative size-full" data-node-id="8671:26558">
-                <img alt="Vector" className="block max-w-none size-full" src={imgVector3} />
-              </div>
-            </div>
-          </div>
-          <div className="absolute bottom-0 left-[33.65%] right-0 top-[33.73%]" data-name="Vector" data-node-id="8671:26559">
-            <img alt="Vector" className="block max-w-none size-full" src={imgVector4} />
-          </div>
-          <div className="absolute bottom-[33.73%] left-0 right-[33.88%] top-0" data-name="Vector" data-node-id="8671:26560">
-            <img alt="Vector" className="block max-w-none size-full" height="827.094" src={imgVector5} width="827.094" />
-          </div>
-        </div>
-      </div>
-      <div className="absolute h-[516px] left-1/2 opacity-[0.02] translate-x-[-50%] translate-y-[-50%] w-[517.217px]" data-node-id="8671:26561" style={{ top: "calc(50% - 436px)" }}>
-        <div className="absolute h-[516px] left-0 top-0 w-[517.217px]" data-node-id="8671:26562">
-          <div className="absolute inset-0" data-name="Vector" data-node-id="8671:26563">
-            <img alt="Vector" className="block max-w-none size-full" src={imgVector6} />
-          </div>
-          <div className="absolute bottom-0 left-[33.65%] right-0 top-[33.73%]" data-name="Vector" data-node-id="8671:26564">
-            <img alt="Vector" className="block max-w-none size-full" height="341.972" src={imgVector7} width="343.189" />
-          </div>
-          <div className="absolute bottom-[36.56%] left-[67.19%] right-0 top-[33.68%]" data-node-id="8671:26565">
-            <img alt="Vector" className="block max-w-none size-full" src={imgVector8} />
-          </div>
-          <div className="absolute bottom-[33.72%] flex items-center justify-center left-0 right-[71.88%] top-[33.68%]">
-            <div className="flex-none h-[145.467px] rotate-[90deg] scale-y-[-100%] w-[168.222px]">
-              <div className="relative size-full" data-node-id="8671:26566">
-                <img alt="Vector" className="block max-w-none size-full" src={imgVector9} />
-              </div>
-            </div>
-          </div>
-          <div className="absolute bottom-0 left-[33.65%] right-0 top-[33.73%]" data-name="Vector" data-node-id="8671:26567">
-            <img alt="Vector" className="block max-w-none size-full" src={imgVector10} />
-          </div>
-          <div className="absolute bottom-[33.73%] left-0 right-[33.88%] top-0" data-name="Vector" data-node-id="8671:26568">
-            <img alt="Vector" className="block max-w-none size-full" height="341.972" src={imgVector11} width="341.972" />
-          </div>
-        </div>
-      </div>
       <div className="content-stretch flex flex-col gap-3 items-center justify-end leading-[0] relative shrink-0 text-center" data-name="Tilte&Subtitle" data-node-id="8671:26569">
         <div className="font-['Roboto:Medium',_sans-serif] font-medium relative shrink-0 text-[#7be385] text-[18px] tracking-[-0.3px] w-[760.5px]" data-node-id="8671:26570" style={{ fontVariationSettings: "'wdth' 100" }}>
           <p className="leading-[1.65]">True Stories</p>
