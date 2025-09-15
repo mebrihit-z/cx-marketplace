@@ -2,6 +2,10 @@
 interface LeadOrganizationProps {
   className?: string;
 }
+const whiteRightArrow = "/icons/white-right-arrow.svg";
+const fourDotsIcon = "/icons/four-dots-icon.svg";
+const salesTrackingIcon = "/icons/sales-tracking-icon.svg";
+const totalCustomers = "images/total-customers.svg";
 
 export default function LeadOrganization({ className = '' }: LeadOrganizationProps) {
   return (
@@ -12,7 +16,7 @@ export default function LeadOrganization({ className = '' }: LeadOrganizationPro
           alt="Lead Organization Background" 
           className="block max-w-none size-full" 
           height="554" 
-          src="http://localhost:3845/assets/46827c75ee060474f809ad870654867db20a6155.png" 
+          src={totalCustomers} 
           width="555.307" 
         />
       </div>
@@ -43,7 +47,7 @@ export default function LeadOrganization({ className = '' }: LeadOrganizationPro
               <div className="bg-[#7be385] box-border content-stretch flex gap-[5.556px] items-center justify-center p-[6.667px] relative rounded-[6.667px] shrink-0 size-10" style={{ backgroundImage: "url('data:image/svg+xml;utf8,<svg viewBox=\\'0 0 40 40\\' xmlns=\\'http://www.w3.org/2000/svg\\' preserveAspectRatio=\\'none\\'><rect x=\\'0\\' y=\\'0\\' height=\\'100%\\' width=\\'100%\\' fill=\\'url(%23grad)\\' opacity=\\'1\\'/><defs><radialGradient id=\\'grad\\' gradientUnits=\\'userSpaceOnUse\\' cx=\\'0\\' cy=\\'0\\' r=\\'10\\' gradientTransform=\\'matrix(-0.41346 -3.461 6.6301 5.6221 31.817 33.078)\\'><stop stop-color=\\'rgba(255,255,255,0)\\' offset=\\'0\\'/><stop stop-color=\\'rgba(255,255,255,0.4)\\' offset=\\'1\\'/></radialGradient></defs></svg>')" }}>
                 <div className="relative shrink-0 size-[22.222px]">
                   <div className="absolute contents inset-0">
-                    <img alt="Category icon" className="block max-w-none size-full" src="http://localhost:3845/assets/344286940ab62cdd6022320ec177e88a11c0857a.svg" />
+                    <img alt="Category icon" className="block max-w-none size-full" src={fourDotsIcon} />
                   </div>
                 </div>
               </div>
@@ -58,7 +62,7 @@ export default function LeadOrganization({ className = '' }: LeadOrganizationPro
             </div>
             <div className="relative shrink-0 size-8">
               <div className="absolute contents inset-0">
-                <img alt="Arrow right icon" className="block max-w-none size-full" src="http://localhost:3845/assets/c554238ae6120abe1434de6f0bffed4d289eb9b0.svg" />
+                <img alt="Arrow right icon" className="block max-w-none size-full" src={whiteRightArrow} />
               </div>
             </div>
           </div>
@@ -69,7 +73,7 @@ export default function LeadOrganization({ className = '' }: LeadOrganizationPro
               <div className="bg-[#7be385] box-border content-stretch flex gap-[5.556px] items-center justify-center p-[6.667px] relative rounded-[6.667px] shrink-0 size-10" style={{ backgroundImage: "url('data:image/svg+xml;utf8,<svg viewBox=\\'0 0 40 40\\' xmlns=\\'http://www.w3.org/2000/svg\\' preserveAspectRatio=\\'none\\'><rect x=\\'0\\' y=\\'0\\' height=\\'100%\\' width=\\'100%\\' fill=\\'url(%23grad)\\' opacity=\\'1\\'/><defs><radialGradient id=\\'grad\\' gradientUnits=\\'userSpaceOnUse\\' cx=\\'0\\' cy=\\'0\\' r=\\'10\\' gradientTransform=\\'matrix(2.0225 3.814 -3.814 8.6641 7.6404 1.8605)\\'><stop stop-color=\\'rgba(255,255,255,0)\\' offset=\\'0\\'/><stop stop-color=\\'rgba(255,255,255,0.4)\\' offset=\\'1\\'/></radialGradient></defs></svg>')" }}>
                 <div className="relative shrink-0 size-[22.222px]">
                   <div className="absolute contents inset-0">
-                    <img alt="Chart icon" className="block max-w-none size-full" src="http://localhost:3845/assets/797a4f3310a135017160ec3322c1889ffeb11372.svg" />
+                    <img alt="Chart icon" className="block max-w-none size-full" src={salesTrackingIcon} />
                   </div>
                 </div>
               </div>
