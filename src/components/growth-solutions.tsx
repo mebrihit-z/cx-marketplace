@@ -1,15 +1,18 @@
 
-const imgIntersect = "http://localhost:3845/assets/a552cc9e12ee8f234a3ab94138f9048e5f30ab8e.png";
-const imgVector1 = "http://localhost:3845/assets/ee5a8de1aac2b6ce3164057edaf5475bbca2375e.png";
-const imgVector5 = "http://localhost:3845/assets/9261f59508a58416e8a24545f40e979f0e4177c7.png";
-const imgIcons = "http://localhost:3845/assets/ca8ac99523e596878baaa39d83200c0b1ea0687c.svg";
-const imgVector = "http://localhost:3845/assets/787a796cf4df0888d196e91dab603b69a8400145.svg";
-const imgVector2 = "http://localhost:3845/assets/1b8cddc97c4da0a84acc9066d2cbd93e7004f00f.svg";
-const imgVector3 = "http://localhost:3845/assets/29552600b9a07b7617116804794b31c9a6f41364.svg";
-const imgVector4 = "http://localhost:3845/assets/901f8fb71566110633088c4faf0469d50a83acff.svg";
-const imgVuesaxOutlineUserAdd = "http://localhost:3845/assets/3dd36e42a41b0905db8fa85e7340af389828c200.svg";
-const imgVuesaxOutlineChart = "http://localhost:3845/assets/cb025f64654d1f44de209c90d21cd8c9db10a3e5.svg";
-const imgVuesaxOutlineStar = "http://localhost:3845/assets/5a188d3a3ef9883bdcce5727d41903fd13a7dbe4.svg";
+// Main growth solutions image
+const imgIntersect = "/images/growth-solutions.svg";
+// Logo and vector elements - using available icons
+const imgVector1 = "/icons/logo-icon.svg";
+const imgVector5 = "/icons/logo-icon.svg";
+const imgIcons = "/icons/black-right-arrow.svg";
+const imgVector = "/icons/logo-icon.svg";
+const imgVector2 = "/icons/logo-icon.svg";
+const imgVector3 = "/icons/logo-icon.svg";
+const imgVector4 = "/icons/logo-icon.svg";
+// Feature icons
+const imgVuesaxOutlineUserAdd = "/icons/add-icon.svg";
+const imgVuesaxOutlineChart = "/icons/dollar-icon.svg";
+const imgVuesaxOutlineStar = "/icons/star-black.svg";
 
 export default function GrowthSolutions() {
   console.log('GrowthSolutions component is rendering');
