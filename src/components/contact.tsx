@@ -4,6 +4,7 @@ import LeadOrganization from './lead-organization';
 import Testimonials from './testimonials';
 import Sections from './blog-section'; 
 import IdentifyBestPlanSections from './identify-best-plan';
+import PreviewFooter from './preview-footer';
 
 export default function Contact() {
     return (
@@ -15,6 +16,7 @@ export default function Contact() {
         <Testimonials />
         <Sections />
         <IdentifyBestPlanSections />
+        <PreviewFooter />
       </>
     );
 }

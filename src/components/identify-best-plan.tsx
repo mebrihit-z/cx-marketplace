@@ -1,7 +1,11 @@
 const BestPlanVideo = "images/best-plan-video-bg.svg";
 export default function IdentifyBestPlan() {
   return (
-    <section className="min-h-screen flex items-center py-20 bg-gradient-to-br from-[#0A191E] to-[#0F1F24]">
+    <section className="min-h-screen flex items-center py-20"
+    style={{ 
+        backgroundImage: "url('data:image/svg+xml;utf8,<svg viewBox=\\'0 0 1512 358.23\\' xmlns=\\'http://www.w3.org/2000/svg\\' preserveAspectRatio=\\'none\\'><rect x=\\'0\\' y=\\'0\\' height=\\'100%\\' width=\\'100%\\' fill=\\'url(%23grad)\\' opacity=\\'1\\'/><defs><radialGradient id=\\'grad\\' gradientUnits=\\'userSpaceOnUse\\' cx=\\'0\\' cy=\\'0\\' r=\\'10\\' gradientTransform=\\'matrix(47.521 27.794 -27.794 47.521 634.5 0.000010398)\\'><stop stop-color=\\'rgba(0,0,0,1)\\' offset=\\'0\\'/><stop stop-color=\\'rgba(1,7,8,1)\\' offset=\\'0.25\\'/><stop stop-color=\\'rgba(2,13,16,1)\\' offset=\\'0.5\\'/><stop stop-color=\\'rgba(0,20,12,1)\\' offset=\\'1\\'/></radialGradient></defs></svg>')" 
+      }}
+    >
       <div className="max-w-6xl mx-auto px-5 w-full">
         <div className="flex flex-col items-center gap-16">
           <div className="text-center max-w-3xl">
