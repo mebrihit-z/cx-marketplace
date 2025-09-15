@@ -1,5 +1,7 @@
 import React from 'react';
 
+const blackRightArrow = "/icons/black-right-arrow.svg";
+
 export default function IntegrationsSection() {
   return (
     <section className="bg-[#d6f6d9] relative overflow-hidden py-20">
@@ -45,32 +47,10 @@ export default function IntegrationsSection() {
           <div className="pt-4">
             <button className="bg-white hover:bg-gray-50 transition-colors duration-200 inline-flex items-center gap-3 px-6 py-4 rounded-xl shadow-sm font-semibold text-[#041117] text-base">
               Start Integrating Now
-              <svg 
-                className="w-5 h-5" 
-                fill="none" 
-                stroke="currentColor" 
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path 
-                  strokeLinecap="round" 
-                  strokeLinejoin="round" 
-                  strokeWidth={2} 
-                  d="M9 5l7 7-7 7" 
-                />
-              </svg>
+              <img alt="Black right arrow" className="" src={blackRightArrow} />
             </button>
           </div>
         </div>
-      </div>
-
-      {/* Grid Blocks Overlay */}
-      <div className="absolute inset-0 pointer-events-none">
-        {/* Animated grid blocks */}
-        <div className="absolute top-20 left-1/4 w-20 h-20 bg-green-500/20 rounded-lg animate-pulse"></div>
-        <div className="absolute top-40 right-1/3 w-16 h-16 bg-green-600/15 rounded-lg animate-pulse delay-1000"></div>
-        <div className="absolute bottom-32 left-1/3 w-24 h-24 bg-green-400/25 rounded-lg animate-pulse delay-500"></div>
-        <div className="absolute bottom-20 right-1/4 w-18 h-18 bg-green-500/20 rounded-lg animate-pulse delay-1500"></div>
       </div>
     </section>
   );
