@@ -1,7 +1,7 @@
 // Image assets from Figma
-const imgXIcon = "icons/x-icon.svg";
-const imgVector6 = "icons/preview-log.svg";
-const imgVuesaxLinearArrowRight = "icons/black-right-arrow.svg";
+// const imgXIcon = "icons/x-icon.svg";
+// const imgVector6 = "icons/preview-log.svg";
+// const imgVuesaxLinearArrowRight = "icons/black-right-arrow.svg";
 export default function PreviewHero() {
   return (
     <>

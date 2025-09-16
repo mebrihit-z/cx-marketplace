@@ -3,7 +3,6 @@ import TemplateCard from './TemplateCard';
 // import Preview from './preview';
 import { moreTemplates } from '../data/templates';
 import type { MoreTemplate } from '../data/templates';
-import type { ActiveSection } from '../types';
 
 interface SaaSProps {
   // setActiveSection: (section: ActiveSection) => void;
@@ -636,6 +635,7 @@ export default function SaaS({selectedTemplate }: SaaSProps) {
         <div className="box-border content-stretch flex flex-col lg:flex-row gap-3 lg:gap-4 items-start justify-start px-4 lg:px-32 py-0 relative shrink-0 w-full">
           {moreTemplates.map((template) => (
             <TemplateCard
+              tag=""
               key={template.id}
               title={template.title}
               backgroundImage={template.backgroundImage}
