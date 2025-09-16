@@ -123,6 +123,62 @@ export const moreTemplates: MoreTemplate[] = [
     aspectRatio: "aspect-[1666/1084]"
   }
 ];
+export const galleryTemplates: MoreTemplate[] = [
+  {
+    id: "saas-1.0",
+    tag: "SaaS",
+    title: "Horizon",
+    backgroundImage: "images/saas-card-lg.svg",
+    backgroundColor: "#4DD58C",
+    gradientTo: "#04261E",
+    aspectRatio: "aspect-[1860/1212]"
+  },
+  {
+    id: "e-commerce-1.0",
+    tag: "E-commerce",
+    title: "Agora",
+    backgroundImage: "images/e-commerce-card-lg.svg",
+    backgroundColor: "#6D83D9",
+    gradientTo: "#131D45",
+    aspectRatio: "aspect-[1726/1124]"
+  },
+  {
+    id: "startup-1.0",
+    tag: "Startup",
+    title: "Nova",
+    backgroundImage: "images/startup-card-lg.svg",
+    backgroundColor: "#BD550F",
+    gradientTo: "#421E06",
+    aspectRatio: "aspect-[1666/1084]"
+  },
+  {
+    id: "startup-11",
+    tag: "Startup",
+    title: "Nova",
+    backgroundImage: "images/portfolio-card-bg-image.svg",
+    backgroundColor: "#E9D101",
+    gradientTo: "#4D4000",
+    aspectRatio: "aspect-[1666/1084]"
+  },
+  {
+    id: "startup-11",
+    tag: "Startup",
+    title: "Nova",
+    backgroundImage: "images/event-card-bg-image.svg",
+    backgroundColor: "#8B0B68",
+    gradientTo: "#2C0321",
+    aspectRatio: "aspect-[1666/1084]"
+  },
+  {
+    id: "startup-11",
+    tag: "Startup",
+    title: "Nova",
+    backgroundImage: "images/agency-bg-image.svg",
+    backgroundColor: "#0F1AAA",
+    gradientTo: "#030529",
+    aspectRatio: "aspect-[1666/1084]"
+  }
+];
 
 export const additionalTemplates: Template[] = [
   {

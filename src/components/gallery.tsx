@@ -3,7 +3,7 @@ import CTASection from './cta-section';
 import GalleryGrid from './GalleryGrid';
 import { templateData, additionalTemplates } from '../data/templates';
 import type { Template } from '../data/templates';
-import { moreTemplates } from '../data/templates';
+import { galleryTemplates } from '../data/templates';
 import TemplateCard from './TemplateCard';
 import type { ActiveSection } from '../types';
 import type { MoreTemplate } from '../data/templates';
@@ -160,17 +160,12 @@ export default function Gallery({setActiveSection, setSelectedTemplate}: Gallery
           </div>
         </div>
         
-        {/* Template Grid */}
-        {/* <GalleryGrid 
-          templates={templateData} 
-          onCardClick={handleCardClick}
-        /> */}
-
       {/* Grid - Mobile: Single column, Desktop: Multi-column */}
-      <div className="box-border content-stretch flex flex-col lg:flex-row gap-3 lg:gap-4 items-start justify-start px-4 lg:px-32 py-0 relative shrink-0 w-full my-10 lg:my-24">
-          {moreTemplates.map((template) => (
+      <div className="box-border content-stretch grid grid-cols-1 md:grid-cols-3 gap-3 lg:gap-4 items-start justify-start px-4 lg:px-32 py-0 relative shrink-0 w-full my-10 lg:my-24">
+          {galleryTemplates.map((template) => (
             <TemplateCard
               key={template.id}
+              tag={template.tag}
               title={template.title}
               backgroundImage={template.backgroundImage}
               backgroundColor={template.backgroundColor}
@@ -187,16 +182,11 @@ export default function Gallery({setActiveSection, setSelectedTemplate}: Gallery
       </div>
       <CTASection />
       
-      {/* Additional Gallery Section */}
-      {/* <GalleryGrid 
-        templates={additionalTemplates} 
-        onCardClick={handleCardClick}
-        className="grid-rows-[repeat(2,_minmax(0px,_1fr))] sm:grid-rows-[repeat(2,_minmax(0px,_1fr))] lg:grid-rows-[repeat(3,_minmax(0px,_1fr))] h-auto sm:h-[600px] lg:h-[1000px]"
-      /> */}
-      <div className="box-border content-stretch flex flex-col lg:flex-row gap-3 lg:gap-4 items-start justify-start px-4 lg:px-32 py-0 relative shrink-0 w-full my-10 lg:my-24">
-          {moreTemplates.map((template) => (
+      <div className="box-border content-stretch grid grid-cols-1 md:grid-cols-3 gap-3 gap-3 lg:gap-4 items-start justify-start px-4 lg:px-32 py-0 relative shrink-0 w-full my-10 lg:my-24">
+          {galleryTemplates.map((template) => (
             <TemplateCard
               key={template.id}
+              tag={template.tag}
               title={template.title}
               backgroundImage={template.backgroundImage}
               backgroundColor={template.backgroundColor}

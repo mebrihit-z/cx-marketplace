@@ -28,7 +28,7 @@ export default function GallerySection({ setActiveSection, setSelectedTemplate }
       </div>
     </div>
     {/* Grid - Mobile: Single column, Desktop: Multi-column */}
-    <div className="box-border content-stretch flex flex-col lg:flex-row gap-3 lg:gap-4 items-start justify-start px-4 lg:px-32 py-0 relative shrink-0 w-full my-10 lg:my-24">
+    <div className="box-border content-stretch flex flex-col lg:flex-row gap-3 lg:gap-4 items-start justify-start px-4 lg:px-32 py-0 relative shrink-0 w-full my-10 lg:my-24 text-[14px]">
           {moreTemplates.map((template) => (
             <TemplateCard
               key={template.id}
