@@ -6,7 +6,7 @@ import type { MoreTemplate } from '../data/templates';
 import type { ActiveSection } from '../types';
 
 interface SaaSProps {
-  setActiveSection: (section: ActiveSection) => void;
+  // setActiveSection: (section: ActiveSection) => void;
   selectedTemplate?: MoreTemplate | null;
 }
 
@@ -117,7 +117,8 @@ function Button({ text, variant = "primary", showArrow = false }: ButtonProps) {
   );
 }
 
-export default function SaaS({ setActiveSection, selectedTemplate }: SaaSProps) {
+// export default function SaaS({ setActiveSection, selectedTemplate }: SaaSProps) {
+export default function SaaS({selectedTemplate }: SaaSProps) {
   const [selectedSkin, setSelectedSkin] = useState<keyof typeof skinThemes>('default');
   // const [previewOpen, setPreviewOpen] = useState(false);
   
@@ -215,7 +216,7 @@ export default function SaaS({ setActiveSection, selectedTemplate }: SaaSProps) 
       {/* Back Button */}
       <div 
         className="absolute box-border content-stretch flex gap-2 items-center justify-start left-4 lg:left-32 rounded-[8px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)] top-7 lg:top-[84px] cursor-pointer"
-        onClick={() => setActiveSection('home')}
+        // onClick={() => setActiveSection('home')}
       >
         <div className="relative shrink-0 size-5">
           <img alt="" className="block max-w-none size-full" src={imgBackArrow} />
