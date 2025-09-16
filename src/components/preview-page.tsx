@@ -6,18 +6,13 @@ import IntegrationsSection from './integrations-section';
 import LeadOrganization from './lead-organization';
 import Testimonials from './testimonials';
 import BlogSections from './blog-section';
+import type { MoreTemplate } from '../data/templates';
 // Image assets from Figma
 const imgVector6 = "icons/preview-log.svg";
 const imgVuesaxLinearArrowRight = "icons/black-right-arrow.svg";
 
 interface PreviewPageProps {
-  template: {
-    id: string;
-    src: string;
-    alt: string;
-    title: string;
-    category: string;
-  };
+  template: MoreTemplate;
 }
 
 export default function PreviewPage({ template }: PreviewPageProps) {
