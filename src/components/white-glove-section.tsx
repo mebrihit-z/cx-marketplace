@@ -2,7 +2,7 @@ interface WhiteGlovesTabsProps {
   property1?: "Default" | "Variant2" | "Variant3";
 }
 
-function WhiteGlovesTabs({ property1 = "Default" }: WhiteGlovesTabsProps) {
+function WhiteGlovesTabs() {
   const dollarIcon = "icons/dollar-icon.svg";
   const starRibbonIcon = "icons/star-ribbon.svg";
   const customerSupportIcon = "icons/support-icon.svg";
