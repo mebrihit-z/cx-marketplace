@@ -1,8 +1,8 @@
 import '../App.css'
 import CTASection from './cta-section';
-import GalleryGrid from './GalleryGrid';
-import { templateData, additionalTemplates } from '../data/templates';
-import type { Template } from '../data/templates';
+// import GalleryGrid from './GalleryGrid';
+// import { templateData, additionalTemplates } from '../data/templates';
+// import type { Template } from '../data/templates';
 import { galleryTemplates } from '../data/templates';
 import TemplateCard from './TemplateCard';
 import type { ActiveSection } from '../types';
@@ -36,10 +36,10 @@ function Button({ text = "Button" }: ButtonProps) {
 }
 
 export default function Gallery({setActiveSection, setSelectedTemplate}: GallerySectionProps) {
-  const handleCardClick = (template: Template) => {
-    console.log('Template clicked:', template);
-    // You can add navigation, modal opening, or other actions here
-  };
+  // const handleCardClick = (template: Template) => {
+  //   console.log('Template clicked:', template);
+  //   // You can add navigation, modal opening, or other actions here
+  // };
 
   return (
     <div className="box-border content-stretch flex flex-col gap-8 md:gap-12 lg:gap-20 items-start justify-start pb-8 md:pb-12 lg:pb-16 pt-16 md:pt-24 lg:pt-32 px-4 md:px-8 lg:px-0 relative size-full" data-name="Section Container" data-node-id="8084:56888">

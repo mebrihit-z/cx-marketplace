@@ -6,7 +6,7 @@ import type { MoreTemplate } from '../data/templates';
 import type { ActiveSection } from '../types';
 
 interface SaaSProps {
-  // setActiveSection: (section: ActiveSection) => void;
+   setActiveSection: (section: ActiveSection) => void;
   selectedTemplate?: MoreTemplate | null;
 }
 
@@ -118,7 +118,7 @@ function Button({ text, variant = "primary", showArrow = false }: ButtonProps) {
 }
 
 // export default function SaaS({ setActiveSection, selectedTemplate }: SaaSProps) {
-export default function SaaS({selectedTemplate }: SaaSProps) {
+export default function SaaS({setActiveSection, selectedTemplate }: SaaSProps) {
   const [selectedSkin, setSelectedSkin] = useState<keyof typeof skinThemes>('default');
   // const [previewOpen, setPreviewOpen] = useState(false);
   
@@ -142,7 +142,7 @@ export default function SaaS({selectedTemplate }: SaaSProps) {
       // If no template is selected, default to default skin
       setSelectedSkin('default');
     }
-  }, [selectedTemplate]);
+  }, [setActiveSection, selectedTemplate]);
   
 
   // Use selected skin theme colors, but if a template is selected and no skin change has been made,
@@ -636,6 +636,7 @@ export default function SaaS({selectedTemplate }: SaaSProps) {
         <div className="box-border content-stretch flex flex-col lg:flex-row gap-3 lg:gap-4 items-start justify-start px-4 lg:px-32 py-0 relative shrink-0 w-full">
           {moreTemplates.map((template) => (
             <TemplateCard
+            tag={template.id}
               key={template.id}
               title={template.title}
               backgroundImage={template.backgroundImage}

@@ -9,7 +9,7 @@ interface ButtonProps {
   buttonType?: "Default" | "Tertiary Right Icon" | "Tertiary" | "Primary Right Icon" | "Primary Left Icon" | "Secondary" | "Secondary Left Icon" | "Secondary Right Icon" | "Button Link" | "Button Link Right Icon" | "Button Link Left Icon" | "Tertiary Left Icon";
 }
 
-function Button({ text = "Button", leftIcon = true, rightIcon = true, state = "Default", buttonType = "Default" }: ButtonProps) {
+function Button({ text = "Button", state = "Default", buttonType = "Default" }: ButtonProps) {
   if (state === "Default" && buttonType === "Primary Left Icon") {
     return (
       <div className="box-border content-stretch flex gap-2 items-center justify-start px-6 py-2.5 relative rounded-[8px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)] size-full" data-name="State=Default, Button Type=Primary Left Icon" data-node-id="3904:19140">
@@ -38,7 +38,7 @@ export default function AISection() {
           </div>
         </div>
         <div className="bg-[#0a7c00] box-border content-stretch flex gap-2 items-center justify-start px-6 py-2.5 relative rounded-[8px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)] shrink-0" data-name="Button" data-node-id="8207:44625">
-          <Button text="Create template" buttonType="Primary Left Icon" />
+          <Button text="Create template" leftIcon={false} rightIcon={false} buttonType="Primary Left Icon" />
         </div>
       </div>
     </div>

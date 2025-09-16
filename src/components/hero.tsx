@@ -10,7 +10,7 @@ interface ButtonProps {
   buttonType?: "Default" | "Tertiary Right Icon" | "Tertiary" | "Primary Right Icon" | "Primary Left Icon" | "Secondary" | "Secondary Left Icon" | "Secondary Right Icon" | "Button Link" | "Button Link Right Icon" | "Button Link Left Icon" | "Tertiary Left Icon";
 }
 
-function Button({ text = "Button", leftIcon = true, rightIcon = true, state = "Default", buttonType = "Default" }: ButtonProps) {
+function Button({ text = "Button", state = "Default", buttonType = "Default" }: ButtonProps) {
   if (state === "Default" && buttonType === "Secondary Left Icon") {
     return (
       <div className="bg-white box-border content-stretch flex gap-2 items-center justify-start px-6 py-2.5 rounded-[8px] size-full" data-name="State=Default, Button Type=Secondary Left Icon" data-node-id="4138:11594">
@@ -52,10 +52,10 @@ export default function Hero() {
         <div className="content-stretch flex flex-col sm:flex-row gap-4 items-center justify-center shrink-0 w-full" data-name="Button Group" data-node-id="8213:78191">
           <div aria-hidden="true" className="absolute border-0 border-black border-solid inset-0 pointer-events-none" />
           <div className="bg-[#0a7c00] box-border content-stretch flex gap-2.5 items-center justify-center px-6 py-2.5 relative rounded-[8px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)] shrink-0 w-full sm:w-auto" data-name="Button" data-node-id="8213:78192">
-            <Button text="Get a quote" />
+            <Button text="Get a quote" leftIcon={false} rightIcon={false} />
           </div>
           <div className="bg-white box-border content-stretch flex gap-2 items-center justify-start px-6 py-2.5 relative rounded-[8px] shrink-0 w-full sm:w-auto" data-name="Button" data-node-id="8213:78193">
-            <Button text="Create template" buttonType="Secondary Left Icon" />
+            <Button text="Create template" leftIcon={false} rightIcon={false} buttonType="Secondary Left Icon" />
           </div>
         </div>
       </div>

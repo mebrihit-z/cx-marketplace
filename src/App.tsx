@@ -40,7 +40,7 @@ function App() {
       case 'home':
         return <Home setActiveSection={setActiveSection} setSelectedTemplate={setSelectedTemplate} />
       case 'gallery':
-        return <Gallery />
+        return <Gallery  setActiveSection={setActiveSection} setSelectedTemplate={setSelectedTemplate}/>
       case 'pricing':
         return <Pricing />
       case 'faqs':
