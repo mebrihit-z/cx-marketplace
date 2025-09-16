@@ -1,7 +1,3 @@
-interface WhiteGlovesTabsProps {
-  property1?: "Default" | "Variant2" | "Variant3";
-}
-
 function WhiteGlovesTabs() {
   const dollarIcon = "icons/dollar-icon.svg";
   const starRibbonIcon = "icons/star-ribbon.svg";
