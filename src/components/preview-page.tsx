@@ -29,7 +29,7 @@ export default function PreviewPage({ template }: PreviewPageProps) {
       <div className="fixed top-0 left-0 right-0 z-50 bg-[#041117] bg-opacity-95 backdrop-blur-sm border-b border-gray-800">
         <div className="max-w-7xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
-            <div className="flex gap-16 items-center">
+            <div className="flex gap-32 items-center">
               <div className="h-[33.455px] relative w-[92px]">
                 <div className="absolute bottom-0 left-0 right-[0.91%] top-0">
                   <div className="absolute bottom-[-1.63%] font-['Inter:Semi_Bold',_sans-serif] font-semibold leading-[0] left-[36.7%] not-italic right-[-12.38%] text-[26.764px] text-nowrap text-white top-0 tracking-[-0.8364px]">

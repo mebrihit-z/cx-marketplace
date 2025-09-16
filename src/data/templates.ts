@@ -86,6 +86,7 @@ export const templateData: Template[] = [
 
 export interface MoreTemplate {
   id: string;
+  tag: string;
   title: string;
   backgroundImage: string;
   backgroundColor: string;
@@ -96,7 +97,8 @@ export interface MoreTemplate {
 export const moreTemplates: MoreTemplate[] = [
   {
     id: "saas-1.0",
-    title: "SaaS",
+    tag: "SaaS",
+    title: "Horizon",
     backgroundImage: "images/saas-card-lg.svg",
     backgroundColor: "#4DD58C",
     gradientTo: "#04261E",
@@ -104,7 +106,8 @@ export const moreTemplates: MoreTemplate[] = [
   },
   {
     id: "e-commerce-1.0",
-    title: "E-commerce",
+    tag: "E-commerce",
+    title: "Agora",
     backgroundImage: "images/e-commerce-card-lg.svg",
     backgroundColor: "#6D83D9",
     gradientTo: "#131D45",
@@ -112,7 +115,8 @@ export const moreTemplates: MoreTemplate[] = [
   },
   {
     id: "startup-1.0",
-    title: "Startup",
+    tag: "Startup",
+    title: "Nova",
     backgroundImage: "images/startup-card-lg.svg",
     backgroundColor: "#BD550F",
     gradientTo: "#421E06",

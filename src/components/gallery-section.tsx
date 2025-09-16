@@ -32,6 +32,7 @@ export default function GallerySection({ setActiveSection, setSelectedTemplate }
           {moreTemplates.map((template) => (
             <TemplateCard
               key={template.id}
+              tag={template.tag}
               title={template.title}
               backgroundImage={template.backgroundImage}
               backgroundColor={template.backgroundColor}

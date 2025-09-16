@@ -3,9 +3,19 @@ import CTASection from './cta-section';
 import GalleryGrid from './GalleryGrid';
 import { templateData, additionalTemplates } from '../data/templates';
 import type { Template } from '../data/templates';
+import { moreTemplates } from '../data/templates';
+import TemplateCard from './TemplateCard';
+import type { ActiveSection } from '../types';
+import type { MoreTemplate } from '../data/templates';
 
 const imgLineRoundedSearch = "icons/search-icon.svg";
 const imgMaterialSymbolsKeyboardArrowDownRounded = "icons/keyboard-arrow-down-icon.svg";
+
+interface GallerySectionProps {
+  setActiveSection: (section: ActiveSection) => void;
+  setSelectedTemplate: (template: MoreTemplate) => void;
+}
+
 
 interface ButtonProps {
   text?: string;
@@ -25,7 +35,7 @@ function Button({ text = "Button" }: ButtonProps) {
   );
 }
 
-export default function Gallery() {
+export default function Gallery({setActiveSection, setSelectedTemplate}: GallerySectionProps) {
   const handleCardClick = (template: Template) => {
     console.log('Template clicked:', template);
     // You can add navigation, modal opening, or other actions here
@@ -151,19 +161,56 @@ export default function Gallery() {
         </div>
         
         {/* Template Grid */}
-        <GalleryGrid 
+        {/* <GalleryGrid 
           templates={templateData} 
           onCardClick={handleCardClick}
-        />
+        /> */}
+
+      {/* Grid - Mobile: Single column, Desktop: Multi-column */}
+      <div className="box-border content-stretch flex flex-col lg:flex-row gap-3 lg:gap-4 items-start justify-start px-4 lg:px-32 py-0 relative shrink-0 w-full my-10 lg:my-24">
+          {moreTemplates.map((template) => (
+            <TemplateCard
+              key={template.id}
+              title={template.title}
+              backgroundImage={template.backgroundImage}
+              backgroundColor={template.backgroundColor}
+              gradientTo={template.gradientTo}
+              aspectRatio={template.aspectRatio}
+              onClick={() => {
+                // Set the selected template and navigate to SaaS component
+                setSelectedTemplate(template);
+                setActiveSection('saas');
+              }}
+            />
+          ))}
+        </div>
       </div>
       <CTASection />
       
       {/* Additional Gallery Section */}
-      <GalleryGrid 
+      {/* <GalleryGrid 
         templates={additionalTemplates} 
         onCardClick={handleCardClick}
         className="grid-rows-[repeat(2,_minmax(0px,_1fr))] sm:grid-rows-[repeat(2,_minmax(0px,_1fr))] lg:grid-rows-[repeat(3,_minmax(0px,_1fr))] h-auto sm:h-[600px] lg:h-[1000px]"
-      />
+      /> */}
+      <div className="box-border content-stretch flex flex-col lg:flex-row gap-3 lg:gap-4 items-start justify-start px-4 lg:px-32 py-0 relative shrink-0 w-full my-10 lg:my-24">
+          {moreTemplates.map((template) => (
+            <TemplateCard
+              key={template.id}
+              title={template.title}
+              backgroundImage={template.backgroundImage}
+              backgroundColor={template.backgroundColor}
+              gradientTo={template.gradientTo}
+              aspectRatio={template.aspectRatio}
+              onClick={() => {
+                // Set the selected template and navigate to SaaS component
+                setSelectedTemplate(template);
+                setActiveSection('saas');
+              }}
+            />
+          ))}
+      </div>
+      
     </div>
   );
 }

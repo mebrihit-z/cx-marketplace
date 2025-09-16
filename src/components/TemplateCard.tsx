@@ -1,4 +1,5 @@
 interface TemplateCardProps {
+  tag: string;
   title: string;
   backgroundImage: string;
   backgroundColor: string;
@@ -8,6 +9,7 @@ interface TemplateCardProps {
 }
 
 export default function TemplateCard({ 
+  tag,
   title, 
   backgroundImage, 
   backgroundColor, 
@@ -31,6 +33,9 @@ export default function TemplateCard({
             background: `linear-gradient(to bottom, transparent 0%, ${gradientTo} 85%), url('${backgroundImage}')`
           }}
         />
+      </div>
+      <div className="leading-[0] not-italic relative shrink-0 text-[20px] lg:text-[24px] text-[#0A7C00] rounded-[5px] bg-[#E7F6E5] shadow-[0_1px_2px_0_rgba(16,24,40,0.05)] px-3 py-[5px]">
+        <p className="leading-[24px]">{tag}</p>
       </div>
       <div className="content-stretch flex items-center justify-between relative shrink-0 w-full">
         <div className="font-['Inter:Semi_Bold',_sans-serif] font-semibold leading-[0] not-italic relative shrink-0 text-[20px] lg:text-[24px] text-white w-48">
