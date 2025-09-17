@@ -3,10 +3,10 @@
 // const imgVector6 = "images/preview-log.svg";
 // const imgVuesaxLinearArrowRight = "images/black-right-arrow.svg";
 
-const imgLogo1 = "../src/assets/images/Logomark_spark.svg";
-const imgLogo2 = "../src/assets/images/Logomark_hexa.svg";
-const imgLogo3 = "../src/assets/images/Logomark_cube.svg";
-const imgHero = "../src/assets/images/herocardview.png";
+const imgLogo1 = "images/Logomark_spark.svg";
+const imgLogo2 = "images/Logomark_hexa.svg";
+const imgLogo3 = "images/Logomark_cube.svg";
+const imgHero = "images/herocardview.png";
 
 export default function PreviewHero() {
   return (
