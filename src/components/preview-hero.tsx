@@ -2,6 +2,12 @@
 // const imgXIcon = "assets/images/x-icon.svg";
 // const imgVector6 = "images/preview-log.svg";
 // const imgVuesaxLinearArrowRight = "images/black-right-arrow.svg";
+
+const imgLogo1 = "../src/assets/images/Logomark_spark.svg";
+const imgLogo2 = "../src/assets/images/Logomark_hexa.svg";
+const imgLogo3 = "../src/assets/images/Logomark_cube.svg";
+const imgHero = "../src/assets/images/herocardview.png";
+
 export default function PreviewHero() {
   return (
     <>
@@ -121,7 +127,7 @@ export default function PreviewHero() {
     </div>
               <div className="flex gap-4">
                 <div className="inline-flex gap-8 items-center pt-2 pb-2">
-                <img className="" src="../../src/assets/images/Logomark_spark.svg" alt=""/>
+                <img className="" src={imgLogo1} alt=""/>
                   {/* BioShift */}
                   <svg xmlns="http://www.w3.org/2000/svg" width="67" height="14" viewBox="0 0 67 14" fill="none">
       <path d="M0.304688 12.7806V10.7506H1.91468V2.56058H0.304688V0.530584H6.60465C7.35131 0.530584 7.99881 0.658917 8.54714 0.915584C9.10713 1.16058 9.5388 1.51642 9.84213 1.98308C10.1571 2.43808 10.3146 2.98642 10.3146 3.62808V3.80308C10.3146 4.36308 10.2096 4.82392 9.99963 5.18559C9.78963 5.53559 9.5388 5.80975 9.24713 6.00809C8.96713 6.19475 8.6988 6.32892 8.44214 6.41058V6.72558C8.6988 6.79559 8.9788 6.92975 9.28213 7.12809C9.58546 7.31475 9.84213 7.58892 10.0521 7.95059C10.2738 8.31225 10.3846 8.78475 10.3846 9.36809V9.54309C10.3846 10.2198 10.2271 10.8031 9.91213 11.2931C9.59713 11.7714 9.15963 12.1389 8.59964 12.3956C8.05131 12.6523 7.40964 12.7806 6.67465 12.7806H0.304688ZM4.22466 10.6806H6.39465C6.89631 10.6806 7.29881 10.5581 7.60214 10.3131C7.91714 10.0681 8.07464 9.71809 8.07464 9.26309V9.08809C8.07464 8.63309 7.92297 8.28309 7.61964 8.03809C7.31631 7.79309 6.90798 7.67059 6.39465 7.67059H4.22466V10.6806ZM4.22466 5.57059H6.35965C6.83798 5.57059 7.22881 5.44808 7.53214 5.20308C7.84714 4.95808 8.00464 4.61975 8.00464 4.18808V4.01308C8.00464 3.56975 7.85297 3.23142 7.54964 2.99808C7.24631 2.75308 6.84965 2.63058 6.35965 2.63058H4.22466V5.57059Z" fill="#D6F6D9"/>
@@ -183,7 +189,7 @@ export default function PreviewHero() {
     </svg>
                 </div>
                 <div className="inline-flex gap-8 items-center pt-2 pb-2">
-                <img className="" src="../../src/assets/images/Logomark_hexa.svg" alt=""/>
+                <img className="" src={imgLogo2} alt=""/>
                   {/* GlobalBank */}
                   <svg xmlns="http://www.w3.org/2000/svg" width="84" height="13" viewBox="0 0 84 13" fill="none">
       <path d="M6.11371 12.9738C7.6887 12.9738 8.9837 12.1688 9.38619 10.9613V12.8338H11.7137V8.10884C11.7137 7.04134 10.8737 6.13134 9.73619 6.13134H6.41121V8.10884H8.7737C9.07119 8.10884 9.26369 8.30134 9.26369 8.59884C9.26369 9.73634 7.7587 10.8388 6.23621 10.8388C4.20622 10.8388 2.59623 9.24634 2.59623 6.70884C2.59623 4.17134 4.20622 2.70134 6.28871 2.70134C7.8637 2.70134 8.9487 3.55884 9.14119 4.87134H11.7487C11.5912 2.24634 9.38619 0.443836 6.30621 0.443836C3.06873 0.443836 0.09375 2.52634 0.09375 6.70884C0.09375 10.8913 2.98123 12.9738 6.11371 12.9738Z" fill="#D6F6D9"/>
@@ -251,7 +257,7 @@ export default function PreviewHero() {
     </svg>
                 </div>
                 <div className="inline-flex gap-8 items-center pt-2 pb-2">              
-                <img className="" src="../../src/assets/images/Logomark_cube.svg" alt=""/>
+                <img className="" src={imgLogo3} alt=""/>
                   {/* Lightbox */}
                   <svg xmlns="http://www.w3.org/2000/svg" width="69" height="18" viewBox="0 0 69 18" fill="none">
       <path d="M3.33581 10.7015H6.86379V12.7805H0.642578V1.72398H3.33581V10.7015Z" fill="#D6F6D9"/>
@@ -310,7 +316,7 @@ export default function PreviewHero() {
             </div>
           </div>
           <div className="hero__right">
-              <img className="" src="../../src/assets/images/herocardview.png" alt=""/>
+              <img className="" src={imgHero} alt=""/>
           </div>
         </div>
       </div>
