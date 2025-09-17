@@ -638,7 +638,7 @@ export default function SaaS({setActiveSection, selectedTemplate }: SaaSProps) {
           {moreTemplates.map((template) => (
             <TemplateCard
               key={template.id}
-              tag=""
+              tag={template.tag}
               title={template.title}
               backgroundImage={template.backgroundImage}
               backgroundColor={template.backgroundColor}
