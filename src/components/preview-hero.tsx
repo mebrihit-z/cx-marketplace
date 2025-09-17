@@ -104,7 +104,7 @@ export default function PreviewHero() {
                     </div>
                     <div className="relative shrink-0 size-5" data-name="Icons" data-node-id="8671:26114">
                       <div className="absolute contents inset-0" data-name="vuesax/linear/arrow-right" data-node-id="8671:26115">
-                        <img alt="" className="block max-w-none size-full" src="../../src/assets/images/arrowblack.svg" />
+                        <img alt="" className="block max-w-none size-full" src="images/arrowblack.svg" />
                       </div>
                     </div>
                   </div>
