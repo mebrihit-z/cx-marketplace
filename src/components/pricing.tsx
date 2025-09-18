@@ -52,8 +52,8 @@ export default function Pricing() {
         <div className="box-border content-stretch flex flex-col gap-12 items-center justify-start overflow-clip px-4 sm:px-8 lg:px-32 py-0 relative shrink-0 w-full" data-name="Container" data-node-id="8272:91887">
           <div className="content-stretch flex flex-col lg:flex-row gap-6 items-start justify-start relative shrink-0 w-full" data-name="Pricing Cards" data-node-id="8272:96386">
             {/* Basic Plan */}
-            <div className="bg-[#032900] box-border content-stretch flex flex-col gap-6 items-start justify-start overflow-clip px-8 py-10 relative rounded-[16px] shrink-0 w-full lg:w-[400px]" data-name="_Pricing tier card" data-node-id="8272:92105">
-              <div className="absolute bg-gradient-to-b from-[#569800] h-[526px] left-1/2 opacity-40 to-[#00a748] top-1/2 translate-x-[-50%] translate-y-[-50%] via-50% via-[#e7ffc9] w-full lg:w-[400px]" data-name="Background" data-node-id="8272:92257" />
+            <div className="bg-[#032900] box-border content-stretch flex flex-col gap-6 items-start justify-start overflow-clip px-8 py-10 relative rounded-[16px] shrink-0 w-full lg:w-[400px] lg:h-[600px]" data-name="_Pricing tier card" data-node-id="8272:92105">
+              <div className="absolute bg-gradient-to-b from-[#569800] left-1/2 opacity-40 to-[#00a748] top-1/2 translate-x-[-50%] translate-y-[-50%] via-50% via-[#e7ffc9] w-full lg:w-[400px]" data-name="Background" data-node-id="8272:92257" />
               <div className="font-['Inter:Semi_Bold',_sans-serif] font-semibold leading-[0] min-w-full not-italic relative shrink-0 text-[40px] text-white" data-node-id="8272:92107" style={{ width: "min-content" }}>
                 <p className="leading-[48px]">Basic</p>
               </div>
@@ -119,9 +119,11 @@ export default function Pricing() {
             </div>
 
             {/* Pro Plan */}
-            <div className="bg-white relative rounded-[16px] shrink-0 w-full lg:w-[400px]" data-name="_Pricing tier card" data-node-id="8272:92217">
-              <div className="box-border content-stretch flex flex-col gap-6 items-start justify-start overflow-clip px-8 py-10 relative w-full lg:w-[400px] rounded-[16px] bg-center bg-cover bg-no-repeat" style={{ top: "calc(50% - 0.5px)", backgroundImage: `url('${imgImage19}')` }}>
-                <div className="font-['Inter:Semi_Bold',_sans-serif] font-semibold leading-[0] min-w-full not-italic relative shrink-0 text-[40px] text-white" data-node-id="8272:92219" style={{ width: "min-content" }}>
+            {/* <div className="bg-white relative rounded-[16px] shrink-0 w-full lg:w-[400px]" data-name="_Pricing tier card" data-node-id="8272:92217">
+              <div className="box-border content-stretch flex flex-col gap-6 items-start justify-start overflow-clip px-8 py-10 relative w-full lg:w-[400px] rounded-[16px] bg-center bg-cover bg-no-repeat" style={{ top: "calc(50% - 0.5px)", backgroundImage: `url('${imgImage19}')` }}>*/}
+               <div className="bg-white box-border content-stretch flex flex-col gap-6 items-start justify-start overflow-clip px-8 py-10 relative rounded-[16px] shrink-0 w-full lg:w-[400px] lg:h-[600px] " data-name="_Pricing tier card" data-node-id="8272:92161" style={{ top: "calc(50% - 0.5px)", backgroundImage: `url('${imgImage19}')` }}>
+              
+                <div className="font-['Inter:Semi_Bold',_sans-serif] font-semibold leading-[0] min-w-full not-italic relative shrink-0 text-[40px] text-white" data-node-id="8272:92219" style={{ width: "min-content" }}> 
                   <p className="leading-[48px]">Pro</p>
                 </div>
                 <div className="content-stretch flex flex-col gap-1 items-start justify-center relative shrink-0 w-full" data-name="Price" data-node-id="8272:92220">
@@ -200,11 +202,11 @@ export default function Pricing() {
                   </div>
                 </div>
               </div>
-              <div aria-hidden="true" className="absolute border border-black border-solid inset-0 pointer-events-none rounded-[16px]" />
-            </div>
+              {/* <div aria-hidden="true" className="absolute border border-black border-solid inset-0 pointer-events-none rounded-[16px]" />
+            </div> */}
 
             {/* Premium Plan */}
-            <div className="bg-white box-border content-stretch flex flex-col gap-6 items-start justify-start overflow-clip px-8 py-10 relative rounded-[16px] shrink-0 w-full lg:w-[400px]" data-name="_Pricing tier card" data-node-id="8272:92161" style={{ top: "calc(50% - 0.5px)", backgroundImage: `url('${greenCardBgImage}')` }}>
+            <div className="bg-white box-border content-stretch flex flex-col gap-6 items-start justify-start overflow-clip px-8 py-10 relative rounded-[16px] shrink-0 w-full lg:w-[400px] lg:h-[600px]" data-name="_Pricing tier card" data-node-id="8272:92161" style={{ top: "calc(50% - 0.5px)", backgroundImage: `url('${greenCardBgImage}')` }}>
               <div className="font-['Inter:Semi_Bold',_sans-serif] font-semibold leading-[0] min-w-full not-italic relative shrink-0 text-[40px] text-white" data-node-id="8272:92163" style={{ width: "min-content" }}>
                 <p className="leading-[48px]">Premium</p>
               </div>

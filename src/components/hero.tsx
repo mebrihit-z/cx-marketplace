@@ -35,7 +35,7 @@ function Button({ text = "Button", state = "Default", buttonType = "Default" }: 
 
 export default function Hero() {
   return (
-    <div className="box-border content-stretch flex flex-col gap-8 md:gap-12 lg:gap-20 items-center justify-start pb-6 pt-16 md:pt-24 lg:pt-32 px-4 md:px-8 lg:px-16 xl:px-60 relative size-full" data-name="Hero" data-node-id="8213:78184" style={{ backgroundImage: `url('${heroBg}')` }}>
+    <div className="box-border content-stretch flex flex-col gap-8 md:gap-12 lg:gap-20 items-center justify-start pb-6 pt-16 md:pt-24 lg:pt-32 px-4 md:px-8 lg:px-16 xl:px-60 relative size-full" data-name="Hero" data-node-id="8213:78184" style={{ backgroundImage: `url('${heroBg}')`,backgroundPosition: 'center',backgroundSize: 'cover',backgroundRepeat: 'no-repeat'  }}>
       <div className="content-stretch flex flex-col gap-8 md:gap-10 lg:gap-12 items-center justify-start shrink-0 w-full" data-name="Header Wrapper" data-node-id="8213:78185">
         <div className="content-stretch flex flex-col gap-4 md:gap-6 items-center justify-start shrink-0 w-full" data-name="Header" data-node-id="8213:78186">
           <div className="content-stretch flex flex-col items-center justify-center shrink-0 w-full" data-name="Title Container" data-node-id="8213:78187">

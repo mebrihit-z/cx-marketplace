@@ -268,7 +268,7 @@ export default function SaaS({setActiveSection, selectedTemplate }: SaaSProps) {
         </div>
 
         {/* Text Container - Mobile First, Laptop Second */}
-        <div className="content-stretch flex flex-col gap-12 items-start justify-center relative shrink-0 w-full lg:w-[480px] order-1 lg:order-2">
+        <div className="content-stretch flex flex-col gap-12 items-start justify-center relative shrink-0 w-full lg:w-[35%] lg:mt-0 lg:mb-0 lg:ml-auto lg:mr-auto order-1 lg:order-2">
           {/* Title and Description */}
           <div className="content-stretch flex flex-col gap-6 h-[280px] items-start justify-start relative shrink-0 w-full">
             <div className="font-['Inter:Semi_Bold',_sans-serif] font-semibold leading-[0] not-italic relative shrink-0 text-[#22252b] text-[32px] lg:text-[48px] w-full">

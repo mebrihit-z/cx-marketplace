@@ -181,7 +181,7 @@ export default function FAQs() {
     };
   }, []);
     return (
-    <div className="box-border content-stretch flex flex-col gap-8 md:gap-12 lg:gap-20 items-start justify-start pb-8 md:pb-12 lg:pb-16 pt-16 md:pt-24 lg:pt-32 px-4 md:px-8 lg:px-0 relative size-full" data-name="Section Container" data-node-id="8141:20154">
+    <div className="box-border content-stretch flex flex-col gap-2 md:gap-2 lg:gap-0 items-start justify-start pb-8 md:pb-12 lg:pb-16 pt-16 md:pt-24 lg:pt-32 px-4 md:px-8 lg:px-0 relative size-full" data-name="Section Container" data-node-id="8141:20154">
       <div className="box-border content-stretch flex flex-col lg:flex-row items-start justify-between px-0 md:px-8 lg:px-32 py-0 relative shrink-0 w-full gap-6 lg:gap-0" data-name="Header" data-node-id="8141:20155">
         <div className="content-stretch flex flex-col items-start justify-center relative shrink-0 w-full lg:w-[480px]" data-name="Title Container" data-node-id="8141:20156">
           <div className="font-['Inter:semibold',_sans-serif] leading-[0] not-italic relative shrink-0 text-[#22252b] text-[40px] md:text-[50px] lg:text-[60px] w-full" data-node-id="8141:20157">

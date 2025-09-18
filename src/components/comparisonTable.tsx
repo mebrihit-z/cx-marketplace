@@ -8,9 +8,9 @@ const xIcon = "icons/x-icon.svg";
 export default function ComparisonTable() {
   return (
     <div className="bg-[#020d10] box-border content-stretch flex flex-col gap-12 items-start justify-start px-0 py-16 relative size-full" data-name="Section Container" data-node-id="8306:40159">
-      <div className="absolute flex h-[1054px] items-center justify-center left-[-35px] top-0 w-[1581px] hidden lg:block">
+      <div className="absolute flex h-[1054px] items-center justify-center left-[-35px] top-0 hidden lg:block">
         <div className="flex-none rotate-[180deg]">
-          <div className="bg-center bg-cover bg-no-repeat h-[1054px] opacity-70 w-[1581px]" data-name="image 46" data-node-id="8306:40160" style={{ backgroundImage: `url('${imgImage46}')` }} />
+          <div className="bg-center bg-cover bg-no-repeat h-[1054px] opacity-70" data-name="image 46" data-node-id="8306:40160" style={{ backgroundImage: `url('${imgImage46}')` }} />
         </div>
       </div>
       <div className="box-border content-stretch flex items-start justify-start px-4 sm:px-8 lg:px-32 py-0 relative shrink-0 w-full" data-name="Header" data-node-id="8306:40161">
