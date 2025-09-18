@@ -30,7 +30,9 @@ export default function TemplateCard({
           className={`${aspectRatio} basis-0 bg-[position:0%_0%,_50%_50%] bg-gradient-to-b bg-size-[auto,cover] from-[#00000000] grow min-h-px min-w-px rounded-tl-[4px] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] shrink-0 to-85% to-[#001619]`}
           style={{ 
             backgroundImage: `url('${backgroundImage}')`,
-            background: `linear-gradient(to bottom, transparent 0%, ${gradientTo} 85%), url('${backgroundImage}')`
+            background: `linear-gradient(to bottom, transparent 0%, ${gradientTo} 85%), url('${backgroundImage}')`,            
+    backgroundRepeat: `no-repeat`,
+    backgroundSize: `cover`,
           }}
         />
       </div>
