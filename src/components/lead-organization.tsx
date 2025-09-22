@@ -6,6 +6,9 @@ const whiteRightArrow = "/icons/white-right-arrow.svg";
 const fourDotsIcon = "/icons/four-dots-icon.svg";
 const salesTrackingIcon = "/icons/sales-tracking-icon.svg";
 const totalCustomers = "images/total-customers.svg";
+const arrorwup = "icons/arrowup.svg";
+const graph = "icons/graph.svg";
+const dot = "icons/dot.svg";
 
 export default function LeadOrganization({ className = '' }: LeadOrganizationProps) {
   return (
@@ -20,6 +23,27 @@ export default function LeadOrganization({ className = '' }: LeadOrganizationPro
           width="555.307" 
         />
       </div>
+
+      <div className="absolute top-[350px] right-[150px] w-[170px] h-[200px] p-[20px]" style={{ borderRadius: '12px', background: 'radial-gradient(290.16% 138.3% at 17.21% -1.6%, #FFF 0%, rgba(255, 255, 255, 0.40) 100%), #7BE385', boxShadow: '0 4px 48px 0 rgba(255, 255, 255, 0.24)' }}>
+      
+                <div className=" font-['Inter:Semi_Bold',_sans-serif] font-semibold leading-[0] not-italic text-[#02080b] text-[14.288px] text-nowrap top-0" data-node-id="8671:26296">
+                  <p className="">Total Customers</p>
+                </div>
+                <div className="float-right pt-[12px]" data-name="Vector" data-node-id="8671:26299">
+                      <img alt='' className="block" src={arrorwup} />
+                </div>
+                <div className=" bottom-0 right-0 " data-name="Vector" data-node-id="8671:26300">
+                  <div className="font-['Recoleta',_sans-serif] text-[#041117] text-[56px] font-medium">3,423</div>
+                </div>
+                <div className=" " data-node-id="8671:26301">
+                      <img alt='' className="block" src={graph} />
+                </div>
+                <div className="absolute top-[140px] right-[60px]" data-node-id="8671:26302">
+                      <img alt='' className="block w-3 h-3 " src={dot} />
+                    </div>
+                
+             
+      </div> 
 
       {/* Text Content - positioned exactly like Figma */}
       <div className="absolute box-border content-stretch flex flex-col gap-12 items-start justify-start left-[140px] px-0 py-10 top-20 w-[501.156px]">
