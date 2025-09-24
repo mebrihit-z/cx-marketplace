@@ -18,12 +18,12 @@ export default function GrowthSolutions() {
   console.log('GrowthSolutions component is rendering');
   
   return (
-    <div className="bg-[#f7f7f7] box-border content-stretch flex flex-col gap-[70px] items-center justify-center px-[140px] py-20 relative size-full" data-name="Sections" data-node-id="8671:26267">
-      <div className="content-stretch flex items-center justify-between relative shrink-0 w-full" data-node-id="8671:26268">
+    <div className="bg-[#f7f7f7] box-border px-[40px] py-20 " data-name="Sections" data-node-id="8671:26267">
+      <div className="lg:flex flex-1 items-center justify-between relative " data-node-id="8671:26268">
         <div className="h-[384.094px] relative shrink-0 w-[385px]" data-name="Intersect" data-node-id="8671:26269">
-          <img alt="" className="block max-w-none size-full" height="384.094" src={imgIntersect} width="385" />
+          <img alt="" className="block max-w-none" height="384.094" src={imgIntersect} width="385" />
         </div>
-        <div className="box-border content-stretch flex flex-col gap-6 items-start justify-start pl-16 pr-0 py-10 relative shrink-0 w-[593px]" data-name="text" data-node-id="8671:26271">
+        <div className="box-border content-stretch flex flex-col gap-6 items-start justify-start pl-16 pr-0 py-10" data-name="text" data-node-id="8671:26271">
           <div className="content-stretch flex flex-col gap-3 items-start justify-center relative shrink-0 w-full" data-name="Title&Subtitle" data-node-id="8671:26272">
             <div className="font-['Roboto:Medium',_sans-serif] font-medium leading-[0] relative shrink-0 text-[#041117] text-[18px] tracking-[-0.3px] w-full" data-node-id="8671:26273" style={{ fontVariationSettings: "'wdth' 100" }}>
               <p className="leading-[1.65]">Growth Solutions</p>
@@ -156,7 +156,7 @@ export default function GrowthSolutions() {
           </div>
         </div>
       </div>
-      <div className="content-stretch flex gap-6 items-center justify-start relative shrink-0 w-full" data-node-id="8671:26331">
+      <div className="lg:flex flex-1  gap-6 items-center justify-start shrink-0" data-node-id="8671:26331">
         <div className="basis-0 content-stretch flex flex-col gap-6 grow items-start justify-start min-h-px min-w-px relative shrink-0" data-node-id="8671:26332">
           <div className="bg-white box-border content-stretch flex gap-[5.556px] items-center justify-center p-[6.667px] relative rounded-[6.667px] shrink-0 size-10" data-node-id="8671:26333">
             <div className="relative shrink-0 size-[22.222px]" data-name="Icons" data-node-id="8671:26334">

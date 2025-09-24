@@ -14,7 +14,7 @@ export default function LeadOrganization({ className = '' }: LeadOrganizationPro
   return (
     <div className={`bg-[#041117] relative w-full min-h-screen ${className}`}>
       {/* Background Image - positioned exactly like Figma */}
-      <div className="absolute h-[554px] left-[51.66%] right-[9.77%] top-[98px]">
+      <div className="absolute h-[554px] left-[50%] top-[98px]">
         <img 
           alt="Lead Organization Background" 
           className="block max-w-none size-full" 
@@ -24,7 +24,7 @@ export default function LeadOrganization({ className = '' }: LeadOrganizationPro
         />
       </div>
 
-      <div className="absolute top-[350px] right-[150px] w-[170px] h-[200px] p-[20px]" style={{ borderRadius: '12px', background: 'radial-gradient(290.16% 138.3% at 17.21% -1.6%, #FFF 0%, rgba(255, 255, 255, 0.40) 100%), #7BE385', boxShadow: '0 4px 48px 0 rgba(255, 255, 255, 0.24)' }}>
+      <div className="absolute top-[350px] right-[10%] w-[170px] h-[200px] p-[20px]" style={{ borderRadius: '12px', background: 'radial-gradient(290.16% 138.3% at 17.21% -1.6%, #FFF 0%, rgba(255, 255, 255, 0.40) 100%), #7BE385', boxShadow: '0 4px 48px 0 rgba(255, 255, 255, 0.24)' }}>
       
                 <div className=" font-['Inter:Semi_Bold',_sans-serif] font-semibold leading-[0] not-italic text-[#02080b] text-[14.288px] text-nowrap top-0" data-node-id="8671:26296">
                   <p className="">Total Customers</p>
