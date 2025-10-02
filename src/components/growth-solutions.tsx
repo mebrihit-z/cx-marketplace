@@ -18,10 +18,10 @@ export default function GrowthSolutions() {
   console.log('GrowthSolutions component is rendering');
   
   return (
-    <div className="bg-[#f7f7f7] box-border px-[40px] py-20 " data-name="Sections" data-node-id="8671:26267">
+    <div className="bg-[#f7f7f7] box-border lg:px-[40px] lg:py-20 px-2 py-5" data-name="Sections" data-node-id="8671:26267">
       <div className="lg:flex flex-1 items-center justify-between relative " data-node-id="8671:26268">
         <div className="h-[384.094px] relative shrink-0 w-[385px]" data-name="Intersect" data-node-id="8671:26269">
-          <img alt="" className="block max-w-none" height="384.094" src={imgIntersect} width="385" />
+          <img alt="" className="block max-w-none" src={imgIntersect} />
         </div>
         <div className="box-border content-stretch flex flex-col gap-6 items-start justify-start pl-16 pr-0 py-10" data-name="text" data-node-id="8671:26271">
           <div className="content-stretch flex flex-col gap-3 items-start justify-center relative shrink-0 w-full" data-name="Title&Subtitle" data-node-id="8671:26272">

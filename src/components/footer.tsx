@@ -68,7 +68,7 @@ export default function Footer() {
         </div>
         
         {/* Divider */}
-        <div className="h-0 max-w-[1440px] relative shrink-0 w-full">
+        <div className="h-0 max-w-[100%] relative shrink-0 w-full">
           <div className="absolute bottom-0 left-0 right-0 top-[-1px]">
             <div className="block max-w-none size-full bg-gray-600 h-px"></div>
           </div>
@@ -77,14 +77,14 @@ export default function Footer() {
         {/* Footer Bottom */}
         <div className="content-stretch flex flex-col sm:flex-row gap-4 sm:gap-0 min-h-6 items-center justify-between relative shrink-0 w-full">
           {/* Copyright */}
-          <div className="h-[18px] relative shrink-0 w-full sm:w-[400px] flex justify-center sm:justify-start">
+          <div className="h-[18px] relative shrink-0 w-full sm:w-[28%] flex justify-center sm:justify-start">
             <div className="font-['Inter:regular',_sans-serif] leading-[0] not-italic text-[#a1a4aa] text-[14px] text-center sm:text-left">
               <p className="leading-[18px]">Copyright © 2025 CX Studios. All right reserved.</p>
             </div>
           </div>
           
           {/* Social Media Icons */}
-          <div className="h-6 relative shrink-0 w-full sm:w-[400px] flex justify-center">
+          <div className="h-6 relative shrink-0 w-full sm:w-[28%] flex justify-center">
             <div className="content-stretch flex gap-1 items-center justify-center">
               <div className="overflow-clip relative shrink-0 size-6">
                 <div className="absolute bg-[rgba(255,255,255,0)] inset-0" />
@@ -114,7 +114,7 @@ export default function Footer() {
           </div>
           
           {/* Legal Links */}
-          <div className="h-[18px] relative shrink-0 w-full sm:w-[400px] flex justify-center sm:justify-end">
+          <div className="h-[18px] relative shrink-0 w-full sm:w-[28%] flex justify-center sm:justify-end">
             <div className="font-['Inter:regular',_sans-serif] leading-[0] not-italic text-[#a1a4aa] text-[14px] text-center sm:text-right">
               <p className="leading-[18px]">
                 <span className="[text-decoration-skip-ink:none] [text-underline-position:from-font] decoration-solid font-['Inter:Regular',_sans-serif] font-normal not-italic text-[#a1a4aa] underline">Terms and Conditions</span>
