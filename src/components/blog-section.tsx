@@ -93,15 +93,15 @@ export default function Sections() {
 
   const visibleCards = blogCards.slice(currentIndex, currentIndex + cardsToShow);
   return (
-    <div className="bg-[#041117] box-border content-stretch flex flex-col gap-2.5 items-start justify-center px-[140px] py-20 relative size-full" data-name="Sections" data-node-id="8671:26617">
+    <div className="bg-[#041117] box-border content-stretch flex flex-col gap-2.5 items-start justify-center lg:px-[140px] lg:py-20 px-5 py-2 relative size-full" data-name="Sections" data-node-id="8671:26617">
       <div className="content-stretch flex flex-col gap-12 items-start justify-center relative shrink-0 w-full" data-name="Content" data-node-id="8671:26618">
         <div className="content-stretch flex flex-col gap-3 items-start justify-center leading-[0] relative shrink-0 w-full" data-name="Tilte&Subtitle" data-node-id="8671:26619">
-          <div className="font-['Roboto:Medium',_sans-serif] font-medium relative shrink-0 text-[#7be385] text-[18px] tracking-[-0.3px] w-[760.5px]" data-node-id="8671:26620" style={{ fontVariationSettings: "'wdth' 100" }}>
+          <div className="font-['Roboto:Medium',_sans-serif] font-medium relative shrink-0 text-[#7be385] text-[18px] tracking-[-0.3px] w-[75%]" data-node-id="8671:26620" style={{ fontVariationSettings: "'wdth' 100" }}>
             <p className="leading-[1.65]" dir="auto">
               Our Blogs
             </p>
           </div>
-          <div className="font-['Recoleta:Medium',_sans-serif] not-italic relative shrink-0 text-[56px] text-white tracking-[-1px] w-[804px]" data-node-id="8671:26621">
+          <div className="font-['Recoleta:Medium',_sans-serif] not-italic relative shrink-0 text-[56px] text-white tracking-[-1px] w-[75%]" data-node-id="8671:26621">
             <p className="leading-[1.15]">Explore Our Latest Resources</p>
           </div>
         </div>
@@ -112,7 +112,7 @@ export default function Sections() {
               <div className="content-stretch flex flex-col gap-6 items-start justify-start relative shrink-0" data-name="content">
                 <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] place-items-start relative shrink-0" data-name="Mask group">
                   <div 
-                    className="[grid-area:1_/_1] bg-center bg-cover bg-no-repeat h-[313.603px] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[22.067px_0px] mask-size-[306px_285.093px] ml-[-22.068px] mt-0 rounded-[11.404px] w-[402.361px]" 
+                    className="[grid-area:1_/_1] bg-center bg-cover bg-no-repeat h-[313.603px] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[62.067px_0px] mask-size-[306px_285.093px] ml-[-22.068px] mt-0 rounded-[11.404px] w-[402.361px]" 
                     style={{ backgroundImage: `url('${card.image}')`, maskImage: `url('${card.maskImage}')` }} 
                   />
                 </div>
@@ -187,13 +187,13 @@ export default function Sections() {
           </button>
         </div>
       </div>
-      <div className="absolute blur-[90.541px] filter h-[1248px] opacity-[0.08] top-[927.81px] translate-x-[-50%] w-[1250.94px]" data-node-id="8671:26742" style={{ left: "calc(50% + 0.472px)" }}>
-        <div className="absolute h-[1248px] left-0 top-0 w-[1250.94px]" data-node-id="8671:26743">
+      <div className="absolute blur-[90.541px] filter h-[1248px] opacity-[0.08] top-[927.81px] translate-x-[-50%] w-[90%]" data-node-id="8671:26742" style={{ left: "calc(50% + 0.472px)" }}>
+        <div className="absolute h-[1248px] left-0 top-0 w-[90%]" data-node-id="8671:26743">
           <div className="absolute inset-0" data-name="Vector" data-node-id="8671:26744">
             <img alt="" className="block max-w-none size-full" src={imgVector} />
           </div>
           <div className="absolute bottom-0 left-[33.65%] right-0 top-[33.73%]" data-name="Vector" data-node-id="8671:26745">
-            <img alt="" className="block max-w-none size-full" height="827.094" src={imgVector1} width="830.038" />
+            <img alt="" className="block max-w-none size-full" height="827.094" src={imgVector1}  />
           </div>
           <div className="absolute bottom-[36.56%] left-[67.19%] right-0 top-[33.68%]" data-node-id="8671:26746">
             <img alt="" className="block max-w-none size-full" src={imgVector2} />
@@ -209,7 +209,7 @@ export default function Sections() {
             <img alt="" className="block max-w-none size-full" src={imgVector4} />
           </div>
           <div className="absolute bottom-[33.73%] left-0 right-[33.88%] top-0" data-name="Vector" data-node-id="8671:26749">
-            <img alt="" className="block max-w-none size-full" height="827.094" src={imgVector5} width="827.094" />
+            <img alt="" className="block max-w-none size-full" height="827.094" src={imgVector5} />
           </div>
         </div>
       </div>

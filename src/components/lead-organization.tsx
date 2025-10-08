@@ -53,18 +53,18 @@ export default function LeadOrganization({ className = '' }: LeadOrganizationPro
             <p className="leading-[1.65]">Lead Organization</p>
           </div>
           
-          <div className="content-stretch flex flex-col gap-3 items-start justify-start leading-[0] relative shrink-0 w-full">
-            <div className="font-['Recoleta:Medium',_sans-serif] not-italic relative shrink-0 text-[#f2fcf3] lg:text-[56px] text-[37px] tracking-[-1px] w-full">
+          <div className="content-stretch flex flex-col gap-3 items-start justify-start leading-[0] relative shrink-0">
+            <div className="font-['Recoleta:Medium',_sans-serif] not-italic relative shrink-0 text-[#f2fcf3] lg:text-[56px] text-[37px] tracking-[-1px]">
               <p className="leading-[1.15]">Track All Your Potential Customers</p>
             </div>
-            <div className="font-['Roboto:Regular',_sans-serif] font-normal relative shrink-0 text-[#b1b6b8] text-[16px] tracking-[-0.3px] w-full">
-              <p className="leading-[1.7] text-wrap">Efficiently organize and track your leads, ensuring better follow-ups and higher conversion rates.</p>
+            <div className="font-['Roboto:Regular',_sans-serif] font-normal relative shrink-0 text-[#b1b6b8] text-[16px] tracking-[-0.3px]">
+              <p className="leading-[1.1]">Efficiently organize and track your leads, ensuring better follow-ups and higher conversion rates.</p>
             </div>
           </div>
         </div>
 
         {/* Feature Cards - exact Figma styling */}
-        <div className="content-stretch flex flex-col gap-6 items-start justify-start relative shrink-0 w-[501px]">
+        <div className="content-stretch flex flex-col gap-6 items-start justify-start relative shrink-0 w-[60%]">
           {/* Card 1 - Organize Your Leads */}
           <div className="bg-[rgba(255,255,255,0.04)] box-border content-stretch flex gap-3 items-center justify-center p-[24px] relative rounded-[24px] shrink-0 w-full">
             <div className="basis-0 content-stretch flex gap-6 grow items-center justify-start min-h-px min-w-px relative shrink-0">
