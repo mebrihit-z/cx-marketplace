@@ -82,7 +82,7 @@ export default function PreviewHero() {
               </div>
         </div>
       </div> */}
-      <div className='text-white text-2xl font-bold py-20 pl-40 bg-[#041117] w-full box-border content-stretch'>
+      <div className='text-white text-2xl font-bold lg:py-20 py-2 lg:pl-40 pl-5 bg-[#041117] w-full box-border content-stretch'>
         <div className="grid grid-cols-2 gap-4">
           <div className="hero__left">
             <h1 className="heading text-[72px] font-normal mb-8">
@@ -112,7 +112,7 @@ export default function PreviewHero() {
 
             <div className="trust mb-8">
               <div className="text-[14px] text-[#7be385] mb-4">Trusted by</div>
-              <div className="heading text-[24px] mb-4">Thrive with 3,500+ businesses <span className="inline-block">
+              <div className="heading text-[24px] mb-4 sm:whitespace-nowrap">Thrive with 3,500+ businesses <span className="lg:block inline-block">
               <svg xmlns="http://www.w3.org/2000/svg" width="78" height="12" viewBox="0 0 78 12" fill="none">
     <path d="M0.226497 6L6 11.7735L11.7735 6L6 0.226497L0.226497 6ZM66.6667 6C66.6667 8.94552 69.0545 11.3333 72 11.3333C74.9455 11.3333 77.3333 8.94552 77.3333 6C77.3333 3.05448 74.9455 0.666667 72 0.666667C69.0545 0.666667 66.6667 3.05448 66.6667 6ZM6 6V7H72V6V5H6V6Z" fill="#7BE385"/>
     <path d="M0.226497 6L6 11.7735L11.7735 6L6 0.226497L0.226497 6ZM66.6667 6C66.6667 8.94552 69.0545 11.3333 72 11.3333C74.9455 11.3333 77.3333 8.94552 77.3333 6C77.3333 3.05448 74.9455 0.666667 72 0.666667C69.0545 0.666667 66.6667 3.05448 66.6667 6ZM6 6V7H72V6V5H6V6Z" fill="url(#paint0_radial_8671_26178)" fill-opacity="0.2"/>

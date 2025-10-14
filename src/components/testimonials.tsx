@@ -7,12 +7,12 @@ const imgImage5 = "images/sarah-lee.svg";
 
 export default function Testimonials() {
   return (
-    <div className="bg-[#041117] box-border content-stretch flex flex-col gap-12 items-center justify-center px-[140px] py-[98px] relative size-full" data-name="Sections" data-node-id="8671:26552">
+    <div className="bg-[#041117] box-border content-stretch flex flex-col gap-12 items-center justify-center lg:px-[140px] lg:py-[98px] px-5 py-5 relative size-full" data-name="Sections" data-node-id="8671:26552">
       <div className="content-stretch flex flex-col gap-3 items-center justify-end leading-[0] relative shrink-0 text-center" data-name="Tilte&Subtitle" data-node-id="8671:26569">
-        <div className="font-['Roboto:Medium',_sans-serif] font-medium relative shrink-0 text-[#7be385] text-[18px] tracking-[-0.3px] w-[760.5px]" data-node-id="8671:26570" style={{ fontVariationSettings: "'wdth' 100" }}>
+        <div className="font-['Roboto:Medium',_sans-serif] font-medium relative shrink-0 text-[#7be385] text-[18px] tracking-[-0.3px] " data-node-id="8671:26570" style={{ fontVariationSettings: "'wdth' 100" }}>
           <p className="leading-[1.65]">True Stories</p>
         </div>
-        <div className="font-['Recoleta:Medium',_sans-serif] not-italic relative shrink-0 text-[56px] text-white tracking-[-1px] w-[942px]" data-node-id="8671:26571">
+        <div className="font-['Recoleta:Medium',_sans-serif] not-italic relative shrink-0 text-[56px] text-white tracking-[-1px]" data-node-id="8671:26571">
           <p className="leading-[1.15]">Authentic Experiences from Our Esteemed Clients</p>
         </div>
       </div>
@@ -40,7 +40,7 @@ export default function Testimonials() {
           <div className="basis-0 bg-[#122024] box-border content-stretch flex flex-col gap-8 grow items-center justify-center min-h-px min-w-px p-[32px] relative rounded-[32px] self-stretch shrink-0" data-name="Cards" data-node-id="8671:26581">
             <div className="basis-0 content-stretch flex flex-col gap-5 grow items-center justify-center min-h-px min-w-px relative shrink-0" data-name="User" data-node-id="8671:26582">
               <div className="relative shrink-0 size-[170.5px]" data-name="Image" data-node-id="8671:26583">
-                <img alt="Image" className="block max-w-none size-full" height="170.5" src={imgImage1} width="170.5" />
+                <img alt="Image" className="block max-w-none size-full" height="56" src={imgImage1} width="56" />
               </div>
               <div className="content-stretch flex flex-col gap-2 items-center justify-center leading-[0] relative shrink-0 text-center text-nowrap" data-name="text" data-node-id="8671:26584">
                 <div className="font-['Recoleta:SemiBold',_sans-serif] not-italic relative shrink-0 text-[#7be385] text-[24px] tracking-[-1px]" data-node-id="8671:26585">
