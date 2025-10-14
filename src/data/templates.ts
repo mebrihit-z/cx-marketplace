@@ -153,27 +153,27 @@ export const galleryTemplates: MoreTemplate[] = [
   },
   {
     id: "startup-11",
-    tag: "Startup",
-    title: "Nova",
-    backgroundImage: "images/portfolio-card-bg-image.svg",
+    tag: "Portfolio",
+    title: "Canvas",
+    backgroundImage: "images/portfolio-card-lg.svg",
     backgroundColor: "#E9D101",
     gradientTo: "#4D4000",
     aspectRatio: "aspect-[1666/1084]"
   },
   {
     id: "startup-11",
-    tag: "Startup",
-    title: "Nova",
-    backgroundImage: "images/event-card-bg-image.svg",
+    tag: "Event",
+    title: "Pulse",
+    backgroundImage: "images/event-card-lg.svg",
     backgroundColor: "#8B0B68",
     gradientTo: "#2C0321",
     aspectRatio: "aspect-[1666/1084]"
   },
   {
     id: "startup-11",
-    tag: "Startup",
-    title: "Nova",
-    backgroundImage: "images/agency-bg-image.svg",
+    tag: "Agency",
+    title: "Mosaic",
+    backgroundImage: "images/agency-card-lg.svg",
     backgroundColor: "#0F1AAA",
     gradientTo: "#030529",
     aspectRatio: "aspect-[1666/1084]"
