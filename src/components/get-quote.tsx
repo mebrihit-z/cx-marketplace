@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import type { ActiveSection } from '../types';
+import QuoteSummary from './quote-summary';
 
 const imgBackArrow = "icons/green-left-arrow.svg";
 const imgError = "icons/info-icon.svg";
@@ -106,6 +107,7 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
   const [selectedExtraFunctionality, setSelectedExtraFunctionality] = useState<string[]>([]);
   const [selectedDesignServices, setSelectedDesignServices] = useState<string[]>([]);
   const [currentStep, setCurrentStep] = useState(1);
+  const [showSummary, setShowSummary] = useState(false);
   const totalSteps = 7;
 
   const toggleCategory = (categoryId: string) => {
@@ -165,20 +167,43 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
   };
 
   const handleViewSummary = () => {
-    // Handle view summary logic
-    console.log('=== Quote Summary ===');
-    console.log('Selected categories:', selectedCategories);
-    console.log('Selected features:', selectedFeatures);
-    console.log('Selected page option:', selectedPageOption);
-    console.log('Selected user option:', selectedUserOption);
-    console.log('Selected customization option:', selectedCustomizationOption);
-    console.log('Selected extra functionality:', selectedExtraFunctionality);
-    console.log('Selected design services:', selectedDesignServices);
+    setShowSummary(true);
+  };
+
+  const handleRestart = () => {
+    // Reset all selections
+    setSelectedCategories([]);
+    setSelectedFeatures([]);
+    setSelectedPageOption('');
+    setSelectedUserOption('');
+    setSelectedCustomizationOption('');
+    setSelectedExtraFunctionality([]);
+    setSelectedDesignServices([]);
+    setCurrentStep(1);
+    setShowSummary(false);
   };
 
   const handleBack = () => {
     setActiveSection('home');
   };
+
+  // Show summary if user clicked "View summary"
+  if (showSummary) {
+    return (
+      <QuoteSummary
+        setActiveSection={setActiveSection}
+        selectedCategories={selectedCategories}
+        selectedFeatures={selectedFeatures}
+        selectedPageOption={selectedPageOption}
+        selectedUserOption={selectedUserOption}
+        selectedCustomizationOption={selectedCustomizationOption}
+        selectedExtraFunctionality={selectedExtraFunctionality}
+        selectedDesignServices={selectedDesignServices}
+        onRestart={handleRestart}
+        onBack={() => setShowSummary(false)}
+      />
+    );
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#f5f9f5] to-white flex flex-col">

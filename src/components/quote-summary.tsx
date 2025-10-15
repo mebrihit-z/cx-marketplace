@@ -1,0 +1,419 @@
+import type { ActiveSection } from '../types';
+
+const imgBackArrow = "icons/black-circle-left-arrow.svg";
+const imgCheckmark = "icons/green-check-icon.svg";
+const imgInfo = "icons/info-icon.svg";
+const imgArrowForward = "icons/black-right-arrow.svg";
+
+interface QuoteSummaryProps {
+  setActiveSection: (section: ActiveSection) => void;
+  selectedCategories: string[];
+  selectedFeatures: string[];
+  selectedPageOption: string;
+  selectedUserOption: string;
+  selectedCustomizationOption: string;
+  selectedExtraFunctionality: string[];
+  selectedDesignServices: string[];
+  onRestart: () => void;
+  onBack: () => void;
+}
+
+// Template preview images
+const templateImages = {
+  saas: "images/saas-card-bg.svg",
+  startup: "images/startup-card-bg-image.svg",
+  ecommerce: "images/e-commerce-card-bg-image.svg",
+  blog: "images/blog-card-bg-image.svg",
+  portfolio: "images/portfolio-card-bg-image-2.svg",
+  agency: "images/business-card-bg-image.svg",
+  event: "images/event-card-bg-image.svg",
+  news: "images/news-card-bg-image.svg",
+  business: "images/business-card-bg-image.svg",
+};
+
+const templateBackgrounds = {
+  saas: '#ac7010',
+  startup: '#bd550f',
+  ecommerce: '#ac7010',
+  blog: '#ac7010',
+  portfolio: '#ac7010',
+  agency: '#ac7010',
+  event: '#ac7010',
+  news: '#ac7010',
+  business: '#ac7010',
+};
+
+const getCategoryLabel = (categoryId: string): string => {
+  const labels: Record<string, string> = {
+    'saas': 'SaaS',
+    'ecommerce': 'eCommerce',
+    'startup': 'Nova',
+    'blog': 'Blog',
+    'event': 'Event',
+    'agency': 'Custom',
+    'portfolio': 'Portfolio',
+    'news': 'News',
+    'business': 'Business',
+  };
+  return labels[categoryId] || categoryId;
+};
+
+const getCategoryType = (categoryId: string): string => {
+  const types: Record<string, string> = {
+    'saas': 'SaaS',
+    'ecommerce': 'eCommerce',
+    'startup': 'Startup',
+    'blog': 'Blog',
+    'event': 'Event',
+    'agency': 'Agency',
+    'portfolio': 'Portfolio',
+    'news': 'News',
+    'business': 'Business',
+  };
+  return types[categoryId] || 'Startup';
+};
+
+const getFeatureLabel = (featureId: string): string => {
+  const labels: Record<string, string> = {
+    'product-overview': 'Product overview',
+    'feature-highlight': 'Feature(s) highlight',
+    'about-us': 'About us',
+    'team-bios': 'Team/speaker bios',
+    'case-studies': 'Case studies',
+    'testimonials': 'Testimonials',
+    'calendar-booking': 'Calendar/booking tool',
+    'lead-generation': 'Lead generation form',
+    'careers': 'Careers directory',
+  };
+  return labels[featureId] || featureId;
+};
+
+export default function QuoteSummary({
+  setActiveSection,
+  selectedCategories,
+  selectedFeatures,
+  selectedPageOption,
+  selectedUserOption,
+  selectedCustomizationOption,
+  selectedExtraFunctionality,
+  selectedDesignServices,
+  onRestart,
+  onBack,
+}: QuoteSummaryProps) {
+  
+  const handleBack = () => {
+    onBack();
+  };
+
+  const handleBookCall = () => {
+    window.open('https://calendly.com', '_blank');
+  };
+
+  const handleRestart = () => {
+    onRestart();
+  };
+
+  // Get the primary selected category for template display
+  const primaryCategory = selectedCategories[0] || 'startup';
+  const templateImage = templateImages[primaryCategory as keyof typeof templateImages] || templateImages.startup;
+  const templateName = getCategoryLabel(primaryCategory);
+  const templateType = getCategoryType(primaryCategory);
+  const templateBg = templateBackgrounds[primaryCategory as keyof typeof templateBackgrounds] || templateBackgrounds.startup;
+
+  return (
+    <div className="min-h-screen bg-white flex items-center justify-center">
+      <div className="box-border flex items-start justify-between pl-0 pr-8 py-0 relative shadow-[0px_1px_3px_0px_rgba(25,33,61,0.1)] w-full h-screen">
+        {/* Left Container */}
+        <div className="box-border flex flex-col items-start justify-between px-16 py-16 relative self-stretch shrink-0">
+        {/* Content with fixed width */}
+        <div className="flex flex-col gap-12 items-start relative shrink-0 w-[640px]">
+          {/* Text Container */}
+          <div className="flex flex-col gap-6 items-start not-italic relative shrink-0 w-full">
+            <p className="font-['Inter:Semi_Bold',_sans-serif] font-semibold leading-[48px] relative shrink-0 text-[#22252b] text-[40px] w-full">
+              You're all set!
+            </p>
+            <div className="font-['Inter:regular',_sans-serif] leading-[24px] relative shrink-0 text-[#333740] text-[18px] w-full">
+              <p className="mb-5">Here's a summary of your quote, with a website template and pricing package that matches your needs. </p>
+              <p>Next step? Connect with our Sales team to discuss making your website dreams come to life. </p>
+            </div>
+          </div>
+
+          {/* Button Group */}
+          <div className="border-0 border-black border-solid box-border flex gap-4 items-start relative shrink-0">
+            <button
+              onClick={handleBookCall}
+              className="bg-[#0a7c00] box-border flex gap-2.5 items-center justify-center px-6 py-2.5 relative rounded-lg shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)] shrink-0 hover:bg-[#096d00] transition-colors"
+            >
+              <p className="font-['Inter:regular',_sans-serif] leading-[20px] not-italic relative shrink-0 text-[16px] text-nowrap text-white whitespace-pre">
+                Book a call
+              </p>
+            </button>
+            <button
+              onClick={handleRestart}
+              className="bg-white border border-[#0a7c00] border-solid box-border flex gap-2.5 items-center justify-center px-6 py-2.5 relative rounded-lg shrink-0 hover:bg-[#f0f9ee] transition-colors"
+            >
+              <p className="font-['Inter:regular',_sans-serif] leading-[20px] not-italic relative shrink-0 text-[#111215] text-[16px] text-nowrap whitespace-pre">
+                Restart quote
+              </p>
+            </button>
+          </div>
+        </div>
+
+        {/* Actions - Back Button */}
+        <div className="flex items-center relative shrink-0 w-full">
+          <div className="h-10 relative shrink-0 w-[320px]">
+            <button
+              onClick={handleBack}
+              className="absolute bg-white border border-[#d0d1d4] border-solid box-border flex gap-2 items-center left-0 px-6 py-2.5 rounded-lg top-0 hover:bg-gray-50 transition-colors"
+            >
+              <div className="relative shrink-0 size-5">
+                <img alt="" className="block max-w-none size-full" src={imgBackArrow} />
+              </div>
+              <p className="font-['Inter:regular',_sans-serif] leading-[20px] not-italic relative shrink-0 text-[#111215] text-[16px] text-nowrap whitespace-pre">
+                Back
+              </p>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* Quote Sidebar */}
+      <div className="basis-0 bg-white border border-[#d0d1d4] border-solid grow min-h-[730px] min-w-px relative rounded-2xl shrink-0">
+        <div className="box-border flex flex-col items-center min-h-inherit overflow-clip p-6 relative rounded-[inherit] w-full">
+          <div className="flex flex-col gap-6 items-start relative shrink-0 w-full">
+            {/* Top Frame */}
+            <div className="flex flex-col gap-4 items-start relative shrink-0 w-full">
+              <p className="font-['Inter:Semi_Bold',_sans-serif] font-semibold leading-[24px] not-italic relative shrink-0 text-[#22252b] text-[20px] w-full">
+                Quote Summary
+              </p>
+              <div className="h-0 relative shrink-0 w-full">
+                <div className="border-t border-[#d0d1d4] w-full" />
+              </div>
+            </div>
+
+            {/* Main Content with Template and Pricing */}
+            <div className="flex gap-16 items-start relative shrink-0 w-full">
+              {/* Left Section - Template & Features */}
+              <div className="basis-0 flex flex-col gap-6 grow items-start min-h-px min-w-px relative self-stretch shrink-0">
+                {/* Template Container */}
+                <div className="flex flex-col gap-2 items-start relative shrink-0 w-full">
+                  <p className="font-['Inter:regular',_sans-serif] leading-[20px] not-italic relative shrink-0 text-[#333740] text-[16px] w-full">
+                    Template
+                  </p>
+                  {/* Template Card */}
+                  <div className="bg-white border border-[#d0d1d4] border-solid h-[108px] relative rounded-lg shrink-0 w-full">
+                    <div className="flex items-center overflow-clip relative rounded-[inherit] size-full">
+                      {/* Image Container */}
+                      <div 
+                        className="box-border flex flex-col gap-2.5 h-full items-start overflow-clip pb-0 pl-2.5 pr-0 pt-2.5 relative shrink-0 w-[120px]"
+                        style={{ backgroundColor: templateBg }}
+                      >
+                        <div className="aspect-[1726/1124] basis-0 grow min-h-px min-w-px relative rounded-tl-[2px] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] shrink-0">
+                          <img 
+                            alt="" 
+                            className="absolute inset-0 max-w-none object-[50%_50%] object-cover pointer-events-none rounded-tl-[2px] size-full" 
+                            src={templateImage} 
+                          />
+                        </div>
+                      </div>
+                      {/* Content */}
+                      <div className="basis-0 box-border flex grow h-full items-start justify-between min-h-px min-w-px p-3 relative shrink-0">
+                        <div className="basis-0 flex flex-col gap-1 grow h-full items-start min-h-px min-w-px not-italic relative shrink-0">
+                          <p className="font-['Inter:Bold',_sans-serif] font-bold leading-[24px] min-w-full relative shrink-0 text-[#22252b] text-[18px] w-[min-content]">
+                            {templateName}
+                          </p>
+                          <p className="font-['Inter:Regular',_sans-serif] font-normal leading-[18px] relative shrink-0 text-[#737780] text-[12px] text-nowrap whitespace-pre">
+                            {templateType}
+                          </p>
+                        </div>
+                        {/* Arrow Button */}
+                        <div className="flex flex-col gap-2.5 h-full items-start justify-end relative shrink-0">
+                          <div className="border border-[#d0d1d4] border-solid box-border flex gap-2 items-center p-2.5 relative rounded-lg shrink-0">
+                            <div className="relative shrink-0 size-5">
+                              <img alt="" className="block max-w-none size-full" src={imgArrowForward} />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Features Checklist */}
+                {selectedFeatures.length > 0 && (
+                  <div className="flex flex-col gap-1 items-start relative shrink-0 w-full">
+                    <p className="font-['Inter:Bold',_sans-serif] font-bold h-[18px] leading-[18px] not-italic relative shrink-0 text-[#333740] text-[14px] w-[293px]">
+                      Features included
+                    </p>
+                    {selectedFeatures.map(featureId => (
+                      <div key={featureId} className="flex gap-2 items-center relative shrink-0 w-full">
+                        <div className="relative shrink-0 size-6">
+                          <img alt="" className="block max-w-none size-full" src={imgCheckmark} />
+                        </div>
+                        <p className="basis-0 font-['Inter:regular',_sans-serif] grow leading-[18px] min-h-px min-w-px not-italic relative shrink-0 text-[#333740] text-[14px]">
+                          {getFeatureLabel(featureId)}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              {/* Right Section - Pricing Package */}
+              <div className="flex flex-col gap-[8px] items-start relative shrink-0">
+                <p className="font-['Inter:regular',_sans-serif] leading-[20px] min-w-full not-italic relative shrink-0 text-[#333740] text-[16px] w-[min-content]">
+                  Pricing Package
+                </p>
+                {/* Pricing Card */}
+                <div className="bg-white box-border flex flex-col gap-[16px] items-start overflow-clip px-[16px] py-[24px] relative rounded-2xl shrink-0 w-[291px]">
+                    {/* Rotated Background Image */}
+                    <div className="absolute flex items-center justify-center left-[calc(50%+16.698px)] top-[-181.76px] -translate-x-1/2 h-[498px] w-[581px]">
+                      <div className="flex-none">
+                        <div className="h-[900px] relative w-[821.027px]">
+                          <div aria-hidden="true" className="absolute inset-0 pointer-events-none">
+                            <div className="absolute inset-0 overflow-hidden">
+                              <img 
+                                alt="" 
+                                className="absolute left-0 max-w-none size-full top-0" 
+                                src="https://images.unsplash.com/photo-1636011497948-13d7aaa84f31?w=800&auto=format&fit=crop" 
+                              />
+                            </div>
+                            <div className="absolute bg-[rgba(0,0,0,0.3)] inset-0" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Premium Title */}
+                    <p className="font-['Inter:Semi_Bold',_sans-serif] font-semibold leading-[28px] min-w-full not-italic relative z-10 shrink-0 text-[24px] text-white w-[min-content]">
+                      Premium
+                    </p>
+
+                    {/* Price */}
+                    <div className="flex flex-col gap-[4px] items-start justify-center relative z-10 shrink-0 w-full">
+                      <div className="flex gap-[4px] items-center relative shrink-0">
+                        <div className="flex flex-col font-['Inter:Regular',_sans-serif] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#d0d1d4] text-[12px] text-center text-nowrap">
+                          <p className="leading-[18px] whitespace-pre">Estimated cost</p>
+                        </div>
+                        <div className="relative shrink-0 size-[12px]">
+                          <img alt="" className="block max-w-none size-full brightness-200" src={imgInfo} />
+                        </div>
+                      </div>
+                      <p className="font-['Inter:Semi_Bold',_sans-serif] font-semibold leading-[24px] not-italic relative shrink-0 text-[20px] text-nowrap text-white whitespace-pre">
+                        $$$–$$$$
+                      </p>
+                    </div>
+
+                    {/* Divider */}
+                    <div className="h-0 relative z-10 shrink-0 w-full">
+                      <div className="border-t border-[#d0d1d4] w-full" />
+                    </div>
+
+                    {/* Includes */}
+                    <div className="flex flex-col gap-[4px] items-start relative z-10 shrink-0 w-full">
+                      <p className="font-['Inter:Bold',_sans-serif] font-bold h-[18px] leading-[18px] not-italic relative shrink-0 text-[14px] text-white w-[259px]">
+                        Includes:
+                      </p>
+                      <div className="flex gap-[8px] items-center relative shrink-0 w-full">
+                        <div className="relative shrink-0 size-6">
+                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20 6L9 17L4 12" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                          </svg>
+                        </div>
+                        <p className="basis-0 font-['Inter:regular',_sans-serif] grow leading-[18px] min-h-px min-w-px not-italic relative shrink-0 text-[14px] text-white">
+                          Up to 1000 pages
+                        </p>
+                      </div>
+                      <div className="flex gap-[8px] items-center relative shrink-0 w-full">
+                        <div className="relative shrink-0 size-6">
+                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20 6L9 17L4 12" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                          </svg>
+                        </div>
+                        <p className="basis-0 font-['Inter:regular',_sans-serif] grow leading-[18px] min-h-px min-w-px not-italic relative shrink-0 text-[14px] text-white">
+                          Up to 30 authorized users
+                        </p>
+                      </div>
+                      <div className="flex gap-[8px] items-center relative shrink-0 w-full">
+                        <div className="relative shrink-0 size-6">
+                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20 6L9 17L4 12" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                          </svg>
+                        </div>
+                        <p className="basis-0 font-['Inter:regular',_sans-serif] grow leading-[18px] min-h-px min-w-px not-italic relative shrink-0 text-[14px] text-white">
+                          Full brand and style customization
+                        </p>
+                      </div>
+                      <div className="flex gap-[8px] items-center relative shrink-0 w-full">
+                        <div className="relative shrink-0 size-6">
+                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20 6L9 17L4 12" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                          </svg>
+                        </div>
+                        <p className="basis-0 font-['Inter:regular',_sans-serif] grow leading-[18px] min-h-px min-w-px not-italic relative shrink-0 text-[14px] text-white">
+                          Advanced SEO optimization
+                        </p>
+                      </div>
+                      <div className="flex gap-[8px] items-center relative shrink-0 w-full">
+                        <div className="relative shrink-0 size-6">
+                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20 6L9 17L4 12" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                          </svg>
+                        </div>
+                        <p className="basis-0 font-['Inter:regular',_sans-serif] grow leading-[18px] min-h-px min-w-px not-italic relative shrink-0 text-[14px] text-white">
+                          CRM integration
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Divider */}
+                    <div className="h-0 relative z-10 shrink-0 w-full">
+                      <div className="border-t border-[#d0d1d4] w-full" />
+                    </div>
+
+                    {/* Bonus Features */}
+                    <div className="flex flex-col gap-[4px] items-start relative z-10 shrink-0 w-full">
+                      <p className="font-['Inter:Bold',_sans-serif] font-bold h-[18px] leading-[18px] not-italic relative shrink-0 text-[14px] text-white w-[259px]">
+                        Bonus features
+                      </p>
+                      <div className="flex gap-[8px] items-center relative shrink-0 w-full">
+                        <div className="relative shrink-0 size-6">
+                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20 6L9 17L4 12" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                          </svg>
+                        </div>
+                        <p className="basis-0 font-['Inter:regular',_sans-serif] grow leading-[18px] min-h-px min-w-px not-italic relative shrink-0 text-[14px] text-white">
+                          Intelligent analytics dashboard
+                        </p>
+                      </div>
+                      <div className="flex gap-[8px] items-center relative shrink-0 w-full">
+                        <div className="relative shrink-0 size-6">
+                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20 6L9 17L4 12" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                          </svg>
+                        </div>
+                        <p className="basis-0 font-['Inter:regular',_sans-serif] grow leading-[18px] min-h-px min-w-px not-italic relative shrink-0 text-[14px] text-white">
+                          Web/graphic designer as needed
+                        </p>
+                      </div>
+                      <div className="flex gap-[8px] items-center relative shrink-0 w-full">
+                        <div className="relative shrink-0 size-6">
+                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20 6L9 17L4 12" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                          </svg>
+                        </div>
+                        <p className="basis-0 font-['Inter:regular',_sans-serif] grow leading-[18px] min-h-px min-w-px not-italic relative shrink-0 text-[14px] text-white">
+                          Custom template built with AI
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
