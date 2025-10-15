@@ -1008,7 +1008,7 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
             <div className="box-border flex flex-col items-center overflow-y-auto p-[24px] rounded-[inherit] flex-1">
               <div className="flex flex-col gap-[32px] items-start w-full min-h-full">
                 {/* Top Frame */}
-                <div className="basis-0 flex flex-col gap-[16px] grow items-start min-h-px min-w-px shrink-0 w-full">
+                <div className="basis-0 flex flex-col gap-[16px] grow items-start min-w-px shrink-0 w-full">
                   <p className="font-['Inter:Semi_Bold',_sans-serif] font-semibold leading-[24px] not-italic shrink-0 text-[#22252b] text-[20px] w-full">
                     Quote Summary
                   </p>
