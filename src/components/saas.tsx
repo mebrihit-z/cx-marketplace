@@ -11,7 +11,7 @@ interface SaaSProps {
 }
 
 // Image assets
-const imgScreenshot1 = "images/saas-card-lg.svg";
+const imgScreenshot1 = "images/horizon-card-lg.svg";
 const imgScreenshot2 = "images/saas-card-md.svg";
 const imgScreenshot3 = "images/saas-card-sm.svg";
 const imgScreenshot1WinterBlues = "images/saas-card-lg-winter-blues.svg";
