@@ -1,4 +1,3 @@
-import { moreTemplates } from '../data/templates';
 import TemplateCard from './TemplateCard';
 import type { MoreTemplate } from '../data/templates';
 import type { ActiveSection } from '../types';
@@ -7,9 +6,10 @@ const img = "/images/white-stars-icon.svg";
 interface GallerySectionProps {
   setActiveSection: (section: ActiveSection) => void;
   setSelectedTemplate: (template: MoreTemplate) => void;
+  templates: MoreTemplate[];
 }
 
-export default function GallerySection({ setActiveSection, setSelectedTemplate }: GallerySectionProps) {
+export default function GallerySection({ setActiveSection, setSelectedTemplate, templates }: GallerySectionProps) {
   return (
     <>
     <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between w-full px-4 md:px-8 lg:px-16 pt-24 md:pt-30 lg:pt-40 gap-6 lg:gap-0" data-name="Header" data-node-id="8071:32925">
@@ -29,7 +29,7 @@ export default function GallerySection({ setActiveSection, setSelectedTemplate }
     </div>
     {/* Grid - Mobile: Single column, Desktop: Multi-column */}
     <div className="box-border content-stretch flex flex-col lg:flex-row gap-3 lg:gap-4 items-start justify-start px-4 lg:px-32 py-0 relative shrink-0 w-full my-10 lg:my-24 text-[14px]">
-          {moreTemplates.map((template) => (
+          {templates.map((template) => (
             <TemplateCard
               key={template.id}
               tag={template.tag}

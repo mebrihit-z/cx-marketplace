@@ -4,6 +4,7 @@ import AISection from './ai-section';
 import PromiseSection from './promise-section';
 import WhiteGloveSection from './white-glove-section';
 import Roadmap from './roadmap';
+import { homePageTemplates } from '../data/templates';
 import type { MoreTemplate } from '../data/templates';
 import type { ActiveSection } from '../types';
 
@@ -18,7 +19,11 @@ export default function Home({ setActiveSection, setSelectedTemplate }: HomeProp
     return (
       <div className="w-full min-h-screen">
         <Hero />
-        <GallerySection setActiveSection={setActiveSection} setSelectedTemplate={setSelectedTemplate} />
+        <GallerySection 
+          setActiveSection={setActiveSection} 
+          setSelectedTemplate={setSelectedTemplate}
+          templates={homePageTemplates}
+        />
         <AISection />
         {/* Show roadmap component on mobile, image on desktop */}
         <div className="block md:hidden">
