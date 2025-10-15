@@ -121,61 +121,61 @@ export default function QuoteSummary({
   const templateBg = templateBackgrounds[primaryCategory as keyof typeof templateBackgrounds] || templateBackgrounds.startup;
 
   return (
-    <div className="min-h-screen bg-white flex items-center justify-center">
-      <div className="box-border flex items-start justify-between pl-0 pr-8 py-0 relative shadow-[0px_1px_3px_0px_rgba(25,33,61,0.1)] w-full h-screen">
+    <div className="min-h-screen bg-white flex items-center justify-center py-12">
+      <div className="box-border flex items-start justify-between pl-0 pr-8 py-0 relative shadow-[0px_1px_3px_0px_rgba(25,33,61,0.1)] w-full max-w-[1400px] mx-auto">
         {/* Left Container */}
-        <div className="box-border flex flex-col items-start justify-between px-16 py-16 relative self-stretch shrink-0">
-        {/* Content with fixed width */}
-        <div className="flex flex-col gap-12 items-start relative shrink-0 w-[640px]">
-          {/* Text Container */}
-          <div className="flex flex-col gap-6 items-start not-italic relative shrink-0 w-full">
-            <p className="font-['Inter:Semi_Bold',_sans-serif] font-semibold leading-[48px] relative shrink-0 text-[#22252b] text-[40px] w-full">
-              You're all set!
-            </p>
-            <div className="font-['Inter:regular',_sans-serif] leading-[24px] relative shrink-0 text-[#333740] text-[18px] w-full">
-              <p className="mb-5">Here's a summary of your quote, with a website template and pricing package that matches your needs. </p>
-              <p>Next step? Connect with our Sales team to discuss making your website dreams come to life. </p>
+        <div className="box-border flex flex-col items-start justify-between px-16 py-0 relative self-stretch shrink-0">
+          {/* Content with fixed width */}
+          <div className="flex flex-col gap-12 items-start relative shrink-0 w-[640px]">
+            {/* Text Container */}
+            <div className="flex flex-col gap-6 items-start not-italic relative shrink-0 w-full">
+              <p className="font-['Inter:Semi_Bold',_sans-serif] font-semibold leading-[48px] relative shrink-0 text-[#22252b] text-[40px] w-full">
+                You're all set!
+              </p>
+              <div className="font-['Inter:regular',_sans-serif] leading-[24px] relative shrink-0 text-[#333740] text-[18px] w-full">
+                <p className="mb-5">Here's a summary of your quote, with a website template and pricing package that matches your needs. </p>
+                <p>Next step? Connect with our Sales team to discuss making your website dreams come to life. </p>
+              </div>
+            </div>
+
+            {/* Button Group */}
+            <div className="border-0 border-black border-solid box-border flex gap-4 items-start relative shrink-0">
+              <button
+                onClick={handleBookCall}
+                className="bg-[#0a7c00] box-border flex gap-2.5 items-center justify-center px-6 py-2.5 relative rounded-lg shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)] shrink-0 hover:bg-[#096d00] transition-colors"
+              >
+                <p className="font-['Inter:regular',_sans-serif] leading-[20px] not-italic relative shrink-0 text-[16px] text-nowrap text-white whitespace-pre">
+                  Book a call
+                </p>
+              </button>
+              <button
+                onClick={handleRestart}
+                className="bg-white border border-[#0a7c00] border-solid box-border flex gap-2.5 items-center justify-center px-6 py-2.5 relative rounded-lg shrink-0 hover:bg-[#f0f9ee] transition-colors"
+              >
+                <p className="font-['Inter:regular',_sans-serif] leading-[20px] not-italic relative shrink-0 text-[#111215] text-[16px] text-nowrap whitespace-pre">
+                  Restart quote
+                </p>
+              </button>
             </div>
           </div>
 
-          {/* Button Group */}
-          <div className="border-0 border-black border-solid box-border flex gap-4 items-start relative shrink-0">
-            <button
-              onClick={handleBookCall}
-              className="bg-[#0a7c00] box-border flex gap-2.5 items-center justify-center px-6 py-2.5 relative rounded-lg shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)] shrink-0 hover:bg-[#096d00] transition-colors"
-            >
-              <p className="font-['Inter:regular',_sans-serif] leading-[20px] not-italic relative shrink-0 text-[16px] text-nowrap text-white whitespace-pre">
-                Book a call
-              </p>
-            </button>
-            <button
-              onClick={handleRestart}
-              className="bg-white border border-[#0a7c00] border-solid box-border flex gap-2.5 items-center justify-center px-6 py-2.5 relative rounded-lg shrink-0 hover:bg-[#f0f9ee] transition-colors"
-            >
-              <p className="font-['Inter:regular',_sans-serif] leading-[20px] not-italic relative shrink-0 text-[#111215] text-[16px] text-nowrap whitespace-pre">
-                Restart quote
-              </p>
-            </button>
+          {/* Actions - Back Button */}
+          <div className="flex items-center relative shrink-0 w-full">
+            <div className="h-10 relative shrink-0 w-[320px]">
+              <button
+                onClick={handleBack}
+                className="bg-white border border-[#d0d1d4] border-solid box-border flex gap-2 items-center px-6 py-2.5 rounded-lg hover:bg-gray-50 transition-colors"
+              >
+                <div className="relative shrink-0 size-5">
+                  <img alt="" className="block max-w-none size-full" src={imgBackArrow} />
+                </div>
+                <p className="font-['Inter:regular',_sans-serif] leading-[20px] not-italic relative shrink-0 text-[#111215] text-[16px] text-nowrap whitespace-pre">
+                  Back
+                </p>
+              </button>
+            </div>
           </div>
         </div>
-
-        {/* Actions - Back Button */}
-        <div className="flex items-center relative shrink-0 w-full">
-          <div className="h-10 relative shrink-0 w-[320px]">
-            <button
-              onClick={handleBack}
-              className="absolute bg-white border border-[#d0d1d4] border-solid box-border flex gap-2 items-center left-0 px-6 py-2.5 rounded-lg top-0 hover:bg-gray-50 transition-colors"
-            >
-              <div className="relative shrink-0 size-5">
-                <img alt="" className="block max-w-none size-full" src={imgBackArrow} />
-              </div>
-              <p className="font-['Inter:regular',_sans-serif] leading-[20px] not-italic relative shrink-0 text-[#111215] text-[16px] text-nowrap whitespace-pre">
-                Back
-              </p>
-            </button>
-          </div>
-        </div>
-      </div>
 
       {/* Quote Sidebar */}
       <div className="basis-0 bg-white border border-[#d0d1d4] border-solid grow min-h-[730px] min-w-px relative rounded-2xl shrink-0">

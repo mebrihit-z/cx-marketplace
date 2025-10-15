@@ -150,7 +150,10 @@ export default function Header({ activeSection, setActiveSection }: HeaderProps)
           {/* Right Container - CTA Button, Avatar, and Hamburger Menu */}
           <div className="content-stretch flex gap-[22px] h-[88px] items-center justify-end relative shrink-0 w-[306px] md:w-[306px] w-auto min-w-0">
             {/* CTA Button - Hidden on mobile, visible on desktop */}
-            <button className="!hidden md:!inline-flex btn btn-primary shrink-0 text-sm md:text-base px-4 md:px-6">
+            <button 
+              onClick={() => handleSectionClick('quote')}
+              className="!hidden md:!inline-flex btn btn-primary shrink-0 text-sm md:text-base px-4 md:px-6"
+            >
               Get a quote
             </button>
 
@@ -216,7 +219,10 @@ export default function Header({ activeSection, setActiveSection }: HeaderProps)
                 </button>
                 
                 {/* CTA Button - Visible mobile*/}
-                <button className="btn btn-primary shrink-0 text-sm md:text-base px-4 md:px-6  w-fit self-start mb-4">
+                <button 
+                  onClick={() => handleSectionClick('quote')}
+                  className="btn btn-primary shrink-0 text-sm md:text-base px-4 md:px-6  w-fit self-start mb-4"
+                >
                   Get a quote
                 </button>
               </div>

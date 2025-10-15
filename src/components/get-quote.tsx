@@ -2,7 +2,6 @@ import { useState } from 'react';
 import type { ActiveSection } from '../types';
 import QuoteSummary from './quote-summary';
 
-const imgBackArrow = "icons/green-left-arrow.svg";
 const imgError = "icons/info-icon.svg";
 const imgCheckmark = "icons/green-check-icon.svg";
 
@@ -183,10 +182,6 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
     setShowSummary(false);
   };
 
-  const handleBack = () => {
-    setActiveSection('home');
-  };
-
   // Show summary if user clicked "View summary"
   if (showSummary) {
     return (
@@ -207,17 +202,6 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#f5f9f5] to-white flex flex-col">
-      {/* Back Button */}
-      <div className="pt-8 px-8">
-        <button
-          onClick={handleBack}
-          className="flex items-center gap-2 text-[#0a7c00] hover:opacity-80 transition-opacity"
-        >
-          <img src={imgBackArrow} alt="back" className="size-5" />
-          <span className="font-['Inter:regular',_sans-serif] text-[16px] leading-[20px]">Back to Home</span>
-        </button>
-      </div>
-
       <div className="max-w-[1400px] mx-auto px-8 py-12 flex-1 flex flex-col">
         <div className="flex items-stretch justify-between gap-8 flex-1">
           {/* Main Content Area */}

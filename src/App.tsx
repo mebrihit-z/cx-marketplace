@@ -61,13 +61,9 @@ function App() {
     }
   }
 
-  // For preview and quote pages, don't show header and footer
+  // For preview page only, don't show header and footer
   if (activeSection === 'preview') {
     return <PreviewPage template={selectedTemplate!} />
-  }
-
-  if (activeSection === 'quote') {
-    return <GetQuote setActiveSection={setActiveSection} />
   }
 
   return (
