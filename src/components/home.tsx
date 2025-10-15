@@ -18,7 +18,7 @@ interface HomeProps {
 export default function Home({ setActiveSection, setSelectedTemplate }: HomeProps) {
     return (
       <div className="w-full min-h-screen">
-        <Hero />
+        <Hero setActiveSection={setActiveSection} />
         <GallerySection 
           setActiveSection={setActiveSection} 
           setSelectedTemplate={setSelectedTemplate}

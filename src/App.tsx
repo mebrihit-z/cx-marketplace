@@ -10,6 +10,7 @@ import Training from './components/training'
 import Contact from './components/contact'
 import SaaS from './components/saas'
 import PreviewPage from './components/preview-page'
+import GetQuote from './components/get-quote'
 import type { MoreTemplate } from './data/templates'
 import type { ActiveSection } from './types'
 
@@ -53,14 +54,20 @@ function App() {
         return <SaaS setActiveSection={setActiveSection} selectedTemplate={selectedTemplate} />
       case 'preview':
         return selectedTemplate ? <PreviewPage template={selectedTemplate} /> : <Home setActiveSection={setActiveSection} setSelectedTemplate={setSelectedTemplate} />
+      case 'quote':
+        return <GetQuote setActiveSection={setActiveSection} />
       default:
         return <Home setActiveSection={setActiveSection} setSelectedTemplate={setSelectedTemplate} />
     }
   }
 
-  // For preview page, don't show header and footer
+  // For preview and quote pages, don't show header and footer
   if (activeSection === 'preview') {
     return <PreviewPage template={selectedTemplate!} />
+  }
+
+  if (activeSection === 'quote') {
+    return <GetQuote setActiveSection={setActiveSection} />
   }
 
   return (
