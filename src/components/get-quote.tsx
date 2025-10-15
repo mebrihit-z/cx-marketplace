@@ -88,9 +88,7 @@ const MarketplaceLogo = () => {
   return (
     <div className="flex items-center gap-4 shrink-0">
       <div className="bg-[#8cc63f] overflow-hidden rounded-full shrink-0 size-[32px] flex items-center justify-center">
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M8 0L10.472 5.528L16 8L10.472 10.472L8 16L5.528 10.472L0 8L5.528 5.528L8 0Z" fill="white"/>
-        </svg>
+      <img alt="Logo icon" className="block size-full" src="icons/logo-icon.svg" />
       </div>
     </div>
   );
@@ -222,11 +220,11 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
               {currentStep === 1 && (
               <div className="flex flex-col gap-10 items-start w-full">
                 {/* Message */}
-                <div className="flex flex-col gap-8 items-start max-w-[940px] w-full">
+                <div className="flex flex-col gap-8 items-start w-full">
                   <div className="flex flex-col gap-0.5 items-start w-full">
                     <div className="flex gap-2 items-start">
                       <MarketplaceLogo />
-                      <div className="bg-white border border-[#d5d5d5] rounded-bl-2xl rounded-br-2xl rounded-tr-2xl max-w-[646px]">
+                      <div className="bg-white border border-[#d5d5d5] rounded-bl-2xl rounded-br-2xl rounded-tr-2xl w-[646px]">
                         <div className="flex flex-col gap-1 items-start p-4">
                           <p className="font-['Inter:regular',_sans-serif] text-[14px] leading-[18px] text-[#333740]">
                             What type of website are you looking for?
@@ -338,11 +336,11 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
               {currentStep === 2 && (
               <div className="flex flex-col gap-10 items-start w-full">
                 {/* Message */}
-                <div className="flex flex-col gap-8 items-start max-w-[940px] w-full">
+                <div className="flex flex-col gap-8 items-start w-full">
                   <div className="flex flex-col gap-0.5 items-start w-full">
                     <div className="flex gap-2 items-start">
                       <MarketplaceLogo />
-                      <div className="bg-white border border-[#d5d5d5] rounded-bl-2xl rounded-br-2xl rounded-tr-2xl max-w-[646px]">
+                      <div className="bg-white border border-[#d5d5d5] rounded-bl-2xl rounded-br-2xl rounded-tr-2xl w-[646px]">
                         <div className="flex flex-col gap-1 items-start p-4">
                           <p className="font-['Inter:regular',_sans-serif] text-[14px] leading-[18px] text-[#333740]">
                             What features does your startup website need?
@@ -454,11 +452,11 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
               {currentStep === 3 && (
               <div className="flex flex-col gap-10 items-start w-full">
                 {/* Message */}
-                <div className="flex flex-col gap-8 items-start max-w-[940px] w-full">
+                <div className="flex flex-col gap-8 items-start w-full">
                   <div className="flex flex-col gap-0.5 items-start w-full">
                     <div className="flex gap-2 items-start">
                       <MarketplaceLogo />
-                      <div className="bg-white border border-[#d5d5d5] rounded-bl-2xl rounded-br-2xl rounded-tr-2xl max-w-[646px]">
+                      <div className="bg-white border border-[#d5d5d5] rounded-bl-2xl rounded-br-2xl rounded-tr-2xl w-[646px]">
                         <div className="flex flex-col gap-1 items-start p-4">
                           <p className="font-['Inter:regular',_sans-serif] text-[14px] leading-[18px] text-[#333740]">
                             What is the total number of desired pages across your website?
@@ -537,11 +535,11 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
               {currentStep === 4 && (
               <div className="flex flex-col gap-10 items-start w-full">
                 {/* Message */}
-                <div className="flex flex-col gap-8 items-start max-w-[940px] w-full">
+                <div className="flex flex-col gap-8 items-start w-full">
                   <div className="flex flex-col gap-0.5 items-start w-full">
                     <div className="flex gap-2 items-start">
                       <MarketplaceLogo />
-                      <div className="bg-white border border-[#d5d5d5] rounded-bl-2xl rounded-br-2xl rounded-tr-2xl max-w-[646px]">
+                      <div className="bg-white border border-[#d5d5d5] rounded-bl-2xl rounded-br-2xl rounded-tr-2xl w-[646px]">
                         <div className="flex flex-col gap-1 items-start p-4">
                           <p className="font-['Inter:regular',_sans-serif] text-[14px] leading-[18px] text-[#333740]">
                             How many authorized users will manage your website?
@@ -620,11 +618,11 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
               {currentStep === 5 && (
               <div className="flex flex-col gap-10 items-start w-full">
                 {/* Message */}
-                <div className="flex flex-col gap-8 items-start max-w-[940px] w-full">
+                <div className="flex flex-col gap-8 items-start w-full">
                   <div className="flex flex-col gap-0.5 items-start w-full">
                     <div className="flex gap-2 items-start">
                       <MarketplaceLogo />
-                      <div className="bg-white border border-[#d5d5d5] rounded-bl-2xl rounded-br-2xl rounded-tr-2xl max-w-[646px]">
+                      <div className="bg-white border border-[#d5d5d5] rounded-bl-2xl rounded-br-2xl rounded-tr-2xl w-[646px]">
                         <div className="flex flex-col gap-1 items-start p-4">
                           <p className="font-['Inter:regular',_sans-serif] text-[14px] leading-[18px] text-[#333740]">
                             What level of customization do you prefer?
@@ -673,11 +671,11 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
               {currentStep === 6 && (
               <div className="flex flex-col gap-10 items-start w-full">
                 {/* Message */}
-                <div className="flex flex-col gap-8 items-start max-w-[940px] w-full">
+                <div className="flex flex-col gap-8 items-start w-full">
                   <div className="flex flex-col gap-0.5 items-start w-full">
                     <div className="flex gap-2 items-start">
                       <MarketplaceLogo />
-                      <div className="bg-white border border-[#d5d5d5] rounded-bl-2xl rounded-br-2xl rounded-tr-2xl max-w-[646px]">
+                      <div className="bg-white border border-[#d5d5d5] rounded-bl-2xl rounded-br-2xl rounded-tr-2xl w-[646px]">
                         <div className="flex flex-col gap-1 items-start p-4">
                           <p className="font-['Inter:regular',_sans-serif] text-[14px] leading-[18px] text-[#333740]">
                             Does your website need any extra functionality?
@@ -816,11 +814,11 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
               {currentStep === 7 && (
               <div className="flex flex-col gap-10 items-start w-full">
                 {/* Message */}
-                <div className="flex flex-col gap-8 items-start max-w-[940px] w-full">
+                <div className="flex flex-col gap-8 items-start w-full">
                   <div className="flex flex-col gap-0.5 items-start w-full">
                     <div className="flex gap-2 items-start">
                       <MarketplaceLogo />
-                      <div className="bg-white border border-[#d5d5d5] rounded-bl-2xl rounded-br-2xl rounded-tr-2xl max-w-[646px]">
+                      <div className="bg-white border border-[#d5d5d5] rounded-bl-2xl rounded-br-2xl rounded-tr-2xl w-[646px]">
                         <div className="flex flex-col gap-1 items-start p-4">
                           <p className="font-['Inter:regular',_sans-serif] text-[14px] leading-[18px] text-[#333740]">
                             Are you in need of any additional design services?
