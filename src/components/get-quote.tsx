@@ -3,6 +3,7 @@ import type { ActiveSection } from '../types';
 
 const imgBackArrow = "icons/green-left-arrow.svg";
 const imgError = "icons/info-icon.svg";
+const imgCheckmark = "icons/green-check-icon.svg";
 
 interface GetQuoteProps {
   setActiveSection: (section: ActiveSection) => void;
@@ -180,7 +181,7 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#f5f9f5] to-white">
+    <div className="min-h-screen bg-gradient-to-br from-[#f5f9f5] to-white flex flex-col">
       {/* Back Button */}
       <div className="pt-8 px-8">
         <button
@@ -192,8 +193,8 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
         </button>
       </div>
 
-      <div className="max-w-[1400px] mx-auto px-8 py-12">
-        <div className="flex items-start justify-between gap-8">
+      <div className="max-w-[1400px] mx-auto px-8 py-12 flex-1 flex flex-col">
+        <div className="flex items-stretch justify-between gap-8 flex-1">
           {/* Main Content Area */}
           <div className="flex-1 flex flex-col items-start justify-between">
             {/* Text Container */}
@@ -996,11 +997,11 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
           </div>
 
           {/* Quote Sidebar */}
-          <div className="bg-white border border-[#d0d1d4] border-solid rounded-[16px] w-[339px] h-[730px] flex-shrink-0 sticky top-8">
-            <div className="box-border flex flex-col items-center overflow-clip p-[24px] rounded-[inherit] h-full">
-              <div className="flex flex-col gap-[32px] items-start w-full h-full">
+          <div className="bg-white border border-[#d0d1d4] border-solid rounded-[16px] w-[339px] flex-shrink-0 self-stretch flex flex-col">
+            <div className="box-border flex flex-col items-center overflow-y-auto p-[24px] rounded-[inherit] flex-1">
+              <div className="flex flex-col gap-[32px] items-start w-full min-h-full">
                 {/* Top Frame */}
-                <div className="flex flex-col gap-[16px] items-start w-full h-[325px]">
+                <div className="basis-0 flex flex-col gap-[16px] grow items-start min-h-px min-w-px shrink-0 w-full">
                   <p className="font-['Inter:Semi_Bold',_sans-serif] font-semibold leading-[24px] not-italic shrink-0 text-[#22252b] text-[20px] w-full">
                     Quote Summary
                   </p>
@@ -1013,22 +1014,135 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                     <p className="font-['Inter:regular',_sans-serif] leading-[20px] min-w-full not-italic shrink-0 text-[#333740] text-[16px] w-[min-content]">
                       Template
                     </p>
-                    <div className="flex gap-[4px] items-center shrink-0 w-full">
-                      <div className="shrink-0 size-[20px]">
-                        <img alt="" className="block max-w-none size-full" src={imgError} />
+                    {selectedCategories.length > 0 ? (
+                      <div className="bg-white border border-[#d0d1d4] rounded-lg px-3 py-2 w-full">
+                        <p className="font-['Inter:regular',_sans-serif] text-[14px] leading-[18px] text-[#333740]">
+                          {selectedCategories.map(catId => 
+                            categories.find(c => c.id === catId)?.label
+                          ).join(', ')}
+                        </p>
                       </div>
-                      <p className="basis-0 font-['Inter:Regular',_sans-serif] font-normal grow leading-[18px] min-h-px min-w-px not-italic shrink-0 text-[#737780] text-[12px]">
-                        Need more information to suggest template
-                      </p>
-                    </div>
+                    ) : (
+                      <div className="flex gap-[4px] items-center shrink-0 w-full">
+                        <div className="shrink-0 size-[20px]">
+                          <img alt="" className="block max-w-none size-full" src={imgError} />
+                        </div>
+                        <p className="basis-0 font-['Inter:Regular',_sans-serif] font-normal grow leading-[18px] min-h-px min-w-px not-italic shrink-0 text-[#737780] text-[12px]">
+                          Need more information to suggest template
+                        </p>
+                      </div>
+                    )}
                   </div>
+
+                  {/* Features included */}
+                  {selectedFeatures.length > 0 && (
+                    <div className="flex flex-col gap-[4px] items-start shrink-0 w-full">
+                      <p className="font-['Inter:Bold',_sans-serif] font-bold h-[18px] leading-[18px] not-italic shrink-0 text-[#333740] text-[14px] w-full">
+                        Features included
+                      </p>
+                      {selectedFeatures.map(featureId => {
+                        const feature = features.find(f => f.id === featureId);
+                        return feature ? (
+                          <div key={featureId} className="flex gap-[8px] items-center shrink-0 w-full">
+                            <div className="shrink-0 size-[24px]">
+                              <img alt="" className="block max-w-none size-full" src={imgCheckmark} />
+                            </div>
+                            <p className="basis-0 font-['Inter:regular',_sans-serif] grow leading-[18px] min-h-px min-w-px not-italic shrink-0 text-[#333740] text-[14px]">
+                              {feature.label}
+                            </p>
+                          </div>
+                        ) : null;
+                      })}
+                    </div>
+                  )}
                 </div>
 
                 {/* Footer */}
-                <div className="flex flex-col gap-[16px] items-start w-full h-[325px]">
+                <div className="basis-0 flex flex-col gap-[16px] grow items-start min-h-px min-w-px shrink-0 w-full">
                   <div className="h-0 shrink-0 w-full">
                     <div className="border-t border-[#d0d1d4]" />
                   </div>
+                  
+                  {/* Additional selections */}
+                  {selectedPageOption && (
+                    <div className="flex flex-col gap-[8px] items-start shrink-0 w-full">
+                      <p className="font-['Inter:regular',_sans-serif] leading-[20px] not-italic shrink-0 text-[#333740] text-[16px] w-full">
+                        Pages
+                      </p>
+                      <p className="font-['Inter:regular',_sans-serif] text-[14px] leading-[18px] text-[#737780]">
+                        {pageOptions.find(p => p.id === selectedPageOption)?.label}
+                      </p>
+                    </div>
+                  )}
+
+                  {selectedUserOption && (
+                    <div className="flex flex-col gap-[8px] items-start shrink-0 w-full">
+                      <p className="font-['Inter:regular',_sans-serif] leading-[20px] not-italic shrink-0 text-[#333740] text-[16px] w-full">
+                        Users
+                      </p>
+                      <p className="font-['Inter:regular',_sans-serif] text-[14px] leading-[18px] text-[#737780]">
+                        {userOptions.find(u => u.id === selectedUserOption)?.label}
+                      </p>
+                    </div>
+                  )}
+
+                  {selectedCustomizationOption && (
+                    <div className="flex flex-col gap-[8px] items-start shrink-0 w-full">
+                      <p className="font-['Inter:regular',_sans-serif] leading-[20px] not-italic shrink-0 text-[#333740] text-[16px] w-full">
+                        Customization
+                      </p>
+                      <p className="font-['Inter:regular',_sans-serif] text-[14px] leading-[18px] text-[#737780]">
+                        {customizationOptions.find(c => c.id === selectedCustomizationOption)?.label}
+                      </p>
+                    </div>
+                  )}
+
+                  {selectedExtraFunctionality.length > 0 && (
+                    <div className="flex flex-col gap-[8px] items-start shrink-0 w-full">
+                      <p className="font-['Inter:regular',_sans-serif] leading-[20px] not-italic shrink-0 text-[#333740] text-[16px] w-full">
+                        Extra Functionality
+                      </p>
+                      <div className="flex flex-col gap-[4px]">
+                        {selectedExtraFunctionality.map(funcId => {
+                          const func = extraFunctionalityOptions.find(f => f.id === funcId);
+                          return func ? (
+                            <div key={funcId} className="flex gap-[8px] items-center">
+                              <div className="shrink-0 size-[16px]">
+                                <img alt="" className="block max-w-none size-full" src={imgCheckmark} />
+                              </div>
+                              <p className="font-['Inter:regular',_sans-serif] text-[14px] leading-[18px] text-[#737780]">
+                                {func.label}
+                              </p>
+                            </div>
+                          ) : null;
+                        })}
+                      </div>
+                    </div>
+                  )}
+
+                  {selectedDesignServices.length > 0 && (
+                    <div className="flex flex-col gap-[8px] items-start shrink-0 w-full">
+                      <p className="font-['Inter:regular',_sans-serif] leading-[20px] not-italic shrink-0 text-[#333740] text-[16px] w-full">
+                        Design Services
+                      </p>
+                      <div className="flex flex-col gap-[4px]">
+                        {selectedDesignServices.map(serviceId => {
+                          const service = designServicesOptions.find(s => s.id === serviceId);
+                          return service ? (
+                            <div key={serviceId} className="flex gap-[8px] items-center">
+                              <div className="shrink-0 size-[16px]">
+                                <img alt="" className="block max-w-none size-full" src={imgCheckmark} />
+                              </div>
+                              <p className="font-['Inter:regular',_sans-serif] text-[14px] leading-[18px] text-[#737780]">
+                                {service.label}
+                              </p>
+                            </div>
+                          ) : null;
+                        })}
+                      </div>
+                    </div>
+                  )}
+
                   <div className="flex flex-col gap-[8px] items-start shrink-0 w-full">
                     <p className="font-['Inter:regular',_sans-serif] leading-[20px] not-italic shrink-0 text-[#333740] text-[16px] w-full">
                       Pricing Package
