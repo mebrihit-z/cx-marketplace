@@ -10,6 +10,7 @@ import Training from './components/training'
 import Contact from './components/contact'
 import SaaS from './components/saas'
 import PreviewPage from './components/preview-page'
+import CreatePage from './components/create-page'
 import type { MoreTemplate } from './data/templates'
 import type { ActiveSection } from './types'
 
@@ -53,6 +54,8 @@ function App() {
         return <SaaS setActiveSection={setActiveSection} selectedTemplate={selectedTemplate} />
       case 'preview':
         return selectedTemplate ? <PreviewPage template={selectedTemplate} /> : <Home setActiveSection={setActiveSection} setSelectedTemplate={setSelectedTemplate} />
+      case 'create':
+        return <CreatePage setActiveSection={setActiveSection} />
       default:
         return <Home setActiveSection={setActiveSection} setSelectedTemplate={setSelectedTemplate} />
     }
