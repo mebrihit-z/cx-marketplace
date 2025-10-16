@@ -1050,126 +1050,139 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                     <p className="font-['Inter:regular',_sans-serif] leading-[20px] not-italic shrink-0 text-[#333740] text-[16px] w-full">
                       Pricing Package
                     </p>
-                    {/* Pricing Card */}
-                    <div className="bg-white box-border flex flex-col gap-[16px] items-start overflow-hidden px-[16px] py-[24px] relative rounded-[16px] shrink-0 w-full">
-                      {/* Background Image */}
-                      <div className="absolute inset-0 pointer-events-none">
-                        <img 
-                          alt="" 
-                          className="absolute inset-0 w-full h-full object-cover" 
-                          src="images/pricing-package-bg-image.svg" 
-                        />
-                        <div className="absolute bg-[rgba(0,0,0,0.3)] inset-0" />
-                      </div>
-
-                      {/* Premium Title */}
-                      <p className="font-['Inter:Semi_Bold',_sans-serif] font-semibold leading-[28px] min-w-full not-italic relative shrink-0 text-[24px] text-white w-[min-content] z-10">
-                        Premium
-                      </p>
-
-                      {/* Price */}
-                      <div className="flex flex-col gap-[4px] items-start justify-center relative shrink-0 w-full z-10">
-                        <div className="flex gap-[4px] items-center relative shrink-0">
-                          <div className="flex flex-col font-['Inter:Regular',_sans-serif] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#d0d1d4] text-[12px] text-center text-nowrap">
-                            <p className="leading-[18px] whitespace-pre">Estimated cost</p>
-                          </div>
-                          <div className="relative shrink-0 size-[12px]">
-                            <img alt="" className="block max-w-none size-full brightness-200" src={imgError} />
-                          </div>
+                    {/* Check if we have enough information to show pricing */}
+                    {!selectedCategory || !selectedPageOption ? (
+                      // Warning state - Not enough information
+                      <div className="flex gap-[4px] items-center shrink-0 w-full">
+                        <div className="shrink-0 size-[20px]">
+                          <img alt="" className="block max-w-none size-full" src={imgError} />
                         </div>
-                        <p className="font-['Inter:Semi_Bold',_sans-serif] font-semibold leading-[24px] not-italic relative shrink-0 text-[20px] text-nowrap text-white whitespace-pre">
-                          $$$–$$$$
+                        <p className="basis-0 font-['Inter:Regular',_sans-serif] font-normal grow leading-[18px] min-h-px min-w-px not-italic shrink-0 text-[#737780] text-[12px]">
+                          Need more information to show pricing
                         </p>
                       </div>
+                    ) : (
+                      // Premium Pricing Card
+                      <div className="bg-white box-border flex flex-col gap-[16px] items-start overflow-hidden px-[16px] py-[24px] relative rounded-[16px] shrink-0 w-full">
+                        {/* Background Image */}
+                        <div className="absolute inset-0 pointer-events-none">
+                          <img 
+                            alt="" 
+                            className="absolute inset-0 w-full h-full object-cover" 
+                            src="images/pricing-package-bg-image.svg" 
+                          />
+                          <div className="absolute bg-[rgba(0,0,0,0.3)] inset-0" />
+                        </div>
 
-                      {/* Divider */}
-                      <div className="h-0 relative shrink-0 w-full z-10">
-                        <div className="border-t border-[#d0d1d4] w-full" />
-                      </div>
-
-                      {/* Includes */}
-                      <div className="flex flex-col gap-[4px] items-start relative shrink-0 w-full z-10">
-                        <p className="font-['Inter:Bold',_sans-serif] font-bold h-[18px] leading-[18px] not-italic relative shrink-0 text-[14px] text-white w-full">
-                          Includes:
+                        {/* Premium Title */}
+                        <p className="font-['Inter:Semi_Bold',_sans-serif] font-semibold leading-[28px] min-w-full not-italic relative shrink-0 text-[24px] text-white w-[min-content] z-10">
+                          Premium
                         </p>
-                        
-                        {/* Page Option */}
-                        {selectedPageOption && (
-                          <div className="flex gap-[8px] items-center relative shrink-0 w-full">
-                            <div className="relative shrink-0 size-[24px]">
-                              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M20 6L9 17L4 12" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                              </svg>
-                            </div>
-                            <p className="basis-0 font-['Inter:regular',_sans-serif] grow leading-[18px] min-h-px min-w-px not-italic relative shrink-0 text-[14px] text-white">
-                              {pageOptions.find(p => p.id === selectedPageOption)?.label}
-                            </p>
-                          </div>
-                        )}
 
-                        {/* User Option */}
-                        {selectedUserOption && (
-                          <div className="flex gap-[8px] items-center relative shrink-0 w-full">
-                            <div className="relative shrink-0 size-[24px]">
-                              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M20 6L9 17L4 12" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                              </svg>
+                        {/* Price */}
+                        <div className="flex flex-col gap-[4px] items-start justify-center relative shrink-0 w-full z-10">
+                          <div className="flex gap-[4px] items-center relative shrink-0">
+                            <div className="flex flex-col font-['Inter:Regular',_sans-serif] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#d0d1d4] text-[12px] text-center text-nowrap">
+                              <p className="leading-[18px] whitespace-pre">Estimated cost</p>
                             </div>
-                            <p className="basis-0 font-['Inter:regular',_sans-serif] grow leading-[18px] min-h-px min-w-px not-italic relative shrink-0 text-[14px] text-white">
-                              {userOptions.find(u => u.id === selectedUserOption)?.label}
-                            </p>
-                          </div>
-                        )}
-
-                        {/* Customization Option */}
-                        {selectedCustomizationOption && (
-                          <div className="flex gap-[8px] items-center relative shrink-0 w-full">
-                            <div className="relative shrink-0 size-[24px]">
-                              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M20 6L9 17L4 12" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                              </svg>
+                            <div className="relative shrink-0 size-[12px]">
+                              <img alt="" className="block max-w-none size-full brightness-200" src={imgError} />
                             </div>
-                            <p className="basis-0 font-['Inter:regular',_sans-serif] grow leading-[18px] min-h-px min-w-px not-italic relative shrink-0 text-[14px] text-white">
-                              {customizationOptions.find(c => c.id === selectedCustomizationOption)?.label}
-                            </p>
                           </div>
-                        )}
+                          <p className="font-['Inter:Semi_Bold',_sans-serif] font-semibold leading-[24px] not-italic relative shrink-0 text-[20px] text-nowrap text-white whitespace-pre">
+                            $$$–$$$$
+                          </p>
+                        </div>
 
-                        {/* Extra Functionality */}
-                        {selectedExtraFunctionality.map(funcId => {
-                          const func = extraFunctionalityOptions.find(f => f.id === funcId);
-                          return func ? (
-                            <div key={funcId} className="flex gap-[8px] items-center relative shrink-0 w-full">
+                        {/* Divider */}
+                        <div className="h-0 relative shrink-0 w-full z-10">
+                          <div className="border-t border-[#d0d1d4] w-full" />
+                        </div>
+
+                        {/* Includes */}
+                        <div className="flex flex-col gap-[4px] items-start relative shrink-0 w-full z-10">
+                          <p className="font-['Inter:Bold',_sans-serif] font-bold h-[18px] leading-[18px] not-italic relative shrink-0 text-[14px] text-white w-full">
+                            Includes:
+                          </p>
+                          
+                          {/* Page Option */}
+                          {selectedPageOption && (
+                            <div className="flex gap-[8px] items-center relative shrink-0 w-full">
                               <div className="relative shrink-0 size-[24px]">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                   <path d="M20 6L9 17L4 12" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                                 </svg>
                               </div>
                               <p className="basis-0 font-['Inter:regular',_sans-serif] grow leading-[18px] min-h-px min-w-px not-italic relative shrink-0 text-[14px] text-white">
-                                {func.label}
+                                {pageOptions.find(p => p.id === selectedPageOption)?.label}
                               </p>
                             </div>
-                          ) : null;
-                        })}
+                          )}
 
-                        {/* Design Services */}
-                        {selectedDesignServices.map(serviceId => {
-                          const service = designServicesOptions.find(s => s.id === serviceId);
-                          return service ? (
-                            <div key={serviceId} className="flex gap-[8px] items-center relative shrink-0 w-full">
+                          {/* User Option */}
+                          {selectedUserOption && (
+                            <div className="flex gap-[8px] items-center relative shrink-0 w-full">
                               <div className="relative shrink-0 size-[24px]">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                   <path d="M20 6L9 17L4 12" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                                 </svg>
                               </div>
                               <p className="basis-0 font-['Inter:regular',_sans-serif] grow leading-[18px] min-h-px min-w-px not-italic relative shrink-0 text-[14px] text-white">
-                                {service.label}
+                                {userOptions.find(u => u.id === selectedUserOption)?.label}
                               </p>
                             </div>
-                          ) : null;
-                        })}
+                          )}
+
+                          {/* Customization Option */}
+                          {selectedCustomizationOption && (
+                            <div className="flex gap-[8px] items-center relative shrink-0 w-full">
+                              <div className="relative shrink-0 size-[24px]">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                  <path d="M20 6L9 17L4 12" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                                </svg>
+                              </div>
+                              <p className="basis-0 font-['Inter:regular',_sans-serif] grow leading-[18px] min-h-px min-w-px not-italic relative shrink-0 text-[14px] text-white">
+                                {customizationOptions.find(c => c.id === selectedCustomizationOption)?.label}
+                              </p>
+                            </div>
+                          )}
+
+                          {/* Extra Functionality */}
+                          {selectedExtraFunctionality.map(funcId => {
+                            const func = extraFunctionalityOptions.find(f => f.id === funcId);
+                            return func ? (
+                              <div key={funcId} className="flex gap-[8px] items-center relative shrink-0 w-full">
+                                <div className="relative shrink-0 size-[24px]">
+                                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M20 6L9 17L4 12" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                                  </svg>
+                                </div>
+                                <p className="basis-0 font-['Inter:regular',_sans-serif] grow leading-[18px] min-h-px min-w-px not-italic relative shrink-0 text-[14px] text-white">
+                                  {func.label}
+                                </p>
+                              </div>
+                            ) : null;
+                          })}
+
+                          {/* Design Services */}
+                          {selectedDesignServices.map(serviceId => {
+                            const service = designServicesOptions.find(s => s.id === serviceId);
+                            return service ? (
+                              <div key={serviceId} className="flex gap-[8px] items-center relative shrink-0 w-full">
+                                <div className="relative shrink-0 size-[24px]">
+                                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M20 6L9 17L4 12" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                                  </svg>
+                                </div>
+                                <p className="basis-0 font-['Inter:regular',_sans-serif] grow leading-[18px] min-h-px min-w-px not-italic relative shrink-0 text-[14px] text-white">
+                                  {service.label}
+                                </p>
+                              </div>
+                            ) : null;
+                          })}
+                        </div>
                       </div>
-                    </div>
+                    )}
                   </div>
                 </div>
               </div>
