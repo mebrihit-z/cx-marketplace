@@ -258,9 +258,7 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                             </div>
                             {selectedCategories.includes(category.id) && (
                               <div className="absolute right-4 size-4 top-4">
-                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                  <path d="M13.3334 4L6.00002 11.3333L2.66669 8" stroke="#0a7c00" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                                </svg>
+                                <img src="icons/green-circle-check-mark.svg" alt="Check" className="size-4" />
                               </div>
                             )}
                           </div>
@@ -288,9 +286,7 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                             </div>
                             {selectedCategories.includes(category.id) && (
                               <div className="absolute right-4 size-4 top-4">
-                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                  <path d="M13.3334 4L6.00002 11.3333L2.66669 8" stroke="#0a7c00" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                                </svg>
+                                <img src="icons/green-circle-check-mark.svg" alt="Check" className="size-4" />
                               </div>
                             )}
                           </div>
@@ -318,9 +314,7 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                             </div>
                             {selectedCategories.includes(category.id) && (
                               <div className="absolute right-4 size-4 top-4">
-                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                  <path d="M13.3334 4L6.00002 11.3333L2.66669 8" stroke="#0a7c00" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                                </svg>
+                                <img src="icons/green-circle-check-mark.svg" alt="Check" className="size-4" />
                               </div>
                             )}
                           </div>
@@ -374,9 +368,7 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                             </div>
                             {selectedFeatures.includes(feature.id) && (
                               <div className="absolute right-4 size-4 top-4">
-                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                  <path d="M13.3334 4L6.00002 11.3333L2.66669 8" stroke="#0a7c00" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                                </svg>
+                                <img src="icons/green-circle-check-mark.svg" alt="Check" className="size-4" />
                               </div>
                             )}
                           </div>
@@ -404,9 +396,7 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                             </div>
                             {selectedFeatures.includes(feature.id) && (
                               <div className="absolute right-4 size-4 top-4">
-                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                  <path d="M13.3334 4L6.00002 11.3333L2.66669 8" stroke="#0a7c00" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                                </svg>
+                                <img src="icons/green-circle-check-mark.svg" alt="Check" className="size-4" />
                               </div>
                             )}
                           </div>
@@ -434,9 +424,7 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                             </div>
                             {selectedFeatures.includes(feature.id) && (
                               <div className="absolute right-4 size-4 top-4">
-                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                  <path d="M13.3334 4L6.00002 11.3333L2.66669 8" stroke="#0a7c00" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                                </svg>
+                                <img src="icons/green-circle-check-mark.svg" alt="Check" className="size-4" />
                               </div>
                             )}
                           </div>
@@ -490,9 +478,7 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                             </div>
                             {selectedPageOption === option.id && (
                               <div className="absolute right-4 size-4 top-4">
-                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                  <path d="M13.3334 4L6.00002 11.3333L2.66669 8" stroke="#0a7c00" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                                </svg>
+                                <img src="icons/green-circle-check-mark.svg" alt="Check" className="size-4" />
                               </div>
                             )}
                           </div>
@@ -518,9 +504,7 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                           </div>
                           {selectedPageOption === 'not-sure' && (
                             <div className="absolute right-4 size-4 top-4">
-                              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M13.3334 4L6.00002 11.3333L2.66669 8" stroke="#0a7c00" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                              </svg>
+                              <img src="icons/green-circle-check-mark.svg" alt="Check" className="size-4" />
                             </div>
                           )}
                         </div>
@@ -573,9 +557,7 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                             </div>
                             {selectedUserOption === option.id && (
                               <div className="absolute right-4 size-4 top-4">
-                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                  <path d="M13.3334 4L6.00002 11.3333L2.66669 8" stroke="#0a7c00" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                                </svg>
+                                <img src="icons/green-circle-check-mark.svg" alt="Check" className="size-4" />
                               </div>
                             )}
                           </div>
@@ -601,9 +583,7 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                           </div>
                           {selectedUserOption === 'not-sure-users' && (
                             <div className="absolute right-4 size-4 top-4">
-                              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M13.3334 4L6.00002 11.3333L2.66669 8" stroke="#0a7c00" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                              </svg>
+                              <img src="icons/green-circle-check-mark.svg" alt="Check" className="size-4" />
                             </div>
                           )}
                         </div>
@@ -654,9 +634,7 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                           </div>
                           {selectedCustomizationOption === option.id && (
                             <div className="absolute right-4 size-4 top-4">
-                              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M13.3334 4L6.00002 11.3333L2.66669 8" stroke="#0a7c00" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                              </svg>
+                              <img src="icons/green-circle-check-mark.svg" alt="Check" className="size-4" />
                             </div>
                           )}
                         </div>
@@ -709,9 +687,7 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                             </div>
                             {selectedExtraFunctionality.includes(option.id) && (
                               <div className="absolute right-4 size-4 top-4">
-                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                  <path d="M13.3334 4L6.00002 11.3333L2.66669 8" stroke="#0a7c00" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                                </svg>
+                                <img src="icons/green-circle-check-mark.svg" alt="Check" className="size-4" />
                               </div>
                             )}
                           </div>
@@ -739,9 +715,7 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                             </div>
                             {selectedExtraFunctionality.includes(option.id) && (
                               <div className="absolute right-4 size-4 top-4">
-                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                  <path d="M13.3334 4L6.00002 11.3333L2.66669 8" stroke="#0a7c00" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                                </svg>
+                                <img src="icons/green-circle-check-mark.svg" alt="Check" className="size-4" />
                               </div>
                             )}
                           </div>
@@ -769,9 +743,7 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                             </div>
                             {selectedExtraFunctionality.includes(option.id) && (
                               <div className="absolute right-4 size-4 top-4">
-                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                  <path d="M13.3334 4L6.00002 11.3333L2.66669 8" stroke="#0a7c00" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                                </svg>
+                                <img src="icons/green-circle-check-mark.svg" alt="Check" className="size-4" />
                               </div>
                             )}
                           </div>
@@ -797,9 +769,7 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                           </div>
                           {selectedExtraFunctionality.includes('none-basics') && (
                             <div className="absolute right-4 size-4 top-4">
-                              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M13.3334 4L6.00002 11.3333L2.66669 8" stroke="#0a7c00" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                              </svg>
+                              <img src="icons/green-circle-check-mark.svg" alt="Check" className="size-4" />
                             </div>
                           )}
                         </div>
@@ -852,9 +822,7 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                             </div>
                             {selectedDesignServices.includes(option.id) && (
                               <div className="absolute right-4 size-4 top-4">
-                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                  <path d="M13.3334 4L6.00002 11.3333L2.66669 8" stroke="#0a7c00" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                                </svg>
+                                <img src="icons/green-circle-check-mark.svg" alt="Check" className="size-4" />
                               </div>
                             )}
                           </div>
@@ -882,9 +850,7 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                             </div>
                             {selectedDesignServices.includes(option.id) && (
                               <div className="absolute right-4 size-4 top-4">
-                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                  <path d="M13.3334 4L6.00002 11.3333L2.66669 8" stroke="#0a7c00" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                                </svg>
+                                <img src="icons/green-circle-check-mark.svg" alt="Check" className="size-4" />
                               </div>
                             )}
                           </div>
@@ -912,9 +878,7 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                             </div>
                             {selectedDesignServices.includes(option.id) && (
                               <div className="absolute right-4 size-4 top-4">
-                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                  <path d="M13.3334 4L6.00002 11.3333L2.66669 8" stroke="#0a7c00" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                                </svg>
+                                <img src="icons/green-circle-check-mark.svg" alt="Check" className="size-4" />
                               </div>
                             )}
                           </div>
@@ -940,9 +904,7 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                           </div>
                           {selectedDesignServices.includes('no-extras') && (
                             <div className="absolute right-4 size-4 top-4">
-                              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M13.3334 4L6.00002 11.3333L2.66669 8" stroke="#0a7c00" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                              </svg>
+                              <img src="icons/green-circle-check-mark.svg" alt="Check" className="size-4" />
                             </div>
                           )}
                         </div>
@@ -981,14 +943,28 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                   ))}
                 </div>
 
-                {/* Right Container - Next/View Summary Button */}
+                {/* Right Container - Skip and Next/View Summary Buttons */}
                 <div className="flex gap-10 items-center justify-end w-[320px]">
+                  {/* Skip Button */}
+                  <button
+                    onClick={handleNext}
+                    className="flex items-center justify-center gap-2.5 px-0 py-2.5 rounded-lg hover:underline transition-all"
+                  >
+                    <span className="font-['Inter:regular',_sans-serif] text-[16px] leading-[20px] text-[#075300]">Skip</span>
+                  </button>
+                  
+                  {/* Next/View Summary Button with Arrow */}
                   {currentStep < totalSteps ? (
                     <button
                       onClick={handleNext}
                       className="bg-[#0a7c00] flex items-center justify-center gap-2 px-6 py-2.5 rounded-lg shadow-sm hover:bg-[#096d00] transition-colors"
                     >
                       <span className="font-['Inter:regular',_sans-serif] text-[16px] leading-[20px] text-white">Next</span>
+                      <div className="size-5">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M4.16669 10H15.8334M15.8334 10L10 4.16669M15.8334 10L10 15.8334" stroke="white" strokeWidth="1.67" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+                      </div>
                     </button>
                   ) : (
                     <button
@@ -996,6 +972,11 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                       className="bg-[#0a7c00] flex items-center justify-center gap-2 px-6 py-2.5 rounded-lg shadow-sm hover:bg-[#096d00] transition-colors"
                     >
                       <span className="font-['Inter:regular',_sans-serif] text-[16px] leading-[20px] text-white">View summary</span>
+                      <div className="size-5">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M4.16669 10H15.8334M15.8334 10L10 4.16669M15.8334 10L10 15.8334" stroke="white" strokeWidth="1.67" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+                      </div>
                     </button>
                   )}
                 </div>
