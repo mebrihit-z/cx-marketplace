@@ -924,7 +924,8 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                       onClick={handlePrevious}
                       className="bg-white border border-[#d0d1d4] flex items-center justify-center gap-2 px-6 py-2.5 rounded-lg shadow-sm hover:bg-gray-50 transition-colors"
                     >
-                      <span className="font-['Inter:regular',_sans-serif] text-[16px] leading-[20px] text-[#22252b]">Previous</span>
+                      <img src="icons/black-back-arrow.svg" alt="Previous" />
+                      <span className="font-['Inter:regular',_sans-serif] text-[16px] leading-[20px] text-[#22252b]">Back</span>
                     </button>
                   )}
                 </div>
