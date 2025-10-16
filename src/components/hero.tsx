@@ -13,10 +13,14 @@ interface ButtonProps {
   onClick?: () => void;
 }
 
+interface HeroProps {
+  setActiveSection?: (section: ActiveSection) => void;
+}
+
 function Button({ text = "Button", state = "Default", buttonType = "Default", onClick }: ButtonProps) {
   if (state === "Default" && buttonType === "Secondary Left Icon") {
     return (
-      <div onClick={onClick} className="bg-white box-border content-stretch flex gap-2 items-center justify-start px-6 py-2.5 rounded-[8px] size-full cursor-pointer hover:shadow-lg transition-shadow" data-name="State=Default, Button Type=Secondary Left Icon" data-node-id="4138:11594">
+      <div onClick={onClick} className="bg-white box-border content-stretch flex gap-2 items-center justify-start px-6 py-2.5 rounded-[8px] size-full cursor-pointer" data-name="State=Default, Button Type=Secondary Left Icon" data-node-id="4138:11594">
         <div aria-hidden="true" className="absolute border border-[#0a7c00] border-solid inset-0 pointer-events-none rounded-[8px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)]" />
         <div className="relative shrink-0 size-[18.333px]" data-name="Vector" data-node-id="4138:11595">
           <img alt="vector" className="block max-w-none size-full" src={imgVector} />
@@ -28,7 +32,7 @@ function Button({ text = "Button", state = "Default", buttonType = "Default", on
     );
   }
   return (
-    <div onClick={onClick} className="box-border content-stretch flex gap-2.5 items-center justify-center px-6 py-2.5 relative rounded-[8px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)] size-full cursor-pointer hover:shadow-lg transition-shadow" data-name="State=Default, Button Type=Default" data-node-id="3781:18356">
+    <div onClick={onClick} className="box-border content-stretch flex gap-2.5 items-center justify-center px-6 py-2.5 relative rounded-[8px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)] size-full cursor-pointer" data-name="State=Default, Button Type=Default" data-node-id="3781:18356">
       <div className="font-['Inter:regular',_sans-serif] leading-[0] not-italic relative shrink-0 text-[16px] text-nowrap text-white" data-node-id="3490:20338">
         <p className="leading-[20px] whitespace-pre">{text}</p>
       </div>
@@ -36,15 +40,17 @@ function Button({ text = "Button", state = "Default", buttonType = "Default", on
   );
 }
 
-interface HeroProps {
-  setActiveSection?: (section: ActiveSection) => void;
-}
-
 export default function Hero({ setActiveSection }: HeroProps) {
+  const handleGetQuoteClick = () => {
+    if (setActiveSection) {
+      setActiveSection('quote');
+    }
+  };
+
   const handleCreateTemplate = () => {
     if (setActiveSection) {
       setActiveSection('create');
-    }
+    };
   };
 
   return (
@@ -65,13 +71,13 @@ export default function Hero({ setActiveSection }: HeroProps) {
         <div className="content-stretch flex flex-col sm:flex-row gap-4 items-center justify-center shrink-0 w-full" data-name="Button Group" data-node-id="8213:78191">
           <div aria-hidden="true" className="absolute border-0 border-black border-solid inset-0 pointer-events-none" />
           <div className="bg-[#0a7c00] box-border content-stretch flex gap-2.5 items-center justify-center px-6 py-2.5 relative rounded-[8px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)] shrink-0 w-full sm:w-auto" data-name="Button" data-node-id="8213:78192">
-            <Button text="Get a quote" leftIcon={false} rightIcon={false} />
+            <Button text="Get a quote" leftIcon={false} rightIcon={false} onClick={handleGetQuoteClick} />
           </div>
           <div className="bg-white box-border content-stretch flex gap-2 items-center justify-start px-6 py-2.5 relative rounded-[8px] shrink-0 w-full sm:w-auto" data-name="Button" data-node-id="8213:78193">
             <Button text="Create template" leftIcon={false} rightIcon={false} buttonType="Secondary Left Icon" onClick={handleCreateTemplate} />
           </div>
         </div>
-      </div>
+        </div>
       <div className="aspect-[3024/1892] bg-center bg-cover bg-no-repeat relative rounded-[16px] shrink-0 w-full max-w-4xl relative top-20 lg:top-30" data-name="Desktop - Create - 1 1" data-node-id="8719:44627" style={{ backgroundImage: `url('${imgDesktopCreate11}')`} }>
         <div aria-hidden="true" className="absolute border border-[#d0d1d4] border-solid inset-0 pointer-events-none rounded-[16px] shadow-[0px_5px_20px_0px_rgba(0,0,0,0.15)]" />
       </div>

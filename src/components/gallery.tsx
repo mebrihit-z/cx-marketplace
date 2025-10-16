@@ -4,6 +4,8 @@ import CTASection from './cta-section';
 // import { templateData, additionalTemplates } from '../data/templates';
 // import type { Template } from '../data/templates';
 import { galleryTemplates } from '../data/templates';
+import { galleryMoreTemplates } from '../data/templates';
+
 import TemplateCard from './TemplateCard';
 import type { ActiveSection } from '../types';
 import type { MoreTemplate } from '../data/templates';
@@ -183,7 +185,7 @@ export default function Gallery({setActiveSection, setSelectedTemplate}: Gallery
       <CTASection />
       
       <div className="box-border content-stretch grid grid-cols-1 md:grid-cols-3 gap-3 gap-3 lg:gap-4 items-start justify-start px-4 lg:px-32 py-0 relative shrink-0 w-full my-10 lg:my-24">
-          {galleryTemplates.map((template) => (
+          {galleryMoreTemplates.map((template) => (
             <TemplateCard
               key={template.id}
               tag={template.tag}

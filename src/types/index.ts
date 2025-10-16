@@ -1,2 +1,2 @@
 // Shared types for the application
-export type ActiveSection = 'home' | 'gallery' | 'pricing' | 'faqs' | 'training' | 'contact' | 'saas' | 'preview' | 'create';
+export type ActiveSection = 'home' | 'gallery' | 'pricing' | 'faqs' | 'training' | 'contact' | 'saas' | 'preview' | 'create' | 'quote';
