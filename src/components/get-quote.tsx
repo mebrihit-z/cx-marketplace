@@ -96,7 +96,7 @@ const MarketplaceLogo = () => {
 
 
 export default function GetQuote({ setActiveSection }: GetQuoteProps) {
-  const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
+  const [selectedCategory, setSelectedCategory] = useState<string>('');
   const [selectedFeatures, setSelectedFeatures] = useState<string[]>([]);
   const [selectedPageOption, setSelectedPageOption] = useState<string>('');
   const [selectedUserOption, setSelectedUserOption] = useState<string>('');
@@ -107,12 +107,8 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
   const [showSummary, setShowSummary] = useState(false);
   const totalSteps = 7;
 
-  const toggleCategory = (categoryId: string) => {
-    setSelectedCategories(prev =>
-      prev.includes(categoryId)
-        ? prev.filter(id => id !== categoryId)
-        : [...prev, categoryId]
-    );
+  const selectCategory = (categoryId: string) => {
+    setSelectedCategory(categoryId);
   };
 
   const toggleFeature = (featureId: string) => {
@@ -169,7 +165,7 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
 
   const handleRestart = () => {
     // Reset all selections
-    setSelectedCategories([]);
+    setSelectedCategory('');
     setSelectedFeatures([]);
     setSelectedPageOption('');
     setSelectedUserOption('');
@@ -185,7 +181,7 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
     return (
       <QuoteSummary
         setActiveSection={setActiveSection}
-        selectedCategories={selectedCategories}
+        selectedCategories={selectedCategory ? [selectedCategory] : []}
         selectedFeatures={selectedFeatures}
         selectedPageOption={selectedPageOption}
         selectedUserOption={selectedUserOption}
@@ -243,9 +239,9 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                       {categories.slice(0, 3).map(category => (
                         <button
                           key={category.id}
-                          onClick={() => toggleCategory(category.id)}
+                          onClick={() => selectCategory(category.id)}
                           className={`bg-white border ${
-                            selectedCategories.includes(category.id)
+                            selectedCategory === category.id
                               ? 'border-[#0a7c00] bg-[#f0f9ee]'
                               : 'border-[#d0d1d4]'
                           } rounded-lg w-[240px] relative hover:border-[#0a7c00] transition-colors`}
@@ -256,7 +252,7 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                                 {category.label}
                               </p>
                             </div>
-                            {selectedCategories.includes(category.id) && (
+                            {selectedCategory === category.id && (
                               <div className="absolute right-4 size-4 top-4">
                                 <img src="icons/green-circle-check-mark.svg" alt="Check" className="size-4" />
                               </div>
@@ -271,9 +267,9 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                       {categories.slice(3, 6).map(category => (
                         <button
                           key={category.id}
-                          onClick={() => toggleCategory(category.id)}
+                          onClick={() => selectCategory(category.id)}
                           className={`bg-white border ${
-                            selectedCategories.includes(category.id)
+                            selectedCategory === category.id
                               ? 'border-[#0a7c00] bg-[#f0f9ee]'
                               : 'border-[#d0d1d4]'
                           } rounded-lg w-[240px] relative hover:border-[#0a7c00] transition-colors`}
@@ -284,7 +280,7 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                                 {category.label}
                               </p>
                             </div>
-                            {selectedCategories.includes(category.id) && (
+                            {selectedCategory === category.id && (
                               <div className="absolute right-4 size-4 top-4">
                                 <img src="icons/green-circle-check-mark.svg" alt="Check" className="size-4" />
                               </div>
@@ -299,9 +295,9 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                       {categories.slice(6, 9).map(category => (
                         <button
                           key={category.id}
-                          onClick={() => toggleCategory(category.id)}
+                          onClick={() => selectCategory(category.id)}
                           className={`bg-white border ${
-                            selectedCategories.includes(category.id)
+                            selectedCategory === category.id
                               ? 'border-[#0a7c00] bg-[#f0f9ee]'
                               : 'border-[#d0d1d4]'
                           } rounded-lg w-[240px] relative hover:border-[#0a7c00] transition-colors`}
@@ -312,7 +308,7 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                                 {category.label}
                               </p>
                             </div>
-                            {selectedCategories.includes(category.id) && (
+                            {selectedCategory === category.id && (
                               <div className="absolute right-4 size-4 top-4">
                                 <img src="icons/green-circle-check-mark.svg" alt="Check" className="size-4" />
                               </div>
@@ -1003,12 +999,10 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                     <p className="font-['Inter:regular',_sans-serif] leading-[20px] min-w-full not-italic shrink-0 text-[#333740] text-[16px] w-[min-content]">
                       Template
                     </p>
-                    {selectedCategories.length > 0 ? (
+                    {selectedCategory ? (
                       <div className="bg-white border border-[#d0d1d4] rounded-lg px-3 py-2 w-full">
                         <p className="font-['Inter:regular',_sans-serif] text-[14px] leading-[18px] text-[#333740]">
-                          {selectedCategories.map(catId => 
-                            categories.find(c => c.id === catId)?.label
-                          ).join(', ')}
+                          {categories.find(c => c.id === selectedCategory)?.label}
                         </p>
                       </div>
                     ) : (
@@ -1047,102 +1041,134 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                 </div>
 
                 {/* Footer */}
-                <div className="basis-0 flex flex-col gap-[16px] grow items-start min-h-px min-w-px shrink-0 w-full">
+                <div className="basis-0 flex flex-col gap-[16px] grow items-start min-w-px shrink-0 w-full">
                   <div className="h-0 shrink-0 w-full">
                     <div className="border-t border-[#d0d1d4]" />
                   </div>
-                  
-                  {/* Additional selections */}
-                  {selectedPageOption && (
-                    <div className="flex flex-col gap-[8px] items-start shrink-0 w-full">
-                      <p className="font-['Inter:regular',_sans-serif] leading-[20px] not-italic shrink-0 text-[#333740] text-[16px] w-full">
-                        Pages
-                      </p>
-                      <p className="font-['Inter:regular',_sans-serif] text-[14px] leading-[18px] text-[#737780]">
-                        {pageOptions.find(p => p.id === selectedPageOption)?.label}
-                      </p>
-                    </div>
-                  )}
 
-                  {selectedUserOption && (
-                    <div className="flex flex-col gap-[8px] items-start shrink-0 w-full">
-                      <p className="font-['Inter:regular',_sans-serif] leading-[20px] not-italic shrink-0 text-[#333740] text-[16px] w-full">
-                        Users
-                      </p>
-                      <p className="font-['Inter:regular',_sans-serif] text-[14px] leading-[18px] text-[#737780]">
-                        {userOptions.find(u => u.id === selectedUserOption)?.label}
-                      </p>
-                    </div>
-                  )}
+                  <div className="flex flex-col gap-[8px] items-start shrink-0 w-full">
+                    <p className="font-['Inter:regular',_sans-serif] leading-[20px] not-italic shrink-0 text-[#333740] text-[16px] w-full">
+                      Pricing Package
+                    </p>
+                    {/* Pricing Card */}
+                    <div className="bg-white box-border flex flex-col gap-[16px] items-start overflow-hidden px-[16px] py-[24px] relative rounded-[16px] shrink-0 w-full">
+                      {/* Background Image */}
+                      <div className="absolute inset-0 pointer-events-none">
+                        <img 
+                          alt="" 
+                          className="absolute inset-0 w-full h-full object-cover" 
+                          src="images/pricing-package-bg-image.svg" 
+                        />
+                        <div className="absolute bg-[rgba(0,0,0,0.3)] inset-0" />
+                      </div>
 
-                  {selectedCustomizationOption && (
-                    <div className="flex flex-col gap-[8px] items-start shrink-0 w-full">
-                      <p className="font-['Inter:regular',_sans-serif] leading-[20px] not-italic shrink-0 text-[#333740] text-[16px] w-full">
-                        Customization
+                      {/* Premium Title */}
+                      <p className="font-['Inter:Semi_Bold',_sans-serif] font-semibold leading-[28px] min-w-full not-italic relative shrink-0 text-[24px] text-white w-[min-content] z-10">
+                        Premium
                       </p>
-                      <p className="font-['Inter:regular',_sans-serif] text-[14px] leading-[18px] text-[#737780]">
-                        {customizationOptions.find(c => c.id === selectedCustomizationOption)?.label}
-                      </p>
-                    </div>
-                  )}
 
-                  {selectedExtraFunctionality.length > 0 && (
-                    <div className="flex flex-col gap-[8px] items-start shrink-0 w-full">
-                      <p className="font-['Inter:regular',_sans-serif] leading-[20px] not-italic shrink-0 text-[#333740] text-[16px] w-full">
-                        Extra Functionality
-                      </p>
-                      <div className="flex flex-col gap-[4px]">
+                      {/* Price */}
+                      <div className="flex flex-col gap-[4px] items-start justify-center relative shrink-0 w-full z-10">
+                        <div className="flex gap-[4px] items-center relative shrink-0">
+                          <div className="flex flex-col font-['Inter:Regular',_sans-serif] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#d0d1d4] text-[12px] text-center text-nowrap">
+                            <p className="leading-[18px] whitespace-pre">Estimated cost</p>
+                          </div>
+                          <div className="relative shrink-0 size-[12px]">
+                            <img alt="" className="block max-w-none size-full brightness-200" src={imgError} />
+                          </div>
+                        </div>
+                        <p className="font-['Inter:Semi_Bold',_sans-serif] font-semibold leading-[24px] not-italic relative shrink-0 text-[20px] text-nowrap text-white whitespace-pre">
+                          $$$–$$$$
+                        </p>
+                      </div>
+
+                      {/* Divider */}
+                      <div className="h-0 relative shrink-0 w-full z-10">
+                        <div className="border-t border-[#d0d1d4] w-full" />
+                      </div>
+
+                      {/* Includes */}
+                      <div className="flex flex-col gap-[4px] items-start relative shrink-0 w-full z-10">
+                        <p className="font-['Inter:Bold',_sans-serif] font-bold h-[18px] leading-[18px] not-italic relative shrink-0 text-[14px] text-white w-full">
+                          Includes:
+                        </p>
+                        
+                        {/* Page Option */}
+                        {selectedPageOption && (
+                          <div className="flex gap-[8px] items-center relative shrink-0 w-full">
+                            <div className="relative shrink-0 size-[24px]">
+                              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20 6L9 17L4 12" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                              </svg>
+                            </div>
+                            <p className="basis-0 font-['Inter:regular',_sans-serif] grow leading-[18px] min-h-px min-w-px not-italic relative shrink-0 text-[14px] text-white">
+                              {pageOptions.find(p => p.id === selectedPageOption)?.label}
+                            </p>
+                          </div>
+                        )}
+
+                        {/* User Option */}
+                        {selectedUserOption && (
+                          <div className="flex gap-[8px] items-center relative shrink-0 w-full">
+                            <div className="relative shrink-0 size-[24px]">
+                              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20 6L9 17L4 12" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                              </svg>
+                            </div>
+                            <p className="basis-0 font-['Inter:regular',_sans-serif] grow leading-[18px] min-h-px min-w-px not-italic relative shrink-0 text-[14px] text-white">
+                              {userOptions.find(u => u.id === selectedUserOption)?.label}
+                            </p>
+                          </div>
+                        )}
+
+                        {/* Customization Option */}
+                        {selectedCustomizationOption && (
+                          <div className="flex gap-[8px] items-center relative shrink-0 w-full">
+                            <div className="relative shrink-0 size-[24px]">
+                              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20 6L9 17L4 12" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                              </svg>
+                            </div>
+                            <p className="basis-0 font-['Inter:regular',_sans-serif] grow leading-[18px] min-h-px min-w-px not-italic relative shrink-0 text-[14px] text-white">
+                              {customizationOptions.find(c => c.id === selectedCustomizationOption)?.label}
+                            </p>
+                          </div>
+                        )}
+
+                        {/* Extra Functionality */}
                         {selectedExtraFunctionality.map(funcId => {
                           const func = extraFunctionalityOptions.find(f => f.id === funcId);
                           return func ? (
-                            <div key={funcId} className="flex gap-[8px] items-center">
-                              <div className="shrink-0 size-[16px]">
-                                <img alt="" className="block max-w-none size-full" src={imgCheckmark} />
+                            <div key={funcId} className="flex gap-[8px] items-center relative shrink-0 w-full">
+                              <div className="relative shrink-0 size-[24px]">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                  <path d="M20 6L9 17L4 12" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                                </svg>
                               </div>
-                              <p className="font-['Inter:regular',_sans-serif] text-[14px] leading-[18px] text-[#737780]">
+                              <p className="basis-0 font-['Inter:regular',_sans-serif] grow leading-[18px] min-h-px min-w-px not-italic relative shrink-0 text-[14px] text-white">
                                 {func.label}
                               </p>
                             </div>
                           ) : null;
                         })}
-                      </div>
-                    </div>
-                  )}
 
-                  {selectedDesignServices.length > 0 && (
-                    <div className="flex flex-col gap-[8px] items-start shrink-0 w-full">
-                      <p className="font-['Inter:regular',_sans-serif] leading-[20px] not-italic shrink-0 text-[#333740] text-[16px] w-full">
-                        Design Services
-                      </p>
-                      <div className="flex flex-col gap-[4px]">
+                        {/* Design Services */}
                         {selectedDesignServices.map(serviceId => {
                           const service = designServicesOptions.find(s => s.id === serviceId);
                           return service ? (
-                            <div key={serviceId} className="flex gap-[8px] items-center">
-                              <div className="shrink-0 size-[16px]">
-                                <img alt="" className="block max-w-none size-full" src={imgCheckmark} />
+                            <div key={serviceId} className="flex gap-[8px] items-center relative shrink-0 w-full">
+                              <div className="relative shrink-0 size-[24px]">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                  <path d="M20 6L9 17L4 12" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                                </svg>
                               </div>
-                              <p className="font-['Inter:regular',_sans-serif] text-[14px] leading-[18px] text-[#737780]">
+                              <p className="basis-0 font-['Inter:regular',_sans-serif] grow leading-[18px] min-h-px min-w-px not-italic relative shrink-0 text-[14px] text-white">
                                 {service.label}
                               </p>
                             </div>
                           ) : null;
                         })}
                       </div>
-                    </div>
-                  )}
-
-                  <div className="flex flex-col gap-[8px] items-start shrink-0 w-full">
-                    <p className="font-['Inter:regular',_sans-serif] leading-[20px] not-italic shrink-0 text-[#333740] text-[16px] w-full">
-                      Pricing Package
-                    </p>
-                    <div className="flex gap-[4px] items-center shrink-0 w-full">
-                      <div className="shrink-0 size-[20px]">
-                        <img alt="" className="block max-w-none size-full" src={imgError} />
-                      </div>
-                      <p className="basis-0 font-['Inter:Regular',_sans-serif] font-normal grow leading-[18px] min-h-px min-w-px not-italic shrink-0 text-[#737780] text-[12px]">
-                        Need more information to show pricing
-                      </p>
                     </div>
                   </div>
                 </div>

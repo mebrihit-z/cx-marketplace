@@ -18,6 +18,57 @@ interface QuoteSummaryProps {
   onBack: () => void;
 }
 
+interface CategoryOption {
+  id: string;
+  label: string;
+}
+
+const pageOptions: CategoryOption[] = [
+  { id: 'up-to-100', label: 'Up to 100 pages' },
+  { id: 'up-to-500', label: 'Up to 500 pages' },
+  { id: 'up-to-1000', label: 'Up to 1000 pages' },
+  { id: 'not-sure', label: "I'm not sure right now." },
+];
+
+const userOptions: CategoryOption[] = [
+  { id: 'up-to-10', label: 'Up to 10 users' },
+  { id: 'up-to-20', label: 'Up to 20 users' },
+  { id: 'up-to-30', label: 'Up to 30 users' },
+  { id: 'not-sure-users', label: "I'm not sure right now." },
+];
+
+const customizationOptions: CategoryOption[] = [
+  { id: 'full-control', label: 'I want full control over branding and layout.' },
+  { id: 'text-imagery', label: 'I just want to change the text and imagery.' },
+  { id: 'need-help', label: "I'll need help with customization." },
+];
+
+const extraFunctionalityOptions: CategoryOption[] = [
+  { id: 'crm-integration', label: 'CRM integration' },
+  { id: 'asset-storage', label: 'Asset storage/management' },
+  { id: 'localization', label: 'Localization options' },
+  { id: 'multilingual', label: 'Multilingual support' },
+  { id: 'live-chatbot', label: 'Live chatbot' },
+  { id: 'customer-service', label: 'Customer service ticketing' },
+  { id: 'custom-api', label: 'Custom API integration' },
+  { id: 'role-based-access', label: 'Role-based access control' },
+  { id: 'two-factor-auth', label: 'Two-factor authentication' },
+  { id: 'none-basics', label: 'None for now, just the basics!' },
+];
+
+const designServicesOptions: CategoryOption[] = [
+  { id: 'user-research', label: 'User research' },
+  { id: 'heat-map', label: 'Heat map analysis' },
+  { id: 'content-strategy', label: 'Content strategy' },
+  { id: 'custom-graphics', label: 'Custom graphics' },
+  { id: 'copywriting', label: 'Copywriting' },
+  { id: 'integration-setup', label: 'Integration setup' },
+  { id: 'cms-setup', label: 'CMS setup' },
+  { id: 'content-training', label: 'Content author training' },
+  { id: 'seo-optimization', label: 'SEO optimization' },
+  { id: 'no-extras', label: "No extras, I'll handle it in-house." },
+];
+
 // Template preview images
 const templateImages = {
   saas: "images/saas-card-bg.svg",
@@ -314,56 +365,82 @@ export default function QuoteSummary({
                       <p className="font-['Inter:Bold',_sans-serif] font-bold h-[18px] leading-[18px] not-italic relative shrink-0 text-[14px] text-white w-[259px]">
                         Includes:
                       </p>
-                      <div className="flex gap-[8px] items-center relative shrink-0 w-full">
-                        <div className="relative shrink-0 size-6">
-                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M20 6L9 17L4 12" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                          </svg>
+                      
+                      {/* Page Option */}
+                      {selectedPageOption && (
+                        <div className="flex gap-[8px] items-center relative shrink-0 w-full">
+                          <div className="relative shrink-0 size-6">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M20 6L9 17L4 12" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                            </svg>
+                          </div>
+                          <p className="basis-0 font-['Inter:regular',_sans-serif] grow leading-[18px] min-h-px min-w-px not-italic relative shrink-0 text-[14px] text-white">
+                            {pageOptions.find(p => p.id === selectedPageOption)?.label}
+                          </p>
                         </div>
-                        <p className="basis-0 font-['Inter:regular',_sans-serif] grow leading-[18px] min-h-px min-w-px not-italic relative shrink-0 text-[14px] text-white">
-                          Up to 1000 pages
-                        </p>
-                      </div>
-                      <div className="flex gap-[8px] items-center relative shrink-0 w-full">
-                        <div className="relative shrink-0 size-6">
-                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M20 6L9 17L4 12" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                          </svg>
+                      )}
+
+                      {/* User Option */}
+                      {selectedUserOption && (
+                        <div className="flex gap-[8px] items-center relative shrink-0 w-full">
+                          <div className="relative shrink-0 size-6">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M20 6L9 17L4 12" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                            </svg>
+                          </div>
+                          <p className="basis-0 font-['Inter:regular',_sans-serif] grow leading-[18px] min-h-px min-w-px not-italic relative shrink-0 text-[14px] text-white">
+                            {userOptions.find(u => u.id === selectedUserOption)?.label}
+                          </p>
                         </div>
-                        <p className="basis-0 font-['Inter:regular',_sans-serif] grow leading-[18px] min-h-px min-w-px not-italic relative shrink-0 text-[14px] text-white">
-                          Up to 30 authorized users
-                        </p>
-                      </div>
-                      <div className="flex gap-[8px] items-center relative shrink-0 w-full">
-                        <div className="relative shrink-0 size-6">
-                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M20 6L9 17L4 12" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                          </svg>
+                      )}
+
+                      {/* Customization Option */}
+                      {selectedCustomizationOption && (
+                        <div className="flex gap-[8px] items-center relative shrink-0 w-full">
+                          <div className="relative shrink-0 size-6">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M20 6L9 17L4 12" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                            </svg>
+                          </div>
+                          <p className="basis-0 font-['Inter:regular',_sans-serif] grow leading-[18px] min-h-px min-w-px not-italic relative shrink-0 text-[14px] text-white">
+                            {customizationOptions.find(c => c.id === selectedCustomizationOption)?.label}
+                          </p>
                         </div>
-                        <p className="basis-0 font-['Inter:regular',_sans-serif] grow leading-[18px] min-h-px min-w-px not-italic relative shrink-0 text-[14px] text-white">
-                          Full brand and style customization
-                        </p>
-                      </div>
-                      <div className="flex gap-[8px] items-center relative shrink-0 w-full">
-                        <div className="relative shrink-0 size-6">
-                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M20 6L9 17L4 12" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                          </svg>
-                        </div>
-                        <p className="basis-0 font-['Inter:regular',_sans-serif] grow leading-[18px] min-h-px min-w-px not-italic relative shrink-0 text-[14px] text-white">
-                          Advanced SEO optimization
-                        </p>
-                      </div>
-                      <div className="flex gap-[8px] items-center relative shrink-0 w-full">
-                        <div className="relative shrink-0 size-6">
-                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M20 6L9 17L4 12" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                          </svg>
-                        </div>
-                        <p className="basis-0 font-['Inter:regular',_sans-serif] grow leading-[18px] min-h-px min-w-px not-italic relative shrink-0 text-[14px] text-white">
-                          CRM integration
-                        </p>
-                      </div>
+                      )}
+
+                      {/* Extra Functionality */}
+                      {selectedExtraFunctionality.map(funcId => {
+                        const func = extraFunctionalityOptions.find(f => f.id === funcId);
+                        return func ? (
+                          <div key={funcId} className="flex gap-[8px] items-center relative shrink-0 w-full">
+                            <div className="relative shrink-0 size-6">
+                              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20 6L9 17L4 12" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                              </svg>
+                            </div>
+                            <p className="basis-0 font-['Inter:regular',_sans-serif] grow leading-[18px] min-h-px min-w-px not-italic relative shrink-0 text-[14px] text-white">
+                              {func.label}
+                            </p>
+                          </div>
+                        ) : null;
+                      })}
+
+                      {/* Design Services */}
+                      {selectedDesignServices.map(serviceId => {
+                        const service = designServicesOptions.find(s => s.id === serviceId);
+                        return service ? (
+                          <div key={serviceId} className="flex gap-[8px] items-center relative shrink-0 w-full">
+                            <div className="relative shrink-0 size-6">
+                              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20 6L9 17L4 12" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                              </svg>
+                            </div>
+                            <p className="basis-0 font-['Inter:regular',_sans-serif] grow leading-[18px] min-h-px min-w-px not-italic relative shrink-0 text-[14px] text-white">
+                              {service.label}
+                            </p>
+                          </div>
+                        ) : null;
+                      })}
                     </div>
 
                     {/* Divider */}
