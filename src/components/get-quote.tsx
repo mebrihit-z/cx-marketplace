@@ -195,7 +195,7 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
   }
 
   return (
-    <div className="max-h-screen bg-gradient-to-br from-[#f5f9f5] to-white flex flex-col">
+    <div className="max-h-screen flex flex-col" style={{ background: 'linear-gradient(242.27deg, rgba(86, 152, 0, 0.1) 4%, rgba(231, 255, 201, 0.1) 43.62%, rgba(0, 167, 72, 0.1) 85.58%)' }}>
       <div className="max-w-[1400px] mx-auto px-8 py-12 flex-1 flex flex-col">
         <div className="flex items-stretch justify-between gap-8 flex-1">
           {/* Main Content Area */}

@@ -172,7 +172,7 @@ export default function QuoteSummary({
   const templateBg = templateBackgrounds[primaryCategory as keyof typeof templateBackgrounds] || templateBackgrounds.startup;
 
   return (
-    <div className="bg-white flex items-center justify-center py-12">
+    <div className="flex items-center justify-center py-12" style={{ background: 'linear-gradient(242.27deg, rgba(86, 152, 0, 0.1) 4%, rgba(231, 255, 201, 0.1) 43.62%, rgba(0, 167, 72, 0.1) 85.58%)' }}>
       <div className="box-border flex items-start justify-between pl-0 pr-8 py-0 relative w-full max-w-[1400px] mx-auto">
         {/* Left Container */}
         <div className="box-border flex flex-col items-start justify-between px-16 py-0 relative self-stretch shrink-0">
