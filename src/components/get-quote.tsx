@@ -1084,7 +1084,7 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                           <img 
                             alt="" 
                             className="absolute inset-0 w-full h-full object-cover" 
-                            src="images/pricing-package-bg-image.svg" 
+                            src={`images/${getPricingPackage().toLowerCase()}-card-bg-image.svg`}
                           />
                           <div className="absolute bg-[rgba(0,0,0,0.3)] inset-0" />
                         </div>

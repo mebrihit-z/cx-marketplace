@@ -328,7 +328,7 @@ export default function QuoteSummary({
                   Pricing Package
                 </p>
                 {/* Pricing Card */}
-                <div className="box-border flex flex-col gap-[16px] items-start overflow-clip px-[16px] py-[24px] relative rounded-2xl shrink-0 min-w-[291px] w-auto bg-cover bg-center bg-no-repeat" style={{ backgroundImage: 'url(images/quote-summary-card-bg.avif)' }}>
+                <div className="box-border flex flex-col gap-[16px] items-start overflow-clip px-[16px] py-[24px] relative rounded-2xl shrink-0 min-w-[291px] w-auto bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(images/${getPricingPackage().toLowerCase()}-card-bg-image.svg)` }}>
                     {/* Dark Overlay */}
                     <div className="absolute inset-0 bg-[rgba(0,0,0,0.3)] rounded-2xl pointer-events-none" />
 
