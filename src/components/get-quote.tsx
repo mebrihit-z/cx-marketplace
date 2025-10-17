@@ -942,13 +942,15 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
 
                 {/* Right Container - Skip and Next/View Summary Buttons */}
                 <div className="flex gap-10 items-center justify-end w-[320px]">
-                  {/* Skip Button */}
-                  <button
-                    onClick={handleNext}
-                    className="flex items-center justify-center gap-2.5 px-0 py-2.5 rounded-lg hover:underline transition-all"
-                  >
-                    <span className="font-['Inter:regular',_sans-serif] text-[16px] leading-[20px] text-[#075300]">Skip</span>
-                  </button>
+                  {/* Skip Button - Only show if not on last step */}
+                  {currentStep < totalSteps && (
+                    <button
+                      onClick={handleNext}
+                      className="flex items-center justify-center gap-2.5 px-0 py-2.5 rounded-lg hover:underline transition-all"
+                    >
+                      <span className="font-['Inter:regular',_sans-serif] text-[16px] leading-[20px] text-[#075300]">Skip</span>
+                    </button>
+                  )}
                   
                   {/* Next/View Summary Button with Arrow */}
                   {currentStep < totalSteps ? (
