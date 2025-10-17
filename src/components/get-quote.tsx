@@ -1018,10 +1018,71 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                       Template
                     </p>
                     {selectedCategory ? (
-                      <div className="bg-white border border-[#d0d1d4] rounded-lg px-3 py-2 w-full">
-                        <p className="font-['Inter:regular',_sans-serif] text-[14px] leading-[18px] text-[#333740]">
-                          {categories.find(c => c.id === selectedCategory)?.label}
-                        </p>
+                      <div className="bg-white border border-[#d0d1d4] rounded-lg overflow-hidden w-full h-[68px]">
+                        <div className="flex items-center h-full">
+                          {/* Left: Image Container */}
+                          <div className={`flex flex-col gap-[10px] h-full items-start overflow-hidden pb-0 pl-[10px] pr-0 pt-[10px] relative shrink-0 w-[120px] ${
+                            selectedCategory === 'startup' ? 'bg-[#42ab18]' :
+                            selectedCategory === 'saas' ? 'bg-[#4a90e2]' :
+                            selectedCategory === 'ecommerce' ? 'bg-[#f5a623]' :
+                            selectedCategory === 'blog' ? 'bg-[#bd10e0]' :
+                            selectedCategory === 'event' ? 'bg-[#50e3c2]' :
+                            selectedCategory === 'portfolio' ? 'bg-[#9013fe]' :
+                            selectedCategory === 'news' ? 'bg-[#d0021b]' :
+                            selectedCategory === 'business' ? 'bg-[#417505]' :
+                            selectedCategory === 'agency' ? 'bg-[#ac7010]' :
+                            'bg-[#ac7010]'
+                          }`}>
+                            <div className="flex-1 relative w-full rounded-tl-[2px] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] overflow-hidden">
+                              <img 
+                                alt="" 
+                                className="absolute inset-0 w-full h-full object-cover rounded-tl-[2px]" 
+                                src={
+                                  selectedCategory === 'startup' ? 'images/spark-card-lg.svg' :
+                                  selectedCategory === 'saas' ? 'images/pulse-card-lg.svg' :
+                                  selectedCategory === 'ecommerce' ? 'images/canvas-card-lg.svg' :
+                                  selectedCategory === 'blog' ? 'images/nova-card-lg.svg' :
+                                  selectedCategory === 'event' ? 'images/summit-card-lg.svg' :
+                                  selectedCategory === 'portfolio' ? 'images/prism-card-lg.svg' :
+                                  selectedCategory === 'news' ? 'images/nexus-card-lg.svg' :
+                                  selectedCategory === 'business' ? 'images/horizon-card-lg.svg' :
+                                  selectedCategory === 'agency' ? 'images/atlas-card-lg.svg' :
+                                  'images/atlas-card-lg.svg'
+                                } 
+                              />
+                            </div>
+                          </div>
+                          
+                          {/* Right: Text and Button */}
+                          <div className="flex-1 flex items-start justify-between h-full p-[12px]">
+                            <div className="flex flex-col gap-[4px] justify-center h-full">
+                              <p className="font-['Inter:Bold',_sans-serif] font-bold leading-[24px] text-[#22252b] text-[18px]">
+                                {selectedCategory === 'startup' ? 'Spark' :
+                                 selectedCategory === 'saas' ? 'Pulse' :
+                                 selectedCategory === 'ecommerce' ? 'Canvas' :
+                                 selectedCategory === 'blog' ? 'Nova' :
+                                 selectedCategory === 'event' ? 'Summit' :
+                                 selectedCategory === 'portfolio' ? 'Prism' :
+                                 selectedCategory === 'news' ? 'Nexus' :
+                                 selectedCategory === 'business' ? 'Horizon' :
+                                 selectedCategory === 'agency' ? 'Atlas' :
+                                 'Custom'}
+                              </p>
+                              <p className="font-['Inter:Regular',_sans-serif] font-normal leading-[18px] text-[#737780] text-[12px]">
+                                {categories.find(c => c.id === selectedCategory)?.label}
+                              </p>
+                            </div>
+                            <div className="flex items-end h-full">
+                              <div className="border border-[#d0d1d4] border-solid flex gap-[8px] items-center p-[10px] rounded-[8px]">
+                                <div className="size-[20px]">
+                                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4.16669 10H15.8334M15.8334 10L10 4.16669M15.8334 10L10 15.8334" stroke="#22252b" strokeWidth="1.67" strokeLinecap="round" strokeLinejoin="round"/>
+                                  </svg>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     ) : (
                       <div className="flex gap-[4px] items-center shrink-0 w-full">

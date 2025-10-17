@@ -72,40 +72,40 @@ const designServicesOptions: CategoryOption[] = [
 
 // Template preview images
 const templateImages = {
-  saas: "images/saas-card-bg.svg",
-  startup: "images/startup-card-bg-image.svg",
-  ecommerce: "images/e-commerce-card-bg-image.svg",
-  blog: "images/blog-card-bg-image.svg",
-  portfolio: "images/portfolio-card-bg-image-2.svg",
-  agency: "images/business-card-bg-image.svg",
-  event: "images/event-card-bg-image.svg",
-  news: "images/news-card-bg-image.svg",
-  business: "images/business-card-bg-image.svg",
+  saas: "images/pulse-card-lg.svg",
+  startup: "images/spark-card-lg.svg",
+  ecommerce: "images/canvas-card-lg.svg",
+  blog: "images/nova-card-lg.svg",
+  portfolio: "images/prism-card-lg.svg",
+  agency: "images/atlas-card-lg.svg",
+  event: "images/summit-card-lg.svg",
+  news: "images/nexus-card-lg.svg",
+  business: "images/horizon-card-lg.svg",
 };
 
 const templateBackgrounds = {
-  saas: '#ac7010',
-  startup: '#bd550f',
-  ecommerce: '#ac7010',
-  blog: '#ac7010',
-  portfolio: '#ac7010',
+  saas: '#4a90e2',
+  startup: '#42ab18',
+  ecommerce: '#f5a623',
+  blog: '#bd10e0',
+  portfolio: '#9013fe',
   agency: '#ac7010',
-  event: '#ac7010',
-  news: '#ac7010',
-  business: '#ac7010',
+  event: '#50e3c2',
+  news: '#d0021b',
+  business: '#417505',
 };
 
 const getCategoryLabel = (categoryId: string): string => {
   const labels: Record<string, string> = {
-    'saas': 'SaaS',
-    'ecommerce': 'eCommerce',
-    'startup': 'Nova',
-    'blog': 'Blog',
-    'event': 'Event',
-    'agency': 'Custom',
-    'portfolio': 'Portfolio',
-    'news': 'News',
-    'business': 'Business',
+    'saas': 'Pulse',
+    'ecommerce': 'Canvas',
+    'startup': 'Spark',
+    'blog': 'Nova',
+    'event': 'Summit',
+    'agency': 'Atlas',
+    'portfolio': 'Prism',
+    'news': 'Nexus',
+    'business': 'Horizon',
   };
   return labels[categoryId] || categoryId;
 };
@@ -122,7 +122,7 @@ const getCategoryType = (categoryId: string): string => {
     'news': 'News',
     'business': 'Business',
   };
-  return types[categoryId] || 'Startup';
+  return types[categoryId] || categoryId;
 };
 
 const getFeatureLabel = (featureId: string): string => {
