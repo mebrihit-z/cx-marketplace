@@ -189,10 +189,10 @@ export default function QuoteSummary({
   const templateBg = templateBackgrounds[primaryCategory as keyof typeof templateBackgrounds] || templateBackgrounds.startup;
 
   return (
-    <div className="flex items-center justify-center py-12" style={{ background: 'linear-gradient(242.27deg, rgba(86, 152, 0, 0.1) 4%, rgba(231, 255, 201, 0.1) 43.62%, rgba(0, 167, 72, 0.1) 85.58%)' }}>
-      <div className="box-border flex items-start justify-between pl-0 pr-8 py-0 relative w-full max-w-[1400px] mx-auto">
+    <div className="flex items-center justify-center" style={{ background: 'linear-gradient(242.27deg, rgba(86, 152, 0, 0.1) 4%, rgba(231, 255, 201, 0.1) 43.62%, rgba(0, 167, 72, 0.1) 85.58%)' }}>
+      <div className="box-border flex items-start justify-between relative w-full p-12">
         {/* Left Container */}
-        <div className="box-border flex flex-col items-start justify-between px-16 py-0 relative self-stretch shrink-0">
+        <div className="box-border flex flex-col items-start justify-between relative self-stretch shrink-0 flex-1">
           {/* Content with fixed width */}
           <div className="flex flex-col gap-12 items-start relative shrink-0 w-[640px]">
             {/* Text Container */}
@@ -241,8 +241,8 @@ export default function QuoteSummary({
           </div>
         </div>
 
-      {/* Quote Sidebar */}
-      <div className="basis-0 bg-white border border-[#d0d1d4] border-solid grow min-h-full max-h-full min-w-px relative rounded-2xl shrink-0 overflow-y-auto">
+        {/* Quote Sidebar */}
+        <div className="basis-0 bg-white border border-[#d0d1d4] border-solid grow min-h-full max-h-full relative rounded-2xl shrink-0 overflow-y-auto w-[60%]">
         <div className="box-border flex flex-col items-center p-6 relative rounded-[inherit] w-full">
           <div className="flex flex-col gap-6 items-start relative shrink-0 w-full">
             {/* Top Frame */}
