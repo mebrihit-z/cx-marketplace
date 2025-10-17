@@ -3,6 +3,7 @@ import type { ActiveSection } from '../types';
 import QuoteSummary from './quote-summary';
 
 const imgError = "icons/info-icon.svg";
+const whiteInfoIcon = "icons/white-info-icon.svg";
 const imgCheckmark = "icons/green-check-icon.svg";
 
 interface GetQuoteProps {
@@ -1104,7 +1105,7 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                               <p className="leading-[18px] whitespace-pre">Estimated cost</p>
                             </div>
                             <div className="relative shrink-0 size-[12px]">
-                              <img alt="" className="block max-w-none size-full brightness-200" src={imgError} />
+                              <img alt="" className="block max-w-none size-full brightness-200" src={whiteInfoIcon} />
                             </div>
                           </div>
                           <p className="font-['Inter:Semi_Bold',_sans-serif] font-semibold leading-[24px] not-italic relative shrink-0 text-[20px] text-nowrap text-white whitespace-pre">

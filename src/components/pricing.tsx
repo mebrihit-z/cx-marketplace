@@ -24,7 +24,7 @@ const imgBasicCardBgImage = "images/basic-card-bg-image.svg";
 const imgProCardBgImage = "images/pro-card-bg-image.svg";
 const imgPremiumCardBgImage = "images/premium-card-bg-image.svg";
 const whiteCheckIcon = "icons/white-check-icon.svg";
-const imgInfo = "icons/info-icon.svg";
+const imgInfo = "icons/white-info-icon.svg";
 const imgMaterialSymbolsAttachMoneyRounded = "icons/money-icon.svg";
 
 import ComparisonTable from './comparisonTable';

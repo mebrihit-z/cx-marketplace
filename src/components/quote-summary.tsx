@@ -2,7 +2,8 @@ import type { ActiveSection } from '../types';
 
 const imgBackArrow = "icons/black-back-arrow.svg";
 const imgCheckmark = "icons/green-check-icon.svg";
-const imgInfo = "icons/info-icon.svg";
+const imgInfo = "icons/white-info-icon.svg";
+
 const imgArrowForward = "icons/black-right-arrow.svg";
 
 interface QuoteSummaryProps {
