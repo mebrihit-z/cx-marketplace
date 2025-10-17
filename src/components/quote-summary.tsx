@@ -164,6 +164,22 @@ export default function QuoteSummary({
     onRestart();
   };
 
+  // Function to determine pricing package based on page count
+  const getPricingPackage = (): string => {
+    switch (selectedPageOption) {
+      case 'up-to-100':
+        return 'Basic';
+      case 'up-to-500':
+        return 'Pro';
+      case 'up-to-1000':
+        return 'Premium';
+      case 'not-sure':
+        return 'Pro'; // Default to Pro if not sure
+      default:
+        return 'Premium';
+    }
+  };
+
   // Get the primary selected category for template display
   const primaryCategory = selectedCategories[0] || 'startup';
   const templateImage = templateImages[primaryCategory as keyof typeof templateImages] || templateImages.startup;
@@ -316,9 +332,9 @@ export default function QuoteSummary({
                     {/* Dark Overlay */}
                     <div className="absolute inset-0 bg-[rgba(0,0,0,0.3)] rounded-2xl pointer-events-none" />
 
-                    {/* Premium Title */}
+                    {/* Pricing Package Title */}
                     <p className="font-['Inter:Semi_Bold',_sans-serif] font-semibold leading-[28px] min-w-full not-italic relative z-10 shrink-0 text-[24px] text-white w-[min-content]">
-                      Premium
+                      {getPricingPackage()}
                     </p>
 
                     {/* Price */}
