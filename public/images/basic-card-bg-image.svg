@@ -1,10 +1,19 @@
-<svg width="400" height="478" viewBox="0 0 400 478" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect opacity="0.4" y="-24" width="400" height="526" fill="url(#paint0_linear_8272_92257)"/>
+<svg width="400" height="500" viewBox="0 0 400 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+<!-- Dark background -->
+<rect width="400" height="500" fill="#032900"/>
+<!-- Centered gradient overlay with blur effect -->
+<g filter="url(#blur)">
+<rect x="0" y="-13" width="400" height="526" fill="url(#paint0_linear)" opacity="0.4"/>
+</g>
 <defs>
-<linearGradient id="paint0_linear_8272_92257" x1="200" y1="-24" x2="200" y2="502" gradientUnits="userSpaceOnUse">
+<linearGradient id="paint0_linear" x1="200" y1="-13" x2="200" y2="513" gradientUnits="userSpaceOnUse">
 <stop stop-color="#569800"/>
 <stop offset="0.5" stop-color="#E7FFC9"/>
 <stop offset="1" stop-color="#00A748"/>
 </linearGradient>
+<filter id="blur" x="-50" y="-63" width="500" height="626" filterUnits="userSpaceOnUse">
+<feGaussianBlur stdDeviation="25" result="blur"/>
+<feBlend in="SourceGraphic" in2="blur" mode="normal"/>
+</filter>
 </defs>
 </svg>

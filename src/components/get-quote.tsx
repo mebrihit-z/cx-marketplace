@@ -105,6 +105,7 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
   const [selectedDesignServices, setSelectedDesignServices] = useState<string[]>([]);
   const [currentStep, setCurrentStep] = useState(1);
   const [showSummary, setShowSummary] = useState(false);
+  const [imageLoaded, setImageLoaded] = useState(false);
   const totalSteps = 7;
 
   const selectCategory = (categoryId: string) => {
@@ -121,6 +122,7 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
 
   const selectPageOption = (optionId: string) => {
     setSelectedPageOption(optionId);
+    setImageLoaded(false); // Reset image loaded state when package changes
   };
 
   const selectUserOption = (optionId: string) => {
@@ -1078,15 +1080,16 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                       </div>
                     ) : (
                       // Premium Pricing Card
-                      <div className="bg-white box-border flex flex-col gap-[16px] items-start overflow-hidden px-[16px] py-[24px] relative rounded-[16px] shrink-0 w-full">
+                      <div className="box-border flex flex-col gap-[16px] items-start overflow-hidden px-[16px] py-[24px] relative rounded-[16px] shrink-0 w-full bg-gradient-to-br from-gray-700 to-gray-800">
                         {/* Background Image */}
                         <div className="absolute inset-0 pointer-events-none">
                           <img 
                             alt="" 
-                            className="absolute inset-0 w-full h-full object-cover" 
+                            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-300 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
                             src={`images/${getPricingPackage().toLowerCase()}-card-bg-image.svg`}
+                            onLoad={() => setImageLoaded(true)}
                           />
-                          <div className="absolute bg-[rgba(0,0,0,0.3)] inset-0" />
+                          <div className={`absolute bg-[rgba(0,0,0,0.3)] inset-0 transition-opacity duration-300 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`} />
                         </div>
 
                         {/* Pricing Package Title */}
