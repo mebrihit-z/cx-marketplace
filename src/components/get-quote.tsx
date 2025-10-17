@@ -176,6 +176,22 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
     setShowSummary(false);
   };
 
+  // Function to determine pricing package based on page count
+  const getPricingPackage = (): string => {
+    switch (selectedPageOption) {
+      case 'up-to-100':
+        return 'Basic';
+      case 'up-to-500':
+        return 'Pro';
+      case 'up-to-1000':
+        return 'Premium';
+      case 'not-sure':
+        return 'Pro'; // Default to Pro if not sure
+      default:
+        return 'Premium';
+    }
+  };
+
   // Show summary if user clicked "View summary"
   if (showSummary) {
     return (
@@ -1073,9 +1089,9 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                           <div className="absolute bg-[rgba(0,0,0,0.3)] inset-0" />
                         </div>
 
-                        {/* Premium Title */}
+                        {/* Pricing Package Title */}
                         <p className="font-['Inter:Semi_Bold',_sans-serif] font-semibold leading-[28px] min-w-full not-italic relative shrink-0 text-[24px] text-white w-[min-content] z-10">
-                          Premium
+                          {getPricingPackage()}
                         </p>
 
                         {/* Price */}
