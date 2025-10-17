@@ -20,8 +20,8 @@ function Button({ text = "Button", state = "Default", buttonType = "Default" }: 
 }
 
 // Image assets
-const imgImage19 = "images/black-card-bg-image.svg";
-const greenCardBgImage = "images/green-card-bg-image.svg";
+const imgImage19 = "images/pro-card-bg-image.svg";
+const greenCardBgImage = "images/premium-card-bg-image.svg";
 const whiteCheckIcon = "icons/white-check-icon.svg";
 const imgInfo = "icons/info-icon.svg";
 const imgMaterialSymbolsAttachMoneyRounded = "icons/money-icon.svg";
@@ -119,8 +119,6 @@ export default function Pricing() {
             </div>
 
             {/* Pro Plan */}
-            {/* <div className="bg-white relative rounded-[16px] shrink-0 w-full lg:w-[400px]" data-name="_Pricing tier card" data-node-id="8272:92217">
-              <div className="box-border content-stretch flex flex-col gap-6 items-start justify-start overflow-clip px-8 py-10 relative w-full lg:w-[400px] rounded-[16px] bg-center bg-cover bg-no-repeat" style={{ top: "calc(50% - 0.5px)", backgroundImage: `url('${imgImage19}')` }}>*/}
                <div className="bg-white box-border content-stretch flex flex-col gap-6 items-start justify-start overflow-clip px-8 py-10 relative rounded-[16px] shrink-0 w-full lg:w-[400px] " data-name="_Pricing tier card" data-node-id="8272:92161" style={{ top: "calc(50% - 0.5px)", backgroundImage: `url('${imgImage19}')` }}>
               
                 <div className="font-['Inter:Semi_Bold',_sans-serif] font-semibold leading-[0] min-w-full not-italic relative shrink-0 text-[40px] text-white" data-node-id="8272:92219" style={{ width: "min-content" }}> 
@@ -202,9 +200,6 @@ export default function Pricing() {
                   </div>
                 </div>
               </div>
-              {/* <div aria-hidden="true" className="absolute border border-black border-solid inset-0 pointer-events-none rounded-[16px]" />
-            </div> */}
-
             {/* Premium Plan */}
             <div className="bg-white box-border content-stretch flex flex-col gap-6 items-start justify-start overflow-clip px-8 py-10 relative rounded-[16px] shrink-0 w-full lg:w-[400px]" data-name="_Pricing tier card" data-node-id="8272:92161" style={{ top: "calc(50% - 0.5px)", backgroundImage: `url('${greenCardBgImage}')` }}>
               <div className="font-['Inter:Semi_Bold',_sans-serif] font-semibold leading-[0] min-w-full not-italic relative shrink-0 text-[40px] text-white" data-node-id="8272:92163" style={{ width: "min-content" }}>
