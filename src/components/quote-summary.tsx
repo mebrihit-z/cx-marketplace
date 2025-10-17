@@ -1,6 +1,6 @@
 import type { ActiveSection } from '../types';
 
-const imgBackArrow = "icons/black-circle-left-arrow.svg";
+const imgBackArrow = "icons/black-back-arrow.svg";
 const imgCheckmark = "icons/green-check-icon.svg";
 const imgInfo = "icons/info-icon.svg";
 const imgArrowForward = "icons/black-right-arrow.svg";
@@ -172,8 +172,8 @@ export default function QuoteSummary({
   const templateBg = templateBackgrounds[primaryCategory as keyof typeof templateBackgrounds] || templateBackgrounds.startup;
 
   return (
-    <div className="min-h-screen bg-white flex items-center justify-center py-12">
-      <div className="box-border flex items-start justify-between pl-0 pr-8 py-0 relative shadow-[0px_1px_3px_0px_rgba(25,33,61,0.1)] w-full max-w-[1400px] mx-auto">
+    <div className="bg-white flex items-center justify-center py-12">
+      <div className="box-border flex items-start justify-between pl-0 pr-8 py-0 relative w-full max-w-[1400px] mx-auto">
         {/* Left Container */}
         <div className="box-border flex flex-col items-start justify-between px-16 py-0 relative self-stretch shrink-0">
           {/* Content with fixed width */}
@@ -215,22 +215,18 @@ export default function QuoteSummary({
             <div className="h-10 relative shrink-0 w-[320px]">
               <button
                 onClick={handleBack}
-                className="bg-white border border-[#d0d1d4] border-solid box-border flex gap-2 items-center px-6 py-2.5 rounded-lg hover:bg-gray-50 transition-colors"
+                className="bg-white border border-[#d0d1d4] flex items-center justify-center gap-2 px-6 py-2.5 rounded-lg shadow-sm hover:bg-gray-50 transition-colors"
               >
-                <div className="relative shrink-0 size-5">
-                  <img alt="" className="block max-w-none size-full" src={imgBackArrow} />
-                </div>
-                <p className="font-['Inter:regular',_sans-serif] leading-[20px] not-italic relative shrink-0 text-[#111215] text-[16px] text-nowrap whitespace-pre">
-                  Back
-                </p>
+                <img src="icons/black-back-arrow.svg" alt="Previous" />
+                <span className="font-['Inter:regular',_sans-serif] text-[16px] leading-[20px] text-[#22252b]">Back</span>
               </button>
             </div>
           </div>
         </div>
 
       {/* Quote Sidebar */}
-      <div className="basis-0 bg-white border border-[#d0d1d4] border-solid grow min-h-[730px] min-w-px relative rounded-2xl shrink-0">
-        <div className="box-border flex flex-col items-center min-h-inherit overflow-clip p-6 relative rounded-[inherit] w-full">
+      <div className="basis-0 bg-white border border-[#d0d1d4] border-solid grow min-h-full max-h-full min-w-px relative rounded-2xl shrink-0 overflow-y-auto">
+        <div className="box-border flex flex-col items-center p-6 relative rounded-[inherit] w-full">
           <div className="flex flex-col gap-6 items-start relative shrink-0 w-full">
             {/* Top Frame */}
             <div className="flex flex-col gap-4 items-start relative shrink-0 w-full">
@@ -316,24 +312,9 @@ export default function QuoteSummary({
                   Pricing Package
                 </p>
                 {/* Pricing Card */}
-                <div className="bg-white box-border flex flex-col gap-[16px] items-start overflow-clip px-[16px] py-[24px] relative rounded-2xl shrink-0 w-[291px]">
-                    {/* Rotated Background Image */}
-                    <div className="absolute flex items-center justify-center left-[calc(50%+16.698px)] top-[-181.76px] -translate-x-1/2 h-[498px] w-[581px]">
-                      <div className="flex-none">
-                        <div className="h-[900px] relative w-[821.027px]">
-                          <div aria-hidden="true" className="absolute inset-0 pointer-events-none">
-                            <div className="absolute inset-0 overflow-hidden">
-                              <img 
-                                alt="" 
-                                className="absolute left-0 max-w-none size-full top-0" 
-                                src="https://images.unsplash.com/photo-1636011497948-13d7aaa84f31?w=800&auto=format&fit=crop" 
-                              />
-                            </div>
-                            <div className="absolute bg-[rgba(0,0,0,0.3)] inset-0" />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                <div className="box-border flex flex-col gap-[16px] items-start overflow-clip px-[16px] py-[24px] relative rounded-2xl shrink-0 min-w-[291px] w-auto bg-cover bg-center bg-no-repeat" style={{ backgroundImage: 'url(images/quote-summary-card-bg.avif)' }}>
+                    {/* Dark Overlay */}
+                    <div className="absolute inset-0 bg-[rgba(0,0,0,0.3)] rounded-2xl pointer-events-none" />
 
                     {/* Premium Title */}
                     <p className="font-['Inter:Semi_Bold',_sans-serif] font-semibold leading-[28px] min-w-full not-italic relative z-10 shrink-0 text-[24px] text-white w-[min-content]">

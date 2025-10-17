@@ -72,7 +72,7 @@ function App() {
   return (
     <>
       <Header activeSection={activeSection} setActiveSection={setActiveSection} />
-      <main className="min-h-screen">
+      <main className="">
         {renderActiveComponent()}
       </main>
       <Footer />

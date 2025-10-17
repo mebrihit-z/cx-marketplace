@@ -195,7 +195,7 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#f5f9f5] to-white flex flex-col">
+    <div className="max-h-screen bg-gradient-to-br from-[#f5f9f5] to-white flex flex-col">
       <div className="max-w-[1400px] mx-auto px-8 py-12 flex-1 flex flex-col">
         <div className="flex items-stretch justify-between gap-8 flex-1">
           {/* Main Content Area */}
@@ -970,9 +970,6 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                     >
                       <span className="font-['Inter:regular',_sans-serif] text-[16px] leading-[20px] text-white">View summary</span>
                       <div className="size-5">
-                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M4.16669 10H15.8334M15.8334 10L10 4.16669M15.8334 10L10 15.8334" stroke="white" strokeWidth="1.67" strokeLinecap="round" strokeLinejoin="round"/>
-                        </svg>
                       </div>
                     </button>
                   )}
@@ -982,8 +979,8 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
           </div>
 
           {/* Quote Sidebar */}
-          <div className="bg-white border border-[#d0d1d4] border-solid rounded-[16px] w-[339px] flex-shrink-0 self-stretch flex flex-col">
-            <div className="box-border flex flex-col items-center overflow-y-auto p-[24px] rounded-[inherit] flex-1">
+          <div className="bg-white border border-[#d0d1d4] border-solid rounded-[16px] w-[339px] flex-shrink-0 max-h-[calc(100vh-96px)] flex flex-col overflow-y-auto">
+            <div className="box-border flex flex-col items-center p-[24px] rounded-[inherit] flex-1">
               <div className="flex flex-col gap-[32px] items-start w-full min-h-full">
                 {/* Top Frame */}
                 <div className="basis-0 flex flex-col gap-[16px] grow items-start min-w-px shrink-0 w-full">
@@ -1109,9 +1106,7 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                           {selectedPageOption && (
                             <div className="flex gap-[8px] items-center relative shrink-0 w-full">
                               <div className="relative shrink-0 size-[24px]">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                  <path d="M20 6L9 17L4 12" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                                </svg>
+                                <img src="icons/white-check-icon.svg" alt="Check"/>
                               </div>
                               <p className="basis-0 font-['Inter:regular',_sans-serif] grow leading-[18px] min-h-px min-w-px not-italic relative shrink-0 text-[14px] text-white">
                                 {pageOptions.find(p => p.id === selectedPageOption)?.label}
@@ -1123,9 +1118,7 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                           {selectedUserOption && (
                             <div className="flex gap-[8px] items-center relative shrink-0 w-full">
                               <div className="relative shrink-0 size-[24px]">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                  <path d="M20 6L9 17L4 12" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                                </svg>
+                                <img src="icons/white-check-icon.svg" alt="Check"/>
                               </div>
                               <p className="basis-0 font-['Inter:regular',_sans-serif] grow leading-[18px] min-h-px min-w-px not-italic relative shrink-0 text-[14px] text-white">
                                 {userOptions.find(u => u.id === selectedUserOption)?.label}
@@ -1137,9 +1130,7 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                           {selectedCustomizationOption && (
                             <div className="flex gap-[8px] items-center relative shrink-0 w-full">
                               <div className="relative shrink-0 size-[24px]">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                  <path d="M20 6L9 17L4 12" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                                </svg>
+                                <img src="icons/white-check-icon.svg" alt="Check"/>
                               </div>
                               <p className="basis-0 font-['Inter:regular',_sans-serif] grow leading-[18px] min-h-px min-w-px not-italic relative shrink-0 text-[14px] text-white">
                                 {customizationOptions.find(c => c.id === selectedCustomizationOption)?.label}
@@ -1153,9 +1144,7 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                             return func ? (
                               <div key={funcId} className="flex gap-[8px] items-center relative shrink-0 w-full">
                                 <div className="relative shrink-0 size-[24px]">
-                                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M20 6L9 17L4 12" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                                  </svg>
+                                  <img src="icons/white-check-icon.svg" alt="Check"/>
                                 </div>
                                 <p className="basis-0 font-['Inter:regular',_sans-serif] grow leading-[18px] min-h-px min-w-px not-italic relative shrink-0 text-[14px] text-white">
                                   {func.label}
@@ -1170,9 +1159,7 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                             return service ? (
                               <div key={serviceId} className="flex gap-[8px] items-center relative shrink-0 w-full">
                                 <div className="relative shrink-0 size-[24px]">
-                                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M20 6L9 17L4 12" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                                  </svg>
+                                  <img src="icons/white-check-icon.svg" alt="Check"/>
                                 </div>
                                 <p className="basis-0 font-['Inter:regular',_sans-serif] grow leading-[18px] min-h-px min-w-px not-italic relative shrink-0 text-[14px] text-white">
                                   {service.label}
