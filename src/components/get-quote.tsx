@@ -215,16 +215,16 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
 
   return (
     <div className="flex flex-col" style={{ background: 'linear-gradient(242.27deg, rgba(86, 152, 0, 0.1) 4%, rgba(231, 255, 201, 0.1) 43.62%, rgba(0, 167, 72, 0.1) 85.58%)' }}>
-      <div className="max-w-[1400px] mx-auto px-8 py-12 flex-1 flex flex-col">
-        <div className="flex items-stretch justify-between gap-8 flex-1">
+      <div className="max-w-[1400px] mx-auto px-4 md:px-6 lg:px-8 py-6 md:py-8 lg:py-12 flex-1 flex flex-col">
+        <div className="flex flex-col lg:flex-row items-stretch justify-between gap-6 lg:gap-8 flex-1">
           {/* Main Content Area */}
           <div className="flex-1 flex flex-col items-start justify-between">
             {/* Text Container */}
-            <div className="flex flex-col gap-6 items-start w-full mb-8">
-              <h1 className="font-['Inter:Semi_Bold',_sans-serif] font-semibold text-[40px] leading-[48px] text-[#22252b] w-full">
+            <div className="flex flex-col gap-4 md:gap-6 items-start w-full mb-6 md:mb-8">
+              <h1 className="font-['Inter:Semi_Bold',_sans-serif] font-semibold text-[28px] md:text-[32px] lg:text-[40px] leading-[34px] md:leading-[40px] lg:leading-[48px] text-[#22252b] w-full">
                 Get a personalized quote, instantly.
               </h1>
-              <p className="font-['Inter:regular',_sans-serif] text-[18px] leading-[24px] text-[#333740] w-full">
+              <p className="font-['Inter:regular',_sans-serif] text-[16px] md:text-[18px] leading-[22px] md:leading-[24px] text-[#333740] w-full">
                 Let us help you find the right website template and pricing package for your content needs.
               </p>
             </div>
@@ -239,7 +239,7 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                   <div className="flex flex-col gap-0.5 items-start w-full">
                     <div className="flex gap-2 items-start">
                       <MarketplaceLogo />
-                      <div className="bg-white border border-[#d5d5d5] rounded-bl-2xl rounded-br-2xl rounded-tr-2xl w-[646px]">
+                      <div className="bg-white border border-[#d5d5d5] rounded-bl-2xl rounded-br-2xl rounded-tr-2xl w-full max-w-[646px]">
                         <div className="flex flex-col gap-1 items-start p-4">
                           <p className="font-['Inter:regular',_sans-serif] text-[14px] leading-[18px] text-[#333740]">
                             What type of website are you looking for?
@@ -251,10 +251,10 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                 </div>
 
                 {/* Answers */}
-                <div className="flex flex-col gap-2.5 items-end w-full">
-                  <div className="flex flex-col gap-4 items-center justify-center">
+                <div className="flex flex-col gap-2.5 items-center lg:items-end w-full">
+                  <div className="flex flex-col gap-3 md:gap-4 items-center lg:items-end justify-center w-full">
                     {/* Row 1 */}
-                    <div className="flex gap-4 items-start">
+                    <div className="flex flex-col sm:flex-row gap-3 md:gap-4 items-stretch sm:items-start w-full sm:w-auto">
                       {categories.slice(0, 3).map(category => (
                         <button
                           key={category.id}
@@ -263,7 +263,7 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                             selectedCategory === category.id
                               ? 'border-[#0a7c00] bg-[#f0f9ee]'
                               : 'border-[#d0d1d4]'
-                          } rounded-lg w-[240px] relative hover:border-[#0a7c00] transition-colors`}
+                          } rounded-lg w-full sm:w-[240px] relative hover:border-[#0a7c00] transition-colors`}
                         >
                           <div className="flex gap-4 items-center px-4 py-6 relative">
                             <div className="flex-1 flex flex-col gap-1.5 items-start justify-center">
@@ -282,7 +282,7 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                     </div>
 
                     {/* Row 2 */}
-                    <div className="flex gap-4 items-start">
+                    <div className="flex flex-col sm:flex-row gap-3 md:gap-4 items-stretch sm:items-start w-full sm:w-auto">
                       {categories.slice(3, 6).map(category => (
                         <button
                           key={category.id}
@@ -291,7 +291,7 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                             selectedCategory === category.id
                               ? 'border-[#0a7c00] bg-[#f0f9ee]'
                               : 'border-[#d0d1d4]'
-                          } rounded-lg w-[240px] relative hover:border-[#0a7c00] transition-colors`}
+                          } rounded-lg w-full sm:w-[240px] relative hover:border-[#0a7c00] transition-colors`}
                         >
                           <div className="flex gap-4 items-center px-4 py-6 relative">
                             <div className="flex-1 flex flex-col gap-1.5 items-start justify-center">
@@ -310,7 +310,7 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                     </div>
 
                     {/* Row 3 */}
-                    <div className="flex gap-4 items-start">
+                    <div className="flex flex-col sm:flex-row gap-3 md:gap-4 items-stretch sm:items-start w-full sm:w-auto">
                       {categories.slice(6, 9).map(category => (
                         <button
                           key={category.id}
@@ -319,7 +319,7 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                             selectedCategory === category.id
                               ? 'border-[#0a7c00] bg-[#f0f9ee]'
                               : 'border-[#d0d1d4]'
-                          } rounded-lg w-[240px] relative hover:border-[#0a7c00] transition-colors`}
+                          } rounded-lg w-full sm:w-[240px] relative hover:border-[#0a7c00] transition-colors`}
                         >
                           <div className="flex gap-4 items-center px-4 py-6 relative">
                             <div className="flex-1 flex flex-col gap-1.5 items-start justify-center">
@@ -349,7 +349,7 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                   <div className="flex flex-col gap-0.5 items-start w-full">
                     <div className="flex gap-2 items-start">
                       <MarketplaceLogo />
-                      <div className="bg-white border border-[#d5d5d5] rounded-bl-2xl rounded-br-2xl rounded-tr-2xl w-[646px]">
+                      <div className="bg-white border border-[#d5d5d5] rounded-bl-2xl rounded-br-2xl rounded-tr-2xl w-full max-w-[646px]">
                         <div className="flex flex-col gap-1 items-start p-4">
                           <p className="font-['Inter:regular',_sans-serif] text-[14px] leading-[18px] text-[#333740]">
                             What features does your startup website need?
@@ -361,10 +361,10 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                 </div>
 
                 {/* Answers */}
-                <div className="flex flex-col gap-2.5 items-end w-full">
-                  <div className="flex flex-col gap-4 items-center justify-center">
+                <div className="flex flex-col gap-2.5 items-center lg:items-end w-full">
+                  <div className="flex flex-col gap-3 md:gap-4 items-center lg:items-end justify-center w-full">
                     {/* Row 1 */}
-                    <div className="flex gap-4 items-start">
+                    <div className="flex flex-col sm:flex-row gap-3 md:gap-4 items-stretch sm:items-start w-full sm:w-auto">
                       {features.slice(0, 3).map(feature => (
                         <button
                           key={feature.id}
@@ -373,7 +373,7 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                             selectedFeatures.includes(feature.id)
                               ? 'border-[#0a7c00] bg-[#f0f9ee]'
                               : 'border-[#d0d1d4]'
-                          } rounded-lg w-[240px] relative hover:border-[#0a7c00] transition-colors`}
+                          } rounded-lg w-full sm:w-[240px] relative hover:border-[#0a7c00] transition-colors`}
                         >
                           <div className="flex gap-4 items-center px-4 py-6 relative">
                             <div className="flex-1 flex flex-col gap-1.5 items-start justify-center">
@@ -392,7 +392,7 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                     </div>
 
                     {/* Row 2 */}
-                    <div className="flex gap-4 items-start">
+                    <div className="flex flex-col sm:flex-row gap-3 md:gap-4 items-stretch sm:items-start w-full sm:w-auto">
                       {features.slice(3, 6).map(feature => (
                         <button
                           key={feature.id}
@@ -401,7 +401,7 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                             selectedFeatures.includes(feature.id)
                               ? 'border-[#0a7c00] bg-[#f0f9ee]'
                               : 'border-[#d0d1d4]'
-                          } rounded-lg w-[240px] relative hover:border-[#0a7c00] transition-colors`}
+                          } rounded-lg w-full sm:w-[240px] relative hover:border-[#0a7c00] transition-colors`}
                         >
                           <div className="flex gap-4 items-center px-4 py-6 relative">
                             <div className="flex-1 flex flex-col gap-1.5 items-start justify-center">
@@ -420,7 +420,7 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                     </div>
 
                     {/* Row 3 */}
-                    <div className="flex gap-4 items-start">
+                    <div className="flex flex-col sm:flex-row gap-3 md:gap-4 items-stretch sm:items-start w-full sm:w-auto">
                       {features.slice(6, 9).map(feature => (
                         <button
                           key={feature.id}
@@ -429,7 +429,7 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                             selectedFeatures.includes(feature.id)
                               ? 'border-[#0a7c00] bg-[#f0f9ee]'
                               : 'border-[#d0d1d4]'
-                          } rounded-lg w-[240px] relative hover:border-[#0a7c00] transition-colors`}
+                          } rounded-lg w-full sm:w-[240px] relative hover:border-[#0a7c00] transition-colors`}
                         >
                           <div className="flex gap-4 items-center px-4 py-6 relative">
                             <div className="flex-1 flex flex-col gap-1.5 items-start justify-center">
@@ -459,7 +459,7 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                   <div className="flex flex-col gap-0.5 items-start w-full">
                     <div className="flex gap-2 items-start">
                       <MarketplaceLogo />
-                      <div className="bg-white border border-[#d5d5d5] rounded-bl-2xl rounded-br-2xl rounded-tr-2xl w-[646px]">
+                      <div className="bg-white border border-[#d5d5d5] rounded-bl-2xl rounded-br-2xl rounded-tr-2xl w-full max-w-[646px]">
                         <div className="flex flex-col gap-1 items-start p-4">
                           <p className="font-['Inter:regular',_sans-serif] text-[14px] leading-[18px] text-[#333740]">
                             What is the total number of desired pages across your website?
@@ -471,10 +471,10 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                 </div>
 
                 {/* Answers */}
-                <div className="flex flex-col gap-2.5 items-end w-full">
-                  <div className="flex flex-col gap-4 items-end justify-center">
+                <div className="flex flex-col gap-2.5 items-center lg:items-end w-full">
+                  <div className="flex flex-col gap-3 md:gap-4 items-center lg:items-end justify-center w-full">
                     {/* Row 1 */}
-                    <div className="flex gap-4 items-start">
+                    <div className="flex flex-col sm:flex-row gap-3 md:gap-4 items-stretch sm:items-start w-full sm:w-auto">
                       {pageOptions.slice(0, 3).map(option => (
                         <button
                           key={option.id}
@@ -483,7 +483,7 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                             selectedPageOption === option.id
                               ? 'border-[#0a7c00] bg-[#f0f9ee]'
                               : 'border-[#d0d1d4]'
-                          } rounded-lg w-[240px] relative hover:border-[#0a7c00] transition-colors`}
+                          } rounded-lg w-full sm:w-[240px] relative hover:border-[#0a7c00] transition-colors`}
                         >
                           <div className="flex gap-4 items-center px-4 py-6 relative">
                             <div className="flex-1 flex flex-col gap-1.5 items-start justify-center">
@@ -502,14 +502,14 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                     </div>
 
                     {/* Row 2 - Wider option */}
-                    <div className="flex gap-4 items-start">
+                    <div className="flex gap-3 md:gap-4 items-start w-full sm:w-auto">
                       <button
                         onClick={() => selectPageOption('not-sure')}
                         className={`bg-white border ${
                           selectedPageOption === 'not-sure'
                             ? 'border-[#0a7c00] bg-[#f0f9ee]'
                             : 'border-[#d0d1d4]'
-                        } rounded-lg w-[400px] relative hover:border-[#0a7c00] transition-colors`}
+                        } rounded-lg w-full sm:w-[400px] relative hover:border-[#0a7c00] transition-colors`}
                       >
                         <div className="flex gap-4 items-center px-4 py-6 relative">
                           <div className="flex-1 flex flex-col gap-1.5 items-start justify-center">
@@ -538,7 +538,7 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                   <div className="flex flex-col gap-0.5 items-start w-full">
                     <div className="flex gap-2 items-start">
                       <MarketplaceLogo />
-                      <div className="bg-white border border-[#d5d5d5] rounded-bl-2xl rounded-br-2xl rounded-tr-2xl w-[646px]">
+                      <div className="bg-white border border-[#d5d5d5] rounded-bl-2xl rounded-br-2xl rounded-tr-2xl w-full max-w-[646px]">
                         <div className="flex flex-col gap-1 items-start p-4">
                           <p className="font-['Inter:regular',_sans-serif] text-[14px] leading-[18px] text-[#333740]">
                             How many authorized users will manage your website?
@@ -550,10 +550,10 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                 </div>
 
                 {/* Answers */}
-                <div className="flex flex-col gap-2.5 items-end w-full">
-                  <div className="flex flex-col gap-4 items-end justify-center">
+                <div className="flex flex-col gap-2.5 items-center lg:items-end w-full">
+                  <div className="flex flex-col gap-3 md:gap-4 items-center lg:items-end justify-center w-full">
                     {/* Row 1 */}
-                    <div className="flex gap-4 items-start">
+                    <div className="flex flex-col sm:flex-row gap-3 md:gap-4 items-stretch sm:items-start w-full sm:w-auto">
                       {userOptions.slice(0, 3).map(option => (
                         <button
                           key={option.id}
@@ -562,7 +562,7 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                             selectedUserOption === option.id
                               ? 'border-[#0a7c00] bg-[#f0f9ee]'
                               : 'border-[#d0d1d4]'
-                          } rounded-lg w-[240px] relative hover:border-[#0a7c00] transition-colors`}
+                          } rounded-lg w-full sm:w-[240px] relative hover:border-[#0a7c00] transition-colors`}
                         >
                           <div className="flex gap-4 items-center px-4 py-6 relative">
                             <div className="flex-1 flex flex-col gap-1.5 items-start justify-center">
@@ -581,14 +581,14 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                     </div>
 
                     {/* Row 2 - Wider option */}
-                    <div className="flex gap-4 items-start">
+                    <div className="flex gap-3 md:gap-4 items-start w-full sm:w-auto">
                       <button
                         onClick={() => selectUserOption('not-sure-users')}
                         className={`bg-white border ${
                           selectedUserOption === 'not-sure-users'
                             ? 'border-[#0a7c00] bg-[#f0f9ee]'
                             : 'border-[#d0d1d4]'
-                        } rounded-lg w-[400px] relative hover:border-[#0a7c00] transition-colors`}
+                        } rounded-lg w-full sm:w-[400px] relative hover:border-[#0a7c00] transition-colors`}
                       >
                         <div className="flex gap-4 items-center px-4 py-6 relative">
                           <div className="flex-1 flex flex-col gap-1.5 items-start justify-center">
@@ -617,7 +617,7 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                   <div className="flex flex-col gap-0.5 items-start w-full">
                     <div className="flex gap-2 items-start">
                       <MarketplaceLogo />
-                      <div className="bg-white border border-[#d5d5d5] rounded-bl-2xl rounded-br-2xl rounded-tr-2xl w-[646px]">
+                      <div className="bg-white border border-[#d5d5d5] rounded-bl-2xl rounded-br-2xl rounded-tr-2xl w-full max-w-[646px]">
                         <div className="flex flex-col gap-1 items-start p-4">
                           <p className="font-['Inter:regular',_sans-serif] text-[14px] leading-[18px] text-[#333740]">
                             What level of customization do you prefer?
@@ -629,8 +629,8 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                 </div>
 
                 {/* Answers */}
-                <div className="flex flex-col gap-2.5 items-end w-full">
-                  <div className="flex flex-col gap-4 items-end justify-center">
+                <div className="flex flex-col gap-2.5 items-center lg:items-end w-full">
+                  <div className="flex flex-col gap-3 md:gap-4 items-center lg:items-end justify-center w-full">
                     {customizationOptions.map(option => (
                       <button
                         key={option.id}
@@ -639,7 +639,7 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                           selectedCustomizationOption === option.id
                             ? 'border-[#0a7c00] bg-[#f0f9ee]'
                             : 'border-[#d0d1d4]'
-                        } rounded-lg w-[400px] relative hover:border-[#0a7c00] transition-colors`}
+                        } rounded-lg w-full sm:w-[400px] relative hover:border-[#0a7c00] transition-colors`}
                       >
                         <div className="flex gap-4 items-center px-4 py-6 relative">
                           <div className="flex-1 flex flex-col gap-1.5 items-start justify-center">
@@ -668,7 +668,7 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                   <div className="flex flex-col gap-0.5 items-start w-full">
                     <div className="flex gap-2 items-start">
                       <MarketplaceLogo />
-                      <div className="bg-white border border-[#d5d5d5] rounded-bl-2xl rounded-br-2xl rounded-tr-2xl w-[646px]">
+                      <div className="bg-white border border-[#d5d5d5] rounded-bl-2xl rounded-br-2xl rounded-tr-2xl w-full max-w-[646px]">
                         <div className="flex flex-col gap-1 items-start p-4">
                           <p className="font-['Inter:regular',_sans-serif] text-[14px] leading-[18px] text-[#333740]">
                             Does your website need any extra functionality?
@@ -680,10 +680,10 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                 </div>
 
                 {/* Answers */}
-                <div className="flex flex-col gap-2.5 items-end w-full">
-                  <div className="flex flex-col gap-4 items-end justify-center">
+                <div className="flex flex-col gap-2.5 items-center lg:items-end w-full">
+                  <div className="flex flex-col gap-3 md:gap-4 items-center lg:items-end justify-center w-full">
                     {/* Row 1 */}
-                    <div className="flex gap-4 items-start">
+                    <div className="flex flex-col sm:flex-row gap-3 md:gap-4 items-stretch sm:items-start w-full sm:w-auto">
                       {extraFunctionalityOptions.slice(0, 3).map(option => (
                         <button
                           key={option.id}
@@ -692,7 +692,7 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                             selectedExtraFunctionality.includes(option.id)
                               ? 'border-[#0a7c00] bg-[#f0f9ee]'
                               : 'border-[#d0d1d4]'
-                          } rounded-lg w-[240px] relative hover:border-[#0a7c00] transition-colors`}
+                          } rounded-lg w-full sm:w-[240px] relative hover:border-[#0a7c00] transition-colors`}
                         >
                           <div className="flex gap-4 items-center px-4 py-6 relative">
                             <div className="flex-1 flex flex-col gap-1.5 items-start justify-center">
@@ -711,7 +711,7 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                     </div>
 
                     {/* Row 2 */}
-                    <div className="flex gap-4 items-start">
+                    <div className="flex flex-col sm:flex-row gap-3 md:gap-4 items-stretch sm:items-start w-full sm:w-auto">
                       {extraFunctionalityOptions.slice(3, 6).map(option => (
                         <button
                           key={option.id}
@@ -720,7 +720,7 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                             selectedExtraFunctionality.includes(option.id)
                               ? 'border-[#0a7c00] bg-[#f0f9ee]'
                               : 'border-[#d0d1d4]'
-                          } rounded-lg w-[240px] relative hover:border-[#0a7c00] transition-colors`}
+                          } rounded-lg w-full sm:w-[240px] relative hover:border-[#0a7c00] transition-colors`}
                         >
                           <div className="flex gap-4 items-center px-4 py-6 relative">
                             <div className="flex-1 flex flex-col gap-1.5 items-start justify-center">
@@ -739,7 +739,7 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                     </div>
 
                     {/* Row 3 */}
-                    <div className="flex gap-4 items-start">
+                    <div className="flex flex-col sm:flex-row gap-3 md:gap-4 items-stretch sm:items-start w-full sm:w-auto">
                       {extraFunctionalityOptions.slice(6, 9).map(option => (
                         <button
                           key={option.id}
@@ -748,7 +748,7 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                             selectedExtraFunctionality.includes(option.id)
                               ? 'border-[#0a7c00] bg-[#f0f9ee]'
                               : 'border-[#d0d1d4]'
-                          } rounded-lg w-[240px] relative hover:border-[#0a7c00] transition-colors`}
+                          } rounded-lg w-full sm:w-[240px] relative hover:border-[#0a7c00] transition-colors`}
                         >
                           <div className="flex gap-4 items-center px-4 py-6 relative">
                             <div className="flex-1 flex flex-col gap-1.5 items-start justify-center">
@@ -767,14 +767,14 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                     </div>
 
                     {/* Row 4 - Wider option */}
-                    <div className="flex gap-4 items-start">
+                    <div className="flex gap-3 md:gap-4 items-start w-full sm:w-auto">
                       <button
                         onClick={() => toggleExtraFunctionality('none-basics')}
                         className={`bg-white border ${
                           selectedExtraFunctionality.includes('none-basics')
                             ? 'border-[#0a7c00] bg-[#f0f9ee]'
                             : 'border-[#d0d1d4]'
-                        } rounded-lg w-[400px] relative hover:border-[#0a7c00] transition-colors`}
+                        } rounded-lg w-full sm:w-[400px] relative hover:border-[#0a7c00] transition-colors`}
                       >
                         <div className="flex gap-4 items-center px-4 py-6 relative">
                           <div className="flex-1 flex flex-col gap-1.5 items-start justify-center">
@@ -803,7 +803,7 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                   <div className="flex flex-col gap-0.5 items-start w-full">
                     <div className="flex gap-2 items-start">
                       <MarketplaceLogo />
-                      <div className="bg-white border border-[#d5d5d5] rounded-bl-2xl rounded-br-2xl rounded-tr-2xl w-[646px]">
+                      <div className="bg-white border border-[#d5d5d5] rounded-bl-2xl rounded-br-2xl rounded-tr-2xl w-full max-w-[646px]">
                         <div className="flex flex-col gap-1 items-start p-4">
                           <p className="font-['Inter:regular',_sans-serif] text-[14px] leading-[18px] text-[#333740]">
                             Are you in need of any additional design services?
@@ -815,10 +815,10 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                 </div>
 
                 {/* Answers */}
-                <div className="flex flex-col gap-2.5 items-end w-full">
-                  <div className="flex flex-col gap-4 items-end justify-center">
+                <div className="flex flex-col gap-2.5 items-center lg:items-end w-full">
+                  <div className="flex flex-col gap-3 md:gap-4 items-center lg:items-end justify-center w-full">
                     {/* Row 1 */}
-                    <div className="flex gap-4 items-start">
+                    <div className="flex flex-col sm:flex-row gap-3 md:gap-4 items-stretch sm:items-start w-full sm:w-auto">
                       {designServicesOptions.slice(0, 3).map(option => (
                         <button
                           key={option.id}
@@ -827,7 +827,7 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                             selectedDesignServices.includes(option.id)
                               ? 'border-[#0a7c00] bg-[#f0f9ee]'
                               : 'border-[#d0d1d4]'
-                          } rounded-lg w-[240px] relative hover:border-[#0a7c00] transition-colors`}
+                          } rounded-lg w-full sm:w-[240px] relative hover:border-[#0a7c00] transition-colors`}
                         >
                           <div className="flex gap-4 items-center px-4 py-6 relative">
                             <div className="flex-1 flex flex-col gap-1.5 items-start justify-center">
@@ -846,7 +846,7 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                     </div>
 
                     {/* Row 2 */}
-                    <div className="flex gap-4 items-start">
+                    <div className="flex flex-col sm:flex-row gap-3 md:gap-4 items-stretch sm:items-start w-full sm:w-auto">
                       {designServicesOptions.slice(3, 6).map(option => (
                         <button
                           key={option.id}
@@ -855,7 +855,7 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                             selectedDesignServices.includes(option.id)
                               ? 'border-[#0a7c00] bg-[#f0f9ee]'
                               : 'border-[#d0d1d4]'
-                          } rounded-lg w-[240px] relative hover:border-[#0a7c00] transition-colors`}
+                          } rounded-lg w-full sm:w-[240px] relative hover:border-[#0a7c00] transition-colors`}
                         >
                           <div className="flex gap-4 items-center px-4 py-6 relative">
                             <div className="flex-1 flex flex-col gap-1.5 items-start justify-center">
@@ -874,7 +874,7 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                     </div>
 
                     {/* Row 3 */}
-                    <div className="flex gap-4 items-start">
+                    <div className="flex flex-col sm:flex-row gap-3 md:gap-4 items-stretch sm:items-start w-full sm:w-auto">
                       {designServicesOptions.slice(6, 9).map(option => (
                         <button
                           key={option.id}
@@ -883,7 +883,7 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                             selectedDesignServices.includes(option.id)
                               ? 'border-[#0a7c00] bg-[#f0f9ee]'
                               : 'border-[#d0d1d4]'
-                          } rounded-lg w-[240px] relative hover:border-[#0a7c00] transition-colors`}
+                          } rounded-lg w-full sm:w-[240px] relative hover:border-[#0a7c00] transition-colors`}
                         >
                           <div className="flex gap-4 items-center px-4 py-6 relative">
                             <div className="flex-1 flex flex-col gap-1.5 items-start justify-center">
@@ -902,14 +902,14 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                     </div>
 
                     {/* Row 4 - Wider option */}
-                    <div className="flex gap-4 items-start">
+                    <div className="flex gap-3 md:gap-4 items-start w-full sm:w-auto">
                       <button
                         onClick={() => toggleDesignService('no-extras')}
                         className={`bg-white border ${
                           selectedDesignServices.includes('no-extras')
                             ? 'border-[#0a7c00] bg-[#f0f9ee]'
                             : 'border-[#d0d1d4]'
-                        } rounded-lg w-[400px] relative hover:border-[#0a7c00] transition-colors`}
+                        } rounded-lg w-full sm:w-[400px] relative hover:border-[#0a7c00] transition-colors`}
                       >
                         <div className="flex gap-4 items-center px-4 py-6 relative">
                           <div className="flex-1 flex flex-col gap-1.5 items-start justify-center">
@@ -931,13 +931,13 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
               )}
 
               {/* Actions */}
-              <div className="flex items-center justify-between w-full">
+              <div className="flex flex-col md:flex-row items-center justify-between w-full gap-4 md:gap-0">
                 {/* Left Container - Previous Button */}
-                <div className="h-10 w-[320px]">
+                <div className="h-10 w-full md:w-[320px] order-2 md:order-1">
                   {currentStep > 1 && (
                     <button
                       onClick={handlePrevious}
-                      className="bg-white border border-[#d0d1d4] flex items-center justify-center gap-2 px-6 py-2.5 rounded-lg shadow-sm hover:bg-gray-50 transition-colors"
+                      className="bg-white border border-[#d0d1d4] flex items-center justify-center gap-2 px-6 py-2.5 rounded-lg shadow-sm hover:bg-gray-50 transition-colors w-full md:w-auto"
                     >
                       <img src="icons/black-back-arrow.svg" alt="Previous" />
                       <span className="font-['Inter:regular',_sans-serif] text-[16px] leading-[20px] text-[#22252b]">Back</span>
@@ -946,11 +946,11 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                 </div>
                 
                 {/* Progress Indicators */}
-                <div className="flex gap-1 items-center">
+                <div className="flex gap-1 items-center order-1 md:order-2">
                   {Array.from({ length: totalSteps }).map((_, index) => (
                     <div
                       key={index}
-                      className={`h-2 w-10 rounded-sm ${
+                      className={`h-2 w-8 md:w-10 rounded-sm ${
                         index < currentStep
                           ? 'bg-[#0da500]'
                           : 'bg-[#737780] opacity-15'
@@ -960,7 +960,7 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                 </div>
 
                 {/* Right Container - Skip and Next/View Summary Buttons */}
-                <div className="flex gap-10 items-center justify-end w-[320px]">
+                <div className="flex gap-4 md:gap-10 items-center justify-end w-full md:w-[320px] order-3">
                   {/* Skip Button - Only show if not on last step */}
                   {currentStep < totalSteps && (
                     <button
@@ -975,7 +975,7 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                   {currentStep < totalSteps ? (
                     <button
                       onClick={handleNext}
-                      className="bg-[#0a7c00] flex items-center justify-center gap-2 px-6 py-2.5 rounded-lg shadow-sm hover:bg-[#096d00] transition-colors"
+                      className="bg-[#0a7c00] flex items-center justify-center gap-2 px-6 py-2.5 rounded-lg shadow-sm hover:bg-[#096d00] transition-colors flex-1 md:flex-initial"
                     >
                       <span className="font-['Inter:regular',_sans-serif] text-[16px] leading-[20px] text-white">Next</span>
                       <div className="size-5">
@@ -987,7 +987,7 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                   ) : (
                     <button
                       onClick={handleViewSummary}
-                      className="bg-[#0a7c00] flex items-center justify-center gap-2 px-6 py-2.5 rounded-lg shadow-sm hover:bg-[#096d00] transition-colors"
+                      className="bg-[#0a7c00] flex items-center justify-center gap-2 px-6 py-2.5 rounded-lg shadow-sm hover:bg-[#096d00] transition-colors flex-1 md:flex-initial"
                     >
                       <span className="font-['Inter:regular',_sans-serif] text-[16px] leading-[20px] text-white">View summary</span>
                       <div className="size-5">
@@ -1000,7 +1000,7 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
           </div>
 
           {/* Quote Sidebar */}
-          <div className="bg-white border border-[#d0d1d4] border-solid rounded-[16px] w-[339px] flex-shrink-0 max-h-[calc(100vh-96px)] flex flex-col overflow-y-auto">
+          <div className="bg-white border border-[#d0d1d4] border-solid rounded-[16px] w-full lg:w-[339px] flex-shrink-0 lg:max-h-[calc(100vh-96px)] flex flex-col overflow-y-auto">
             <div className="box-border flex flex-col items-center p-[24px] rounded-[inherit] flex-1">
               <div className="flex flex-col gap-[32px] items-start w-full min-h-full">
                 {/* Top Frame */}
