@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import type { ActiveSection } from '../types';
 import QuoteSummary from './quote-summary';
 
 const imgError = "icons/info-icon.svg";
@@ -7,7 +6,7 @@ const whiteInfoIcon = "icons/white-info-icon.svg";
 const imgCheckmark = "icons/green-check-icon.svg";
 
 interface GetQuoteProps {
-  setActiveSection: (section: ActiveSection) => void;
+  // No props needed currently
 }
 
 interface CategoryOption {
@@ -96,7 +95,7 @@ const MarketplaceLogo = () => {
 };
 
 
-export default function GetQuote({ setActiveSection }: GetQuoteProps) {
+export default function GetQuote({}: GetQuoteProps) {
   const [selectedCategory, setSelectedCategory] = useState<string>('');
   const [selectedFeatures, setSelectedFeatures] = useState<string[]>([]);
   const [selectedPageOption, setSelectedPageOption] = useState<string>('');
@@ -199,7 +198,6 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
   if (showSummary) {
     return (
       <QuoteSummary
-        setActiveSection={setActiveSection}
         selectedCategories={selectedCategory ? [selectedCategory] : []}
         selectedFeatures={selectedFeatures}
         selectedPageOption={selectedPageOption}

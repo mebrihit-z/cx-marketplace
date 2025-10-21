@@ -56,9 +56,9 @@ function App() {
       case 'preview':
         return selectedTemplate ? <PreviewPage template={selectedTemplate} /> : <Home setActiveSection={setActiveSection} setSelectedTemplate={setSelectedTemplate} />
       case 'create':
-        return <CreatePage setActiveSection={setActiveSection} />
+        return <CreatePage />
       case 'quote':
-        return <GetQuote setActiveSection={setActiveSection} />
+        return <GetQuote />
       default:
         return <Home setActiveSection={setActiveSection} setSelectedTemplate={setSelectedTemplate} />
     }

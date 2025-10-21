@@ -5,7 +5,6 @@ const commandIcon = `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg
 
 const sendIcon = `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M7 11L12 6L17 11M12 18V7' stroke='%23333740' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E`;
 
-const sendIconWhite = `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M7 11L12 6L17 11M12 18V7' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E`;
 
 const marketplaceLogo = `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32' fill='none'%3E%3Ccircle cx='16' cy='16' r='16' fill='%238cc63f'/%3E%3Crect x='9' y='9' width='14' height='14' fill='white' opacity='0.3'/%3E%3C/svg%3E`;
 
@@ -159,11 +158,9 @@ interface ChatMessage {
   showBrandingPrompts?: boolean;
 }
 
-interface CreatePageProps {
-  setActiveSection?: (section: import('../types').ActiveSection) => void;
-}
 
-export default function CreatePage({ setActiveSection }: CreatePageProps = {}) {
+
+export default function CreatePage() {
   const [promptInput, setPromptInput] = useState('');
   const [chatMessages, setChatMessages] = useState<ChatMessage[]>([]);
   const [showSuggestions, setShowSuggestions] = useState(true);
@@ -635,7 +632,6 @@ export default function CreatePage({ setActiveSection }: CreatePageProps = {}) {
   };
 
   // Show Back/Next buttons when at step 1 (goals) or step 2 (features) or step 3 (styles) or step 4 (branding) or step 5 (final)
-  const showActionButtons = conversationStep >= 1;
   
   // Show chat input only when not showing action buttons
   const showChatInput = conversationStep === 0;

@@ -1,13 +1,13 @@
-import type { ActiveSection } from '../types';
+// import type { ActiveSection } from '../types';
 
-const imgBackArrow = "icons/black-back-arrow.svg";
+// const imgBackArrow = "icons/black-back-arrow.svg";
 const imgCheckmark = "icons/green-check-icon.svg";
 const imgInfo = "icons/white-info-icon.svg";
 
 const imgArrowForward = "icons/black-right-arrow.svg";
 
 interface QuoteSummaryProps {
-  setActiveSection: (section: ActiveSection) => void;
+  // setActiveSection: (section: ActiveSection) => void;
   selectedCategories: string[];
   selectedFeatures: string[];
   selectedPageOption: string;
@@ -141,7 +141,7 @@ const getFeatureLabel = (featureId: string): string => {
 };
 
 export default function QuoteSummary({
-  setActiveSection,
+  // setActiveSection,
   selectedCategories,
   selectedFeatures,
   selectedPageOption,
