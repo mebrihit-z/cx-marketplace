@@ -242,7 +242,7 @@ export default function QuoteSummary({
         </div>
 
         {/* Quote Sidebar */}
-        <div className="bg-white border border-[#d0d1d4] border-solid relative rounded-2xl shrink-0 overflow-y-auto w-full lg:w-[60%] lg:basis-0 lg:grow lg:min-h-full lg:max-h-full">
+        <div className="bg-white border border-[#d0d1d4] border-solid relative rounded-2xl shrink-0 overflow-y-auto w-full lg:w-[65%] lg:basis-0 lg:grow lg:min-h-full lg:max-h-full">
         <div className="box-border flex flex-col items-center p-4 sm:p-6 relative rounded-[inherit] w-full">
           <div className="flex flex-col gap-4 sm:gap-6 items-start relative shrink-0 w-full">
             {/* Top Frame */}
@@ -256,9 +256,9 @@ export default function QuoteSummary({
             </div>
 
             {/* Main Content with Template and Pricing */}
-            <div className="flex flex-col lg:flex-row gap-6 sm:gap-8 lg:gap-16 items-start relative shrink-0 w-full">
+            <div className="flex flex-col lg:flex-row gap-6 sm:gap-8 lg:gap-8 items-start relative shrink-0 w-full">
               {/* Left Section - Template & Features */}
-              <div className="flex flex-col gap-4 sm:gap-6 items-start w-full lg:basis-0 lg:grow lg:min-h-px lg:min-w-px relative lg:self-stretch shrink-0">
+              <div className="flex flex-col gap-4 sm:gap-6 items-start w-full lg:flex-[1.1] lg:min-w-[240px] relative lg:self-stretch shrink-0">
                 {/* Template Container */}
                 <div className="flex flex-col gap-2 items-start relative shrink-0 w-full">
                   <p className="font-['Inter:regular',_sans-serif] leading-[20px] not-italic relative shrink-0 text-[#333740] text-[14px] sm:text-[16px] w-full">
@@ -324,12 +324,12 @@ export default function QuoteSummary({
               </div>
 
               {/* Right Section - Pricing Package */}
-              <div className="flex flex-col gap-2 sm:gap-[8px] items-start relative shrink-0 w-full lg:w-auto">
+              <div className="flex flex-col gap-2 sm:gap-[8px] items-start relative shrink-0 w-full lg:flex-1 lg:max-w-[340px]">
                 <p className="font-['Inter:regular',_sans-serif] leading-[20px] not-italic relative shrink-0 text-[#333740] text-[14px] sm:text-[16px] w-full">
                   Pricing Package
                 </p>
                 {/* Pricing Card */}
-                <div className="box-border flex flex-col gap-3 sm:gap-[16px] items-start overflow-clip px-4 sm:px-[16px] py-5 sm:py-[24px] relative rounded-2xl shrink-0 w-full lg:min-w-[291px] lg:w-auto bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(images/${getPricingPackage().toLowerCase()}-card-bg-image.svg)` }}>
+                <div className="box-border flex flex-col gap-3 sm:gap-[16px] items-start overflow-clip px-4 sm:px-[16px] py-5 sm:py-[24px] relative rounded-2xl shrink-0 w-full bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(images/${getPricingPackage().toLowerCase()}-card-bg-image.svg)` }}>
                     {/* Dark Overlay */}
                     <div className="absolute inset-0 bg-[rgba(0,0,0,0.3)] rounded-2xl pointer-events-none" />
 

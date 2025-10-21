@@ -33,7 +33,7 @@ function Avatar({ property1 = "Chris", size = "Default" }: AvatarProps) {
 function HamburgerIcon({ isOpen, onClick }: { isOpen: boolean; onClick: () => void }) {
   return (
     <button
-      className="md:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1.5 cursor-pointer p-1 bg-gray-800 rounded hover:bg-gray-700 transition-colors"
+      className="lg:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1.5 cursor-pointer p-1 bg-gray-800 rounded hover:bg-gray-700 transition-colors"
       onClick={onClick}
       aria-label="Toggle mobile menu"
     >
@@ -77,7 +77,7 @@ export default function Header({ activeSection, setActiveSection }: HeaderProps)
       <div className="box-border content-stretch flex items-center justify-center px-6 py-0 relative size-full bg-[#041117] sticky top-0 z-50">
         <div className="basis-0 content-stretch flex grow items-center justify-between max-w-[1440px] min-h-px min-w-px relative shrink-0">
           {/* Left Container - Logo */}
-          <div className="h-[88px] relative shrink-0 w-[306px] md:w-[306px] w-auto min-w-0">
+          <div className="h-[88px] relative shrink-0 w-[306px] lg:w-[306px] w-auto min-w-0">
             <button 
               className="absolute box-border content-stretch cursor-pointer flex gap-2 items-end justify-start left-0 overflow-visible p-0 top-1/2 translate-y-[-50%]"
               onClick={() => handleSectionClick('home')}
@@ -94,7 +94,7 @@ export default function Header({ activeSection, setActiveSection }: HeaderProps)
           </div>
 
           {/* Primary Navigation - Hidden on mobile */}
-          <div className="hidden md:flex box-border content-stretch gap-8 h-[88px] items-center justify-center px-4 py-0 relative shrink-0">
+          <div className="hidden lg:flex box-border content-stretch gap-8 h-[88px] items-center justify-center px-4 py-0 relative shrink-0">
             <button 
               className={`box-border content-stretch flex gap-2 items-center justify-center overflow-clip px-2.5 py-2 relative shrink-0 cursor-pointer hover:bg-gray-800 rounded-md transition-colors ${
                 activeSection === 'gallery' ? 'bg-gray-800' : ''
@@ -148,17 +148,17 @@ export default function Header({ activeSection, setActiveSection }: HeaderProps)
           </div>
 
           {/* Right Container - CTA Button, Avatar, and Hamburger Menu */}
-          <div className="content-stretch flex gap-[22px] h-[88px] items-center justify-end relative shrink-0 w-[306px] md:w-[306px] w-auto min-w-0">
+          <div className="content-stretch flex gap-[22px] h-[88px] items-center justify-end relative shrink-0 w-[306px] lg:w-[306px] w-auto min-w-0">
             {/* CTA Button - Hidden on mobile, visible on desktop */}
             <button 
               onClick={() => handleSectionClick('quote')}
-              className="!hidden md:!inline-flex btn btn-primary shrink-0 text-sm md:text-base px-4 md:px-6"
+              className="!hidden lg:!inline-flex btn btn-primary shrink-0 text-sm lg:text-base px-4 lg:px-6"
             >
               Get a quote
             </button>
 
             {/* Avatar - Hidden on mobile */}
-            <div className="hidden md:flex content-stretch gap-3 items-center justify-start relative shrink-0">
+            <div className="hidden lg:flex content-stretch gap-3 items-center justify-start relative shrink-0">
               <div className="bg-[#e7f6e5] content-stretch flex flex-col items-center justify-center relative rounded-[200px] shrink-0 size-10">
                 <Avatar property1="Chris" />
               </div>
@@ -172,7 +172,7 @@ export default function Header({ activeSection, setActiveSection }: HeaderProps)
 
       {/* Mobile Menu Overlay */}
       {isMobileMenuOpen && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 z-40 md:hidden" onClick={closeMobileMenu}>
+        <div className="fixed inset-0 bg-black bg-opacity-50 z-40 lg:hidden" onClick={closeMobileMenu}>
           <div className="fixed top-[88px] left-0 right-0 bg-gray-900 shadow-lg z-50" onClick={(e) => e.stopPropagation()}>
             <div className="flex flex-col">
               {/* Mobile Navigation Links */}
@@ -221,7 +221,7 @@ export default function Header({ activeSection, setActiveSection }: HeaderProps)
                 {/* CTA Button - Visible mobile*/}
                 <button 
                   onClick={() => handleSectionClick('quote')}
-                  className="btn btn-primary shrink-0 text-sm md:text-base px-4 md:px-6  w-fit self-start mb-4"
+                  className="btn btn-primary shrink-0 text-sm lg:text-base px-4 lg:px-6  w-fit self-start mb-4"
                 >
                   Get a quote
                 </button>
