@@ -626,8 +626,8 @@ export default function CreatePage() {
       console.log('Get a Quote clicked - navigate to pricing or quote page');
       // TODO: Navigate to pricing page or show quote form
     } else {
-      console.log('Moving to next step...');
-      // Add logic for next step
+    console.log('Moving to next step...');
+    // Add logic for next step
     }
   };
 
@@ -722,22 +722,26 @@ export default function CreatePage() {
           }
         }
         
-        /* Chat Content Container */
+        /* Chat Content Container - Clean Start */
         .chat-content-container {
           display: flex;
           flex-direction: column;
-          gap: 2rem;
-        }
-        
-        @media (min-width: 768px) {
-          .chat-content-container {
-            gap: 5rem;
-          }
+          flex: 1;
+          padding: 1rem 0;
         }
         
         /* Chat Text Box Container */
         .chat-text-box-container {
-          /* Styles will be applied via className */
+          margin-top: 2rem;
+        }
+        
+        /* Chat Message Spacing - Simple and Clean */
+        .chat-message {
+          margin-bottom: 2rem;
+        }
+        
+        .chat-message:last-child {
+          margin-bottom: 0;
         }
         
         /* Image Area Container */
@@ -745,24 +749,24 @@ export default function CreatePage() {
           width: 100%;
           border-radius: 1rem;
           overflow: hidden;
-          height: 300px;
+          height: 400px;
         }
         
         @media (min-width: 640px) {
           .image-area-container {
-            height: 350px;
+            height: 500px;
           }
         }
         
         @media (min-width: 768px) {
           .image-area-container {
-            height: 400px;
+            height: 600px;
           }
         }
         
         @media (min-width: 1024px) {
           .image-area-container {
-            height: 450px;
+            height: 700px;
           }
         }
         
@@ -771,6 +775,9 @@ export default function CreatePage() {
             flex: 1;
             height: 730px;
             max-width: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
           }
         }
       `}</style>
@@ -785,16 +792,16 @@ export default function CreatePage() {
             {/* Chat Title Container */}
             <div className="chat-title-container">
               <h1 className="font-semibold text-[28px] md:text-[40px] leading-[36px] md:leading-[48px] text-[#22252b]">
-                Create your perfect website template
-              </h1>
-            </div>
+              Create your perfect website template
+            </h1>
+          </div>
 
             {/* Chat Content Container */}
             <div className="chat-content-container">
             {/* Chat Messages or Suggested Prompts */}
             {showSuggestions ? (
-              <div className="flex flex-col gap-3">
-                <p className="font-['Inter'] text-[16px] md:text-[18px] leading-[22px] md:leading-[24px] text-[#333740]">
+              <div className="chat-message">
+                <p className="font-['Inter'] text-[16px] md:text-[18px] leading-[22px] md:leading-[24px] text-[#333740] mb-4">
                   Select a prompt to get started
                 </p>
                 <div className="flex flex-wrap gap-4">
@@ -815,38 +822,38 @@ export default function CreatePage() {
                 </div>
               </div>
             ) : (
-              <div className="flex flex-col gap-4 md:gap-6 max-h-[400px] md:max-h-[500px] overflow-y-auto">
+              <div className="space-y-4">
                 {chatMessages.map((message) => (
-                  <div key={message.id} className="flex flex-col gap-4">
+                  <div key={message.id} className="chat-message">
                     <div className={`flex ${message.type === 'user' ? 'justify-end' : 'items-start gap-2'}`}>
-                      {message.type === 'ai' && (
-                        <div className="flex-shrink-0 w-8 h-8">
-                          <img src={marketplaceLogo} alt="AI" className="w-full h-full" />
+                    {message.type === 'ai' && (
+                      <div className="flex-shrink-0 w-8 h-8">
+                        <img src={marketplaceLogo} alt="AI" className="w-full h-full" />
+                      </div>
+                    )}
+                    <div className={`${message.type === 'user' ? 'ml-10' : 'flex-1'}`}>
+                      {message.isTyping ? (
+                        <div className="flex items-center gap-1 p-2">
+                          <div className="w-2 h-2 bg-[#8cc63f] rounded-full animate-bounce" style={{ animationDelay: '0ms' }}></div>
+                          <div className="w-2 h-2 bg-[#8cc63f] rounded-full animate-bounce" style={{ animationDelay: '150ms' }}></div>
+                          <div className="w-2 h-2 bg-[#8cc63f] rounded-full animate-bounce" style={{ animationDelay: '300ms' }}></div>
+                        </div>
+                      ) : (
+                        <div className={`${
+                          message.type === 'user' 
+                            ? 'bg-white border border-[#d0d1d4] rounded-tl-2xl rounded-bl-2xl rounded-br-2xl p-4' 
+                            : 'bg-white border border-[#d0d1d4] rounded-tr-2xl rounded-bl-2xl rounded-br-2xl p-4'
+                        }`}>
+                          <p className="font-['Inter'] text-[14px] leading-[18px] text-[#333740]">
+                            {message.content}
+                          </p>
                         </div>
                       )}
-                      <div className={`${message.type === 'user' ? 'ml-10' : 'flex-1'}`}>
-                        {message.isTyping ? (
-                          <div className="flex items-center gap-1 p-2">
-                            <div className="w-2 h-2 bg-[#8cc63f] rounded-full animate-bounce" style={{ animationDelay: '0ms' }}></div>
-                            <div className="w-2 h-2 bg-[#8cc63f] rounded-full animate-bounce" style={{ animationDelay: '150ms' }}></div>
-                            <div className="w-2 h-2 bg-[#8cc63f] rounded-full animate-bounce" style={{ animationDelay: '300ms' }}></div>
-                          </div>
-                        ) : (
-                          <div className={`${
-                            message.type === 'user' 
-                              ? 'bg-white border border-[#d0d1d4] rounded-tl-2xl rounded-bl-2xl rounded-br-2xl p-4' 
-                              : 'bg-white border border-[#d0d1d4] rounded-tr-2xl rounded-bl-2xl rounded-br-2xl p-4'
-                          }`}>
-                            <p className="font-['Inter'] text-[14px] leading-[18px] text-[#333740]">
-                              {message.content}
-                            </p>
-                          </div>
-                        )}
-                      </div>
                     </div>
+                  </div>
                     {/* Show follow-up prompts if this is an AI message with follow-up prompts */}
                     {message.type === 'ai' && message.showFollowUpPrompts && (
-                      <div className="flex flex-col gap-3 items-end ml-4 md:ml-10">
+                      <div className="flex flex-col gap-3 items-end ml-4 md:ml-10 mt-4">
                         {followUpPrompts.map((item) => (
                           <button
                             key={item.id}
@@ -871,7 +878,7 @@ export default function CreatePage() {
                     )}
                     {/* Show feature prompts if this is an AI message with feature prompts */}
                     {message.type === 'ai' && message.showFeaturePrompts && (
-                      <div className="flex flex-col gap-3 items-end ml-4 md:ml-10">
+                      <div className="flex flex-col gap-3 items-end ml-4 md:ml-10 mt-4">
                         {featurePrompts.map((item) => (
                           <button
                             key={item.id}
@@ -896,7 +903,7 @@ export default function CreatePage() {
                     )}
                     {/* Show style prompts if this is an AI message with style prompts */}
                     {message.type === 'ai' && message.showStylePrompts && (
-                      <div className="flex flex-col gap-3 items-end ml-4 md:ml-10">
+                      <div className="flex flex-col gap-3 items-end ml-4 md:ml-10 mt-4">
                         {stylePrompts.map((item) => (
                           <button
                             key={item.id}
@@ -916,15 +923,15 @@ export default function CreatePage() {
                               className="w-2.5 h-2.5 flex-shrink-0" 
                             />
                           </button>
-                        ))}
-                      </div>
-                    )}
+                ))}
+              </div>
+            )}
                     {/* Show branding prompts if this is an AI message with branding prompts */}
                     {message.type === 'ai' && message.showBrandingPrompts && (
-                      <div className="flex flex-col gap-3 items-end ml-4 md:ml-10">
+                      <div className="flex flex-col gap-3 items-end ml-4 md:ml-10 mt-4">
                         {brandingPrompts.map((item) => (
                           <div key={item.id} className="flex flex-col gap-2 items-end w-full">
-                            <button
+                <button
                               onClick={() => handleBrandingToggle(item.id)}
                               className={`bg-white border rounded-lg px-4 py-4 hover:shadow-sm transition-all cursor-pointer text-left w-full max-w-[320px] flex items-center justify-between gap-4 ${
                                 selectedBranding.includes(item.id) 
@@ -940,7 +947,7 @@ export default function CreatePage() {
                                 alt={selectedBranding.includes(item.id) ? "Selected" : "Not selected"} 
                                 className="w-2.5 h-2.5 flex-shrink-0" 
                               />
-                            </button>
+                </button>
                             {/* Show URL input if "Pull from my current site" is selected */}
                             {selectedBranding.includes(item.id) && item.id === 20 && (
                               <div className="w-full max-w-[320px] bg-[#f5f5f5] border border-[#d0d1d4] rounded-lg px-4 py-3">
@@ -1002,7 +1009,7 @@ export default function CreatePage() {
                                             {(file.size / 1024).toFixed(1)} KB
                                           </p>
                                         </div>
-                                        <button
+                <button
                                           onClick={(e) => {
                                             e.stopPropagation();
                                             handleRemoveFile(index);
@@ -1013,8 +1020,8 @@ export default function CreatePage() {
                                             <line x1="18" y1="6" x2="6" y2="18"/>
                                             <line x1="6" y1="6" x2="18" y2="18"/>
                                           </svg>
-                                        </button>
-                                      </div>
+                </button>
+              </div>
                                     ))}
                                   </div>
                                 )}
@@ -1029,85 +1036,85 @@ export default function CreatePage() {
               </div>
             )}
 
-            {/* Chat Text Box Container */}
-            <div className="chat-text-box-container">
-            {showChatInput ? (
-              <div className="flex gap-2 w-full">
-                {/* Command Button */}
-                <button className="bg-white border border-[#d0d1d4] rounded-2xl p-3 md:p-4 hover:border-[#8cc63f] transition-colors flex-shrink-0">
-                  <img src={commandIcon} alt="Command" className="w-5 h-5 md:w-6 md:h-6" />
-                </button>
+              {/* Chat Text Box Container - Now part of scrollable content */}
+              <div className="chat-text-box-container">
+                {showChatInput ? (
+                  <div className="flex gap-2 w-full">
+                    {/* Command Button */}
+                    <button className="bg-white border border-[#d0d1d4] rounded-2xl p-3 md:p-4 hover:border-[#8cc63f] transition-colors flex-shrink-0">
+                      <img src={commandIcon} alt="Command" className="w-5 h-5 md:w-6 md:h-6" />
+                    </button>
 
-                {/* Text Input with Send Button */}
-                <div className="flex-1 bg-white border border-[#d0d1d4] rounded-2xl px-4 md:px-6 py-3 md:py-4 flex items-center justify-between gap-2 md:gap-4">
-                  <input
-                    type="text"
-                    value={promptInput}
-                    onChange={(e) => setPromptInput(e.target.value)}
-                    onKeyDown={(e) => e.key === 'Enter' && handleSubmit()}
-                    placeholder="Type something here..."
-                    className="flex-1 font-['Inter'] text-[14px] leading-[1.5] text-[#333740] placeholder:text-[#737780] outline-none bg-transparent"
-                  />
-                  <button
-                    onClick={handleSubmit}
-                    className="transform rotate-45 hover:scale-110 transition-transform"
-                    aria-label="Send"
-                  >
-                    <img src={sendIcon} alt="Send" className="w-4 h-4" />
-                  </button>
-                </div>
-              </div>
-            ) : (
-              <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between w-full gap-4">
-                {/* Back Button */}
-                <button
-                  onClick={handleBack}
-                  className="bg-white border border-[#d0d1d4] rounded-lg px-4 md:px-6 py-2.5 flex items-center justify-center gap-2 hover:border-[#8cc63f] hover:shadow-md transition-all"
-                >
-                  <img src={backArrowIcon} alt="Back" className="w-5 h-5" />
-                  <span className="font-['Inter'] text-[16px] leading-[20px] text-[#111215]">Back</span>
-                </button>
+                    {/* Text Input with Send Button */}
+                    <div className="flex-1 bg-white border border-[#d0d1d4] rounded-2xl px-4 md:px-6 py-3 md:py-4 flex items-center justify-between gap-2 md:gap-4">
+                      <input
+                        type="text"
+                        value={promptInput}
+                        onChange={(e) => setPromptInput(e.target.value)}
+                        onKeyDown={(e) => e.key === 'Enter' && handleSubmit()}
+                        placeholder="Type something here..."
+                        className="flex-1 font-['Inter'] text-[14px] leading-[1.5] text-[#333740] placeholder:text-[#737780] outline-none bg-transparent"
+                      />
+                      <button
+                        onClick={handleSubmit}
+                        className="transform rotate-45 hover:scale-110 transition-transform"
+                        aria-label="Send"
+                      >
+                        <img src={sendIcon} alt="Send" className="w-4 h-4" />
+                      </button>
+                    </div>
+                  </div>
+                ) : (
+                  <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between w-full gap-4">
+                    {/* Back Button */}
+                    <button
+                      onClick={handleBack}
+                      className="bg-white border border-[#d0d1d4] rounded-lg px-4 md:px-6 py-2.5 flex items-center justify-center gap-2 hover:border-[#8cc63f] hover:shadow-md transition-all"
+                    >
+                      <img src={backArrowIcon} alt="Back" className="w-5 h-5" />
+                      <span className="font-['Inter'] text-[16px] leading-[20px] text-[#111215]">Back</span>
+                    </button>
 
-                {/* Next/Get a Quote Button */}
-                <button
-                  onClick={handleNext}
-                  disabled={
-                    (conversationStep === 1 && selectedFollowUps.length === 0) ||
-                    (conversationStep === 2 && selectedFeatures.length === 0) ||
-                    (conversationStep === 3 && selectedStyles.length === 0) ||
-                    (conversationStep === 4 && (selectedBranding.length === 0 || (selectedBranding[0] === 20 && !websiteUrl.trim())))
-                  }
-                  className={`rounded-lg px-4 md:px-6 py-2.5 flex items-center justify-center gap-2 shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)] transition-colors ${
-                    (conversationStep === 1 && selectedFollowUps.length === 0) ||
-                    (conversationStep === 2 && selectedFeatures.length === 0) ||
-                    (conversationStep === 3 && selectedStyles.length === 0) ||
-                    (conversationStep === 4 && (selectedBranding.length === 0 || (selectedBranding[0] === 20 && !websiteUrl.trim())))
-                      ? 'bg-gray-300 cursor-not-allowed'
-                      : 'bg-[#0a7c00] hover:bg-[#0a6b00]'
-                  }`}
-                >
-                  <span className="font-['Inter'] text-[16px] leading-[20px] text-white">
-                    {conversationStep === 5 ? 'Get a Quote' : 'Next'}
-                  </span>
-                  <img src={forwardArrowIcon} alt={conversationStep === 5 ? 'Get a Quote' : 'Next'} className="w-5 h-5" />
-                </button>
+                    {/* Next/Get a Quote Button */}
+                    <button
+                      onClick={handleNext}
+                      disabled={
+                        (conversationStep === 1 && selectedFollowUps.length === 0) ||
+                        (conversationStep === 2 && selectedFeatures.length === 0) ||
+                        (conversationStep === 3 && selectedStyles.length === 0) ||
+                        (conversationStep === 4 && (selectedBranding.length === 0 || (selectedBranding[0] === 20 && !websiteUrl.trim())))
+                      }
+                      className={`rounded-lg px-4 md:px-6 py-2.5 flex items-center justify-center gap-2 shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)] transition-colors ${
+                        (conversationStep === 1 && selectedFollowUps.length === 0) ||
+                        (conversationStep === 2 && selectedFeatures.length === 0) ||
+                        (conversationStep === 3 && selectedStyles.length === 0) ||
+                        (conversationStep === 4 && (selectedBranding.length === 0 || (selectedBranding[0] === 20 && !websiteUrl.trim())))
+                          ? 'bg-gray-300 cursor-not-allowed'
+                          : 'bg-[#0a7c00] hover:bg-[#0a6b00]'
+                      }`}
+                    >
+                      <span className="font-['Inter'] text-[16px] leading-[20px] text-white">
+                        {conversationStep === 5 ? 'Get a Quote' : 'Next'}
+                      </span>
+                      <img src={forwardArrowIcon} alt={conversationStep === 5 ? 'Get a Quote' : 'Next'} className="w-5 h-5" />
+                    </button>
+                  </div>
+                )}
               </div>
-            )}
             </div>
-            </div>
-          </div>
+        </div>
 
           {/* Image Area Container */}
           <div className="image-area-container">
-            <div className="h-full overflow-y-auto">
-              <img 
+          <div className="h-full overflow-y-auto">
+            <img 
                 src={previewImage} 
-                alt="Template Preview" 
-                className="w-full h-auto"
-              />
-            </div>
+              alt="Template Preview" 
+              className="w-full h-auto"
+            />
           </div>
         </div>
+      </div>
       </div>
 
       {/* Footer Area - Already set and ready */}
