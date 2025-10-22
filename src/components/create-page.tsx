@@ -641,24 +641,164 @@ export default function CreatePage({ setActiveSection }: CreatePageProps = {}) {
   const showChatInput = conversationStep === 0;
 
   return (
-    <div className="w-full min-h-screen flex flex-col" style={{ background: 'linear-gradient(242.27deg, rgba(86, 152, 0, 0.1) 4%, rgba(231, 255, 201, 0.1) 43.62%, rgba(0, 167, 72, 0.1) 85.58%)' }}>
-      {/* Main Content Container */}
-      <div className="flex-1 flex flex-col lg:flex-row gap-8 px-4 md:px-8 lg:px-16 py-16 max-w-[1512px] mx-auto w-full">
-        {/* Left Panel - Creation Interface */}
-        <div className="flex-1 flex flex-col gap-20">
-          {/* Header */}
-          <div className="flex flex-col gap-6">
-            <h1 className="font-semibold text-[40px] leading-[48px] text-[#22252b]">
-              Create your perfect website template
-            </h1>
-          </div>
+    <div className="w-full flex flex-col create-page-override" style={{ background: 'linear-gradient(242.27deg, rgba(86, 152, 0, 0.1) 4%, rgba(231, 255, 201, 0.1) 43.62%, rgba(0, 167, 72, 0.1) 85.58%)', minHeight: '0 !important', height: 'auto !important' }}>
+      <style>{`
+        .create-page-override {
+          min-height: 0 !important;
+          height: auto !important;
+        }
+        .create-page-override * {
+          min-height: 0 !important;
+        }
+        .create-page-override,
+        .create-page-override > *,
+        .create-page-override > * > * {
+          min-height: 0 !important;
+          height: auto !important;
+        }
+        /* Override any min-h-screen classes */
+        .min-h-screen {
+          min-height: 0 !important;
+        }
+        
+        /* Content Area */
+        .content-area {
+          display: flex;
+          flex-direction: column;
+          gap: 2rem;
+          padding: 90px 60px;
+          width: 100%;
+        }
+        
+        @media (min-width: 1280px) {
+          .content-area {
+            flex-direction: row;
+          }
+        }
+        
+        /* Main Container */
+        .main-container {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          gap: 2rem;
+        }
+        
+        @media (min-width: 1280px) {
+          .main-container {
+            flex-direction: row;
+            gap: 4rem;
+          }
+        }
+        
+        /* Chat Area Container */
+        .chat-area-container {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          gap: 2rem;
+        }
+        
+        @media (min-width: 768px) {
+          .chat-area-container {
+            gap: 5rem;
+          }
+        }
+        
+        @media (min-width: 1280px) {
+          .chat-area-container {
+            width: 392px;
+            max-width: 392px;
+            flex-shrink: 0;
+          }
+        }
+        
+        /* Chat Title Container */
+        .chat-title-container {
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+        }
+        
+        @media (min-width: 768px) {
+          .chat-title-container {
+            gap: 1.5rem;
+          }
+        }
+        
+        /* Chat Content Container */
+        .chat-content-container {
+          display: flex;
+          flex-direction: column;
+          gap: 2rem;
+        }
+        
+        @media (min-width: 768px) {
+          .chat-content-container {
+            gap: 5rem;
+          }
+        }
+        
+        /* Chat Text Box Container */
+        .chat-text-box-container {
+          /* Styles will be applied via className */
+        }
+        
+        /* Image Area Container */
+        .image-area-container {
+          width: 100%;
+          border-radius: 1rem;
+          overflow: hidden;
+          height: 300px;
+        }
+        
+        @media (min-width: 640px) {
+          .image-area-container {
+            height: 350px;
+          }
+        }
+        
+        @media (min-width: 768px) {
+          .image-area-container {
+            height: 400px;
+          }
+        }
+        
+        @media (min-width: 1024px) {
+          .image-area-container {
+            height: 450px;
+          }
+        }
+        
+        @media (min-width: 1280px) {
+          .image-area-container {
+            flex: 1;
+            height: 730px;
+            max-width: none;
+          }
+        }
+      `}</style>
+      {/* Header Area - Already set and ready */}
+      
+      {/* Content Area */}
+      <div className="content-area" style={{ minHeight: '0 !important' }}>
+        {/* Main Container */}
+        <div className="main-container">
+          {/* Chat Area Container */}
+          <div className="chat-area-container">
+            {/* Chat Title Container */}
+            <div className="chat-title-container">
+              <h1 className="font-semibold text-[28px] md:text-[40px] leading-[36px] md:leading-[48px] text-[#22252b]">
+                Create your perfect website template
+              </h1>
+            </div>
 
-          {/* Content */}
-          <div className="flex flex-col gap-20">
+            {/* Chat Content Container */}
+            <div className="chat-content-container">
             {/* Chat Messages or Suggested Prompts */}
             {showSuggestions ? (
               <div className="flex flex-col gap-3">
-                <p className="font-['Inter'] text-[18px] leading-[24px] text-[#333740]">
+                <p className="font-['Inter'] text-[16px] md:text-[18px] leading-[22px] md:leading-[24px] text-[#333740]">
                   Select a prompt to get started
                 </p>
                 <div className="flex flex-wrap gap-4">
@@ -679,7 +819,7 @@ export default function CreatePage({ setActiveSection }: CreatePageProps = {}) {
                 </div>
               </div>
             ) : (
-              <div className="flex flex-col gap-6 max-h-[500px] overflow-y-auto">
+              <div className="flex flex-col gap-4 md:gap-6 max-h-[400px] md:max-h-[500px] overflow-y-auto">
                 {chatMessages.map((message) => (
                   <div key={message.id} className="flex flex-col gap-4">
                     <div className={`flex ${message.type === 'user' ? 'justify-end' : 'items-start gap-2'}`}>
@@ -710,12 +850,12 @@ export default function CreatePage({ setActiveSection }: CreatePageProps = {}) {
                     </div>
                     {/* Show follow-up prompts if this is an AI message with follow-up prompts */}
                     {message.type === 'ai' && message.showFollowUpPrompts && (
-                      <div className="flex flex-col gap-3 items-end ml-10">
+                      <div className="flex flex-col gap-3 items-end ml-4 md:ml-10">
                         {followUpPrompts.map((item) => (
                           <button
                             key={item.id}
                             onClick={() => handleFollowUpToggle(item.id)}
-                            className={`bg-white border rounded-lg px-4 py-4 hover:shadow-sm transition-all cursor-pointer text-left w-[320px] flex items-center justify-between gap-4 ${
+                            className={`bg-white border rounded-lg px-4 py-4 hover:shadow-sm transition-all cursor-pointer text-left w-full max-w-[320px] flex items-center justify-between gap-4 ${
                               selectedFollowUps.includes(item.id) 
                                 ? 'border-[#8cc63f] bg-[#f0f9e8]' 
                                 : 'border-[#d0d1d4]'
@@ -735,12 +875,12 @@ export default function CreatePage({ setActiveSection }: CreatePageProps = {}) {
                     )}
                     {/* Show feature prompts if this is an AI message with feature prompts */}
                     {message.type === 'ai' && message.showFeaturePrompts && (
-                      <div className="flex flex-col gap-3 items-end ml-10">
+                      <div className="flex flex-col gap-3 items-end ml-4 md:ml-10">
                         {featurePrompts.map((item) => (
                           <button
                             key={item.id}
                             onClick={() => handleFeatureToggle(item.id)}
-                            className={`bg-white border rounded-lg px-4 py-4 hover:shadow-sm transition-all cursor-pointer text-left w-[320px] flex items-center justify-between gap-4 ${
+                            className={`bg-white border rounded-lg px-4 py-4 hover:shadow-sm transition-all cursor-pointer text-left w-full max-w-[320px] flex items-center justify-between gap-4 ${
                               selectedFeatures.includes(item.id) 
                                 ? 'border-[#8cc63f] bg-[#f0f9e8]' 
                                 : 'border-[#d0d1d4]'
@@ -760,12 +900,12 @@ export default function CreatePage({ setActiveSection }: CreatePageProps = {}) {
                     )}
                     {/* Show style prompts if this is an AI message with style prompts */}
                     {message.type === 'ai' && message.showStylePrompts && (
-                      <div className="flex flex-col gap-3 items-end ml-10">
+                      <div className="flex flex-col gap-3 items-end ml-4 md:ml-10">
                         {stylePrompts.map((item) => (
                           <button
                             key={item.id}
                             onClick={() => handleStyleToggle(item.id)}
-                            className={`bg-white border rounded-lg px-4 py-4 hover:shadow-sm transition-all cursor-pointer text-left w-[320px] flex items-center justify-between gap-4 ${
+                            className={`bg-white border rounded-lg px-4 py-4 hover:shadow-sm transition-all cursor-pointer text-left w-full max-w-[320px] flex items-center justify-between gap-4 ${
                               selectedStyles.includes(item.id) 
                                 ? 'border-[#8cc63f] bg-[#f0f9e8]' 
                                 : 'border-[#d0d1d4]'
@@ -785,12 +925,12 @@ export default function CreatePage({ setActiveSection }: CreatePageProps = {}) {
                     )}
                     {/* Show branding prompts if this is an AI message with branding prompts */}
                     {message.type === 'ai' && message.showBrandingPrompts && (
-                      <div className="flex flex-col gap-3 items-end ml-10">
+                      <div className="flex flex-col gap-3 items-end ml-4 md:ml-10">
                         {brandingPrompts.map((item) => (
                           <div key={item.id} className="flex flex-col gap-2 items-end w-full">
                             <button
                               onClick={() => handleBrandingToggle(item.id)}
-                              className={`bg-white border rounded-lg px-4 py-4 hover:shadow-sm transition-all cursor-pointer text-left w-[320px] flex items-center justify-between gap-4 ${
+                              className={`bg-white border rounded-lg px-4 py-4 hover:shadow-sm transition-all cursor-pointer text-left w-full max-w-[320px] flex items-center justify-between gap-4 ${
                                 selectedBranding.includes(item.id) 
                                   ? 'border-[#8cc63f] bg-[#f0f9e8]' 
                                   : 'border-[#d0d1d4]'
@@ -807,7 +947,7 @@ export default function CreatePage({ setActiveSection }: CreatePageProps = {}) {
                             </button>
                             {/* Show URL input if "Pull from my current site" is selected */}
                             {selectedBranding.includes(item.id) && item.id === 20 && (
-                              <div className="w-[320px] bg-[#f5f5f5] border border-[#d0d1d4] rounded-lg px-4 py-3">
+                              <div className="w-full max-w-[320px] bg-[#f5f5f5] border border-[#d0d1d4] rounded-lg px-4 py-3">
                                 <input
                                   type="url"
                                   value={websiteUrl}
@@ -819,7 +959,7 @@ export default function CreatePage({ setActiveSection }: CreatePageProps = {}) {
                             )}
                             {/* Show upload area if "Upload my own files" is selected */}
                             {selectedBranding.includes(item.id) && item.id === 21 && (
-                              <div className="w-[320px] flex flex-col gap-2">
+                              <div className="w-full max-w-[320px] flex flex-col gap-2">
                                 <div 
                                   onDrop={handleDrop}
                                   onDragOver={handleDragOver}
@@ -893,16 +1033,17 @@ export default function CreatePage({ setActiveSection }: CreatePageProps = {}) {
               </div>
             )}
 
-            {/* Input Area or Action Buttons */}
+            {/* Chat Text Box Container */}
+            <div className="chat-text-box-container">
             {showChatInput ? (
               <div className="flex gap-2 w-full">
                 {/* Command Button */}
-                <button className="bg-white border border-[#d0d1d4] rounded-2xl p-4 hover:border-[#8cc63f] transition-colors">
-                  <img src={commandIcon} alt="Command" className="w-6 h-6" />
+                <button className="bg-white border border-[#d0d1d4] rounded-2xl p-3 md:p-4 hover:border-[#8cc63f] transition-colors flex-shrink-0">
+                  <img src={commandIcon} alt="Command" className="w-5 h-5 md:w-6 md:h-6" />
                 </button>
 
                 {/* Text Input with Send Button */}
-                <div className="flex-1 bg-white border border-[#d0d1d4] rounded-2xl px-6 py-4 flex items-center justify-between gap-4">
+                <div className="flex-1 bg-white border border-[#d0d1d4] rounded-2xl px-4 md:px-6 py-3 md:py-4 flex items-center justify-between gap-2 md:gap-4">
                   <input
                     type="text"
                     value={promptInput}
@@ -921,11 +1062,11 @@ export default function CreatePage({ setActiveSection }: CreatePageProps = {}) {
                 </div>
               </div>
             ) : (
-              <div className="flex items-center justify-between w-full">
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between w-full gap-4">
                 {/* Back Button */}
                 <button
                   onClick={handleBack}
-                  className="bg-white border border-[#d0d1d4] rounded-lg px-6 py-2.5 flex items-center gap-2 hover:border-[#8cc63f] hover:shadow-md transition-all"
+                  className="bg-white border border-[#d0d1d4] rounded-lg px-4 md:px-6 py-2.5 flex items-center justify-center gap-2 hover:border-[#8cc63f] hover:shadow-md transition-all"
                 >
                   <img src={backArrowIcon} alt="Back" className="w-5 h-5" />
                   <span className="font-['Inter'] text-[16px] leading-[20px] text-[#111215]">Back</span>
@@ -940,7 +1081,7 @@ export default function CreatePage({ setActiveSection }: CreatePageProps = {}) {
                     (conversationStep === 3 && selectedStyles.length === 0) ||
                     (conversationStep === 4 && (selectedBranding.length === 0 || (selectedBranding[0] === 20 && !websiteUrl.trim())))
                   }
-                  className={`rounded-lg px-6 py-2.5 flex items-center gap-2 shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)] transition-colors ${
+                  className={`rounded-lg px-4 md:px-6 py-2.5 flex items-center justify-center gap-2 shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)] transition-colors ${
                     (conversationStep === 1 && selectedFollowUps.length === 0) ||
                     (conversationStep === 2 && selectedFeatures.length === 0) ||
                     (conversationStep === 3 && selectedStyles.length === 0) ||
@@ -956,21 +1097,24 @@ export default function CreatePage({ setActiveSection }: CreatePageProps = {}) {
                 </button>
               </div>
             )}
+            </div>
+            </div>
           </div>
-        </div>
 
-        {/* Right Panel - Template Preview */}
-        <div className="w-full lg:w-[960px] border border-[#d0d1d4] rounded-2xl overflow-hidden h-[730px]">
-          <div className="h-full overflow-y-auto">
-            <img 
-              src={previewImage} 
-              alt="Template Preview" 
-              className="w-full h-auto"
-            />
+          {/* Image Area Container */}
+          <div className="image-area-container">
+            <div className="h-full overflow-y-auto">
+              <img 
+                src={previewImage} 
+                alt="Template Preview" 
+                className="w-full h-auto"
+              />
+            </div>
           </div>
         </div>
       </div>
+
+      {/* Footer Area - Already set and ready */}
     </div>
   );
 }
-
