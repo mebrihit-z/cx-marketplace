@@ -1,12 +1,12 @@
 import { useState } from 'react';
-import type { ActiveSection } from '../types';
 import QuoteSummary from './quote-summary';
 
 const imgError = "icons/info-icon.svg";
+const whiteInfoIcon = "icons/white-info-icon.svg";
 const imgCheckmark = "icons/green-check-icon.svg";
 
 interface GetQuoteProps {
-  setActiveSection: (section: ActiveSection) => void;
+  // No props needed currently
 }
 
 interface CategoryOption {
@@ -95,7 +95,7 @@ const MarketplaceLogo = () => {
 };
 
 
-export default function GetQuote({ setActiveSection }: GetQuoteProps) {
+export default function GetQuote({}: GetQuoteProps) {
   const [selectedCategory, setSelectedCategory] = useState<string>('');
   const [selectedFeatures, setSelectedFeatures] = useState<string[]>([]);
   const [selectedPageOption, setSelectedPageOption] = useState<string>('');
@@ -105,6 +105,7 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
   const [selectedDesignServices, setSelectedDesignServices] = useState<string[]>([]);
   const [currentStep, setCurrentStep] = useState(1);
   const [showSummary, setShowSummary] = useState(false);
+  const [imageLoaded, setImageLoaded] = useState(false);
   const totalSteps = 7;
 
   const selectCategory = (categoryId: string) => {
@@ -121,6 +122,7 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
 
   const selectPageOption = (optionId: string) => {
     setSelectedPageOption(optionId);
+    setImageLoaded(false); // Reset image loaded state when package changes
   };
 
   const selectUserOption = (optionId: string) => {
@@ -176,11 +178,26 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
     setShowSummary(false);
   };
 
+  // Function to determine pricing package based on page count
+  const getPricingPackage = (): string => {
+    switch (selectedPageOption) {
+      case 'up-to-100':
+        return 'Basic';
+      case 'up-to-500':
+        return 'Pro';
+      case 'up-to-1000':
+        return 'Premium';
+      case 'not-sure':
+        return 'Pro'; // Default to Pro if not sure
+      default:
+        return 'Premium';
+    }
+  };
+
   // Show summary if user clicked "View summary"
   if (showSummary) {
     return (
       <QuoteSummary
-        setActiveSection={setActiveSection}
         selectedCategories={selectedCategory ? [selectedCategory] : []}
         selectedFeatures={selectedFeatures}
         selectedPageOption={selectedPageOption}
@@ -195,17 +212,17 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#f5f9f5] to-white flex flex-col">
-      <div className="max-w-[1400px] mx-auto px-8 py-12 flex-1 flex flex-col">
-        <div className="flex items-stretch justify-between gap-8 flex-1">
+    <div className="flex flex-col" style={{ background: 'linear-gradient(242.27deg, rgba(86, 152, 0, 0.1) 4%, rgba(231, 255, 201, 0.1) 43.62%, rgba(0, 167, 72, 0.1) 85.58%)' }}>
+      <div className="box-border w-full px-4 py-6 sm:p-6 md:p-8 lg:p-12 gap-6 lg:gap-8">
+        <div className="flex flex-col lg:flex-row items-stretch justify-between gap-6 lg:gap-8 flex-1">
           {/* Main Content Area */}
           <div className="flex-1 flex flex-col items-start justify-between">
             {/* Text Container */}
-            <div className="flex flex-col gap-6 items-start w-full mb-8">
-              <h1 className="font-['Inter:Semi_Bold',_sans-serif] font-semibold text-[40px] leading-[48px] text-[#22252b] w-full">
+            <div className="flex flex-col gap-4 md:gap-6 items-start w-full mb-6 md:mb-8">
+              <h1 className="font-['Inter:Semi_Bold',_sans-serif] font-semibold text-[28px] md:text-[32px] lg:text-[40px] leading-[34px] md:leading-[40px] lg:leading-[48px] text-[#22252b] w-full">
                 Get a personalized quote, instantly.
               </h1>
-              <p className="font-['Inter:regular',_sans-serif] text-[18px] leading-[24px] text-[#333740] w-full">
+              <p className="font-['Inter:regular',_sans-serif] text-[16px] md:text-[18px] leading-[22px] md:leading-[24px] text-[#333740] w-full">
                 Let us help you find the right website template and pricing package for your content needs.
               </p>
             </div>
@@ -220,7 +237,7 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                   <div className="flex flex-col gap-0.5 items-start w-full">
                     <div className="flex gap-2 items-start">
                       <MarketplaceLogo />
-                      <div className="bg-white border border-[#d5d5d5] rounded-bl-2xl rounded-br-2xl rounded-tr-2xl w-[646px]">
+                      <div className="bg-white border border-[#d5d5d5] rounded-bl-2xl rounded-br-2xl rounded-tr-2xl w-full lg:min-w-[600px]">
                         <div className="flex flex-col gap-1 items-start p-4">
                           <p className="font-['Inter:regular',_sans-serif] text-[14px] leading-[18px] text-[#333740]">
                             What type of website are you looking for?
@@ -232,10 +249,10 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                 </div>
 
                 {/* Answers */}
-                <div className="flex flex-col gap-2.5 items-end w-full">
-                  <div className="flex flex-col gap-4 items-center justify-center">
+                <div className="flex flex-col gap-2.5 items-center lg:items-end w-full">
+                  <div className="flex flex-col gap-3 md:gap-4 items-center lg:items-end justify-center w-full">
                     {/* Row 1 */}
-                    <div className="flex gap-4 items-start">
+                    <div className="flex flex-col sm:flex-row gap-3 md:gap-4 items-stretch sm:items-start w-full sm:w-auto">
                       {categories.slice(0, 3).map(category => (
                         <button
                           key={category.id}
@@ -244,7 +261,7 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                             selectedCategory === category.id
                               ? 'border-[#0a7c00] bg-[#f0f9ee]'
                               : 'border-[#d0d1d4]'
-                          } rounded-lg w-[240px] relative hover:border-[#0a7c00] transition-colors`}
+                          } rounded-lg w-full sm:w-[240px] relative hover:border-[#0a7c00] transition-colors`}
                         >
                           <div className="flex gap-4 items-center px-4 py-6 relative">
                             <div className="flex-1 flex flex-col gap-1.5 items-start justify-center">
@@ -263,7 +280,7 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                     </div>
 
                     {/* Row 2 */}
-                    <div className="flex gap-4 items-start">
+                    <div className="flex flex-col sm:flex-row gap-3 md:gap-4 items-stretch sm:items-start w-full sm:w-auto">
                       {categories.slice(3, 6).map(category => (
                         <button
                           key={category.id}
@@ -272,7 +289,7 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                             selectedCategory === category.id
                               ? 'border-[#0a7c00] bg-[#f0f9ee]'
                               : 'border-[#d0d1d4]'
-                          } rounded-lg w-[240px] relative hover:border-[#0a7c00] transition-colors`}
+                          } rounded-lg w-full sm:w-[240px] relative hover:border-[#0a7c00] transition-colors`}
                         >
                           <div className="flex gap-4 items-center px-4 py-6 relative">
                             <div className="flex-1 flex flex-col gap-1.5 items-start justify-center">
@@ -291,7 +308,7 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                     </div>
 
                     {/* Row 3 */}
-                    <div className="flex gap-4 items-start">
+                    <div className="flex flex-col sm:flex-row gap-3 md:gap-4 items-stretch sm:items-start w-full sm:w-auto">
                       {categories.slice(6, 9).map(category => (
                         <button
                           key={category.id}
@@ -300,7 +317,7 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                             selectedCategory === category.id
                               ? 'border-[#0a7c00] bg-[#f0f9ee]'
                               : 'border-[#d0d1d4]'
-                          } rounded-lg w-[240px] relative hover:border-[#0a7c00] transition-colors`}
+                          } rounded-lg w-full sm:w-[240px] relative hover:border-[#0a7c00] transition-colors`}
                         >
                           <div className="flex gap-4 items-center px-4 py-6 relative">
                             <div className="flex-1 flex flex-col gap-1.5 items-start justify-center">
@@ -330,7 +347,7 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                   <div className="flex flex-col gap-0.5 items-start w-full">
                     <div className="flex gap-2 items-start">
                       <MarketplaceLogo />
-                      <div className="bg-white border border-[#d5d5d5] rounded-bl-2xl rounded-br-2xl rounded-tr-2xl w-[646px]">
+                      <div className="bg-white border border-[#d5d5d5] rounded-bl-2xl rounded-br-2xl rounded-tr-2xl w-full lg:min-w-[600px]">
                         <div className="flex flex-col gap-1 items-start p-4">
                           <p className="font-['Inter:regular',_sans-serif] text-[14px] leading-[18px] text-[#333740]">
                             What features does your startup website need?
@@ -342,10 +359,10 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                 </div>
 
                 {/* Answers */}
-                <div className="flex flex-col gap-2.5 items-end w-full">
-                  <div className="flex flex-col gap-4 items-center justify-center">
+                <div className="flex flex-col gap-2.5 items-center lg:items-end w-full">
+                  <div className="flex flex-col gap-3 md:gap-4 items-center lg:items-end justify-center w-full">
                     {/* Row 1 */}
-                    <div className="flex gap-4 items-start">
+                    <div className="flex flex-col sm:flex-row gap-3 md:gap-4 items-stretch sm:items-start w-full sm:w-auto">
                       {features.slice(0, 3).map(feature => (
                         <button
                           key={feature.id}
@@ -354,7 +371,7 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                             selectedFeatures.includes(feature.id)
                               ? 'border-[#0a7c00] bg-[#f0f9ee]'
                               : 'border-[#d0d1d4]'
-                          } rounded-lg w-[240px] relative hover:border-[#0a7c00] transition-colors`}
+                          } rounded-lg w-full sm:w-[240px] relative hover:border-[#0a7c00] transition-colors`}
                         >
                           <div className="flex gap-4 items-center px-4 py-6 relative">
                             <div className="flex-1 flex flex-col gap-1.5 items-start justify-center">
@@ -373,7 +390,7 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                     </div>
 
                     {/* Row 2 */}
-                    <div className="flex gap-4 items-start">
+                    <div className="flex flex-col sm:flex-row gap-3 md:gap-4 items-stretch sm:items-start w-full sm:w-auto">
                       {features.slice(3, 6).map(feature => (
                         <button
                           key={feature.id}
@@ -382,7 +399,7 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                             selectedFeatures.includes(feature.id)
                               ? 'border-[#0a7c00] bg-[#f0f9ee]'
                               : 'border-[#d0d1d4]'
-                          } rounded-lg w-[240px] relative hover:border-[#0a7c00] transition-colors`}
+                          } rounded-lg w-full sm:w-[240px] relative hover:border-[#0a7c00] transition-colors`}
                         >
                           <div className="flex gap-4 items-center px-4 py-6 relative">
                             <div className="flex-1 flex flex-col gap-1.5 items-start justify-center">
@@ -401,7 +418,7 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                     </div>
 
                     {/* Row 3 */}
-                    <div className="flex gap-4 items-start">
+                    <div className="flex flex-col sm:flex-row gap-3 md:gap-4 items-stretch sm:items-start w-full sm:w-auto">
                       {features.slice(6, 9).map(feature => (
                         <button
                           key={feature.id}
@@ -410,7 +427,7 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                             selectedFeatures.includes(feature.id)
                               ? 'border-[#0a7c00] bg-[#f0f9ee]'
                               : 'border-[#d0d1d4]'
-                          } rounded-lg w-[240px] relative hover:border-[#0a7c00] transition-colors`}
+                          } rounded-lg w-full sm:w-[240px] relative hover:border-[#0a7c00] transition-colors`}
                         >
                           <div className="flex gap-4 items-center px-4 py-6 relative">
                             <div className="flex-1 flex flex-col gap-1.5 items-start justify-center">
@@ -440,7 +457,7 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                   <div className="flex flex-col gap-0.5 items-start w-full">
                     <div className="flex gap-2 items-start">
                       <MarketplaceLogo />
-                      <div className="bg-white border border-[#d5d5d5] rounded-bl-2xl rounded-br-2xl rounded-tr-2xl w-[646px]">
+                      <div className="bg-white border border-[#d5d5d5] rounded-bl-2xl rounded-br-2xl rounded-tr-2xl w-full lg:min-w-[600px]">
                         <div className="flex flex-col gap-1 items-start p-4">
                           <p className="font-['Inter:regular',_sans-serif] text-[14px] leading-[18px] text-[#333740]">
                             What is the total number of desired pages across your website?
@@ -452,10 +469,10 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                 </div>
 
                 {/* Answers */}
-                <div className="flex flex-col gap-2.5 items-end w-full">
-                  <div className="flex flex-col gap-4 items-end justify-center">
+                <div className="flex flex-col gap-2.5 items-center lg:items-end w-full">
+                  <div className="flex flex-col gap-3 md:gap-4 items-center lg:items-end justify-center w-full">
                     {/* Row 1 */}
-                    <div className="flex gap-4 items-start">
+                    <div className="flex flex-col sm:flex-row gap-3 md:gap-4 items-stretch sm:items-start w-full sm:w-auto">
                       {pageOptions.slice(0, 3).map(option => (
                         <button
                           key={option.id}
@@ -464,7 +481,7 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                             selectedPageOption === option.id
                               ? 'border-[#0a7c00] bg-[#f0f9ee]'
                               : 'border-[#d0d1d4]'
-                          } rounded-lg w-[240px] relative hover:border-[#0a7c00] transition-colors`}
+                          } rounded-lg w-full sm:w-[240px] relative hover:border-[#0a7c00] transition-colors`}
                         >
                           <div className="flex gap-4 items-center px-4 py-6 relative">
                             <div className="flex-1 flex flex-col gap-1.5 items-start justify-center">
@@ -483,14 +500,14 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                     </div>
 
                     {/* Row 2 - Wider option */}
-                    <div className="flex gap-4 items-start">
+                    <div className="flex gap-3 md:gap-4 items-start w-full sm:w-auto">
                       <button
                         onClick={() => selectPageOption('not-sure')}
                         className={`bg-white border ${
                           selectedPageOption === 'not-sure'
                             ? 'border-[#0a7c00] bg-[#f0f9ee]'
                             : 'border-[#d0d1d4]'
-                        } rounded-lg w-[400px] relative hover:border-[#0a7c00] transition-colors`}
+                        } rounded-lg w-full sm:w-[400px] relative hover:border-[#0a7c00] transition-colors`}
                       >
                         <div className="flex gap-4 items-center px-4 py-6 relative">
                           <div className="flex-1 flex flex-col gap-1.5 items-start justify-center">
@@ -519,7 +536,7 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                   <div className="flex flex-col gap-0.5 items-start w-full">
                     <div className="flex gap-2 items-start">
                       <MarketplaceLogo />
-                      <div className="bg-white border border-[#d5d5d5] rounded-bl-2xl rounded-br-2xl rounded-tr-2xl w-[646px]">
+                      <div className="bg-white border border-[#d5d5d5] rounded-bl-2xl rounded-br-2xl rounded-tr-2xl w-full lg:min-w-[600px]">
                         <div className="flex flex-col gap-1 items-start p-4">
                           <p className="font-['Inter:regular',_sans-serif] text-[14px] leading-[18px] text-[#333740]">
                             How many authorized users will manage your website?
@@ -531,10 +548,10 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                 </div>
 
                 {/* Answers */}
-                <div className="flex flex-col gap-2.5 items-end w-full">
-                  <div className="flex flex-col gap-4 items-end justify-center">
+                <div className="flex flex-col gap-2.5 items-center lg:items-end w-full">
+                  <div className="flex flex-col gap-3 md:gap-4 items-center lg:items-end justify-center w-full">
                     {/* Row 1 */}
-                    <div className="flex gap-4 items-start">
+                    <div className="flex flex-col sm:flex-row gap-3 md:gap-4 items-stretch sm:items-start w-full sm:w-auto">
                       {userOptions.slice(0, 3).map(option => (
                         <button
                           key={option.id}
@@ -543,7 +560,7 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                             selectedUserOption === option.id
                               ? 'border-[#0a7c00] bg-[#f0f9ee]'
                               : 'border-[#d0d1d4]'
-                          } rounded-lg w-[240px] relative hover:border-[#0a7c00] transition-colors`}
+                          } rounded-lg w-full sm:w-[240px] relative hover:border-[#0a7c00] transition-colors`}
                         >
                           <div className="flex gap-4 items-center px-4 py-6 relative">
                             <div className="flex-1 flex flex-col gap-1.5 items-start justify-center">
@@ -562,14 +579,14 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                     </div>
 
                     {/* Row 2 - Wider option */}
-                    <div className="flex gap-4 items-start">
+                    <div className="flex gap-3 md:gap-4 items-start w-full sm:w-auto">
                       <button
                         onClick={() => selectUserOption('not-sure-users')}
                         className={`bg-white border ${
                           selectedUserOption === 'not-sure-users'
                             ? 'border-[#0a7c00] bg-[#f0f9ee]'
                             : 'border-[#d0d1d4]'
-                        } rounded-lg w-[400px] relative hover:border-[#0a7c00] transition-colors`}
+                        } rounded-lg w-full sm:w-[400px] relative hover:border-[#0a7c00] transition-colors`}
                       >
                         <div className="flex gap-4 items-center px-4 py-6 relative">
                           <div className="flex-1 flex flex-col gap-1.5 items-start justify-center">
@@ -598,7 +615,7 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                   <div className="flex flex-col gap-0.5 items-start w-full">
                     <div className="flex gap-2 items-start">
                       <MarketplaceLogo />
-                      <div className="bg-white border border-[#d5d5d5] rounded-bl-2xl rounded-br-2xl rounded-tr-2xl w-[646px]">
+                      <div className="bg-white border border-[#d5d5d5] rounded-bl-2xl rounded-br-2xl rounded-tr-2xl w-full lg:min-w-[600px]">
                         <div className="flex flex-col gap-1 items-start p-4">
                           <p className="font-['Inter:regular',_sans-serif] text-[14px] leading-[18px] text-[#333740]">
                             What level of customization do you prefer?
@@ -610,8 +627,8 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                 </div>
 
                 {/* Answers */}
-                <div className="flex flex-col gap-2.5 items-end w-full">
-                  <div className="flex flex-col gap-4 items-end justify-center">
+                <div className="flex flex-col gap-2.5 items-center lg:items-end w-full">
+                  <div className="flex flex-col gap-3 md:gap-4 items-center lg:items-end justify-center w-full">
                     {customizationOptions.map(option => (
                       <button
                         key={option.id}
@@ -620,7 +637,7 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                           selectedCustomizationOption === option.id
                             ? 'border-[#0a7c00] bg-[#f0f9ee]'
                             : 'border-[#d0d1d4]'
-                        } rounded-lg w-[400px] relative hover:border-[#0a7c00] transition-colors`}
+                        } rounded-lg w-full sm:w-[400px] relative hover:border-[#0a7c00] transition-colors`}
                       >
                         <div className="flex gap-4 items-center px-4 py-6 relative">
                           <div className="flex-1 flex flex-col gap-1.5 items-start justify-center">
@@ -649,7 +666,7 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                   <div className="flex flex-col gap-0.5 items-start w-full">
                     <div className="flex gap-2 items-start">
                       <MarketplaceLogo />
-                      <div className="bg-white border border-[#d5d5d5] rounded-bl-2xl rounded-br-2xl rounded-tr-2xl w-[646px]">
+                      <div className="bg-white border border-[#d5d5d5] rounded-bl-2xl rounded-br-2xl rounded-tr-2xl w-full lg:min-w-[600px]">
                         <div className="flex flex-col gap-1 items-start p-4">
                           <p className="font-['Inter:regular',_sans-serif] text-[14px] leading-[18px] text-[#333740]">
                             Does your website need any extra functionality?
@@ -661,10 +678,10 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                 </div>
 
                 {/* Answers */}
-                <div className="flex flex-col gap-2.5 items-end w-full">
-                  <div className="flex flex-col gap-4 items-end justify-center">
+                <div className="flex flex-col gap-2.5 items-center lg:items-end w-full">
+                  <div className="flex flex-col gap-3 md:gap-4 items-center lg:items-end justify-center w-full">
                     {/* Row 1 */}
-                    <div className="flex gap-4 items-start">
+                    <div className="flex flex-col sm:flex-row gap-3 md:gap-4 items-stretch sm:items-start w-full sm:w-auto">
                       {extraFunctionalityOptions.slice(0, 3).map(option => (
                         <button
                           key={option.id}
@@ -673,7 +690,7 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                             selectedExtraFunctionality.includes(option.id)
                               ? 'border-[#0a7c00] bg-[#f0f9ee]'
                               : 'border-[#d0d1d4]'
-                          } rounded-lg w-[240px] relative hover:border-[#0a7c00] transition-colors`}
+                          } rounded-lg w-full sm:w-[240px] relative hover:border-[#0a7c00] transition-colors`}
                         >
                           <div className="flex gap-4 items-center px-4 py-6 relative">
                             <div className="flex-1 flex flex-col gap-1.5 items-start justify-center">
@@ -692,7 +709,7 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                     </div>
 
                     {/* Row 2 */}
-                    <div className="flex gap-4 items-start">
+                    <div className="flex flex-col sm:flex-row gap-3 md:gap-4 items-stretch sm:items-start w-full sm:w-auto">
                       {extraFunctionalityOptions.slice(3, 6).map(option => (
                         <button
                           key={option.id}
@@ -701,7 +718,7 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                             selectedExtraFunctionality.includes(option.id)
                               ? 'border-[#0a7c00] bg-[#f0f9ee]'
                               : 'border-[#d0d1d4]'
-                          } rounded-lg w-[240px] relative hover:border-[#0a7c00] transition-colors`}
+                          } rounded-lg w-full sm:w-[240px] relative hover:border-[#0a7c00] transition-colors`}
                         >
                           <div className="flex gap-4 items-center px-4 py-6 relative">
                             <div className="flex-1 flex flex-col gap-1.5 items-start justify-center">
@@ -720,7 +737,7 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                     </div>
 
                     {/* Row 3 */}
-                    <div className="flex gap-4 items-start">
+                    <div className="flex flex-col sm:flex-row gap-3 md:gap-4 items-stretch sm:items-start w-full sm:w-auto">
                       {extraFunctionalityOptions.slice(6, 9).map(option => (
                         <button
                           key={option.id}
@@ -729,7 +746,7 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                             selectedExtraFunctionality.includes(option.id)
                               ? 'border-[#0a7c00] bg-[#f0f9ee]'
                               : 'border-[#d0d1d4]'
-                          } rounded-lg w-[240px] relative hover:border-[#0a7c00] transition-colors`}
+                          } rounded-lg w-full sm:w-[240px] relative hover:border-[#0a7c00] transition-colors`}
                         >
                           <div className="flex gap-4 items-center px-4 py-6 relative">
                             <div className="flex-1 flex flex-col gap-1.5 items-start justify-center">
@@ -748,14 +765,14 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                     </div>
 
                     {/* Row 4 - Wider option */}
-                    <div className="flex gap-4 items-start">
+                    <div className="flex gap-3 md:gap-4 items-start w-full sm:w-auto">
                       <button
                         onClick={() => toggleExtraFunctionality('none-basics')}
                         className={`bg-white border ${
                           selectedExtraFunctionality.includes('none-basics')
                             ? 'border-[#0a7c00] bg-[#f0f9ee]'
                             : 'border-[#d0d1d4]'
-                        } rounded-lg w-[400px] relative hover:border-[#0a7c00] transition-colors`}
+                        } rounded-lg w-full sm:w-[400px] relative hover:border-[#0a7c00] transition-colors`}
                       >
                         <div className="flex gap-4 items-center px-4 py-6 relative">
                           <div className="flex-1 flex flex-col gap-1.5 items-start justify-center">
@@ -784,7 +801,7 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                   <div className="flex flex-col gap-0.5 items-start w-full">
                     <div className="flex gap-2 items-start">
                       <MarketplaceLogo />
-                      <div className="bg-white border border-[#d5d5d5] rounded-bl-2xl rounded-br-2xl rounded-tr-2xl w-[646px]">
+                      <div className="bg-white border border-[#d5d5d5] rounded-bl-2xl rounded-br-2xl rounded-tr-2xl w-full lg:min-w-[600px]">
                         <div className="flex flex-col gap-1 items-start p-4">
                           <p className="font-['Inter:regular',_sans-serif] text-[14px] leading-[18px] text-[#333740]">
                             Are you in need of any additional design services?
@@ -796,10 +813,10 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                 </div>
 
                 {/* Answers */}
-                <div className="flex flex-col gap-2.5 items-end w-full">
-                  <div className="flex flex-col gap-4 items-end justify-center">
+                <div className="flex flex-col gap-2.5 items-center lg:items-end w-full">
+                  <div className="flex flex-col gap-3 md:gap-4 items-center lg:items-end justify-center w-full">
                     {/* Row 1 */}
-                    <div className="flex gap-4 items-start">
+                    <div className="flex flex-col sm:flex-row gap-3 md:gap-4 items-stretch sm:items-start w-full sm:w-auto">
                       {designServicesOptions.slice(0, 3).map(option => (
                         <button
                           key={option.id}
@@ -808,7 +825,7 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                             selectedDesignServices.includes(option.id)
                               ? 'border-[#0a7c00] bg-[#f0f9ee]'
                               : 'border-[#d0d1d4]'
-                          } rounded-lg w-[240px] relative hover:border-[#0a7c00] transition-colors`}
+                          } rounded-lg w-full sm:w-[240px] relative hover:border-[#0a7c00] transition-colors`}
                         >
                           <div className="flex gap-4 items-center px-4 py-6 relative">
                             <div className="flex-1 flex flex-col gap-1.5 items-start justify-center">
@@ -827,7 +844,7 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                     </div>
 
                     {/* Row 2 */}
-                    <div className="flex gap-4 items-start">
+                    <div className="flex flex-col sm:flex-row gap-3 md:gap-4 items-stretch sm:items-start w-full sm:w-auto">
                       {designServicesOptions.slice(3, 6).map(option => (
                         <button
                           key={option.id}
@@ -836,7 +853,7 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                             selectedDesignServices.includes(option.id)
                               ? 'border-[#0a7c00] bg-[#f0f9ee]'
                               : 'border-[#d0d1d4]'
-                          } rounded-lg w-[240px] relative hover:border-[#0a7c00] transition-colors`}
+                          } rounded-lg w-full sm:w-[240px] relative hover:border-[#0a7c00] transition-colors`}
                         >
                           <div className="flex gap-4 items-center px-4 py-6 relative">
                             <div className="flex-1 flex flex-col gap-1.5 items-start justify-center">
@@ -855,7 +872,7 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                     </div>
 
                     {/* Row 3 */}
-                    <div className="flex gap-4 items-start">
+                    <div className="flex flex-col sm:flex-row gap-3 md:gap-4 items-stretch sm:items-start w-full sm:w-auto">
                       {designServicesOptions.slice(6, 9).map(option => (
                         <button
                           key={option.id}
@@ -864,7 +881,7 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                             selectedDesignServices.includes(option.id)
                               ? 'border-[#0a7c00] bg-[#f0f9ee]'
                               : 'border-[#d0d1d4]'
-                          } rounded-lg w-[240px] relative hover:border-[#0a7c00] transition-colors`}
+                          } rounded-lg w-full sm:w-[240px] relative hover:border-[#0a7c00] transition-colors`}
                         >
                           <div className="flex gap-4 items-center px-4 py-6 relative">
                             <div className="flex-1 flex flex-col gap-1.5 items-start justify-center">
@@ -883,14 +900,14 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                     </div>
 
                     {/* Row 4 - Wider option */}
-                    <div className="flex gap-4 items-start">
+                    <div className="flex gap-3 md:gap-4 items-start w-full sm:w-auto">
                       <button
                         onClick={() => toggleDesignService('no-extras')}
                         className={`bg-white border ${
                           selectedDesignServices.includes('no-extras')
                             ? 'border-[#0a7c00] bg-[#f0f9ee]'
                             : 'border-[#d0d1d4]'
-                        } rounded-lg w-[400px] relative hover:border-[#0a7c00] transition-colors`}
+                        } rounded-lg w-full sm:w-[400px] relative hover:border-[#0a7c00] transition-colors`}
                       >
                         <div className="flex gap-4 items-center px-4 py-6 relative">
                           <div className="flex-1 flex flex-col gap-1.5 items-start justify-center">
@@ -912,13 +929,13 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
               )}
 
               {/* Actions */}
-              <div className="flex items-center justify-between w-full">
+              <div className="flex flex-col md:flex-row items-center justify-between w-full gap-4 md:gap-0">
                 {/* Left Container - Previous Button */}
-                <div className="h-10 w-[320px]">
+                <div className="h-10 w-full md:w-[320px] order-2 md:order-1">
                   {currentStep > 1 && (
                     <button
                       onClick={handlePrevious}
-                      className="bg-white border border-[#d0d1d4] flex items-center justify-center gap-2 px-6 py-2.5 rounded-lg shadow-sm hover:bg-gray-50 transition-colors"
+                      className="bg-white border border-[#d0d1d4] flex items-center justify-center gap-2 px-6 py-2.5 rounded-lg shadow-sm hover:bg-gray-50 transition-colors w-full md:w-auto"
                     >
                       <img src="icons/black-back-arrow.svg" alt="Previous" />
                       <span className="font-['Inter:regular',_sans-serif] text-[16px] leading-[20px] text-[#22252b]">Back</span>
@@ -927,11 +944,11 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                 </div>
                 
                 {/* Progress Indicators */}
-                <div className="flex gap-1 items-center">
+                <div className="flex gap-1 items-center order-1 md:order-2">
                   {Array.from({ length: totalSteps }).map((_, index) => (
                     <div
                       key={index}
-                      className={`h-2 w-10 rounded-sm ${
+                      className={`h-2 w-8 md:w-10 rounded-sm ${
                         index < currentStep
                           ? 'bg-[#0da500]'
                           : 'bg-[#737780] opacity-15'
@@ -941,20 +958,22 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                 </div>
 
                 {/* Right Container - Skip and Next/View Summary Buttons */}
-                <div className="flex gap-10 items-center justify-end w-[320px]">
-                  {/* Skip Button */}
-                  <button
-                    onClick={handleNext}
-                    className="flex items-center justify-center gap-2.5 px-0 py-2.5 rounded-lg hover:underline transition-all"
-                  >
-                    <span className="font-['Inter:regular',_sans-serif] text-[16px] leading-[20px] text-[#075300]">Skip</span>
-                  </button>
+                <div className="flex gap-4 md:gap-10 items-center justify-end w-full md:w-[320px] order-3">
+                  {/* Skip Button - Only show if not on last step */}
+                  {currentStep < totalSteps && (
+                    <button
+                      onClick={handleNext}
+                      className="flex items-center justify-center gap-2.5 px-0 py-2.5 rounded-lg hover:underline transition-all"
+                    >
+                      <span className="font-['Inter:regular',_sans-serif] text-[16px] leading-[20px] text-[#075300]">Skip</span>
+                    </button>
+                  )}
                   
                   {/* Next/View Summary Button with Arrow */}
                   {currentStep < totalSteps ? (
                     <button
                       onClick={handleNext}
-                      className="bg-[#0a7c00] flex items-center justify-center gap-2 px-6 py-2.5 rounded-lg shadow-sm hover:bg-[#096d00] transition-colors"
+                      className="bg-[#0a7c00] flex items-center justify-center gap-2 px-6 py-2.5 rounded-lg shadow-sm hover:bg-[#096d00] transition-colors flex-1 md:flex-initial"
                     >
                       <span className="font-['Inter:regular',_sans-serif] text-[16px] leading-[20px] text-white">Next</span>
                       <div className="size-5">
@@ -966,13 +985,10 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                   ) : (
                     <button
                       onClick={handleViewSummary}
-                      className="bg-[#0a7c00] flex items-center justify-center gap-2 px-6 py-2.5 rounded-lg shadow-sm hover:bg-[#096d00] transition-colors"
+                      className="bg-[#0a7c00] flex items-center justify-center gap-2 px-6 py-2.5 rounded-lg shadow-sm hover:bg-[#096d00] transition-colors flex-1 md:flex-initial"
                     >
                       <span className="font-['Inter:regular',_sans-serif] text-[16px] leading-[20px] text-white">View summary</span>
                       <div className="size-5">
-                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M4.16669 10H15.8334M15.8334 10L10 4.16669M15.8334 10L10 15.8334" stroke="white" strokeWidth="1.67" strokeLinecap="round" strokeLinejoin="round"/>
-                        </svg>
                       </div>
                     </button>
                   )}
@@ -982,8 +998,8 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
           </div>
 
           {/* Quote Sidebar */}
-          <div className="bg-white border border-[#d0d1d4] border-solid rounded-[16px] w-[339px] flex-shrink-0 self-stretch flex flex-col">
-            <div className="box-border flex flex-col items-center overflow-y-auto p-[24px] rounded-[inherit] flex-1">
+          <div className="bg-white border border-[#d0d1d4] border-solid rounded-[16px] w-full lg:w-[339px] flex-shrink-0 lg:max-h-[calc(100vh-96px)] flex flex-col overflow-y-auto">
+            <div className="box-border flex flex-col items-center p-[24px] rounded-[inherit] flex-1">
               <div className="flex flex-col gap-[32px] items-start w-full min-h-full">
                 {/* Top Frame */}
                 <div className="basis-0 flex flex-col gap-[16px] grow items-start min-w-px shrink-0 w-full">
@@ -1000,10 +1016,71 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                       Template
                     </p>
                     {selectedCategory ? (
-                      <div className="bg-white border border-[#d0d1d4] rounded-lg px-3 py-2 w-full">
-                        <p className="font-['Inter:regular',_sans-serif] text-[14px] leading-[18px] text-[#333740]">
-                          {categories.find(c => c.id === selectedCategory)?.label}
-                        </p>
+                      <div className="bg-white border border-[#d0d1d4] rounded-lg overflow-hidden w-full h-[68px]">
+                        <div className="flex items-center h-full">
+                          {/* Left: Image Container */}
+                          <div className={`flex flex-col gap-[10px] h-full items-start overflow-hidden pb-0 pl-[10px] pr-0 pt-[10px] relative shrink-0 w-[120px] ${
+                            selectedCategory === 'startup' ? 'bg-[#42ab18]' :
+                            selectedCategory === 'saas' ? 'bg-[#4a90e2]' :
+                            selectedCategory === 'ecommerce' ? 'bg-[#f5a623]' :
+                            selectedCategory === 'blog' ? 'bg-[#bd10e0]' :
+                            selectedCategory === 'event' ? 'bg-[#50e3c2]' :
+                            selectedCategory === 'portfolio' ? 'bg-[#9013fe]' :
+                            selectedCategory === 'news' ? 'bg-[#d0021b]' :
+                            selectedCategory === 'business' ? 'bg-[#417505]' :
+                            selectedCategory === 'agency' ? 'bg-[#ac7010]' :
+                            'bg-[#ac7010]'
+                          }`}>
+                            <div className="flex-1 relative w-full rounded-tl-[2px] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] overflow-hidden">
+                              <img 
+                                alt="" 
+                                className="absolute inset-0 w-full h-full object-cover rounded-tl-[2px]" 
+                                src={
+                                  selectedCategory === 'startup' ? 'images/spark-card-lg.svg' :
+                                  selectedCategory === 'saas' ? 'images/pulse-card-lg.svg' :
+                                  selectedCategory === 'ecommerce' ? 'images/canvas-card-lg.svg' :
+                                  selectedCategory === 'blog' ? 'images/nova-card-lg.svg' :
+                                  selectedCategory === 'event' ? 'images/summit-card-lg.svg' :
+                                  selectedCategory === 'portfolio' ? 'images/prism-card-lg.svg' :
+                                  selectedCategory === 'news' ? 'images/nexus-card-lg.svg' :
+                                  selectedCategory === 'business' ? 'images/horizon-card-lg.svg' :
+                                  selectedCategory === 'agency' ? 'images/atlas-card-lg.svg' :
+                                  'images/atlas-card-lg.svg'
+                                } 
+                              />
+                            </div>
+                          </div>
+                          
+                          {/* Right: Text and Button */}
+                          <div className="flex-1 flex items-start justify-between h-full p-[12px]">
+                            <div className="flex flex-col gap-[4px] justify-center h-full">
+                              <p className="font-['Inter:Bold',_sans-serif] font-bold leading-[24px] text-[#22252b] text-[18px]">
+                                {selectedCategory === 'startup' ? 'Spark' :
+                                 selectedCategory === 'saas' ? 'Pulse' :
+                                 selectedCategory === 'ecommerce' ? 'Canvas' :
+                                 selectedCategory === 'blog' ? 'Nova' :
+                                 selectedCategory === 'event' ? 'Summit' :
+                                 selectedCategory === 'portfolio' ? 'Prism' :
+                                 selectedCategory === 'news' ? 'Nexus' :
+                                 selectedCategory === 'business' ? 'Horizon' :
+                                 selectedCategory === 'agency' ? 'Atlas' :
+                                 'Custom'}
+                              </p>
+                              <p className="font-['Inter:Regular',_sans-serif] font-normal leading-[18px] text-[#737780] text-[12px]">
+                                {categories.find(c => c.id === selectedCategory)?.label}
+                              </p>
+                            </div>
+                            <div className="flex items-end h-full">
+                              <div className="border border-[#d0d1d4] border-solid flex gap-[8px] items-center p-[10px] rounded-[8px]">
+                                <div className="size-[20px]">
+                                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4.16669 10H15.8334M15.8334 10L10 4.16669M15.8334 10L10 15.8334" stroke="#22252b" strokeWidth="1.67" strokeLinecap="round" strokeLinejoin="round"/>
+                                  </svg>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     ) : (
                       <div className="flex gap-[4px] items-center shrink-0 w-full">
@@ -1063,20 +1140,21 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                       </div>
                     ) : (
                       // Premium Pricing Card
-                      <div className="bg-white box-border flex flex-col gap-[16px] items-start overflow-hidden px-[16px] py-[24px] relative rounded-[16px] shrink-0 w-full">
+                      <div className="box-border flex flex-col gap-[16px] items-start overflow-hidden px-[16px] py-[24px] relative rounded-[16px] shrink-0 w-full bg-gradient-to-br from-gray-700 to-gray-800">
                         {/* Background Image */}
                         <div className="absolute inset-0 pointer-events-none">
                           <img 
                             alt="" 
-                            className="absolute inset-0 w-full h-full object-cover" 
-                            src="images/pricing-package-bg-image.svg" 
+                            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-300 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
+                            src={`images/${getPricingPackage().toLowerCase()}-card-bg-image.svg`}
+                            onLoad={() => setImageLoaded(true)}
                           />
-                          <div className="absolute bg-[rgba(0,0,0,0.3)] inset-0" />
+                          <div className={`absolute bg-[rgba(0,0,0,0.3)] inset-0 transition-opacity duration-300 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`} />
                         </div>
 
-                        {/* Premium Title */}
+                        {/* Pricing Package Title */}
                         <p className="font-['Inter:Semi_Bold',_sans-serif] font-semibold leading-[28px] min-w-full not-italic relative shrink-0 text-[24px] text-white w-[min-content] z-10">
-                          Premium
+                          {getPricingPackage()}
                         </p>
 
                         {/* Price */}
@@ -1086,7 +1164,7 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                               <p className="leading-[18px] whitespace-pre">Estimated cost</p>
                             </div>
                             <div className="relative shrink-0 size-[12px]">
-                              <img alt="" className="block max-w-none size-full brightness-200" src={imgError} />
+                              <img alt="" className="block max-w-none size-full brightness-200" src={whiteInfoIcon} />
                             </div>
                           </div>
                           <p className="font-['Inter:Semi_Bold',_sans-serif] font-semibold leading-[24px] not-italic relative shrink-0 text-[20px] text-nowrap text-white whitespace-pre">
@@ -1109,9 +1187,7 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                           {selectedPageOption && (
                             <div className="flex gap-[8px] items-center relative shrink-0 w-full">
                               <div className="relative shrink-0 size-[24px]">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                  <path d="M20 6L9 17L4 12" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                                </svg>
+                                <img src="icons/white-check-icon.svg" alt="Check"/>
                               </div>
                               <p className="basis-0 font-['Inter:regular',_sans-serif] grow leading-[18px] min-h-px min-w-px not-italic relative shrink-0 text-[14px] text-white">
                                 {pageOptions.find(p => p.id === selectedPageOption)?.label}
@@ -1123,9 +1199,7 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                           {selectedUserOption && (
                             <div className="flex gap-[8px] items-center relative shrink-0 w-full">
                               <div className="relative shrink-0 size-[24px]">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                  <path d="M20 6L9 17L4 12" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                                </svg>
+                                <img src="icons/white-check-icon.svg" alt="Check"/>
                               </div>
                               <p className="basis-0 font-['Inter:regular',_sans-serif] grow leading-[18px] min-h-px min-w-px not-italic relative shrink-0 text-[14px] text-white">
                                 {userOptions.find(u => u.id === selectedUserOption)?.label}
@@ -1137,9 +1211,7 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                           {selectedCustomizationOption && (
                             <div className="flex gap-[8px] items-center relative shrink-0 w-full">
                               <div className="relative shrink-0 size-[24px]">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                  <path d="M20 6L9 17L4 12" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                                </svg>
+                                <img src="icons/white-check-icon.svg" alt="Check"/>
                               </div>
                               <p className="basis-0 font-['Inter:regular',_sans-serif] grow leading-[18px] min-h-px min-w-px not-italic relative shrink-0 text-[14px] text-white">
                                 {customizationOptions.find(c => c.id === selectedCustomizationOption)?.label}
@@ -1153,9 +1225,7 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                             return func ? (
                               <div key={funcId} className="flex gap-[8px] items-center relative shrink-0 w-full">
                                 <div className="relative shrink-0 size-[24px]">
-                                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M20 6L9 17L4 12" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                                  </svg>
+                                  <img src="icons/white-check-icon.svg" alt="Check"/>
                                 </div>
                                 <p className="basis-0 font-['Inter:regular',_sans-serif] grow leading-[18px] min-h-px min-w-px not-italic relative shrink-0 text-[14px] text-white">
                                   {func.label}
@@ -1170,9 +1240,7 @@ export default function GetQuote({ setActiveSection }: GetQuoteProps) {
                             return service ? (
                               <div key={serviceId} className="flex gap-[8px] items-center relative shrink-0 w-full">
                                 <div className="relative shrink-0 size-[24px]">
-                                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M20 6L9 17L4 12" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                                  </svg>
+                                  <img src="icons/white-check-icon.svg" alt="Check"/>
                                 </div>
                                 <p className="basis-0 font-['Inter:regular',_sans-serif] grow leading-[18px] min-h-px min-w-px not-italic relative shrink-0 text-[14px] text-white">
                                   {service.label}
