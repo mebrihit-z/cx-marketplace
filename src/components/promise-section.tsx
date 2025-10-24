@@ -17,7 +17,7 @@ export default function PromiseSection() {
       </div>
       <div className="box-border content-stretch flex gap-8 md:gap-12 lg:gap-[120px] items-center justify-center overflow-clip px-4 md:px-8 lg:px-16 xl:px-32 py-0 relative shrink-0 w-full">
         <div className="bg-white box-border content-stretch flex flex-col lg:flex-row gap-8 md:gap-12 lg:gap-16 items-center justify-start overflow-clip px-6 md:px-12 lg:px-16 py-6 md:py-8 relative rounded-[16px] shrink-0 shadow-lg w-full">
-          <div className="absolute h-full lg:h-[413px] left-0 opacity-25 translate-y-[-50%] w-[1272px] bg-gradient-to-r bg-[linear-gradient(242deg,#569800_4%,#E7FFC9_43.62%,#00A748_85.58%)]" style={{ top: "calc(50% + 0.324px)" }} />
+          <div className="absolute h-full lg:h-[413px] left-0 opacity-25 translate-y-[-50%] w-full bg-gradient-to-r bg-[linear-gradient(242deg,#569800_4%,#E7FFC9_43.62%,#00A748_85.58%)]" style={{ top: "calc(50% + 0.324px)" }} />
           <div className="content-stretch flex flex-col items-center justify-center relative shrink-0 w-full lg:w-auto">
             <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] place-items-start relative shrink-0 w-full max-w-[200px]">
               <img alt="arrow" className="block max-w-none size-full" src={img} />
