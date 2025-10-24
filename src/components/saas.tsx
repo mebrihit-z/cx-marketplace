@@ -531,7 +531,10 @@ export default function SaaS({setActiveSection, selectedTemplate }: SaaSProps) {
           {/* Action Buttons */}
           <div className="content-stretch flex gap-4 items-start justify-start relative shrink-0">
             <div aria-hidden="true" className="absolute border-0 border-black border-solid inset-0 pointer-events-none" />
-            <div className="bg-[#0a7c00] box-border content-stretch flex gap-2.5 items-center justify-center px-6 py-2.5 relative rounded-[8px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)] shrink-0">
+            <div 
+              className="bg-[#0a7c00] box-border content-stretch flex gap-2.5 items-center justify-center px-6 py-2.5 relative rounded-[8px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)] shrink-0 cursor-pointer"
+              onClick={() => setActiveSection('quote')}
+            >
               <Button text="Get a quote" />
             </div>
             <div 

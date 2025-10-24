@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import type { ActiveSection } from '../types';
 
 // SVG icon data URIs for command and send icons
 const commandIcon = `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23333740' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M18 3a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3H6a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3V6a3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 3 3 0 0 0-3-3z'/%3E%3C/svg%3E`;
@@ -158,9 +159,13 @@ interface ChatMessage {
   showBrandingPrompts?: boolean;
 }
 
+interface CreatePageProps {
+  setActiveSection: (section: ActiveSection) => void;
+}
 
 
-export default function CreatePage() {
+
+export default function CreatePage({ setActiveSection }: CreatePageProps) {
   const [promptInput, setPromptInput] = useState('');
   const [chatMessages, setChatMessages] = useState<ChatMessage[]>([]);
   const [showSuggestions, setShowSuggestions] = useState(true);
@@ -623,8 +628,7 @@ export default function CreatePage() {
       handleSubmitBranding();
     } else if (conversationStep === 5) {
       // Final step - "Get a Quote" button clicked
-      console.log('Get a Quote clicked - navigate to pricing or quote page');
-      // TODO: Navigate to pricing page or show quote form
+      setActiveSection('quote');
     } else {
     console.log('Moving to next step...');
     // Add logic for next step
