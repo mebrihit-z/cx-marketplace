@@ -269,11 +269,13 @@ export default function GetQuote({}: GetQuoteProps) {
                                 {category.label}
                               </p>
                             </div>
-                            {selectedCategory === category.id && (
-                              <div className="absolute right-4 size-4 top-4">
+                            <div className="absolute right-4 size-4 top-4">
+                              {selectedCategory === category.id ? (
                                 <img src="icons/green-circle-check-mark.svg" alt="Check" className="size-4" />
-                              </div>
-                            )}
+                              ) : (
+                                <img src="icons/gray-circle-icon.svg" alt="Circle" className="size-4" />
+                              )}
+                            </div>
                           </div>
                         </button>
                       ))}
@@ -297,11 +299,13 @@ export default function GetQuote({}: GetQuoteProps) {
                                 {category.label}
                               </p>
                             </div>
-                            {selectedCategory === category.id && (
-                              <div className="absolute right-4 size-4 top-4">
+                            <div className="absolute right-4 size-4 top-4">
+                              {selectedCategory === category.id ? (
                                 <img src="icons/green-circle-check-mark.svg" alt="Check" className="size-4" />
-                              </div>
-                            )}
+                              ) : (
+                                <img src="icons/gray-circle-icon.svg" alt="Circle" className="size-4" />
+                              )}
+                            </div>
                           </div>
                         </button>
                       ))}
@@ -325,11 +329,13 @@ export default function GetQuote({}: GetQuoteProps) {
                                 {category.label}
                               </p>
                             </div>
-                            {selectedCategory === category.id && (
-                              <div className="absolute right-4 size-4 top-4">
+                            <div className="absolute right-4 size-4 top-4">
+                              {selectedCategory === category.id ? (
                                 <img src="icons/green-circle-check-mark.svg" alt="Check" className="size-4" />
-                              </div>
-                            )}
+                              ) : (
+                                <img src="icons/gray-circle-icon.svg" alt="Circle" className="size-4" />
+                              )}
+                            </div>
                           </div>
                         </button>
                       ))}
@@ -379,11 +385,13 @@ export default function GetQuote({}: GetQuoteProps) {
                                 {feature.label}
                               </p>
                             </div>
-                            {selectedFeatures.includes(feature.id) && (
-                              <div className="absolute right-4 size-4 top-4">
+                            <div className="absolute right-4 size-4 top-4">
+                              {selectedFeatures.includes(feature.id) ? (
                                 <img src="icons/green-circle-check-mark.svg" alt="Check" className="size-4" />
-                              </div>
-                            )}
+                              ) : (
+                                <img src="icons/gray-circle-icon.svg" alt="Circle" className="size-4" />
+                              )}
+                            </div>
                           </div>
                         </button>
                       ))}
@@ -407,11 +415,13 @@ export default function GetQuote({}: GetQuoteProps) {
                                 {feature.label}
                               </p>
                             </div>
-                            {selectedFeatures.includes(feature.id) && (
-                              <div className="absolute right-4 size-4 top-4">
+                            <div className="absolute right-4 size-4 top-4">
+                              {selectedFeatures.includes(feature.id) ? (
                                 <img src="icons/green-circle-check-mark.svg" alt="Check" className="size-4" />
-                              </div>
-                            )}
+                              ) : (
+                                <img src="icons/gray-circle-icon.svg" alt="Circle" className="size-4" />
+                              )}
+                            </div>
                           </div>
                         </button>
                       ))}
@@ -435,11 +445,13 @@ export default function GetQuote({}: GetQuoteProps) {
                                 {feature.label}
                               </p>
                             </div>
-                            {selectedFeatures.includes(feature.id) && (
-                              <div className="absolute right-4 size-4 top-4">
+                            <div className="absolute right-4 size-4 top-4">
+                              {selectedFeatures.includes(feature.id) ? (
                                 <img src="icons/green-circle-check-mark.svg" alt="Check" className="size-4" />
-                              </div>
-                            )}
+                              ) : (
+                                <img src="icons/gray-circle-icon.svg" alt="Circle" className="size-4" />
+                              )}
+                            </div>
                           </div>
                         </button>
                       ))}
@@ -489,11 +501,13 @@ export default function GetQuote({}: GetQuoteProps) {
                                 {option.label}
                               </p>
                             </div>
-                            {selectedPageOption === option.id && (
-                              <div className="absolute right-4 size-4 top-4">
+                            <div className="absolute right-4 size-4 top-4">
+                              {selectedPageOption === option.id ? (
                                 <img src="icons/green-circle-check-mark.svg" alt="Check" className="size-4" />
-                              </div>
-                            )}
+                              ) : (
+                                <img src="icons/gray-circle-icon.svg" alt="Circle" className="size-4" />
+                              )}
+                            </div>
                           </div>
                         </button>
                       ))}
@@ -515,11 +529,13 @@ export default function GetQuote({}: GetQuoteProps) {
                               I'm not sure right now.
                             </p>
                           </div>
-                          {selectedPageOption === 'not-sure' && (
-                            <div className="absolute right-4 size-4 top-4">
+                          <div className="absolute right-4 size-4 top-4">
+                            {selectedPageOption === 'not-sure' ? (
                               <img src="icons/green-circle-check-mark.svg" alt="Check" className="size-4" />
-                            </div>
-                          )}
+                            ) : (
+                              <img src="icons/gray-circle-icon.svg" alt="Circle" className="size-4" />
+                            )}
+                          </div>
                         </div>
                       </button>
                     </div>
@@ -568,11 +584,13 @@ export default function GetQuote({}: GetQuoteProps) {
                                 {option.label}
                               </p>
                             </div>
-                            {selectedUserOption === option.id && (
-                              <div className="absolute right-4 size-4 top-4">
+                            <div className="absolute right-4 size-4 top-4">
+                              {selectedUserOption === option.id ? (
                                 <img src="icons/green-circle-check-mark.svg" alt="Check" className="size-4" />
-                              </div>
-                            )}
+                              ) : (
+                                <img src="icons/gray-circle-icon.svg" alt="Circle" className="size-4" />
+                              )}
+                            </div>
                           </div>
                         </button>
                       ))}
@@ -594,11 +612,13 @@ export default function GetQuote({}: GetQuoteProps) {
                               I'm not sure right now.
                             </p>
                           </div>
-                          {selectedUserOption === 'not-sure-users' && (
-                            <div className="absolute right-4 size-4 top-4">
+                          <div className="absolute right-4 size-4 top-4">
+                            {selectedUserOption === 'not-sure-users' ? (
                               <img src="icons/green-circle-check-mark.svg" alt="Check" className="size-4" />
-                            </div>
-                          )}
+                            ) : (
+                              <img src="icons/gray-circle-icon.svg" alt="Circle" className="size-4" />
+                            )}
+                          </div>
                         </div>
                       </button>
                     </div>
@@ -645,11 +665,13 @@ export default function GetQuote({}: GetQuoteProps) {
                               {option.label}
                             </p>
                           </div>
-                          {selectedCustomizationOption === option.id && (
-                            <div className="absolute right-4 size-4 top-4">
+                          <div className="absolute right-4 size-4 top-4">
+                            {selectedCustomizationOption === option.id ? (
                               <img src="icons/green-circle-check-mark.svg" alt="Check" className="size-4" />
-                            </div>
-                          )}
+                            ) : (
+                              <img src="icons/gray-circle-icon.svg" alt="Circle" className="size-4" />
+                            )}
+                          </div>
                         </div>
                       </button>
                     ))}
@@ -698,11 +720,13 @@ export default function GetQuote({}: GetQuoteProps) {
                                 {option.label}
                               </p>
                             </div>
-                            {selectedExtraFunctionality.includes(option.id) && (
-                              <div className="absolute right-4 size-4 top-4">
+                            <div className="absolute right-4 size-4 top-4">
+                              {selectedExtraFunctionality.includes(option.id) ? (
                                 <img src="icons/green-circle-check-mark.svg" alt="Check" className="size-4" />
-                              </div>
-                            )}
+                              ) : (
+                                <img src="icons/gray-circle-icon.svg" alt="Circle" className="size-4" />
+                              )}
+                            </div>
                           </div>
                         </button>
                       ))}
@@ -726,11 +750,13 @@ export default function GetQuote({}: GetQuoteProps) {
                                 {option.label}
                               </p>
                             </div>
-                            {selectedExtraFunctionality.includes(option.id) && (
-                              <div className="absolute right-4 size-4 top-4">
+                            <div className="absolute right-4 size-4 top-4">
+                              {selectedExtraFunctionality.includes(option.id) ? (
                                 <img src="icons/green-circle-check-mark.svg" alt="Check" className="size-4" />
-                              </div>
-                            )}
+                              ) : (
+                                <img src="icons/gray-circle-icon.svg" alt="Circle" className="size-4" />
+                              )}
+                            </div>
                           </div>
                         </button>
                       ))}
@@ -754,11 +780,13 @@ export default function GetQuote({}: GetQuoteProps) {
                                 {option.label}
                               </p>
                             </div>
-                            {selectedExtraFunctionality.includes(option.id) && (
-                              <div className="absolute right-4 size-4 top-4">
+                            <div className="absolute right-4 size-4 top-4">
+                              {selectedExtraFunctionality.includes(option.id) ? (
                                 <img src="icons/green-circle-check-mark.svg" alt="Check" className="size-4" />
-                              </div>
-                            )}
+                              ) : (
+                                <img src="icons/gray-circle-icon.svg" alt="Circle" className="size-4" />
+                              )}
+                            </div>
                           </div>
                         </button>
                       ))}
@@ -780,11 +808,13 @@ export default function GetQuote({}: GetQuoteProps) {
                               None for now, just the basics!
                             </p>
                           </div>
-                          {selectedExtraFunctionality.includes('none-basics') && (
-                            <div className="absolute right-4 size-4 top-4">
+                          <div className="absolute right-4 size-4 top-4">
+                            {selectedExtraFunctionality.includes('none-basics') ? (
                               <img src="icons/green-circle-check-mark.svg" alt="Check" className="size-4" />
-                            </div>
-                          )}
+                            ) : (
+                              <img src="icons/gray-circle-icon.svg" alt="Circle" className="size-4" />
+                            )}
+                          </div>
                         </div>
                       </button>
                     </div>
@@ -833,11 +863,13 @@ export default function GetQuote({}: GetQuoteProps) {
                                 {option.label}
                               </p>
                             </div>
-                            {selectedDesignServices.includes(option.id) && (
-                              <div className="absolute right-4 size-4 top-4">
+                            <div className="absolute right-4 size-4 top-4">
+                              {selectedDesignServices.includes(option.id) ? (
                                 <img src="icons/green-circle-check-mark.svg" alt="Check" className="size-4" />
-                              </div>
-                            )}
+                              ) : (
+                                <img src="icons/gray-circle-icon.svg" alt="Circle" className="size-4" />
+                              )}
+                            </div>
                           </div>
                         </button>
                       ))}
@@ -861,11 +893,13 @@ export default function GetQuote({}: GetQuoteProps) {
                                 {option.label}
                               </p>
                             </div>
-                            {selectedDesignServices.includes(option.id) && (
-                              <div className="absolute right-4 size-4 top-4">
+                            <div className="absolute right-4 size-4 top-4">
+                              {selectedDesignServices.includes(option.id) ? (
                                 <img src="icons/green-circle-check-mark.svg" alt="Check" className="size-4" />
-                              </div>
-                            )}
+                              ) : (
+                                <img src="icons/gray-circle-icon.svg" alt="Circle" className="size-4" />
+                              )}
+                            </div>
                           </div>
                         </button>
                       ))}
@@ -889,11 +923,13 @@ export default function GetQuote({}: GetQuoteProps) {
                                 {option.label}
                               </p>
                             </div>
-                            {selectedDesignServices.includes(option.id) && (
-                              <div className="absolute right-4 size-4 top-4">
+                            <div className="absolute right-4 size-4 top-4">
+                              {selectedDesignServices.includes(option.id) ? (
                                 <img src="icons/green-circle-check-mark.svg" alt="Check" className="size-4" />
-                              </div>
-                            )}
+                              ) : (
+                                <img src="icons/gray-circle-icon.svg" alt="Circle" className="size-4" />
+                              )}
+                            </div>
                           </div>
                         </button>
                       ))}
@@ -915,11 +951,13 @@ export default function GetQuote({}: GetQuoteProps) {
                               No extras, I'll handle it in-house.
                             </p>
                           </div>
-                          {selectedDesignServices.includes('no-extras') && (
-                            <div className="absolute right-4 size-4 top-4">
+                          <div className="absolute right-4 size-4 top-4">
+                            {selectedDesignServices.includes('no-extras') ? (
                               <img src="icons/green-circle-check-mark.svg" alt="Check" className="size-4" />
-                            </div>
-                          )}
+                            ) : (
+                              <img src="icons/gray-circle-icon.svg" alt="Circle" className="size-4" />
+                            )}
+                          </div>
                         </div>
                       </button>
                     </div>

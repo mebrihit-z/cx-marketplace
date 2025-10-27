@@ -13,9 +13,9 @@ const backArrowIcon = `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
 
 const forwardArrowIcon = `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20' fill='none'%3E%3Cpath d='M7.5 5L12.5 10L7.5 15' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E`;
 
-const checkCircleIcon = `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 10 10' fill='none'%3E%3Ccircle cx='5' cy='5' r='5' fill='%238cc63f'/%3E%3Cpath d='M3 5L4.5 6.5L7 3.5' stroke='white' stroke-width='1.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E`;
+const checkCircleIcon = `icons/green-circle-check-mark.svg`;
 
-const emptyCircleIcon = `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 10 10' fill='none'%3E%3Ccircle cx='5' cy='5' r='5' fill='%23d0d1d4'/%3E%3C/svg%3E`;
+const emptyCircleIcon = `icons/gray-circle-icon.svg`;
 
 interface SuggestedPrompt {
   id: number;
@@ -874,7 +874,7 @@ export default function CreatePage({ setActiveSection }: CreatePageProps) {
                             <img 
                               src={selectedFollowUps.includes(item.id) ? checkCircleIcon : emptyCircleIcon} 
                               alt={selectedFollowUps.includes(item.id) ? "Selected" : "Not selected"} 
-                              className="w-2.5 h-2.5 flex-shrink-0" 
+                              className="size-4"
                             />
                           </button>
                         ))}
@@ -899,7 +899,7 @@ export default function CreatePage({ setActiveSection }: CreatePageProps) {
                             <img 
                               src={selectedFeatures.includes(item.id) ? checkCircleIcon : emptyCircleIcon} 
                               alt={selectedFeatures.includes(item.id) ? "Selected" : "Not selected"} 
-                              className="w-2.5 h-2.5 flex-shrink-0" 
+                              className="size-4" 
                             />
                           </button>
                         ))}
@@ -924,7 +924,7 @@ export default function CreatePage({ setActiveSection }: CreatePageProps) {
                             <img 
                               src={selectedStyles.includes(item.id) ? checkCircleIcon : emptyCircleIcon} 
                               alt={selectedStyles.includes(item.id) ? "Selected" : "Not selected"} 
-                              className="w-2.5 h-2.5 flex-shrink-0" 
+                              className="size-4" 
                             />
                           </button>
                 ))}
@@ -949,7 +949,7 @@ export default function CreatePage({ setActiveSection }: CreatePageProps) {
                               <img 
                                 src={selectedBranding.includes(item.id) ? checkCircleIcon : emptyCircleIcon} 
                                 alt={selectedBranding.includes(item.id) ? "Selected" : "Not selected"} 
-                                className="w-2.5 h-2.5 flex-shrink-0" 
+                                className="size-4" 
                               />
                 </button>
                             {/* Show URL input if "Pull from my current site" is selected */}
