@@ -9,10 +9,7 @@ const sendIcon = `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' w
 
 const marketplaceLogo = `icons/logo-icon.svg`;
 
-const backArrowIcon = `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20' fill='none'%3E%3Cpath d='M12.5 15L7.5 10L12.5 5' stroke='%23111215' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E`;
-
-const forwardArrowIcon = `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20' fill='none'%3E%3Cpath d='M7.5 5L12.5 10L7.5 15' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E`;
-
+const backArrowIcon = `icons/black-back-arrow.svg`;
 const checkCircleIcon = `icons/green-circle-check-mark.svg`;
 
 const emptyCircleIcon = `icons/gray-circle-icon.svg`;
@@ -1075,7 +1072,7 @@ export default function CreatePage({ setActiveSection }: CreatePageProps) {
                       onClick={handleBack}
                       className="bg-white border border-[#d0d1d4] rounded-lg px-4 md:px-6 py-2.5 flex items-center justify-center gap-2 hover:border-[#8cc63f] hover:shadow-md transition-all"
                     >
-                      <img src={backArrowIcon} alt="Back" className="w-5 h-5" />
+                      <img src={backArrowIcon} alt="Back" />
                       <span className="font-['Inter:regular',_sans-serif] text-[16px] leading-[20px] text-[#111215]">Back</span>
                     </button>
 
@@ -1100,7 +1097,7 @@ export default function CreatePage({ setActiveSection }: CreatePageProps) {
                       <span className="font-['Inter:regular',_sans-serif] text-[16px] leading-[20px] text-white">
                         {conversationStep === 5 ? 'Get a Quote' : 'Next'}
                       </span>
-                      <img src={forwardArrowIcon} alt={conversationStep === 5 ? 'Get a Quote' : 'Next'} className="w-5 h-5" />
+                      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.16669 10H15.8334M15.8334 10L10 4.16669M15.8334 10L10 15.8334" stroke="white" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"></path></svg>
                     </button>
                   </div>
                 )}
