@@ -7,7 +7,7 @@ const commandIcon = `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg
 const sendIcon = `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M7 11L12 6L17 11M12 18V7' stroke='%23333740' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E`;
 
 
-const marketplaceLogo = `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32' fill='none'%3E%3Ccircle cx='16' cy='16' r='16' fill='%238cc63f'/%3E%3Crect x='9' y='9' width='14' height='14' fill='white' opacity='0.3'/%3E%3C/svg%3E`;
+const marketplaceLogo = `icons/logo-icon.svg`;
 
 const backArrowIcon = `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20' fill='none'%3E%3Cpath d='M12.5 15L7.5 10L12.5 5' stroke='%23111215' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E`;
 
@@ -795,7 +795,7 @@ export default function CreatePage({ setActiveSection }: CreatePageProps) {
           <div className="chat-area-container">
             {/* Chat Title Container */}
             <div className="chat-title-container">
-              <h1 className="font-semibold text-[28px] md:text-[40px] leading-[36px] md:leading-[48px] text-[#22252b]">
+              <h1 className="font-['Inter:Semi_Bold',_sans-serif] font-semibold text-[28px] md:text-[32px] lg:text-[40px] leading-[34px] md:leading-[40px] lg:leading-[48px] text-[#22252b] w-full">
               Create your perfect website template
             </h1>
           </div>
@@ -805,7 +805,7 @@ export default function CreatePage({ setActiveSection }: CreatePageProps) {
             {/* Chat Messages or Suggested Prompts */}
             {showSuggestions ? (
               <div className="chat-message">
-                <p className="font-['Inter'] text-[16px] md:text-[18px] leading-[22px] md:leading-[24px] text-[#333740] mb-4">
+                <p className="font-['Inter:regular',_sans-serif] text-[16px] md:text-[18px] leading-[22px] md:leading-[24px] text-[#333740] mb-4">
                   Select a prompt to get started
                 </p>
                 <div className="flex flex-wrap gap-4">
@@ -815,10 +815,10 @@ export default function CreatePage({ setActiveSection }: CreatePageProps) {
                       onClick={() => handlePromptClick(item.prompt)}
                       className="bg-white border border-[#d0d1d4] rounded-xl p-4 w-[188px] h-[140px] flex flex-col gap-2 hover:border-[#8cc63f] hover:shadow-md transition-all cursor-pointer text-left"
                     >
-                      <p className="font-['Inter'] text-[12px] leading-[18px] text-[#737780]">
+                      <p className="font-['Inter:regular',_sans-serif] text-[12px] leading-[18px] text-[#737780]">
                         {item.label}
                       </p>
-                      <p className="font-['Inter'] text-[14px] leading-[18px] text-[#333740]">
+                      <p className="font-['Inter:regular',_sans-serif] text-[14px] leading-[18px] text-[#333740]">
                         {item.prompt}
                       </p>
                     </button>
@@ -848,7 +848,7 @@ export default function CreatePage({ setActiveSection }: CreatePageProps) {
                             ? 'bg-white border border-[#d0d1d4] rounded-tl-2xl rounded-bl-2xl rounded-br-2xl p-4' 
                             : 'bg-white border border-[#d0d1d4] rounded-tr-2xl rounded-bl-2xl rounded-br-2xl p-4'
                         }`}>
-                          <p className="font-['Inter'] text-[14px] leading-[18px] text-[#333740]">
+                          <p className="font-['Inter:regular',_sans-serif] text-[14px] leading-[18px] text-[#333740]">
                             {message.content}
                           </p>
                         </div>
@@ -868,7 +868,7 @@ export default function CreatePage({ setActiveSection }: CreatePageProps) {
                                 : 'border-[#d0d1d4]'
                             }`}
                           >
-                            <p className="font-['Inter'] text-[14px] leading-[20px] text-[#333740] flex-1">
+                            <p className="font-['Inter:regular',_sans-serif] text-[14px] leading-[20px] text-[#333740] flex-1">
                               {item.prompt}
                             </p>
                             <img 
@@ -893,7 +893,7 @@ export default function CreatePage({ setActiveSection }: CreatePageProps) {
                                 : 'border-[#d0d1d4]'
                             }`}
                           >
-                            <p className="font-['Inter'] text-[14px] leading-[20px] text-[#333740] flex-1">
+                            <p className="font-['Inter:regular',_sans-serif] text-[14px] leading-[20px] text-[#333740] flex-1">
                               {item.prompt}
                             </p>
                             <img 
@@ -918,7 +918,7 @@ export default function CreatePage({ setActiveSection }: CreatePageProps) {
                                 : 'border-[#d0d1d4]'
                             }`}
                           >
-                            <p className="font-['Inter'] text-[14px] leading-[20px] text-[#333740] flex-1">
+                            <p className="font-['Inter:regular',_sans-serif] text-[14px] leading-[20px] text-[#333740] flex-1">
                               {item.prompt}
                             </p>
                             <img 
@@ -943,7 +943,7 @@ export default function CreatePage({ setActiveSection }: CreatePageProps) {
                                   : 'border-[#d0d1d4]'
                               }`}
                             >
-                              <p className="font-['Inter'] text-[14px] leading-[20px] text-[#333740] flex-1">
+                              <p className="font-['Inter:regular',_sans-serif] text-[14px] leading-[20px] text-[#333740] flex-1">
                                 {item.prompt}
                               </p>
                               <img 
@@ -960,7 +960,7 @@ export default function CreatePage({ setActiveSection }: CreatePageProps) {
                                   value={websiteUrl}
                                   onChange={(e) => setWebsiteUrl(e.target.value)}
                                   placeholder="Enter your website URL"
-                                  className="w-full font-['Inter'] text-[14px] leading-[20px] text-[#333740] placeholder:text-[#737780] outline-none bg-transparent"
+                                  className="w-full font-['Inter:regular',_sans-serif] text-[14px] leading-[20px] text-[#333740] placeholder:text-[#737780] outline-none bg-transparent"
                                 />
                               </div>
                             )}
@@ -978,10 +978,10 @@ export default function CreatePage({ setActiveSection }: CreatePageProps) {
                                     <polyline points="17 8 12 3 7 8"/>
                                     <line x1="12" y1="3" x2="12" y2="15"/>
                                   </svg>
-                                  <p className="font-['Inter'] text-[13px] leading-[18px] text-[#737780] text-center">
+                                  <p className="font-['Inter:regular',_sans-serif] text-[13px] leading-[18px] text-[#737780] text-center">
                                     Drop files here or click to upload
                                   </p>
-                                  <p className="font-['Inter'] text-[11px] leading-[16px] text-[#999] text-center">
+                                  <p className="font-['Inter:regular',_sans-serif] text-[11px] leading-[16px] text-[#999] text-center">
                                     PNG, JPG, SVG up to 10MB
                                   </p>
                                   <input
@@ -1006,10 +1006,10 @@ export default function CreatePage({ setActiveSection }: CreatePageProps) {
                                             <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/>
                                             <polyline points="13 2 13 9 20 9"/>
                                           </svg>
-                                          <p className="font-['Inter'] text-[12px] leading-[16px] text-[#333740] truncate">
+                                          <p className="font-['Inter:regular',_sans-serif] text-[12px] leading-[16px] text-[#333740] truncate">
                                             {file.name}
                                           </p>
-                                          <p className="font-['Inter'] text-[11px] leading-[16px] text-[#999] flex-shrink-0">
+                                          <p className="font-['Inter:regular',_sans-serif] text-[11px] leading-[16px] text-[#999] flex-shrink-0">
                                             {(file.size / 1024).toFixed(1)} KB
                                           </p>
                                         </div>
@@ -1057,7 +1057,7 @@ export default function CreatePage({ setActiveSection }: CreatePageProps) {
                         onChange={(e) => setPromptInput(e.target.value)}
                         onKeyDown={(e) => e.key === 'Enter' && handleSubmit()}
                         placeholder="Type something here..."
-                        className="flex-1 font-['Inter'] text-[14px] leading-[1.5] text-[#333740] placeholder:text-[#737780] outline-none bg-transparent"
+                        className="flex-1 font-['Inter:regular',_sans-serif] text-[14px] leading-[1.5] text-[#333740] placeholder:text-[#737780] outline-none bg-transparent"
                       />
                       <button
                         onClick={handleSubmit}
@@ -1076,7 +1076,7 @@ export default function CreatePage({ setActiveSection }: CreatePageProps) {
                       className="bg-white border border-[#d0d1d4] rounded-lg px-4 md:px-6 py-2.5 flex items-center justify-center gap-2 hover:border-[#8cc63f] hover:shadow-md transition-all"
                     >
                       <img src={backArrowIcon} alt="Back" className="w-5 h-5" />
-                      <span className="font-['Inter'] text-[16px] leading-[20px] text-[#111215]">Back</span>
+                      <span className="font-['Inter:regular',_sans-serif] text-[16px] leading-[20px] text-[#111215]">Back</span>
                     </button>
 
                     {/* Next/Get a Quote Button */}
@@ -1097,7 +1097,7 @@ export default function CreatePage({ setActiveSection }: CreatePageProps) {
                           : 'bg-[#0a7c00] hover:bg-[#0a6b00]'
                       }`}
                     >
-                      <span className="font-['Inter'] text-[16px] leading-[20px] text-white">
+                      <span className="font-['Inter:regular',_sans-serif] text-[16px] leading-[20px] text-white">
                         {conversationStep === 5 ? 'Get a Quote' : 'Next'}
                       </span>
                       <img src={forwardArrowIcon} alt={conversationStep === 5 ? 'Get a Quote' : 'Next'} className="w-5 h-5" />
